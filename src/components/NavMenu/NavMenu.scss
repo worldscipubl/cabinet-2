@@ -1,0 +1,10 @@
+@use './src/common/style/global' as *;
+
+.menu {
+  background: #FFFFFF;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+
+  &__inner {
+    padding: 16px 18px;
+  }
+}

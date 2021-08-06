@@ -1,0 +1,57 @@
+@use '../global' as *;
+
+.app {
+  background-color: #F5F5F5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    flex: 0 0 58px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    background-color: yellow;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow-y: hidden;
+  }
+
+  &__aside-menu {
+    flex: 0 0 283px;
+  }
+
+  &__content {
+    flex: 1;
+    margin: 12px 12px 0px;
+    background-color: red;
+    overflow-y: scroll;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+  }
+
+  &__main {
+    flex: 1;
+    border: 1px solid rebeccapurple;
+  }
+
+  &__footer {
+    margin-top: 12px;
+  }
+}

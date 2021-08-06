@@ -1,0 +1,72 @@
+@use 'variables' as *;
+
+%text {
+  font-family: $fontMain;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 112%;
+}
+
+%title {
+  font-family: $fontMain;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 112%;
+}
+
+%btn-white {
+  background: transparent;
+  color: $textColorPrimary;
+}
+
+%btn-green {
+  color: $textColorSecondary;
+  background: $colorAccent;
+}
+
+@mixin font-size($f-size: 12px) {
+  font-size: $f-size;
+
+  @media (min-width: $bp-xxl-1440) {
+    font-size: #{get-vw($f-size, $bp-xxl-1440)};
+  }
+}
+
+@mixin padding($top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+
+  @media (min-width: $bp-xxl-1440) {
+    padding-top: #{get-vw($top, $bp-xxl-1440)};
+    padding-right: #{get-vw($right, $bp-xxl-1440)};
+    padding-bottom: #{get-vw($bottom, $bp-xxl-1440)};
+    padding-left: #{get-vw($left, $bp-xxl-1440)};
+  }
+}
+
+@mixin margin($t-margin: 0px, $r-margin: 0px, $b-margin: 0px, $l-margin: 0px) {
+  margin: $t-margin $r-margin $b-margin $l-margin;
+
+  @media (min-width: $bp-xxl-1440) {
+    margin: #{get-vw($t-margin, $bp-xxl-1440)}
+    #{get-vw($r-margin, $bp-xxl-1440)}
+    #{get-vw($b-margin, $bp-xxl-1440)}
+    #{get-vw($l-margin, $bp-xxl-1440)};
+  }
+}
+
+@mixin more-than($resolution: 180px) {
+  @media (min-width: $resolution) {
+    @content;
+  }
+}
+
+@mixin less-than($resolution: 1170px) {
+  @media (max-width: $resolution) {
+    @content;
+  }
+}

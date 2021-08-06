@@ -1,0 +1,64 @@
+@use './src/common/style/global' as *;
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &_type {
+    &_paper {
+      background: #FFFFFF;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 16px 42px;
+  }
+
+  &__header {
+    width: 100%;
+  }
+
+  &__main {
+    width: 100%;
+    margin: auto;
+  }
+
+  &__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &_align {
+      &_center {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__union {
+    position: absolute;
+    top: 0;
+    right: 4%;
+    object-fit: contain;
+    width: 10%;
+  }
+
+  &__bg-img {
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    transform: rotateY(180deg);
+    object-fit: contain;
+    height: 24%;
+  }
+}

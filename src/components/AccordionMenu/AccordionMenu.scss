@@ -1,0 +1,72 @@
+@use './src/common/style/global' as *;
+
+.accordion-menu {
+
+}
+
+.accordion-menu__item {
+  overflow: hidden;
+
+  & + & {
+    margin-top: 6px;
+  }
+}
+
+.accordion-menu__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: .5em;
+  border-radius: .25em;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #d1f3ff;
+  }
+}
+
+.accordion-menu__header.show {
+  background-color: #d1f3ff;
+}
+
+.accordion-menu__img {
+  object-position: center;
+  object-fit: contain;
+  height: 18px;
+  width: 18px;
+}
+
+.accordion-menu__title {
+  margin-left: 8px;
+  line-height: 120%;
+  transform: translateY(5%);
+}
+
+.accordion-menu__content {
+  position: relative;
+  overflow: hidden;
+  padding-left: 30px;
+  max-height: 0;
+  transition: max-height 1s cubic-bezier(0, 1.17, 0.32, 1.12);
+
+  &:before {
+    content: '';
+    height: 100%;
+    opacity: 1;
+    width: 3px;
+    background: #d1f3ff;
+    position: absolute;
+    left: calc(9px + .25em);
+    top: 0;
+    border-radius: 15px;
+  }
+
+  &.open {
+    overflow: hidden;
+    max-height: 100vh;
+    transition: max-height 1s;
+  }
+}
+

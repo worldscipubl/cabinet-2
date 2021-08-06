@@ -1,0 +1,117 @@
+@use './src/common/style/global' as *;
+
+$border-thickness: .12em;
+$border-color: #ced4da;
+$border-color-focus: #4D90FE;
+$label-font-size: 0.876em;
+
+.text-field {
+  font-family: $fontMain;
+  font-size: 16px;
+
+  input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    color: black;
+    background-color: #fff;
+    border: $border-thickness solid $border-color;
+    border-radius: .25em;
+    padding: .512em .75em;
+    outline: none;
+
+    &:focus {
+      border: $border-thickness solid $border-color-focus;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    &:focus ~ label, &:not(:placeholder-shown) ~ label {
+      top: 0;
+      left: #{(1 + (1 - $label-font-size)) / 2 * 0.75};
+      padding: 0 #{(1 + (1 - $label-font-size)) / 2 * 0.75};
+      background-color: white;
+      font-size: $label-font-size;
+      opacity: 1;
+      pointer-events: auto;
+      line-height: $border-thickness;
+      transform: translateY(0);
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    padding-left: .75em;
+    transition: all .15s;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: center left;
+    background-size: contain;
+    width: 1em;
+    margin: 0 0.75em;
+    z-index: 2;
+    pointer-events: none;
+
+    &[data-type="button"] {
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    &.start-icon {
+      left: 0;
+      right: auto;
+    }
+
+    &.end-icon {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .start-icon ~ label {
+    padding-left: #{1.56 * 0.75em + 1em};
+  }
+
+  .start-icon ~ input {
+    padding-left: #{1.56 * 0.75em + 1em};
+  }
+
+  .end-icon ~ input {
+    padding-right: #{1.56 * 0.75em + 1em};
+  }
+}
+
+.text-field.error input {
+  border-color: red;
+}
+
+.text-field__container {
+  position: relative;
+}
+
+.text-field__helper {
+  padding: 0 .75em;
+  font-size: $label-font-size;
+  color: #495057;
+}
+
+.text-field__helper-msg {
+
+}
+
+.text-field.error .text-field__helper-msg {
+  color: red;
+}

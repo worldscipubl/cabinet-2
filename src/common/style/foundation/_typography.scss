@@ -1,0 +1,154 @@
+@use '../global' as *;
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+
+    src: url('#{$file-path}.woff') format('woff'),
+    url('#{$file-path}.woff') format('woff2');
+  }
+}
+
+//@include font-face("Helvetica", "../../fonts/helvetica-regular", 400);
+//@include font-face("Helvetica", "../../fonts/helvetica-light", 300);
+//@include font-face("Helvetica", "../../fonts/helvetica-bold", 700);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$text-sizes: (
+        large: 64px,
+        title: 36px,
+        subtitle: 24px,
+        header-logo: 22px,
+        accent: 18px,
+        default: 16px,
+        text: 14px,
+        small: 9px,
+);
+
+$text-colors: (
+        "black": #000,
+        "white": #FFF,
+        "gray": #00000066,
+        "gray-blue": #0D1D47,
+        "yellow": #FFC700,
+        "green": #219653,
+        "bronze": #BD8C4E,
+        "silver": #B5B5B5,
+        "gold": #ECBA40,
+        "platinum": #9195A3,
+        "red": red,
+);
+
+.text {
+  @extend %text;
+  color: map-get($text-colors, "black");
+
+  &_size {
+    @each $size, $val in $text-sizes {
+      &_#{$size} {
+        font-size: $val;
+      }
+    }
+  }
+
+  &_color {
+    @each $color, $val in $text-colors {
+      &_#{$color} {
+        color: $val;
+      }
+    }
+  }
+
+  &_weight {
+    &_normal {
+      font-weight: 400;
+    }
+
+    &_lighter {
+      font-weight: 300;
+    }
+
+    &_bold {
+      font-weight: 700;
+    }
+  }
+
+  &_align {
+    &_center {
+      text-align: center;
+      vertical-align: center;
+    }
+  }
+}
+
+.title {
+  @extend %title;
+  color: map-get($text-colors, "black");
+
+  &_size {
+    @each $size, $val in $text-sizes {
+      &_#{$size} {
+        font-size: $val;
+      }
+    }
+  }
+
+  &_color {
+    @each $color, $val in $text-colors {
+      &_#{$color} {
+        color: $val;
+      }
+    }
+  }
+
+  &_weight {
+    &_normal {
+      font-weight: normal;
+    }
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.link {
+  @extend %text;
+  color: map-get($text-colors, "gray");
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  &_size {
+    @each $size, $val in $text-sizes {
+      &_#{$size} {
+        font-size: $val;
+      }
+    }
+  }
+
+  &_color {
+    @each $color, $val in $text-colors {
+      &_#{$color} {
+        color: $val;
+      }
+    }
+  }
+
+  &_weight {
+    &_normal {
+      font-weight: normal;
+    }
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+}
