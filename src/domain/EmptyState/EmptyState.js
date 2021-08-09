@@ -78,14 +78,15 @@ function EmptyState(props) {
     return (
       <div padding={props.padding} textAlign="center">
         {props.image && (
-          <div
-            clone
-            mb={props.title || props.description ? 2 : 0}
-            width={`${imageWidth}%`}
-            height={`${imageHeight}%`}
-          >
-            {props.image}
-          </div>
+            <div
+                style={{
+                  width: `${imageHeight}%`,
+                  height: `${imageHeight}%`,
+                  margin: "auto",
+                }}
+            >
+              {props.image}
+            </div>
         )}
 
         {props.title && (

@@ -5,109 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbee66fb-1990-487d-8684-c8e32a8b4be0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/fonts/helvetica-bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/fonts/helvetica-bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/fonts/helvetica-light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/fonts/helvetica-light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/fonts/helvetica-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/fonts/helvetica-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/illustrations/client.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/illustrations/error.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/illustrations/not-found.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/logo/logo_black.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/logo/logo_white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/logo/union.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/nav-menu/faq.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/nav-menu/loyalty.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/nav-menu/my_articles.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/nav-menu/profile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/foundation/_index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/foundation/_reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/foundation/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/global/_functions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/global/_index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/global/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/global/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/partials/_index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/style/partials/_partials.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionItem/AccordionItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Avatar/Avatar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Avatar/Avatar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BreadCrumbs/BreadCrumbs.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BreadCrumbs/BreadCrumbs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BurgerBtn/BurgerBtn.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BurgerBtn/BurgerBtn.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/Card.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/Card.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Checkbox/Checkbox.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Checkbox/Checkbox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Copyright/Copyright.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Copyright/Copyright.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LogoBanner/LogoBanner.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LogoBanner/LogoBanner.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MenuList/MenuList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MenuList/MenuList.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PrivacyPolicy/PrivacyPolicy.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PrivacyPolicy/PrivacyPolicy.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TextField/TextField.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/ErrorBoundary/ErrorBoundary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/LaunchScreen/LaunchScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/NotFoundPage/NotFoundPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forms/FormErrorsBoard/FormErrorsBoard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forms/FormSignIn/FormSignIn.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/authHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Faq/Faq.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Forgot/Forgot.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Forgot/Forgot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Loyalty/Loyalty.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Loyalty/Loyalty.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Profile/Profile.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignIn/SignIn.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignIn/SignIn.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignUp/SignUp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignUp/SignUp.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/AppRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ApiService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/HTTPError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/UserServices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/constraints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/images/icons/plus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/images/nav-menu/chat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ProgressBar/ProgressBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ProgressBar/ProgressBar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Article/Article.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Article/Article.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/NotFoundPage/NotFoundPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/NotFoundPage/NotFoundPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AppRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ApiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/HTTPError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/HTTPError.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +33,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="103130" />
+    <option name="totalTimeSeconds" value="133360" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -137,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/common/images/icons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -150,13 +68,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/common/images/icons" />
+      <recent name="$PROJECT_DIR$/src/common/icons" />
+      <recent name="$PROJECT_DIR$/src/common/style/partials" />
       <recent name="$PROJECT_DIR$/src/utils" />
       <recent name="$PROJECT_DIR$/src/common/images/illustrations" />
-      <recent name="$PROJECT_DIR$/src/common/images" />
-      <recent name="$PROJECT_DIR$/src/common/style/partials" />
-      <recent name="$PROJECT_DIR$/src/domain" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/common/images/nav-menu" />
+      <recent name="$PROJECT_DIR$/src/common/images/icons/nav-menu" />
+      <recent name="$PROJECT_DIR$/src/common/images" />
       <recent name="$PROJECT_DIR$/src/components/AccordionMenu" />
       <recent name="$PROJECT_DIR$/src/domain" />
     </key>
@@ -211,7 +132,10 @@
       <workItem from="1628094302457" duration="3954000" />
       <workItem from="1628141878504" duration="2102000" />
       <workItem from="1628147402312" duration="26448000" />
-      <workItem from="1628230444292" duration="13338000" />
+      <workItem from="1628230444292" duration="13688000" />
+      <workItem from="1628270424334" duration="1705000" />
+      <workItem from="1628406798006" duration="9769000" />
+      <workItem from="1628483180568" duration="16684000" />
     </task>
     <servers />
   </component>

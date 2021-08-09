@@ -4,7 +4,47 @@
   background: #FFFFFF;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 
-  &__inner {
-    padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu__inner {
+  padding: 16px 18px;
+}
+
+.menu__bottom {
+  border-top: 1px solid rgba(0, 27, 57, 0.08);
+  margin-top: auto;
+  position: relative;
+  width: 100%;
+  padding: 27px 34px;
+}
+
+.menu__bottom-img {
+  position: absolute;
+  top: -1px;
+  left: 4%;
+  display: block;
+  object-fit: contain;
+  object-position: left bottom;
+  width: 40%;
+  transform: translateY(-100%) rotateY(180deg);
+}
+
+.menu__bottom-btn {
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 750px) {
+  .menu__bottom {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .menu__inner {
+    padding: 14px 12px;
   }
 }

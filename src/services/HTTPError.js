@@ -1,5 +1,3 @@
-import { STATUS_CODES } from "http";
-
 class HTTPError extends Error {
   constructor(error) {
     super();

@@ -12,13 +12,11 @@ class ApiService {
     });
   }
 
-  // async getResource(endPointURL, endPointValue, params) {
-  async getResource({ url = null, value = null, params = null, auth = null }) {
+  async getResource({ url = null, params = null, auth = null }) {
     const config = {};
     params && (config.params = params);
     auth && (config.auth = auth);
 
-    url = `${url}/${value}`;
     try {
       const response = await this.wspAxios.get(url, config);
       this.logMessage("Response API", response);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { NotFoundPage } from "../domain/NotFoundPage/NotFoundPage";
 import { Header } from "../components/Header/Header";
 import { MainContent } from "../components/MainContent/MainContent";
@@ -10,9 +10,10 @@ import { MyArticles } from "../pages/MyArticles/MyArticles";
 import { SignIn } from "../pages/SignIn/SignIn";
 import { SignUp } from "../pages/SignUp/SignUp";
 import { Forgot } from "../pages/Forgot/Forgot";
+import Article from "../pages/Article/Article";
 
 export const AppRouter = () => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
 
   return (
     <BrowserRouter>
@@ -21,9 +22,7 @@ export const AppRouter = () => {
         {user ? (
           <Switch>
             <Route path="/" exact>
-              <MainContent>
-                <h2>Index page </h2>
-              </MainContent>
+              <Redirect to="/my-articles" />
             </Route>
             <Route path="/my-articles">
               <MainContent>
@@ -46,15 +45,12 @@ export const AppRouter = () => {
               </MainContent>
             </Route>
 
-            <Route path="/sign-in">
-              <SignIn />
+            <Route path="/article/:id">
+              <MainContent>
+                <Article />
+              </MainContent>
             </Route>
-            <Route path="/sign-up">
-              <SignUp />
-            </Route>
-            <Route path="/forgot">
-              <Forgot />
-            </Route>
+
             <Route>
               <NotFoundPage />
             </Route>

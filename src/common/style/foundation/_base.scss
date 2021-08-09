@@ -21,7 +21,6 @@
   &__body {
     display: flex;
     flex: 1;
-    background-color: yellow;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
@@ -29,17 +28,14 @@
   }
 
   &__aside-menu {
+    overflow: hidden;
     flex: 0 0 283px;
   }
 
   &__content {
     flex: 1;
-    margin: 12px 12px 0px;
-    background-color: red;
     overflow-y: scroll;
-  }
 
-  &__inner {
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -48,10 +44,31 @@
 
   &__main {
     flex: 1;
-    border: 1px solid rebeccapurple;
+    padding: 12px 24px 0px;
   }
 
   &__footer {
     margin-top: 12px;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .app__aside-menu {
+    flex-basis: 96px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .app__aside-menu {
+    flex: 1 1 42px;
+  }
+
+  .app__content {
+    flex: 17 1;
+  }
+
+  .app__body {
+    flex-direction: column-reverse;
   }
 }
