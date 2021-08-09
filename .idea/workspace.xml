@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbee66fb-1990-487d-8684-c8e32a8b4be0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/images/icons/plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/nav-menu/chat.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProgressBar/ProgressBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProgressBar/ProgressBar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Article/Article.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Article/Article.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/NotFoundPage/NotFoundPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/NotFoundPage/NotFoundPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AppRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ApiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/HTTPError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/HTTPError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="133360" />
+    <option name="totalTimeSeconds" value="134168" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -135,7 +119,7 @@
       <workItem from="1628230444292" duration="13688000" />
       <workItem from="1628270424334" duration="1705000" />
       <workItem from="1628406798006" duration="9769000" />
-      <workItem from="1628483180568" duration="16684000" />
+      <workItem from="1628483180568" duration="17349000" />
     </task>
     <servers />
   </component>

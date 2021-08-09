@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MyArticles.scss";
 import ArticlesService from "../../services/ArticlesService";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
@@ -10,15 +10,17 @@ export const MyArticles = (props) => {
   const [articles, setArticles] = useState([]);
   const [title, setTitle] = useState("Загружаю");
 
-  articlesService
-    .getArticles()
-    .then((data) => {
-      setArticles(data);
-      setTitle("Загружено");
-    })
-    .catch((error) => {
-      setTitle("Ошибка");
-    });
+  useEffect(() => {
+    articlesService
+      .getArticles()
+      .then((data) => {
+        setArticles(data);
+        setTitle("Загружено");
+      })
+      .catch((error) => {
+        setTitle("Ошибка");
+      });
+  }, []);
 
   const articlesTrain = [
     {
