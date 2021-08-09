@@ -4,6 +4,7 @@ import { HeaderLogo } from "../HeaderLogo/HeaderLogo";
 import { BurgerBtn } from "../BurgerBtn/BurgerBtn";
 import { Avatar } from "../Avatar/Avatar";
 import { NavLink } from "react-router-dom";
+import couponImg from "../../common/images/icons/coupon.svg";
 
 export const Header = () => {
   const style = `app__header header`;
@@ -17,11 +18,7 @@ export const Header = () => {
           <li className="header__action-item">
             <NavLink className="amounts" to="/">
               <div className="amounts__item">
-                <img
-                  className="amounts__img"
-                  src="http://localhost/wsp_cab/public/images/icons/coupon.svg"
-                  alt="coupon"
-                />
+                <img className="amounts__img" src={couponImg} alt="coupon" />
               </div>
               <div className="amounts__item amount">
                 <h3

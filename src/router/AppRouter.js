@@ -17,7 +17,7 @@ export const AppRouter = () => {
   const [user, setUser] = useState(true);
 
   return (
-    <BrowserRouter>
+      <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
       <div className="app">
         {user && <Header />}
         {user ? (
