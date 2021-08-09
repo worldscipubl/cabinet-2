@@ -14,7 +14,7 @@ import Article from "../pages/Article/Article";
 import Chat from "../pages/Chat/Chat";
 
 export const AppRouter = () => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
 
   return (
     <BrowserRouter>

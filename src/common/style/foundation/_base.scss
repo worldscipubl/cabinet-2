@@ -17,18 +17,19 @@
     z-index: 1;
   }
 
-  &__content {
-    flex: 1;
-    overflow-y: scroll;
-
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
   &__footer {
     margin-top: 12px;
   }
+}
+
+
+.app__content {
+  flex: 1;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .app__header {
@@ -66,11 +67,7 @@
 
 @media screen and (max-width: 486px) {
   .app__aside-menu {
-    flex: 1 1 42px;
-  }
-
-  .app__content {
-    flex: 17 1;
+    flex: 0 1 auto;
   }
 
   .app__body {

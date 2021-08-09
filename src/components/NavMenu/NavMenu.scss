@@ -52,3 +52,9 @@
     padding: 14px 12px;
   }
 }
+
+@media screen and (max-height: 786px) {
+  .menu__bottom-img {
+    display: none;
+  }
+}

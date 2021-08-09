@@ -5,29 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbee66fb-1990-487d-8684-c8e32a8b4be0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/Chat/Chat.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Chat/Chat.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/global/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/global/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionItem/AccordionItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionItem/AccordionItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Copyright/Copyright.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Copyright/Copyright.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Copyright/Copyright.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Copyright/Copyright.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextField.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/forms/FormSignIn/FormSignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/FormSignIn/FormSignIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AppRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="139818" />
+    <option name="totalTimeSeconds" value="140640" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -137,7 +118,7 @@
       <workItem from="1628230444292" duration="13688000" />
       <workItem from="1628270424334" duration="1705000" />
       <workItem from="1628406798006" duration="9769000" />
-      <workItem from="1628483180568" duration="22866000" />
+      <workItem from="1628483180568" duration="23638000" />
     </task>
     <servers />
   </component>
