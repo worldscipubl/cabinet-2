@@ -67,7 +67,7 @@ const FormSignUp = () => {
   return (
     <form className="auth-form" onSubmit={handleForm}>
       <div className="auth-form__inner">
-        <h3 className="auth-form__title title title_size_subtitle">
+        <h3 className="auth-form__title text text_size_subtitle">
           Регистрация
         </h3>
         <p className="auth-form__description text text_size_accent">

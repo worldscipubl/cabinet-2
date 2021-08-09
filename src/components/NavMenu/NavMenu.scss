@@ -38,6 +38,10 @@
 }
 
 @media screen and (max-width: 750px) {
+  .menu__inner {
+    padding: 14px 12px;
+  }
+
   .menu__bottom {
     display: none;
   }

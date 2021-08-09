@@ -3,7 +3,6 @@ import ApiService from "./ApiService";
 class ArticlesService extends ApiService {
   getArticles = () => {
     return new Promise((resolve, reject) => {
-      console.log("ArticlesService")
       this.getResource({
         url: `/articles`,
         auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" },

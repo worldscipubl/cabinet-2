@@ -1,8 +1,13 @@
 @use './src/common/style/global' as *;
 
 .copyright {
-  @extend %text;
   color: $black;
   padding: 5px;
   text-align: center;
+}
+
+@media screen and (max-width: 375px) {
+  .copyright {
+    font-size: 12px;
+  }
 }

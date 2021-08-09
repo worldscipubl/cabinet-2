@@ -5,15 +5,21 @@
   justify-content: center;
   height: 100%;
   text-decoration: none;
+}
 
-  &__img {
-    display: block;
-    object-fit: contain;
-    height: 32px;
-  }
+.logo-header__img {
+  display: block;
+  object-fit: contain;
+  height: 32px;
+}
 
-  &__label {
-    display: block;
-    margin-left: 12px;
+.logo-header__label {
+  display: block;
+  margin-left: 12px;
+}
+
+@media screen and (max-width: 486px) {
+  .logo-header__label {
+    display: none;
   }
 }

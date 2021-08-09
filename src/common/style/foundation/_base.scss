@@ -11,22 +11,6 @@
   display: flex;
   flex-direction: column;
 
-  &__header {
-    flex: 0 0 58px;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-  }
-
-  &__body {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    overflow-y: hidden;
-  }
-
   &__aside-menu {
     overflow: hidden;
     flex: 0 0 283px;
@@ -42,23 +26,45 @@
     width: 100%;
   }
 
-  &__main {
-    flex: 1;
-    padding: 12px 24px 0px;
-  }
-
   &__footer {
     margin-top: 12px;
   }
 }
 
+.app__header {
+  flex: 0 0 58px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.app__body {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow-y: hidden;
+}
+
+.app__main {
+  flex: 1;
+  padding: 12px 24px 0px;
+}
+
 @media screen and (max-width: 750px) {
   .app__aside-menu {
-    flex-basis: 96px;
+    flex-basis: 86px;
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 420px) {
+  .app__main {
+    padding: 8px 12px 0px;
+  }
+}
+
+@media screen and (max-width: 486px) {
   .app__aside-menu {
     flex: 1 1 42px;
   }

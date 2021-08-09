@@ -98,7 +98,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 486px) {
   .accordion-menu {
     display: flex;
     flex-direction: row;
@@ -128,7 +128,7 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 420px) {
   .accordion-menu {
     justify-content: space-between;
   }
@@ -139,7 +139,14 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 300px) {
+  .accordion-menu__img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 300px) {
   .accordion-menu__title {
     display: none;
   }

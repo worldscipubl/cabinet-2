@@ -30,15 +30,6 @@
     }
   }
 
-  &__inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    padding: 16px 42px;
-  }
-
   &__header {
     width: 100%;
   }
@@ -80,6 +71,22 @@
   }
 }
 
+.card__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 16px 42px;
+}
+
 .article__inner {
   padding: 0;
+}
+
+@media screen and (max-width: 420px) {
+
+  .card__inner {
+    padding: 8px 12px;
+  }
 }

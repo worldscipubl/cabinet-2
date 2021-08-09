@@ -60,6 +60,10 @@
     & + & {
       margin-left: 6px;
     }
+
+    &:last-child {
+      flex-shrink: 0;
+    }
   }
 
   &__actions {
@@ -182,6 +186,11 @@
 
 @media screen and (max-width: 895px) {
   .page-spread {
+
+    .card {
+      border-radius: 0;
+    }
+
     &__paper {
       width: 100%;
       min-width: 100%;

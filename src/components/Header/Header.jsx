@@ -31,7 +31,7 @@ export const Header = () => {
                 >
                   ₽6000
                 </h3>
-                <p className="amount__status text mt-1">На счету</p>
+                <p className="amount__status text">На счету</p>
               </div>
             </NavLink>
           </li>

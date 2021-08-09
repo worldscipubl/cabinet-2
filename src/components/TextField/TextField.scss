@@ -4,10 +4,15 @@ $border-thickness: .12em;
 $border-color: #ced4da;
 $border-color-focus: #4D90FE;
 $label-font-size: 0.876em;
+$main-font-size: 16px;
 
 .text-field {
   font-family: $fontMain;
-  font-size: 16px;
+  font-size: $main-font-size;
+
+  @media screen and (min-width: 1440px) {
+    font-size: #{get-vw($main-font-size, 1440px)};
+  }
 
   input {
     position: relative;

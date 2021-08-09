@@ -11,9 +11,10 @@ import { SignIn } from "../pages/SignIn/SignIn";
 import { SignUp } from "../pages/SignUp/SignUp";
 import { Forgot } from "../pages/Forgot/Forgot";
 import Article from "../pages/Article/Article";
+import Chat from "../pages/Chat/Chat";
 
 export const AppRouter = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
 
   return (
     <BrowserRouter>
@@ -51,6 +52,11 @@ export const AppRouter = () => {
               </MainContent>
             </Route>
 
+            <Route path="/chat">
+              <MainContent>
+                <Chat />
+              </MainContent>
+            </Route>
             <Route>
               <NotFoundPage />
             </Route>
@@ -65,6 +71,9 @@ export const AppRouter = () => {
             </Route>
             <Route path="/forgot">
               <Forgot />
+            </Route>
+            <Route>
+              <Redirect to="/" />
             </Route>
           </Switch>
         )}
