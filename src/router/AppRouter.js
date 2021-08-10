@@ -17,7 +17,7 @@ export const AppRouter = () => {
   const [user, setUser] = useState(true);
 
   return (
-      <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
+    <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
       <div className="app">
         {user && <Header />}
         {user ? (
@@ -26,34 +26,34 @@ export const AppRouter = () => {
               <Redirect to="/my-articles" />
             </Route>
             <Route path="/my-articles">
-              <MainContent>
+              <MainContent title="Мои статьи">
                 <MyArticles />
               </MainContent>
             </Route>
             <Route path="/loyalty">
-              <MainContent>
+              <MainContent title="Программа лояльности">
                 <Loyalty />
               </MainContent>
             </Route>
             <Route path="/profile">
-              <MainContent>
+              <MainContent title="Партнерка">
                 <Profile />
               </MainContent>
             </Route>
             <Route path="/faq">
-              <MainContent>
+              <MainContent title="FAQ">
                 <Faq />
               </MainContent>
             </Route>
 
             <Route path="/article/:id">
-              <MainContent>
+              <MainContent title="Статья №">
                 <Article />
               </MainContent>
             </Route>
 
             <Route path="/chat">
-              <MainContent>
+              <MainContent title="Чат">
                 <Chat />
               </MainContent>
             </Route>

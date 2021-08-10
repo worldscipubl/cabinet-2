@@ -149,6 +149,19 @@
       padding: 0.5em 1em;
       font-size: 12px;
     }
+
+    &_tabs {
+      background-color: $white;
+      border: 1px solid $black;
+      border-radius: 1.2em;
+      color: $black;
+      padding: 0.5em 1em;
+      font-size: 14px;
+
+      @media screen and (max-width: 420px) {
+        font-size: 12px;
+      }
+    }
   }
 
   &:hover {

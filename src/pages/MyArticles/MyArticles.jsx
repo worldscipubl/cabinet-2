@@ -117,15 +117,9 @@ export const MyArticles = (props) => {
 
   return (
     <article>
-      <header>
-        <h2 className="text text_size_subtitle text_weight_bold text_color_gray-blue">
-          Мои статьи
-        </h2>
-        <p>{title}</p>
-      </header>
       <div className="articles">
         <NewArticleCard />
-        {articles.map((article, index) => {
+        {articlesTrain.map((article, index) => {
           return <ArticleCard key={article.id} article={article} />;
         })}
       </div>

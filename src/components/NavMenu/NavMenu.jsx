@@ -20,7 +20,7 @@ export const NavMenu = () => {
     },
     {
       img: loyaltyImg,
-      title: "Активность",
+      title: "Партнерка",
       linkTo: "/loyalty",
       id: "loyalty",
     },
