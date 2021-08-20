@@ -1,0 +1,63 @@
+@use './src/common/style/global' as *;
+
+.card-status {
+
+}
+
+.card-status__inner {
+  background: #FFFFFF;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  width: 75%;
+}
+
+.card-status__header {
+
+}
+
+.card-status__body {
+  padding: 12px 12px 0;
+  width: 100%;
+
+  &:after {
+    display: block;
+    content: "";
+    height: 1px;
+    width: 100%;
+    margin: 12px 0 0;
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+}
+
+.card-status__footer {
+  padding: 8px 12px;
+}
+
+.card-status__title {
+  background-color: $green;
+  padding: 0.6em 2em 0.6em 12px;
+  display: inline-block;
+  margin-top: 12px;
+  border-top-right-radius: 0.36em;
+  border-bottom-right-radius: 0.36em;
+}
+
+.card-status__desc {
+  margin-top: 0.3em;
+}
+
+.card-status__msg {
+  margin-top: 1em;
+}
+
+.card-status__desc-spoiler {
+  padding: 0.7em 1em;
+}
+
+.card-status__form {
+
+  &-submit {
+    display: block;
+    margin: 12px auto;
+  }
+}

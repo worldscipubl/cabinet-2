@@ -1,0 +1,67 @@
+@use './src/common/style/global' as *;
+
+.list-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0.6em 1em;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &_type {
+    &_button {
+      cursor: pointer;
+    }
+  }
+
+  &_diraction {
+    &_row {
+      flex-direction: row;
+    }
+
+    &_column {
+      flex-direction: column;
+    }
+  }
+
+  &__icon {
+    color: rgba(0, 0, 0, 0.54);
+    display: inline-flex;
+    flex-shrink: 0;
+
+    &-img {
+      object-fit: contain;
+      object-position: center;
+      width: 1.2em;
+      height: 1.2em;
+      display: inline-block;
+      flex-shrink: 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: inherit;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:not(:first-child) {
+      padding-left: 1.2em;
+    }
+  }
+
+  &__submit {
+    position: relative;
+    z-index: 2;
+  }
+}

@@ -25,6 +25,7 @@ export const AccordionMenu = (props) => {
     <div className="accordion-menu">
       {children.map((item) => (
         <item.type
+          key={item.props.id}
           {...item.props}
           open={item.props.id === isOpenItem}
           onClick={() => toggleItem(item.props.id)}

@@ -26,6 +26,19 @@
   }
 }
 
+.app-bar__tabs {
+  display: flex;
+  overflow-y: scroll;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .app-bar__action {
 
   &_back {
@@ -55,32 +68,5 @@
 .app-bar-title {
   @media screen and (max-width: 486px) {
     font-size: 21px;
-  }
-}
-
-.app-bar__tabs {
-
-}
-
-.tabs-bar {
-  display: flex;
-  overflow-y: scroll;
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-.tabs-bar__item {
-  & + & {
-    margin-left: 12px;
-  }
-
-  @media screen and (max-width: 486px) {
-    margin-left: 12px;
   }
 }

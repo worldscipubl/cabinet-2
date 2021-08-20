@@ -1,0 +1,10 @@
+@use './src/common/style/global' as *;
+
+.article-changes {
+  width: 100%;
+}
+
+.article-changes__old-msg {
+  margin-top: 18px;
+  cursor: pointer;
+}

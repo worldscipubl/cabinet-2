@@ -5,21 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbee66fb-1990-487d-8684-c8e32a8b4be0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/images/icons/arrow-back.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/images/icons/dots-menu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppBar/AppBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppBar/AppBar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ArticleStatus/ArticleStatus.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ArticleStatus/ArticleStatus.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/images/icons/done.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/images/icons/download.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/images/icons/upload.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/style/partials/_button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleChanges/ArticleChanges.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleChanges/ArticleChanges.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleStages/ArticleStages.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleSummary/ArticleSummary.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleSummary/ArticleSummary.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/List.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/List.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/ListItem/ListItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/ListItem/ListItem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Spoiler/Spoiler.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Spoiler/Spoiler.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Stepper/Stepper.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Stepper/Stepper.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Stepper/StepperItem/StepperItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Stepper/StepperItem/StepperItem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/StepperBar/StepperBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/StepperBar/StepperBar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/Article.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/TestData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/textStatic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_reset.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/partials/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/partials/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionItem/AccordionItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenuItem/AccordionMenuItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBar/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBar/AppBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Article/Article.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Article/Article.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Article/Article.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Article/Article.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleStages/ArticleStages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AppRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ApiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +61,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="159736" />
+    <option name="totalTimeSeconds" value="278726" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -51,12 +85,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/common/images/icons" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -69,14 +106,14 @@
       <recent name="$PROJECT_DIR$/src/utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/layouts" />
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/common/images/nav-menu" />
       <recent name="$PROJECT_DIR$/src/common/images/icons/nav-menu" />
       <recent name="$PROJECT_DIR$/src/common/images" />
-      <recent name="$PROJECT_DIR$/src/components/AccordionMenu" />
-      <recent name="$PROJECT_DIR$/src/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.build">
     <configuration name="ApiService.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/services/ApiService.js" working-dir="$PROJECT_DIR$/src/services">
       <method v="2" />
     </configuration>
@@ -112,9 +149,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.deploy" />
-        <item itemvalue="npm.build" />
         <item itemvalue="Node.js.ApiService.js" />
       </list>
     </recent_temporary>
@@ -152,7 +189,19 @@
       <workItem from="1628270424334" duration="1705000" />
       <workItem from="1628406798006" duration="9769000" />
       <workItem from="1628483180568" duration="26368000" />
-      <workItem from="1628572173773" duration="15651000" />
+      <workItem from="1628572173773" duration="16429000" />
+      <workItem from="1628664978786" duration="11560000" />
+      <workItem from="1628752564876" duration="10493000" />
+      <workItem from="1628783111248" duration="230000" />
+      <workItem from="1628829595518" duration="17691000" />
+      <workItem from="1629100200857" duration="13161000" />
+      <workItem from="1629135250240" duration="212000" />
+      <workItem from="1629176168112" duration="21630000" />
+      <workItem from="1629261596658" duration="15035000" />
+      <workItem from="1629298526427" duration="186000" />
+      <workItem from="1629298853596" duration="803000" />
+      <workItem from="1629352581882" duration="23488000" />
+      <workItem from="1629479503300" duration="474000" />
     </task>
     <servers />
   </component>

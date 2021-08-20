@@ -3,36 +3,11 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import "./AppBar.scss";
 import btnImg from "../../common/images/icons/arrow-back.svg";
 import menuImg from "../../common/images/icons/dots-menu.svg";
+import Tab from "../Tabs/Tab/Tab";
 
-const AppBar = ({ title }) => {
+const AppBar = ({ title, children }) => {
   const location = useLocation();
   const { id = "" } = useParams();
-
-  const tabs = [
-    { to: "#", text: "commodo" },
-    { to: "#", text: "Привет" },
-    { to: "#", text: "латинского" },
-    { to: "#", text: "mentitum" },
-    { to: "#", text: "voluptatibus" },
-    { to: "#", text: "Привет" },
-    { to: "#", text: "instructior" },
-  ];
-
-  const TabsBar = () => {
-    return (
-      <ul className="tabs-bar app__bar-tabs app-bar__tabs">
-        {tabs.map(({ text, to }) => {
-          return (
-            <li className="tabs-bar__item">
-              <Link to={to} className="button button_type_tabs">
-                {text}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    );
-  };
 
   return (
     <header className="app-bar">
@@ -53,7 +28,7 @@ const AppBar = ({ title }) => {
           <img className="app-bar__back-btn" src={menuImg} alt="back" />
         </li>
       </ul>
-      <TabsBar />
+      {children}
     </header>
   );
 };

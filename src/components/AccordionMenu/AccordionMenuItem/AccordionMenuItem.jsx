@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export const AccordionItem = ({
+export const AccordionMenuItem = ({
   img,
   title,
   linkTo,
@@ -28,4 +28,4 @@ export const AccordionItem = ({
   );
 };
 
-export default AccordionItem;
+export default AccordionMenuItem;
