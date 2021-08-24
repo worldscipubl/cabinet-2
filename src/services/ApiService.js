@@ -7,7 +7,7 @@ class ApiService {
     this.hasLogging = true;
     this.wspAxios = axios.create({
       baseURL: this._API_BASE,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json"},
       withCredentials: false,
       auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" },
     });

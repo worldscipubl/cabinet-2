@@ -75,4 +75,6 @@ class ArticlesService extends ApiService {
   };
 }
 
+// const articlesService = new ArticlesService();
+// export default ArticlesService;
 export default ArticlesService;

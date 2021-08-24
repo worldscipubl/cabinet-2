@@ -25,7 +25,7 @@ function login(username, password) {
     .then((user) => {
       // login successful if there's a user in the response
       if (user) {
-        // store user details and basic auth credentials in local storage
+        // index user details and basic auth credentials in local storage
         // to keep user logged in between page refreshes
         user.authdata = window.btoa(username + ":" + password);
         localStorage.setItem("user", JSON.stringify(user));
@@ -49,7 +49,7 @@ function registration(name, email) {
     .then((user) => {
       // login successful if there's a user in the response
       if (user) {
-        // store user details and basic auth credentials in local storage
+        // index user details and basic auth credentials in local storage
         // to keep user logged in between page refreshes
         user.authdata = window.btoa(name + ":" + email);
         localStorage.setItem("user", JSON.stringify(user));

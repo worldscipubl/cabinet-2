@@ -50,7 +50,7 @@ class UserService extends ApiService {
         .then((response) => {
           if (response.status === 200) {
             this.logMessage("Login successful", response.data);
-            // store user details and basic auth credentials in local storage
+            // index user details and basic auth credentials in local storage
             // to keep user logged in between page refreshes
             response.authdata = window.btoa(email + ":" + password);
             localStorage.setItem("user", JSON.stringify(response));

@@ -15,8 +15,8 @@ export const NavMenu = () => {
     {
       img: myArticlesImg,
       title: "Мои статьи",
-      linkTo: "/my-articles",
-      id: "my-articles",
+      linkTo: "/article",
+      id: "article",
     },
     {
       img: loyaltyImg,
@@ -34,7 +34,13 @@ export const NavMenu = () => {
       <div className="menu__inner">
         <AccordionMenu>
           {navMenuList.map(({ img, title, linkTo, id }) => (
-            <AccordionMenuItem key={id} img={img} title={title} linkTo={linkTo} id={id}>
+            <AccordionMenuItem
+              key={id}
+              img={img}
+              title={title}
+              linkTo={linkTo}
+              id={id}
+            >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
                 adipisci, asperiores corporis dolor dolorem dolores ducimus iste

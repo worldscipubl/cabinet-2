@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "./MyArticles.scss";
-import ArticlesService from "../../services/ArticlesService";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import imgPlus from "../../common/images/icons/plus.svg";
-import { Link } from "react-router-dom";
+import "./MyArticles.scss";
+import { fetchArticles } from "../../store/slices/articlesSlice/articlesSliceAsync";
 
-export const MyArticles = () => {
-  const articlesService = new ArticlesService();
-  const [articles, setArticles] = useState([]);
+const MyArticles = () => {
+  const dispatch = useDispatch();
+  const { articles, loading, error } = useSelector((state) => state.articles);
   // TODO: Добавить индикатор загрузки статей
 
   useEffect(() => {
-    articlesService
-      .getArticles()
-      .then((data) => {
-        setArticles(data);
-      })
-      .catch((error) => {
-        //  TODO: Добавить обработчк ошибок при загрузки статей
-        //     (это может быть либое тостер, либо экран заглушка)
-        console.log(error.message);
-      });
+    dispatch(fetchArticles());
   }, []);
 
   const ArticleCard = ({ article }) => {
@@ -82,16 +74,20 @@ export const MyArticles = () => {
     );
   };
 
+  if (loading) return <h2 className="text">Загрузка...</h2>;
+  if (error) return <h2 className="text">{error}</h2>;
+
   return (
     <article>
       <div className="articles">
         <NewArticleCard />
         {articles.map((article) => {
           return (
-            <ArticleCard key={"article.id" + Math.random()} article={article} />
+            <ArticleCard key={article.id + Math.random()} article={article} />
           );
         })}
       </div>
     </article>
   );
 };
+export default MyArticles;

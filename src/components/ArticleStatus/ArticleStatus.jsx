@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./ArticleStatus.scss";
-import Spoiler from "../components/Spoiler/Spoiler";
-import List from "../components/List/List";
-import ListItem from "../components/List/ListItem/ListItem";
-import downloadImg from "../common/images/icons/download.svg";
-import uploadImg from "../common/images/icons/upload.svg";
-import { instructions } from "../utils/textStatic";
-import ArticlesService from "../services/ArticlesService";
+import Spoiler from "../../components/Spoiler/Spoiler";
+import List from "../../components/List/List";
+import ListItem from "../../components/List/ListItem/ListItem";
+import downloadImg from "../../common/images/icons/download.svg";
+import uploadImg from "../../common/images/icons/upload.svg";
+import { instructions } from "../../utils/textStatic";
+import ArticlesService from "../../services/ArticlesService";
 
 const ArticleStatus = ({ status, stage }) => {
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ const ArticleStatus = ({ status, stage }) => {
   useEffect(() => {
     if (!status) return;
     setLoading(false);
-  }, []);
+  }, [status]);
 
   return loading ? (
     <h2 className="text">Загрузка...</h2>
@@ -42,37 +42,6 @@ const ArticleStatus = ({ status, stage }) => {
     </div>
   );
 };
-
-const attachmentsList = [
-  { title: "Скачать результат аудита и КП", link: "https://www.google.com/" },
-  { title: "Загрузить новую версию статьи", link: "https://www.google.com/" },
-  { title: "Загрузить новую версию статьи", link: "https://www.google.com/" },
-  { title: "Загрузить новую версию статьи", link: "https://www.google.com/" },
-];
-
-const filesUploadList = [
-  {
-    id: 1,
-    name: "Статья на аудит",
-  },
-  {
-    id: 2,
-    name: "Статья на аудит",
-  },
-  {
-    id: 3,
-    name: "Статья на аудит",
-  },
-  {
-    id: 4,
-    name: "Статья на аудит",
-  },
-  {
-    id: 5,
-    name: "Статья на аудит",
-  },
-];
-
 const AttachmentsSpoiler = (attachments) => {
   return (
     <Spoiler title="Показать вложения">
@@ -110,10 +79,6 @@ const FileUploadSpoiler = (filesUpload) => {
     console.log("Пол-ь нажал отправить");
     console.log("Данные для отправки");
     console.log(data);
-    // const formData = new FormData();
-    // for (const [key, value] of Object.entries(data)) {
-    //   formData.append(key, JSON.stringify(value));
-    // }
 
     articlesService
       .uploadFile(data)
@@ -141,13 +106,17 @@ const FileUploadSpoiler = (filesUpload) => {
             title={typeName || "Безымянный файл"}
             hint="Скачать файл"
             fileUpload={(file) => {
-              const sendData = {
-                articleId: typeId,
-                type: 1,
-                "typeArticleFile[file]": file,
-              };
+              // const sendData = {
+              //   articleId: typeId,
+              //   type: 1,
+              //   "ArticleFile[file]": file,
+              // };
+              const formData = new FormData();
+              formData.append("articleId", typeId);
+              formData.append("type", 1);
+              formData.append("ArticleFile[file]", file);
 
-              fileUploader(sendData);
+              fileUploader(formData);
             }}
           />
         ))}

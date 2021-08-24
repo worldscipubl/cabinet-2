@@ -3,14 +3,16 @@ import { NavMenu } from "../NavMenu/NavMenu";
 import { Footer } from "../Footer/Footer";
 import AppBar from "../../layouts/AppBar/AppBar";
 import Tab from "../../layouts/Tabs/Tab/Tab";
+import { useParams } from "react-router-dom";
 
 const MainContent = ({
   children,
   hideMenu,
+  hideTabsBar,
   hideFooter,
   title,
-  defaultTabs,
 }) => {
+  const { tabId: defaultTabs } = useParams();
   const showTabs = Array.isArray(children);
   const [activeTab, setActiveTab] = useState(
     getActiveTabDefault(children, defaultTabs)
@@ -21,13 +23,13 @@ const MainContent = ({
     return (
       <ul className="app-bar__tabs">
         {children.map((child) => {
-          const { label = "default" } = child.props;
-
+          const { tabId = "default", tabLabel = "default" } = child.props;
           return (
             <Tab
               activeTab={activeTab}
-              key={label}
-              label={label}
+              id={tabId}
+              key={tabId}
+              label={tabLabel}
               onClick={setActiveTab}
             />
           );
@@ -44,7 +46,7 @@ const MainContent = ({
     <div className="app__body">
       {hideMenu || <NavMenu />}
       <div className="app__content">
-        <AppBar title={title}>
+        <AppBar title={title} hideTabsBar={hideTabsBar}>
           <TabsBar />
         </AppBar>
         <main className="app__main">{getTabContent(children, activeTab)}</main>
@@ -56,7 +58,7 @@ const MainContent = ({
 
 const getTabContent = (children, activeTab) => {
   if (!Array.isArray(children)) return children;
-  const tab = children.filter((child) => child.props.label === activeTab);
+  const tab = children.filter((child) => child.props.tabId === activeTab);
   return tab.length ? tab : children[0];
 };
 
@@ -65,7 +67,7 @@ const getActiveTabDefault = (children, defaultTabs) => {
 
   if (defaultTabs) return defaultTabs;
 
-  return children[0].props.label || "default";
+  return children[0].props.tabId || "default";
 };
 
 export default MainContent;

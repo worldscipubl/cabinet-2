@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { Provider as StateProvider } from "react-redux";
 import "./common/style/app.scss";
-import { AppRouter } from "./router/AppRouter";
-import ErrorBoundary from "./domain/ErrorBoundary/ErrorBoundary";
-import { LaunchScreen } from "./domain/LaunchScreen/LaunchScreen";
+import { AppRouter } from "./AppRouter";
+import store from "./store";
 
 export const App = () => {
-  const [ready, setReady] = useState(true);
   return (
-    <ErrorBoundary>
-      {!ready && <LaunchScreen />}
-
-      {ready && <AppRouter />}
-    </ErrorBoundary>
+    <StateProvider store={store}>
+      <AppRouter />
+    </StateProvider>
   );
 };

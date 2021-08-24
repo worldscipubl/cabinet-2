@@ -1,20 +1,15 @@
 import React from "react";
 import "./ArticleStages.scss";
 import StepperItem from "../Stepper/StepperItem/StepperItem";
-import ArticleStatus from "../../ArticleStatus/ArticleStatus";
 import Stepper from "../Stepper/Stepper";
 import ArticleChanges from "../ArticleChanges/ArticleChanges";
 
-const ArticleStages = ({ currentStage, statuses, getArticleChanges }) => {
+const ArticleStages = ({ currentStage }) => {
   return (
     <Stepper currentStage={currentStage}>
       {stagesList.map(({ title, stage }) => (
-        <StepperItem key={stage + Math.random()} title={title} id={stage}>
-          <ArticleChanges
-            statuses={statuses}
-            stage={stage}
-            getArticleChanges={getArticleChanges}
-          />
+        <StepperItem key={stage + title} title={title} id={stage}>
+          <ArticleChanges stage={stage} />
         </StepperItem>
       ))}
     </Stepper>
