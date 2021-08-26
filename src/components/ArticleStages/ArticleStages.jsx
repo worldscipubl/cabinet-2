@@ -4,12 +4,14 @@ import StepperItem from "../Stepper/StepperItem/StepperItem";
 import Stepper from "../Stepper/Stepper";
 import ArticleChanges from "../ArticleChanges/ArticleChanges";
 
-const ArticleStages = ({ currentStage }) => {
+const ArticleStages = ({ article }) => {
+  const { currentStage, articleId } = article;
+
   return (
     <Stepper currentStage={currentStage}>
       {stagesList.map(({ title, stage }) => (
         <StepperItem key={stage + title} title={title} id={stage}>
-          <ArticleChanges stage={stage} />
+          <ArticleChanges article={article} />
         </StepperItem>
       ))}
     </Stepper>

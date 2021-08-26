@@ -5,35 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbee66fb-1990-487d-8684-c8e32a8b4be0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/domain/ApiServiceContext/ApiServiceContext.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/ApiServiceContext/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePipeline/ArticlePipeline.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/slices/articlesSlice/articlesSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/slices/articlesSlice/articlesSliceAsync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/slices/userSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/endpoints/ArticlesApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/entryApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArticleStatus/ArticleStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArticleStatus/ArticleStatus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_reset.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArticleChanges/ArticleChanges.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleChanges/ArticleChanges.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArticleStages/ArticleStages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleStages/ArticleStages.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/Article.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePipeline/ArticlePipeline.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePipeline/ArticlePipeline.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePipeline/ArticlePipeline.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ApiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/TestData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/TestData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/UserServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserServices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/articlesSlice/articlesSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/articlesSlice/articlesSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="328487" />
+    <option name="totalTimeSeconds" value="362485" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -185,6 +171,8 @@
       <workItem from="1629638698821" duration="5632000" />
       <workItem from="1629693483962" duration="16629000" />
       <workItem from="1629779341498" duration="10488000" />
+      <workItem from="1629870161603" duration="21896000" />
+      <workItem from="1629910609221" duration="10689000" />
     </task>
     <servers />
   </component>

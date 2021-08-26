@@ -14,7 +14,11 @@ const articlesSlice = createSlice({
     loading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    addArticles: (state, action) => {
+      state.articles = action.payload;
+    },
+  },
 
   extraReducers: {
     ...fetchArticlesReducers,
@@ -23,5 +27,5 @@ const articlesSlice = createSlice({
   },
 });
 
-export const { articlesLoading, articlesReceived } = articlesSlice.actions;
+export const { addArticles } = articlesSlice.actions;
 export default articlesSlice.reducer;

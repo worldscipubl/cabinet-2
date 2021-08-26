@@ -65,7 +65,7 @@ class UserService extends ApiService {
 
   handleUnauthorized(statusCode) {
     if (statusCode === 401) {
-      // auto logout if 401 response returned from api
+      // auto logout if 401 response returned from entryApi
       if (localStorage.getItem("user")) {
         // remove user from local storage to log user out
         localStorage.removeItem("user");

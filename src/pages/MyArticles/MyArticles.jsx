@@ -1,19 +1,12 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import imgPlus from "../../common/images/icons/plus.svg";
 import "./MyArticles.scss";
-import { fetchArticles } from "../../store/slices/articlesSlice/articlesSliceAsync";
+import { useGetArticlesQuery } from "../../api/endpoints/ArticlesApi";
 
 const MyArticles = () => {
-  const dispatch = useDispatch();
-  const { articles, loading, error } = useSelector((state) => state.articles);
-  // TODO: Добавить индикатор загрузки статей
-
-  useEffect(() => {
-    dispatch(fetchArticles());
-  }, []);
+  const { data: articles, error, isLoading } = useGetArticlesQuery();
 
   const ArticleCard = ({ article }) => {
     const { articleId, statusTitle, title, journal, tariff, progress } =
@@ -74,8 +67,9 @@ const MyArticles = () => {
     );
   };
 
-  if (loading) return <h2 className="text">Загрузка...</h2>;
+  if (isLoading) return <h2 className="text">Загрузка...</h2>;
   if (error) return <h2 className="text">{error}</h2>;
+  if (!articles) return <h2 className="text">Пусто...</h2>;
 
   return (
     <article>

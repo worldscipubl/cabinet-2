@@ -1,26 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ArticleChanges.scss";
+import { useLazyGetArticleChangesQuery } from "../../api/endpoints/ArticlesApi";
 import ArticleStatus from "../ArticleStatus/ArticleStatus";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchArticleChanges } from "../../store/slices/articlesSlice/articlesSliceAsync";
 
-const ArticleChanges = ({ stage }) => {
-  const dispatch = useDispatch();
-  const {
-    article: { articleId },
-    statuses,
-    loading,
-    error,
-  } = useSelector((state) => state.articles);
+const ArticleChanges = ({ article }) => {
+  const { currentStage: stage, articleId } = article;
+  const [statuses, setStatuses] = useState(article?.currentStatus || []);
+  const [trigger, { data: updateStatuses, error, isLoading, isError }] =
+    useLazyGetArticleChangesQuery();
 
-  console.log(statuses[stage]);
+  useEffect(() => {
+    if (!updateStatuses) return;
+    console.log(updateStatuses);
+    setStatuses([...statuses, ...updateStatuses]);
+  }, [updateStatuses]);
 
-  if (!statuses || !statuses[stage] || !statuses[stage].length) return null;
-  const lastStatus = statuses[stage][statuses[stage].length - 1];
-  const nextStatus = lastStatus.startNext;
+  const getMore = (nextStatus) => {
+    trigger({
+      articleId,
+      stage,
+      start: nextStatus,
+    });
+  };
+
+  if (!statuses || !statuses.length) return null;
+  const lastStatus = statuses[statuses.length - 1];
+  const nextStatus = lastStatus?.startNext;
   return (
     <div className="article-changes">
-      {statuses[stage].map((status) => {
+      {statuses.map((status) => {
         return (
           <ArticleStatus
             key={stage + status.statusChangeId + Math.random()}
@@ -29,18 +37,27 @@ const ArticleChanges = ({ stage }) => {
           />
         );
       })}
-      {nextStatus && (
+      {nextStatus && !isLoading && (
         <button
           className="text text_size_default text_color_gray article-changes__old-msg"
           onClick={() => {
-            dispatch(fetchArticleChanges({ articleId, stage, start: 1 }));
+            getMore(nextStatus);
           }}
         >
           Показать предыдущие сообщения...
         </button>
       )}
 
-      {error && <h2 className="text">{error}</h2>}
+      {isLoading && (
+        <h2 className="text text_size_default text_color_gray article-changes__old-msg">
+          Загружаю...
+        </h2>
+      )}
+      {isError && (
+        <h2 className="text text_size_default text_color_red article-changes__old-msg">
+          {error}
+        </h2>
+      )}
     </div>
   );
 };

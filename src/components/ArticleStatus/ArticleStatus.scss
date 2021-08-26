@@ -1,7 +1,9 @@
 @use './src/common/style/global' as *;
 
 .card-status {
-
+  & + & {
+    margin-top: 1em;
+  }
 }
 
 .card-status__inner {
@@ -9,6 +11,10 @@
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
   width: 75%;
+
+  @media screen and (max-width: 750px) {
+    width: 98%;
+  }
 }
 
 .card-status__header {
