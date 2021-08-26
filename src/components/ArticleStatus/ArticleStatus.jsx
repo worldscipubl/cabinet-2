@@ -42,6 +42,7 @@ const ArticleStatus = ({ status, stage }) => {
     </div>
   );
 };
+
 const AttachmentsSpoiler = (attachments) => {
   return (
     <Spoiler title="Показать вложения">
@@ -61,8 +62,18 @@ const AttachmentsSpoiler = (attachments) => {
               const articlesService = new ArticlesService();
               articlesService
                 .getArticleFileById(fileId)
-                .then((file) => {
-                  console.log(file);
+                .then((response) => {
+                  const url = window.URL.createObjectURL(
+                    new Blob([response.data], { type: response.data.type })
+                  );
+
+                  const link = document.createElement("a");
+                  link.href = url;
+                  link.target = "_blank";
+                  link.setAttribute("download", typeName);
+                  link.click();
+                  link.remove();
+                  window.URL.revokeObjectURL(url);
                 })
                 .catch();
             }}
@@ -76,7 +87,6 @@ const AttachmentsSpoiler = (attachments) => {
 const FileUploadSpoiler = (filesUpload) => {
   const articlesService = new ArticlesService();
   const fileUploader = (data) => {
-    console.log("Пол-ь нажал отправить");
     console.log("Данные для отправки");
     console.log(data);
 

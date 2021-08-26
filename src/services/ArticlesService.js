@@ -34,6 +34,7 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.getResource({
         url: `/article-files/${id}`,
+        responseType: "blob",
       })
         .then((response) => {
           resolve(response);

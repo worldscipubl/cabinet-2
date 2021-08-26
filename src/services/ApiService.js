@@ -7,16 +7,23 @@ class ApiService {
     this.hasLogging = true;
     this.wspAxios = axios.create({
       baseURL: this._API_BASE,
-      headers: { "Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
+      // headers: { "Content-Type": "multipart/form-data"},
       withCredentials: false,
       auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" },
     });
   }
 
-  async getResource({ url = null, params = null, auth = null }) {
+  async getResource({
+    url = null,
+    params = null,
+    auth = null,
+    responseType = null,
+  }) {
     const config = {};
     params && (config.params = params);
     auth && (config.auth = auth);
+    responseType && (config.responseType = responseType);
 
     try {
       const response = await this.wspAxios.get(url, config);
