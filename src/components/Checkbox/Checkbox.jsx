@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Checkbox.scss";
 
 const Checkbox = ({ label, children }) => {

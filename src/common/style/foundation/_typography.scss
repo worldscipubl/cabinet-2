@@ -51,8 +51,8 @@ $text-colors: (
       &_#{$size} {
         font-size: $val;
 
-        @media screen and (min-width: 1440px) {
-          font-size: #{get-vw($val, 1440px)};
+        @media screen and (min-width: $bp-large) {
+          font-size: #{get-vw($val, $bp-large)};
         }
       }
     }

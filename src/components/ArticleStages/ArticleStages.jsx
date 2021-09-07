@@ -5,12 +5,16 @@ import Stepper from "../Stepper/Stepper";
 import ArticleChanges from "../ArticleChanges/ArticleChanges";
 
 const ArticleStages = ({ article }) => {
-  const { currentStage, articleId } = article;
+  const { currentStage } = article;
 
   return (
     <Stepper currentStage={currentStage}>
       {stagesList.map(({ title, stage }) => (
-        <StepperItem key={stage + title} title={title} id={stage}>
+        <StepperItem
+          key={stage + title + "_" + Math.random()}
+          title={title}
+          id={stage}
+        >
           <ArticleChanges article={article} />
         </StepperItem>
       ))}

@@ -8,8 +8,8 @@
   font-weight: normal;
   line-height: 112%;
 
-  @media screen and (min-width: 1440px) {
-    font-size: #{get-vw(14px, 1440px)};
+  @media screen and (min-width: $bp-large) {
+    font-size: #{get-vw(14px, $bp-large)};
   }
 }
 

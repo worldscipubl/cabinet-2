@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import ProgressBar from "../../components/ProgressBar/ProgressBar";
-import imgPlus from "../../common/images/icons/plus.svg";
+import ProgressBar from "../../../components/ProgressBar/ProgressBar";
+import imgPlus from "../../../common/images/icons/plus.svg";
 import "./MyArticles.scss";
-import { useGetArticlesQuery } from "../../api/endpoints/ArticlesApi";
+import { useGetArticlesQuery } from "../../../api/endpoints/ArticlesApi";
 
 const MyArticles = () => {
   const { data: articles, error, isLoading } = useGetArticlesQuery();
@@ -77,7 +77,10 @@ const MyArticles = () => {
         <NewArticleCard />
         {articles.map((article) => {
           return (
-            <ArticleCard key={article.id + Math.random()} article={article} />
+            <ArticleCard
+              key={article?.articleId || "article" + Math.random()}
+              article={article}
+            />
           );
         })}
       </div>

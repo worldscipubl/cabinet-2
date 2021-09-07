@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Tab.scss";
 
 const Tab = ({ id, activeTab, label, onClick }) => {
   const className = activeTab === id ? "active" : "";
 
   return (
     <li
-      className={"tabs__item button button_type_tabs " + className}
+      className={"tabs-item button button_type_tabs " + className}
       onClick={() => {
         onClick(id);
       }}

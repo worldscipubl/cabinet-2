@@ -6,12 +6,16 @@ $border-color-focus: #4D90FE;
 $label-font-size: 0.876em;
 $main-font-size: 16px;
 
+input[type=date]:invalid::-webkit-datetime-edit {
+  color: #8e8e8e;
+}
+
 .text-field {
   font-family: $fontMain;
   font-size: $main-font-size;
 
-  @media screen and (min-width: 1440px) {
-    font-size: #{get-vw($main-font-size, 1440px)};
+  @media screen and (min-width: $bp-large) {
+    font-size: #{get-vw($main-font-size, $bp-large)};
   }
 
   input {
@@ -33,30 +37,10 @@ $main-font-size: 16px;
         color: transparent;
       }
     }
-
-    &:focus ~ label, &:not(:placeholder-shown) ~ label {
-      top: 0;
-      left: #{(1 + (1 - $label-font-size)) / 2 * 0.75};
-      padding: 0 #{(1 + (1 - $label-font-size)) / 2 * 0.75};
-      background-color: white;
-      font-size: $label-font-size;
-      opacity: 1;
-      pointer-events: auto;
-      line-height: $border-thickness;
-      transform: translateY(0);
-    }
   }
 
   label {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
     font-size: 1em;
-    padding-left: .75em;
-    transition: all .15s;
-    pointer-events: none;
-    opacity: 0;
   }
 
   img {
@@ -65,9 +49,9 @@ $main-font-size: 16px;
     transform: translateY(-50%);
     background-position: center left;
     background-size: contain;
-    width: 1em;
+    width: 1.38em;
     margin: 0 0.75em;
-    z-index: 2;
+    z-index: 1;
     pointer-events: none;
 
     &[data-type="button"] {
@@ -86,8 +70,14 @@ $main-font-size: 16px;
     }
   }
 
-  .start-icon ~ label {
-    padding-left: #{1.56 * 0.75em + 1em};
+  .action-btn {
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
   }
 
   .start-icon ~ input {
@@ -97,10 +87,42 @@ $main-font-size: 16px;
   .end-icon ~ input {
     padding-right: #{1.56 * 0.75em + 1em};
   }
+
+  .action-btn ~ input {
+    padding-right: #{1.56 * 0.75em + 1em};
+  }
+
+  &.error {
+    input {
+      border-color: red;
+    }
+  }
+
+  &.readonly {
+    .end-icon {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    input {
+      border: 0;
+      padding-left: 0;
+      color: #8b8b8b;
+      pointer-events: none;
+      cursor: text;
+    }
+  }
 }
 
-.text-field.error input {
-  border-color: red;
+.text-field__description {
+  margin-bottom: 0.25em;
+}
+
+.text-field__label {
+  display: inline-block;
+  font-size: inherit;
+  cursor: text;
+  margin-bottom: 0.25em;
 }
 
 .text-field__container {

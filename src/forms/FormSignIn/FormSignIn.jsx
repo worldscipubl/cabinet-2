@@ -6,8 +6,8 @@ import UserService from "../../services/UserService";
 import FormErrorsBoard from "../FormErrorsBoard/FormErrorsBoard";
 
 const FormSignIn = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [, setSubmitted] = useState(false);
+  const [, setLoading] = useState(false);
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const userService = new UserService();
@@ -25,10 +25,8 @@ const FormSignIn = () => {
     if (!isValid) {
       constraints[name] &&
         setErrors({ ...errors, [name]: constraints[name].msg });
-      return;
     } else {
       setErrors(null);
-      return;
     }
   }
 
@@ -58,13 +56,11 @@ const FormSignIn = () => {
       })
       .finally(() => {
         setLoading(false);
-
-        ["d", "df"].map((el) => {});
       });
   }
 
   return (
-    <form className="auth-form" onSubmit={handleForm}>
+    <form className="auth-form" onSubmit={handleForm} noValidate>
       <div className="auth-form__inner">
         <h3 className="auth-form__title text text_size_subtitle">Вход</h3>
 

@@ -1,12 +1,14 @@
 import React from "react";
+import classNames from "classnames";
 import unionImg from "../../common/images/logo/union.svg";
 import clientImg from "../../common/images/illustrations/client.svg";
 import "./Card.scss";
 
-const Card = ({ type, children, isUnion, isClient }) => {
-  const style = `card ${type ? "card_type_" + type : ""}`;
+const Card = ({ children, isUnion, isClient, appearance: { type } = {} }) => {
+  const cardStyle = classNames("card", { [type]: type });
+
   return (
-    <div className={style}>
+    <div className={cardStyle}>
       <div className="card__inner">{children}</div>
       {isUnion && <img className="card__union" src={unionImg} alt="union" />}
       {isClient && (

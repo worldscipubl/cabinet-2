@@ -30,9 +30,9 @@ class ApiService {
       this.logMessage("Response API", response);
       return response;
     } catch (error) {
-      error = new HTTPError(error);
-      this.logMessage("Response Error", error);
-      throw error;
+      const handledError = new HTTPError(error);
+      this.logMessage("Response Error", handledError);
+      throw handledError;
     }
   }
 
@@ -46,9 +46,9 @@ class ApiService {
       this.logMessage("Response API", response);
       return response;
     } catch (error) {
-      error = new HTTPError(error);
-      this.logMessage("Response Error", { ...error });
-      throw error;
+      const handledError = new HTTPError(error);
+      this.logMessage("Response Error", handledError);
+      throw handledError;
     }
   }
 

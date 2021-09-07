@@ -114,13 +114,8 @@ const FileUploadSpoiler = (filesUpload) => {
             key={typeName + Math.random()}
             startIcon={uploadImg}
             title={typeName || "Безымянный файл"}
-            hint="Скачать файл"
+            hint="Загрузить файл"
             fileUpload={(file) => {
-              // const sendData = {
-              //   articleId: typeId,
-              //   type: 1,
-              //   "ArticleFile[file]": file,
-              // };
               const formData = new FormData();
               formData.append("articleId", typeId);
               formData.append("type", 1);

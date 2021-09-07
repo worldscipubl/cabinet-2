@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import TextField from "../../components/TextField/TextField";
 import constraints from "../../utils/constraints";
-import { Link } from "react-router-dom";
 import UserService from "../../services/UserService";
 
 const FormForgot = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [, setSubmitted] = useState(false);
+  const [, setLoading] = useState(false);
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const userService = new UserService();

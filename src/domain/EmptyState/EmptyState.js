@@ -2,33 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function EmptyState(props) {
-  let imageWidth;
   let imageHeight;
-  let variant;
 
   switch (props.size) {
     case "small":
-      imageWidth = 40;
       imageHeight = 40;
-      variant = "h6";
       break;
 
     case "medium":
-      imageWidth = 60;
       imageHeight = 60;
-      variant = "h6";
       break;
 
     case "large":
-      imageWidth = 100;
       imageHeight = 100;
-      variant = "h4";
       break;
 
     default:
-      imageWidth = 60;
       imageHeight = 60;
-      variant = "h5";
       break;
   }
 
@@ -78,15 +68,15 @@ function EmptyState(props) {
     return (
       <div padding={props.padding} textAlign="center">
         {props.image && (
-            <div
-                style={{
-                  width: `${imageHeight}%`,
-                  height: `${imageHeight}%`,
-                  margin: "auto",
-                }}
-            >
-              {props.image}
-            </div>
+          <div
+            style={{
+              width: `${imageHeight}%`,
+              height: `${imageHeight}%`,
+              margin: "auto",
+            }}
+          >
+            {props.image}
+          </div>
         )}
 
         {props.title && (

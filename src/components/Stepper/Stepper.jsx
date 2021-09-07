@@ -8,18 +8,15 @@ const Stepper = ({ currentStage, children }) => {
     setOpenItem(currentStage);
   }, [currentStage]);
 
-  const toggleItem = useCallback(
-    (id) => {
-      setOpenItem((prev) => {
-        if (id === prev) {
-          return "";
-        } else {
-          return id;
-        }
-      });
-    },
-    [currentStage]
-  );
+  const toggleItem = useCallback((id) => {
+    setOpenItem((prev) => {
+      if (id === prev) {
+        return "";
+      } else {
+        return id;
+      }
+    });
+  }, []);
   return (
     <ol className="stepper">
       {children.map((item) => (

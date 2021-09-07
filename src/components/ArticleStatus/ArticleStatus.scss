@@ -12,8 +12,8 @@
   border-radius: 6px;
   width: 75%;
 
-  @media screen and (max-width: 750px) {
-    width: 98%;
+  @media screen and (max-width: $bp-laptop) {
+    width: 100%;
   }
 }
 

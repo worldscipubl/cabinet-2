@@ -20,7 +20,7 @@
   &:only-child {
     max-width: calc(100% / 3 - 14px);
 
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: $bp-tablet) {
       max-width: 100%;
     }
   }

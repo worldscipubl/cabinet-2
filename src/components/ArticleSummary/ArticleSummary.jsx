@@ -3,7 +3,7 @@ import "./ArticleSummary.scss";
 import ProgressBar from "../ProgressBar/ProgressBar";
 
 const ArticleSummary = ({
-  article: { articleId, statusTitle, title, journal, tariff, progress } = {},
+  article: { statusTitle, title, journal, tariff, progress } = {},
 }) => {
   return (
     <div className="article-summary">
@@ -23,7 +23,8 @@ const ArticleSummary = ({
             </h3>
             <a
               className="link link_size_accent "
-              href="#"
+              // TODO: Сделать валидную ссылку на текущий статус
+              href="/#"
               style={{ marginBottom: "12px" }}
             >
               <span>Этап: </span> {statusTitle}

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./ArticlePipeline.scss";
-import ArticleSummary from "../../components/ArticleSummary/ArticleSummary";
-import ArticleStages from "../../components/ArticleStages/ArticleStages";
-import { useGetArticleByIdQuery } from "../../api/endpoints/ArticlesApi";
+import ArticleSummary from "../../../components/ArticleSummary/ArticleSummary";
+import ArticleStages from "../../../components/ArticleStages/ArticleStages";
+import { useGetArticleByIdQuery } from "../../../api/endpoints/ArticlesApi";
 
 const ArticlePipeline = ({ articleId }) => {
   const { data: article, error, isLoading } = useGetArticleByIdQuery(articleId);

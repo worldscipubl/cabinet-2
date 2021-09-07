@@ -13,12 +13,11 @@ const MainContent = ({
   title,
 }) => {
   const { tabId: defaultTabs } = useParams();
-  const showTabs = Array.isArray(children);
   const [activeTab, setActiveTab] = useState(
     getActiveTabDefault(children, defaultTabs)
   );
   const TabsBar = () => {
-    if (!showTabs) return null;
+    if (!activeTab) return null;
 
     return (
       <ul className="app-bar__tabs">
@@ -40,7 +39,7 @@ const MainContent = ({
 
   useEffect(() => {
     setActiveTab(getActiveTabDefault(children, defaultTabs));
-  }, [children]);
+  }, [children, defaultTabs]);
 
   return (
     <div className="app__body">

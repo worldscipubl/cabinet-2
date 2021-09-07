@@ -24,9 +24,9 @@ const getStateStyle = (state) => {
   if (!state) return "";
 
   let stateStyle = "";
-  Object.entries(state).map(([key, value]) => {
-    value && (stateStyle += ` ${key.toString()}`);
-  });
+  Object.entries(state).map(
+    ([key, value]) => value && (stateStyle += ` ${key.toString()}`)
+  );
 
   return stateStyle;
 };

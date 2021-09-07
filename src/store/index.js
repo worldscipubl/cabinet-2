@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import articlesSlice from "./slices/articlesSlice/articlesSlice";
 import entryApi from "../api/entryApi";
 
 const store = configureStore({

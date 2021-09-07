@@ -1,3 +1,5 @@
+@use './src/common/style/global' as *;
+
 .logo-header {
   align-items: center;
   display: flex;
@@ -18,7 +20,7 @@
   margin-left: 12px;
 }
 
-@media screen and (max-width: 486px) {
+@media screen and (max-width: $bp-mobile) {
   .logo-header__label {
     display: none;
   }

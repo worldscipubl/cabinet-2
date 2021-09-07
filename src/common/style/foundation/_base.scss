@@ -55,13 +55,13 @@ $app-padding-tablet: 12px 12px 12px 12px;
   padding: 24px 24px 0px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: $bp-tablet) {
   .app__aside-menu {
     flex-basis: 86px;
   }
 }
 
-@media screen and (max-width: 486px) {
+@media screen and (max-width: $bp-mobile) {
   .app__header {
     display: none;
   }

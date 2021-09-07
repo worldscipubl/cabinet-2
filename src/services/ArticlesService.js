@@ -60,6 +60,49 @@ class ArticlesService extends ApiService {
     });
   };
 
+  setArticleBriefArticle = (data) => {
+    return new Promise((resolve, reject) => {
+      this.setResource({
+        url: "/brief/article",
+        data,
+      })
+        .then((response) => {
+          response(response);
+        })
+        .catch((reason) => {
+          reject(reason);
+        });
+    });
+  };
+  setArticleBriefContact = (data) => {
+    return new Promise((resolve, reject) => {
+      this.setResource({
+        url: "/brief/contact",
+        data,
+      })
+        .then((response) => {
+          response(response);
+        })
+        .catch((reason) => {
+          reject(reason);
+        });
+    });
+  };
+  setArticleBriefAuthors = (data) => {
+    return new Promise((resolve, reject) => {
+      this.setResource({
+        url: "/reg-forms/add",
+        data,
+      })
+        .then((response) => {
+          response(response);
+        })
+        .catch((reason) => {
+          reject(reason);
+        });
+    });
+  };
+
   uploadFile = (data) => {
     return new Promise((resolve, reject) => {
       this.setResource({
@@ -76,6 +119,5 @@ class ArticlesService extends ApiService {
   };
 }
 
-// const articlesService = new ArticlesService();
-// export default ArticlesService;
+export const articlesService = new ArticlesService();
 export default ArticlesService;

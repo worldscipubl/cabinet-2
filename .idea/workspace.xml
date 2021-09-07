@@ -5,10 +5,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbee66fb-1990-487d-8684-c8e32a8b4be0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/endpoints/BriefApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/images/icons/pencil.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/ArticleForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/AuthorForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/BriefForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/ContactForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Input/Input.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ViewPager/ViewPager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ViewPager/ViewPager.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ViewPager/ViewPagerBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/global/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/global/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/global/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/global/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/partials/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/partials/_button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenu.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AccordionMenu/AccordionMenuItem/AccordionMenuItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleChanges/ArticleChanges.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleChanges/ArticleChanges.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleStages/ArticleStages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleStages/ArticleStages.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleSummary/ArticleSummary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleSummary/ArticleSummary.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Checkbox/Checkbox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Checkbox/Checkbox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/ListItem/ListItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/ListItem/ListItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Stepper/Stepper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stepper/Stepper.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Stepper/StepperItem/StepperItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stepper/StepperItem/StepperItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Stepper/StepperItem/StepperItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stepper/StepperItem/StepperItem.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StepperBar/StepperBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StepperBar/StepperBar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextField.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormSignIn/FormSignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/FormSignIn/FormSignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePipeline/ArticlePipeline.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePipeline/ArticlePipeline.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePipeline/ArticlePipeline.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePipeline/ArticlePipeline.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/MyArticles/MyArticles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/MyArticles/MyArticles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ApiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +84,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="365656" />
+    <option name="totalTimeSeconds" value="74531" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -38,7 +106,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/common/images/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/TextField" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,24 +116,24 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/TextField" />
       <recent name="$PROJECT_DIR$/src/common/images/icons" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/common/icons" />
-      <recent name="$PROJECT_DIR$/src/common/style/partials" />
-      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src/layouts/ViewPager" />
+      <recent name="$PROJECT_DIR$/src/layouts" />
+      <recent name="$PROJECT_DIR$/src/pages/ArticlePage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/ViewPager" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/layouts/ViewPager" />
+      <recent name="$PROJECT_DIR$/src/pages/ArticlePage" />
       <recent name="$PROJECT_DIR$/src/store/slices/articlesSlice" />
-      <recent name="$PROJECT_DIR$/src/store/reducers" />
-      <recent name="$PROJECT_DIR$/src/store/slices" />
-      <recent name="$PROJECT_DIR$/src/utils" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -161,7 +229,26 @@
       <workItem from="1629693483962" duration="16629000" />
       <workItem from="1629779341498" duration="10488000" />
       <workItem from="1629870161603" duration="21896000" />
-      <workItem from="1629910609221" duration="13621000" />
+      <workItem from="1629910609221" duration="14481000" />
+      <workItem from="1630044651371" duration="18218000" />
+      <workItem from="1630234909057" duration="9378000" />
+      <workItem from="1630298855883" duration="20365000" />
+      <workItem from="1630395322746" duration="659000" />
+      <workItem from="1630396344584" duration="10582000" />
+      <workItem from="1630471642955" duration="6906000" />
+      <workItem from="1630480249549" duration="13559000" />
+      <workItem from="1630582898163" duration="4582000" />
+      <workItem from="1630592303608" duration="3251000" />
+      <workItem from="1630599826789" duration="3857000" />
+      <workItem from="1630654185016" duration="1301000" />
+      <workItem from="1630663230229" duration="2042000" />
+      <workItem from="1630738399168" duration="6552000" />
+      <workItem from="1630753231862" duration="2566000" />
+      <workItem from="1630774309103" duration="2039000" />
+      <workItem from="1630833639068" duration="11381000" />
+      <workItem from="1630926466339" duration="85000" />
+      <workItem from="1630926584074" duration="5236000" />
+      <workItem from="1631011429315" duration="9938000" />
     </task>
     <servers />
   </component>

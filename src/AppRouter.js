@@ -10,7 +10,6 @@ import { Forgot } from "./pages/Forgot/Forgot";
 import Chat from "./pages/Chat/Chat";
 import { Header } from "./components/Header/Header";
 import MainContent from "./components/MainContent/MainContent";
-import MyArticles from "./pages/MyArticles/MyArticles";
 import ArticlePage from "./pages/ArticlePage/ArticlePage";
 
 export const AppRouter = () => {
@@ -24,6 +23,7 @@ export const AppRouter = () => {
           <Switch>
             <Route path="/" exact>
               <Redirect to="/article" />
+
             </Route>
 
             <Route path="/article/:articleId?/:tabId?">

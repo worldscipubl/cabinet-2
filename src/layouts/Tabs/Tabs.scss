@@ -1,29 +1,5 @@
 @use './src/common/style/global' as *;
 
-.tab-list-item {
-  display: inline-block;
-  list-style: none;
-  margin-bottom: -1px;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-}
-
-.tab-list-active {
-  background-color: white;
-  border: solid #ccc;
-  border-width: 1px 1px 0 1px;
-}
-
-.tab__content {
+.tabs__content {
   margin-top: 12px;
-}
-
-.tabs__item {
-  & + & {
-    margin-left: 12px;
-  }
-
-  @media screen and (max-width: 486px) {
-    margin-left: 12px;
-  }
 }

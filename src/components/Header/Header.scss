@@ -90,7 +90,7 @@
 }
 
 
-@media screen and (max-width: 486px) {
+@media screen and (max-width: $bp-mobile) {
   .header__inner {
     padding: 12px;
   }

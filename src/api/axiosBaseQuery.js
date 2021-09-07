@@ -31,9 +31,9 @@ export const axiosBaseQuery = (
       logMessage("Response API", response);
       return { data: response };
     } catch (error) {
-      error = new HTTPError(error);
-      logMessage("Response Error", error);
-      return { error: error?.message };
+      const handledError = new HTTPError(error);
+      logMessage("Response Error", handledError);
+      return { error: handledError?.message };
     }
   };
 };

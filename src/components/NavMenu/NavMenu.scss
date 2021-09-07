@@ -37,7 +37,7 @@
   margin: auto;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: $bp-tablet) {
   .menu__inner {
     padding: 12px;
   }
@@ -47,9 +47,15 @@
   }
 }
 
-@media screen and (max-width: 486px) {
+@media screen and (max-width: $bp-mobile) {
   .menu__inner {
     padding: 8px 12px;
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 

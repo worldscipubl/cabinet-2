@@ -7,8 +7,8 @@ import Checkbox from "../../components/Checkbox/Checkbox";
 import FormErrorsBoard from "../FormErrorsBoard/FormErrorsBoard";
 
 const FormSignUp = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [, setSubmitted] = useState(false);
+  const [, setLoading] = useState(false);
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const [checked, setChecked] = useState(false);
@@ -65,7 +65,7 @@ const FormSignUp = () => {
   }
 
   return (
-    <form className="auth-form" onSubmit={handleForm}>
+    <form className="auth-form" onSubmit={handleForm} noValidate>
       <div className="auth-form__inner">
         <h3 className="auth-form__title text text_size_subtitle">
           Регистрация

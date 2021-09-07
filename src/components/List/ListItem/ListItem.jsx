@@ -51,7 +51,8 @@ const ListItem = ({
           {state.fileUpload && (
             <button
               className="button button_type_tabs"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 fileUpload(state.fileUpload);
               }}
             >

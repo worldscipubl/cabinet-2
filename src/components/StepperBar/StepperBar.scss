@@ -4,7 +4,7 @@
   font-size: 14px;
   margin-top: 24px;
 
-  @media screen and (max-width: 486px) {
+  @media screen and (max-width: $bp-mobile) {
     font-size: 12px;
   }
 
@@ -18,12 +18,8 @@
 
     height: 5px;
 
-    @media screen and (min-width: 1440px) {
-      height: #{get-vw(5px, 1440px)};
-    }
-
-    @media screen and (max-width: 1170px) {
-      height: 7px;
+    @media screen and (min-width: $bp-large) {
+      height: #{get-vw(5px, $bp-large)};
     }
   }
 

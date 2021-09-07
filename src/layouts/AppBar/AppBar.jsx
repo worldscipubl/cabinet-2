@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./AppBar.scss";
 import btnImg from "../../common/images/icons/arrow-back.svg";
 import menuImg from "../../common/images/icons/dots-menu.svg";
-import Tab from "../Tabs/Tab/Tab";
 
 const AppBar = ({ title, hideTabsBar, children }) => {
   const location = useLocation();

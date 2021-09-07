@@ -13,7 +13,7 @@ export const LoginLayout = ({ children }) => {
   return (
     <div className="page-spread">
       <div className="page-spread__paper">
-        <Card type="paper" isUnion isClient>
+        <Card appearance={{ type: "paper" }} isUnion isClient>
           <CardHeader>
             <h3 className="text">
               Личный кабинет <br />

@@ -1,26 +1,34 @@
 import React from "react";
-import MainContent from "../../components/MainContent/MainContent";
-import ArticlePipeline from "../ArticlePipeline/ArticlePipeline";
 import { useParams } from "react-router-dom";
-import MyArticles from "../MyArticles/MyArticles";
+import MainContent from "../../components/MainContent/MainContent";
+import ArticlePipeline from "./ArticlePipeline/ArticlePipeline";
+import MyArticles from "./MyArticles/MyArticles";
+import ArticleChat from "./ArticleChat/ArticleChat";
+import ArticleBrief from "./ArticleBrief/ArticleBrief";
 
 const ArticlePage = () => {
   const { articleId } = useParams();
   const articleTabs = [
     <ArticlePipeline
-      tabId="tab-1"
+      tabId="ArticlePipeline"
       tabLabel="Процесс публикации"
+      key="ArticlePipeline"
       articleId={articleId}
     />,
-    <h2 tabId="tab-2" tabLabel="tab-2">
-      Tab №2
-    </h2>,
-    <h2 tabId="tab-3" tabLabel="tab-3">
-      Tab №3
-    </h2>,
-    <h2 tabId="tab-4" tabLabel="tab-4">
-      Tab №4
-    </h2>,
+    <ArticleChat tabId="article-chat" key="article-chat" tabLabel="Переписка">
+      Переписка
+    </ArticleChat>,
+    <ArticleBrief
+      articleId={articleId}
+      tabId="article-brief"
+      key="article-brief"
+      tabLabel="Договор"
+    >
+      Договор
+    </ArticleBrief>,
+    <ArticleChat tabId="tab-4" tabLabel="Оплата" key="tab-4">
+      Оплата
+    </ArticleChat>,
   ];
 
   return (

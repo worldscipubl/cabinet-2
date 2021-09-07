@@ -13,7 +13,7 @@ const ArticleChanges = ({ article }) => {
     if (!updateStatuses) return;
     console.log(updateStatuses);
     setStatuses([...statuses, ...updateStatuses]);
-  }, [updateStatuses]);
+  }, [updateStatuses, statuses]);
 
   const getMore = (nextStatus) => {
     trigger({
