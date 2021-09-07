@@ -2,7 +2,7 @@
   "name": "CabinetWorldSciPubl",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cabinet.worldscipubl.com/",
+  "homepage": "https://igortyugaev.github.io/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.21.1",
