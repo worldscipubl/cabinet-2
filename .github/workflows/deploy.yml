@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - uses: appleboy/ssh-action@master
+        with:
+          host: 5.253.63.141
+          username: root
+          key: ${{ secrets.key_server }}
+          port: 22
+          script: |
+            cd /var/www/www-root/data/www/cabinet.worldscipubl.com/public_html
+            git status
+            git pull origin gh-pages
