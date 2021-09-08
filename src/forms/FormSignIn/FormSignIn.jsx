@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import TextField from "../../components/TextField/TextField";
 import constraints from "../../utils/constraints";
-import { Link } from "react-router-dom";
-import UserService from "../../services/UserService";
 import FormErrorsBoard from "../FormErrorsBoard/FormErrorsBoard";
+import UserService from "../../services/UserService";
 
 const FormSignIn = () => {
   const [, setSubmitted] = useState(false);
