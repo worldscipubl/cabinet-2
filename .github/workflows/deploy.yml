@@ -33,6 +33,15 @@ jobs:
         with:
           name: production-files
           path: ./build
+
+  deploy:
+    name: Build
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Deploy to server
         run: |
           set -eu
@@ -40,17 +49,3 @@ jobs:
           echo "${{ secrets.key_server }}" > "$HOME/.ssh/key"
           chmod 600 "$HOME/.ssh/key"
           cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@5.253.63.141:/var/www/www-root/data/www/cabinet.worldscipubl.com/public_html
-
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./build
