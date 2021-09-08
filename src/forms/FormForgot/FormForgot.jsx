@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import TextField from "../../components/TextField/TextField";
 import constraints from "../../utils/constraints";
-import UserService from "../../services/UserService";
+import UserService from "../../services/userService";
 
 const FormForgot = () => {
   const [, setSubmitted] = useState(false);
