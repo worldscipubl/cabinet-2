@@ -20,7 +20,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+<<<<<<< HEAD
     "eject": "react-scripts eject"
+=======
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
+>>>>>>> parent of fa88b42 (Add deploy-to-git)
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +46,10 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
+=======
+    "gh-pages": "^3.2.3",
+>>>>>>> parent of fa88b42 (Add deploy-to-git)
     "prettier": "2.3.2",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0"

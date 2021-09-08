@@ -7,6 +7,10 @@
     <list default="true" id="fbee66fb-1990-487d-8684-c8e32a8b4be0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+>>>>>>> parent of fa88b42 (Add deploy-to-git)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +18,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
+<<<<<<< HEAD
     <option name="totalTimeSeconds" value="82102" />
+=======
+    <option name="totalTimeSeconds" value="78584" />
+>>>>>>> parent of fa88b42 (Add deploy-to-git)
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -102,9 +110,13 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="npm.build" />
+=======
+>>>>>>> parent of fa88b42 (Add deploy-to-git)
         <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
         <item itemvalue="Node.js.ApiService.js" />
       </list>
     </recent_temporary>
