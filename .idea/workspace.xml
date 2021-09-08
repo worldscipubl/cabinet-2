@@ -5,8 +5,191 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbee66fb-1990-487d-8684-c8e32a8b4be0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/igor_tyugaev.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wsp-cab.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/endpoints/ArticlesApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/endpoints/BriefApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/entryApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/fonts/helvetica-bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/fonts/helvetica-bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/fonts/helvetica-light.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/fonts/helvetica-light.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/fonts/helvetica-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/fonts/helvetica-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/icons/arrow-back.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/icons/coupon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/icons/done.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/icons/dots-menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/icons/download.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/icons/pencil.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/icons/plus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/icons/upload.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/illustrations/client.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/illustrations/error.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/illustrations/not-found.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/logo/logo_black.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/logo/logo_white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/logo/union.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/nav-menu/chat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/nav-menu/faq.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/nav-menu/loyalty.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/nav-menu/my_articles.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/nav-menu/profile.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/global/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/global/_index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/global/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/global/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/partials/_button.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/partials/_index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/partials/_partials.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/ArticleForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/AuthorForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/BriefForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/ContactForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleChanges/ArticleChanges.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleChanges/ArticleChanges.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleStages/ArticleStages.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleStages/ArticleStages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleStatus/ArticleStatus.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleSummary/ArticleSummary.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleSummary/ArticleSummary.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar/Avatar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar/Avatar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BreadCrumbs/BreadCrumbs.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BreadCrumbs/BreadCrumbs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerBtn/BurgerBtn.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerBtn/BurgerBtn.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Checkbox/Checkbox.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Checkbox/Checkbox.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Copyright/Copyright.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Copyright/Copyright.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/List.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/List.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/ListItem/ListItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/ListItem/ListItem.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LogoBanner/LogoBanner.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LogoBanner/LogoBanner.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MenuList/MenuList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MenuList/MenuList.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PrivacyPolicy/PrivacyPolicy.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PrivacyPolicy/PrivacyPolicy.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProgressBar/ProgressBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProgressBar/ProgressBar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Spoiler/Spoiler.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Spoiler/Spoiler.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Stepper/Stepper.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Stepper/Stepper.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Stepper/StepperItem/StepperItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Stepper/StepperItem/StepperItem.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StepperBar/StepperBar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StepperBar/StepperBar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ViewPager/ViewPager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ViewPager/ViewPager.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ViewPager/ViewPagerBar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/ApiServiceContext/ApiServiceContext.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/ApiServiceContext/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/ErrorBoundary/ErrorBoundary.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/LaunchScreen/LaunchScreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/NotFoundPage/NotFoundPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormErrorsBoard/FormErrorsBoard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormSignIn/FormSignIn.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/authHeader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePipeline/ArticlePipeline.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePipeline/ArticlePipeline.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/MyArticles/MyArticles.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/MyArticles/MyArticles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Chat/Chat.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Chat/Chat.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Faq/Faq.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Forgot/Forgot.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Forgot/Forgot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Loyalty/Loyalty.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Loyalty/Loyalty.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignIn/SignIn.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignIn/SignIn.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignUp/SignUp.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignUp/SignUp.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ApiService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/HTTPError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UserServices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/userService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/articlesSlice/articlesSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/articlesSlice/articlesSliceAsync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/userSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/TestData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/constraints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/textStatic.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +197,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="78584" />
+    <option name="totalTimeSeconds" value="83464" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -36,7 +219,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/TextField" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,18 +235,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/components/TextField" />
       <recent name="$PROJECT_DIR$/src/common/images/icons" />
       <recent name="$PROJECT_DIR$/src/layouts/ViewPager" />
       <recent name="$PROJECT_DIR$/src/layouts" />
-      <recent name="$PROJECT_DIR$/src/pages/ArticlePage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/components/ViewPager" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/layouts/ViewPager" />
-      <recent name="$PROJECT_DIR$/src/pages/ArticlePage" />
-      <recent name="$PROJECT_DIR$/src/store/slices/articlesSlice" />
     </key>
   </component>
   <component name="RunManager" selected="npm.deploy">
@@ -103,8 +286,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.deploy" />
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
         <item itemvalue="Node.js.ApiService.js" />
       </list>
     </recent_temporary>
@@ -178,7 +361,7 @@
       <workItem from="1630833639068" duration="11381000" />
       <workItem from="1630926466339" duration="85000" />
       <workItem from="1630926584074" duration="5236000" />
-      <workItem from="1631011429315" duration="13905000" />
+      <workItem from="1631011429315" duration="18915000" />
     </task>
     <servers />
   </component>
