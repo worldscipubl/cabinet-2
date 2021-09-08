@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Tabs from "../../layouts/Tabs/Tabs";
-import TextField from "../TextField/TextField";
 import BriefForm from "./BriefForm";
 import { useGetAuthorsQuery } from "../../api/endpoints/BriefApi";
 
@@ -51,7 +50,7 @@ const AuthorForm = ({ fields, articleId }) => {
       <Tabs
         options={{
           isExtensible: true,
-          tabsLimit: 5,
+          tabsLimit: 5
         }}
         handlers={{ handlerAddTab }}
       >

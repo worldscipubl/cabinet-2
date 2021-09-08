@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { articlesService } from "../../services/ArticlesService";
 import TextFieldEditable from "../TextField/TextFieldEditable";
 import Input from "../Input/Input";
+import classNames from "classnames";
 
 const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
   const { data, error, isLoading } = useQuery(useQueryParams);
   const [stateFields, setStateFields] = useState({});
   const [errorFields, setErrorFields] = useState(null);
+  const [isUpdating, setUpdating] = useState(false);
 
   useEffect(() => {
     setStateFields({ ...data });
@@ -32,12 +34,30 @@ const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
   const handleFieldSubmit = (valueField) => {
     // TODO: сделать отправку данных на сервре и только после успешного о
     if (!valueField) return;
-    setStateFields({ ...stateFields, ...valueField });
+
+    setUpdating(true);
+    const form_data = new FormData();
+    for (let key in valueField) form_data.append(key, valueField[key]);
+    form_data.append("articleId", articleId);
+
+    articlesService
+      .setArticleBriefContact(form_data)
+      .then((response) => {
+        console.log(response);
+        setStateFields({ ...stateFields, ...valueField });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setUpdating(false);
+      });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    setUpdating(true);
     const form_data = new FormData();
     for (let key in stateFields) form_data.append(key, stateFields[key]);
     form_data.append("articleId", articleId);
@@ -49,6 +69,9 @@ const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setUpdating(false);
       });
   };
 
@@ -56,17 +79,17 @@ const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
     fields.map((field) => (
       <TextFieldEditable
         className="brief-form__input"
+        name={field?.name}
         label={field?.label}
         description={field?.description}
         key={field?.name}
         handlers={{ handleChange, handleFieldSubmit }}
         error={!!(errorFields && errorFields?.[field?.name])}
+        defaultValue={stateFields?.[field?.name]}
       >
         <Input
           type={field?.type || "text"}
-          name={field?.name}
-          placeholder={field?.label}
-          value={stateFields?.[field?.name] || ""}
+          placeholder={stateFields?.[field?.name] || field?.label}
           required
         />
       </TextFieldEditable>
@@ -77,7 +100,9 @@ const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
 
   return (
     <form
-      className="brief-form"
+      className={classNames("brief-form", {
+        disabled: isUpdating
+      })}
       noValidate
       onSubmit={handleSubmit}
       onKeyPress={(e) => {
@@ -85,9 +110,6 @@ const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
       }}
     >
       {getFields()}
-      <button className="button button_type_main" type="submit">
-        Send
-      </button>
     </form>
   );
 };

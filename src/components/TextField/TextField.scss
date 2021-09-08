@@ -32,10 +32,6 @@ input[type=date]:invalid::-webkit-datetime-edit {
 
     &:focus {
       border: $border-thickness solid $border-color-focus;
-
-      &::placeholder {
-        color: transparent;
-      }
     }
   }
 

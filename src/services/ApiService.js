@@ -10,16 +10,16 @@ class ApiService {
       headers: { "Content-Type": "application/json" },
       // headers: { "Content-Type": "multipart/form-data"},
       withCredentials: false,
-      auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" },
+      auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" }
     });
   }
 
   async getResource({
-    url = null,
-    params = null,
-    auth = null,
-    responseType = null,
-  }) {
+                      url = null,
+                      params = null,
+                      auth = null,
+                      responseType = null
+                    }) {
     const config = {};
     params && (config.params = params);
     auth && (config.auth = auth);
@@ -54,9 +54,10 @@ class ApiService {
 
   logMessage(msg, data) {
     if (!this.hasLogging) return;
-    console.log(`<==== ${msg}  ====>`);
+    console.groupCollapsed(`${msg}`);
+    console.table(data?.data);
     console.log(data);
-    console.log(`</==== ${msg}  ====>`);
+    console.groupEnd();
   }
 }
 

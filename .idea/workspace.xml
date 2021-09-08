@@ -3,6 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/ArticleForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/AuthorForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/BriefForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/ContactForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextField.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ApiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="43977" />
+    <option name="totalTimeSeconds" value="56307" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="Git.Settings">
@@ -32,7 +43,7 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.start">
     <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -55,8 +66,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.deploy" />
       </list>
     </recent_temporary>
   </component>
@@ -68,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631086893562</updated>
-      <workItem from="1631086895266" duration="4636000" />
+      <workItem from="1631086895266" duration="16444000" />
     </task>
     <servers />
   </component>

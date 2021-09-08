@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import "./TextField.scss";
 import pencilImg from "../../common/images/icons/pencil.svg";
 
 const TextFieldEditable = ({
-  label,
-  description,
-  children,
-  error,
-  helperText = "Нажмите Enter, чтобы сохранить изменения",
-  className,
-  options: { startIcon, endIcon } = {},
-  handlers: { handleChange, handleFieldSubmit } = {},
-}) => {
+                             name,
+                             label,
+                             description,
+                             children,
+                             error,
+                             helperText = "Нажмите Enter, чтобы сохранить изменения",
+                             className,
+                             defaultValue,
+                             options: { startIcon, endIcon } = {},
+                             handlers: { handleChange, handleFieldSubmit } = {}
+                           }) => {
   const [isReadOnly, setReadOnly] = useState(true);
   const [value, setValue] = useState({});
   const textFieldStyle = classNames("text-field", className, {
     error: error,
-    readonly: isReadOnly,
+    readonly: isReadOnly
   });
   const handleKeyDown = (event) => {
     if (!event) {
@@ -36,11 +38,17 @@ const TextFieldEditable = ({
 
     if (key === "Escape") {
       setReadOnly(true);
+      setValue({ [name]: defaultValue });
     } else if (key === "Enter") {
       handleFieldSubmit && handleFieldSubmit(value);
       setReadOnly(true);
     }
   };
+
+  useEffect(() => {
+    if (!defaultValue) return;
+    setValue({ [name]: defaultValue });
+  }, [defaultValue, name]);
 
   return (
     <div className={textFieldStyle}>
@@ -65,6 +73,7 @@ const TextFieldEditable = ({
 
           <children.type
             {...children.props}
+            name={name}
             readOnly={isReadOnly || false}
             onKeyDown={(e) => handleKeyDown(e)}
             onChange={(e) => {
@@ -72,15 +81,11 @@ const TextFieldEditable = ({
               if (!res) return;
               setValue({
                 ...value,
-                ...res,
+                ...res
               });
             }}
             onBlur={() => setReadOnly(true)}
-            value={
-              isReadOnly || !value?.[children.props?.name]
-                ? children.props?.value
-                : value?.[children.props?.name]
-            }
+            value={value?.[name] || ""}
           />
         </div>
       </label>

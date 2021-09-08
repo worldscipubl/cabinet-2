@@ -9,14 +9,15 @@ export const axiosBaseQuery = (
     baseUrl,
     headers: { "Content-Type": "application/json" },
     withCredentials: false,
-    auth,
+    auth
   });
 
   const logMessage = (msg, data) => {
     if (!hasLogging) return;
-    console.log(`<==== ${msg}  ====>`);
+    console.groupCollapsed(`${msg}`);
+    console.table(data?.data);
     console.log(data);
-    console.log(`</==== ${msg}  ====>`);
+    console.groupEnd();
   };
 
   return async ({ url, method, data, params, auth }) => {
@@ -26,7 +27,7 @@ export const axiosBaseQuery = (
         method,
         data,
         params,
-        auth,
+        auth
       });
       logMessage("Response API", response);
       return { data: response };
