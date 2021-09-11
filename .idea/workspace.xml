@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/images/icons/error.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/ArticleForm.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/AuthorForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/BriefForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/ContactForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextField.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ApiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ViewPager/ViewPager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ViewPager/ViewPager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="56307" />
+    <option name="totalTimeSeconds" value="83813" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="Git.Settings">
@@ -36,12 +32,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/common/images/icons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/common/images/icons" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.start">
     <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -79,7 +81,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631086893562</updated>
-      <workItem from="1631086895266" duration="16444000" />
+      <workItem from="1631086895266" duration="28540000" />
+      <workItem from="1631252847621" duration="15557000" />
+      <workItem from="1631292847096" duration="176000" />
+      <workItem from="1631339904101" duration="702000" />
     </task>
     <servers />
   </component>
@@ -96,5 +101,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

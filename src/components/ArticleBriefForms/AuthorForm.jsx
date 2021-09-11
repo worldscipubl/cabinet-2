@@ -1,17 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Tabs from "../../layouts/Tabs/Tabs";
 import BriefForm from "./BriefForm";
 import { useGetAuthorsQuery } from "../../api/endpoints/BriefApi";
+import { articlesService } from "../../services/ArticlesService";
 
 const AuthorForm = ({ fields, articleId }) => {
   const { data, error, isLoading } = useGetAuthorsQuery(articleId);
+  const [authors, setAuthors] = useState([]);
+  const [errors, setErrors] = useState({});
+
+  const getStateFields = (key, status) => {
+    if (!status) return;
+    if (key > authors.length) {
+      setAuthors(prevAuthors => [...prevAuthors.slice(0, key), {
+        ...prevAuthors[key],
+        ...status
+      }]);
+    } else {
+      setAuthors(prevAuthors => [
+        ...prevAuthors.slice(0, key),
+        {
+          ...prevAuthors[key],
+          ...status
+        },
+        ...prevAuthors.slice(key + 1)
+      ]);
+    }
+  };
+
+  const getStatusForm = (key, status) => {
+    setErrors(prevErrors => ({ ...prevErrors, ...{ [key]: !!status } }));
+  };
+
+  useEffect(() => {
+    if (!data) return;
+    setAuthors([...data]);
+  }, [isLoading, data]);
 
   const handlerAddTab = ({ tabs }) => {
     const label = `Автор ${tabs.length + 1}`;
     return (
       <AuthorFormInputs
         label={label}
-        id={tabs.length + 1}
+        nameForm={tabs.length}
+        id={tabs.length}
         key={`BriefFormAuthors-${tabs.length + 1}`}
       />
     );
@@ -21,10 +53,13 @@ const AuthorForm = ({ fields, articleId }) => {
     return (
       <BriefForm
         key={`BriefFormAuthors-${id}`}
+        nameForm={id}
         useQuery={() => ({ data: data[id], error: false, isLoading: false })}
+        getStateFields={getStateFields}
+        getStatusForm={getStatusForm}
         fields={fields}
         label={label}
-        id={label + id}
+        isFieldSubmit={false}
       />
     );
   };
@@ -35,6 +70,25 @@ const AuthorForm = ({ fields, articleId }) => {
     return data.map((author, index) =>
       AuthorFormInputs({ label: `Автор ${index + 1}`, id: index })
     );
+  };
+
+  const handlerFromSubmit = () => {
+
+    const form_data = new FormData();
+    form_data.append("articleId", articleId);
+    form_data.append("authorInfo", authors);
+
+    articlesService
+      .setArticleBriefAuthors(form_data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+
+      });
   };
 
   if (isLoading) return <h2 className="text">Загрузка...</h2>;
@@ -56,6 +110,10 @@ const AuthorForm = ({ fields, articleId }) => {
       >
         {getContent()}
       </Tabs>
+
+      <button className="button button_type_main" type="button" onClick={handlerFromSubmit}>
+        Send
+      </button>
     </div>
   );
 };

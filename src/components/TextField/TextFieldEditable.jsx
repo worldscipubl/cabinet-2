@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import "./TextField.scss";
 import pencilImg from "../../common/images/icons/pencil.svg";
+import errorImg from "../../common/images/icons/error.svg";
 
 const TextFieldEditable = ({
                              name,
@@ -9,17 +10,19 @@ const TextFieldEditable = ({
                              description,
                              children,
                              error,
+                             requiredError,
                              helperText = "Нажмите Enter, чтобы сохранить изменения",
                              className,
                              defaultValue,
                              options: { startIcon, endIcon } = {},
-                             handlers: { handleChange, handleFieldSubmit } = {}
+                             handlers: { handleChange, handleSubmit } = {}
                            }) => {
   const [isReadOnly, setReadOnly] = useState(true);
   const [value, setValue] = useState({});
   const textFieldStyle = classNames("text-field", className, {
-    error: error,
-    readonly: isReadOnly
+    error: !!error,
+    readonly: isReadOnly,
+    required: !!requiredError
   });
   const handleKeyDown = (event) => {
     if (!event) {
@@ -40,7 +43,7 @@ const TextFieldEditable = ({
       setReadOnly(true);
       setValue({ [name]: defaultValue });
     } else if (key === "Enter") {
-      handleFieldSubmit && handleFieldSubmit(value);
+      handleSubmit && handleSubmit(value);
       setReadOnly(true);
     }
   };
@@ -58,8 +61,8 @@ const TextFieldEditable = ({
           {description}
         </p>
         <div className="text-field__container">
-          {startIcon && (
-            <img className="start-icon" src={startIcon} alt="start-icon" />
+          {isReadOnly && requiredError && (
+            <img className="start-icon" src={errorImg} alt="start-icon" />
           )}
 
           {isReadOnly && (
@@ -69,6 +72,13 @@ const TextFieldEditable = ({
               alt="end-icon"
               onClick={() => setReadOnly(false)}
             />
+          )}
+
+          {isReadOnly && requiredError && (
+            <i className="button button_type_tabs active action-btn"
+               onClick={() => setReadOnly(false)}>
+              Добавить
+            </i>
           )}
 
           <children.type

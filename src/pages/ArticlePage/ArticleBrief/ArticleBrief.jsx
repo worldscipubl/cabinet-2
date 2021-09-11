@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../../components/Card/Card";
 import ViewPager from "../../../components/ViewPager/ViewPager";
 import AuthorForm from "../../../components/ArticleBriefForms/AuthorForm";
@@ -6,14 +6,24 @@ import "../../../components/DatePicker/DatePicker.scss";
 import "./ArticleBrief.scss";
 import {
   useGetArticleQuery,
-  useGetContactQuery,
+  useGetContactQuery
 } from "../../../api/endpoints/BriefApi";
 import BriefForm from "../../../components/ArticleBriefForms/BriefForm";
 
 const ArticleBrief = ({ children, articleId }) => {
+  const [stateForms, setStateForms] = useState({
+    "BriefFormArticle": false,
+    "BriefFormContact": false,
+    "BriefFormAuthors": false
+  });
+
+  const getStatusForm = (key, status) => {
+    setStateForms({ ...stateForms, [key]: status });
+  };
+
   const handleNext = () => {
     console.log("handleNext");
-    return true;
+    return false;
   };
 
   const handleBack = () => {
@@ -36,10 +46,12 @@ const ArticleBrief = ({ children, articleId }) => {
         return (
           <BriefForm
             key="BriefFormArticle"
+            nameForm="BriefFormArticle"
             useQuery={useGetArticleQuery}
             useQueryParams={articleId}
             fields={fieldsArticle}
             articleId={articleId}
+            getStatusForm={getStatusForm}
           />
         );
       case 1:
@@ -71,7 +83,7 @@ const ArticleBrief = ({ children, articleId }) => {
         handlers={{
           handleNext,
           handleBack,
-          handleReset,
+          handleReset
         }}
         options={{
           initStep: 0,
@@ -80,7 +92,7 @@ const ArticleBrief = ({ children, articleId }) => {
           nextBtnLabel: "Далее",
           backBtnLabel: "Назад",
           resetBtnLabel: "Сбросить",
-          finishBtnLabel: "Завершить",
+          finishBtnLabel: "Завершить"
         }}
       />
     </Card>
@@ -90,112 +102,112 @@ const ArticleBrief = ({ children, articleId }) => {
 const fieldsArticle = [
   {
     name: "articleSubject",
-    label: "Тематика статьи",
+    label: "Тематика статьи"
   },
 
   {
     name: "articleName",
-    label: "Название статьи",
+    label: "Название статьи"
   },
 
   {
     name: "articleAuthor",
-    label: "Авторы статьи",
+    label: "Авторы статьи"
   },
 
   {
     name: "universityAddress",
-    label: "Адрес ВУЗа",
+    label: "Адрес ВУЗа"
   },
 
   {
     name: "universityName",
-    label: "Название ВУЗа",
-  },
+    label: "Название ВУЗа"
+  }
 ];
 const fieldsContact = [
   {
     name: "academicStatus",
-    label: "Академический статус",
+    label: "Академический статус"
   },
 
   {
     name: "post",
-    label: "Должность",
+    label: "Должность"
   },
 
   {
     name: "birthday",
-    label: "Дата рождения",
+    label: "Дата рождения"
   },
 
   {
     name: "passportSerialNumber",
-    label: "Серия и номер паспорта",
+    label: "Серия и номер паспорта"
   },
 
   {
     name: "passportRegistration",
-    label: "Прописка",
+    label: "Прописка"
   },
 
   {
     name: "passportDepartmentCode",
-    label: "Код подразделения",
+    label: "Код подразделения"
   },
 
   {
     name: "passportWhoIssued",
-    label: "Кем выдан паспорт",
+    label: "Кем выдан паспорт"
   },
 
   {
     name: "passportWhenIssued",
-    label: "Когда выдан паспорт",
+    label: "Когда выдан паспорт"
   },
 
   {
     type: "file",
     name: "BriefContact[file][]",
-    label: "Загрузить скан паспорта",
-  },
+    label: "Загрузить скан паспорта"
+  }
 ];
 const fieldsAuthors = [
   {
     name: "name",
-    label: "ФИО",
+    label: "ФИО"
   },
 
   {
     name: "scientificDegree",
-    label: "Ученая степень",
+    label: "Ученая степень"
   },
 
   {
     name: "academicStatus",
-    label: "Ученое звание",
+    label: "Ученое звание"
   },
 
   {
     name: "position",
-    label: "Должность",
+    label: "Должность"
   },
 
   {
     name: "work",
     label: "Основное место работы",
-    description: "название организации, факультет, кафедра, юридический адрес",
+    description: "название организации, факультет, кафедра, юридический адрес"
   },
 
   {
     name: "phone",
-    label: "Контактный телефон",
+    label: "Контактный телефон"
   },
 
   {
     name: "email",
-    label: "Контактный e-mail",
-  },
+    label: "Контактный e-mail"
+  }
 ];
 
 export default ArticleBrief;

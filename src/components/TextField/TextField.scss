@@ -67,13 +67,12 @@ input[type=date]:invalid::-webkit-datetime-edit {
   }
 
   .action-btn {
-    text-align: center;
-    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    border-radius: 50%;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.04);
-    }
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
   }
 
   .start-icon ~ input {
@@ -95,7 +94,7 @@ input[type=date]:invalid::-webkit-datetime-edit {
   }
 
   &.readonly {
-    .end-icon {
+    .end-icon, .action-btn {
       cursor: pointer;
       pointer-events: auto;
     }
@@ -106,6 +105,20 @@ input[type=date]:invalid::-webkit-datetime-edit {
       color: #8b8b8b;
       pointer-events: none;
       cursor: text;
+    }
+  }
+
+  &.readonly.required {
+    .start-icon {
+      margin-left: 0;
+    }
+
+    input {
+      padding-left: #{1.56 * 0.75em + 1em};
+    }
+
+    input::placeholder {
+      color: red;
     }
   }
 }

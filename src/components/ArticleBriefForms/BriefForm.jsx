@@ -1,34 +1,73 @@
 import React, { useEffect, useState } from "react";
+import classNames from "classnames";
 import { articlesService } from "../../services/ArticlesService";
 import TextFieldEditable from "../TextField/TextFieldEditable";
 import Input from "../Input/Input";
-import classNames from "classnames";
 
-const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
+const BriefForm = ({
+                     nameForm,
+                     useQuery,
+                     useQueryParams,
+                     fields = [],
+                     articleId,
+                     getStatusForm,
+                     getStateFields,
+                     isFieldSubmit = true
+                   }) => {
   const { data, error, isLoading } = useQuery(useQueryParams);
   const [stateFields, setStateFields] = useState({});
   const [errorFields, setErrorFields] = useState(null);
+  const [requiredErrors, setRequiredErrors] = useState([]);
   const [isUpdating, setUpdating] = useState(false);
 
   useEffect(() => {
+    if (!data) return;
     setStateFields({ ...data });
   }, [isLoading, data]);
 
-  const handleChange = (e) => {
+  useEffect(() => {
+    if (!stateFields) return;
+    console.log(stateFields);
+
+    const res = fields.map((item) => {
+      const name = item?.name;
+      const value = stateFields?.[name];
+
+      if (name === "email") {
+        if (!value) {
+          console.log("email - error", value);
+          console.log(stateFields);
+        }
+      }
+
+      !value && setRequiredErrors([...[requiredErrors], name]);
+      return !!value;
+    });
+
+    const status = res.every((item) => !!item);
+    !!getStatusForm && getStatusForm(nameForm, status);
+    !!getStateFields && getStateFields(nameForm, stateFields);
+
+  }, [stateFields]);
+
+  const handleFieldChange = (e) => {
     const input = e.target;
     if (!input) return;
 
-    const isValid = input.validity.valid;
     const { name, value } = input;
     if (!name) return;
 
-    if (!isValid) {
+    if (!input.validity.valid) {
       // setErrorFields({ ...errorFields, [name]: constraints[name].msg });
     } else {
       setErrorFields(null);
     }
     const file = input?.files && input?.files[0];
-    return { [name]: file || value };
+
+    const valueField = { [name]: file || value };
+    !isFieldSubmit && setStateFields({ ...stateFields, ...valueField });
+
+    return data;
   };
 
   const handleFieldSubmit = (valueField) => {
@@ -54,46 +93,6 @@ const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
       });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setUpdating(true);
-    const form_data = new FormData();
-    for (let key in stateFields) form_data.append(key, stateFields[key]);
-    form_data.append("articleId", articleId);
-
-    articlesService
-      .setArticleBriefContact(form_data)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setUpdating(false);
-      });
-  };
-
-  const getFields = () =>
-    fields.map((field) => (
-      <TextFieldEditable
-        className="brief-form__input"
-        name={field?.name}
-        label={field?.label}
-        description={field?.description}
-        key={field?.name}
-        handlers={{ handleChange, handleFieldSubmit }}
-        error={!!(errorFields && errorFields?.[field?.name])}
-        defaultValue={stateFields?.[field?.name]}
-      >
-        <Input
-          type={field?.type || "text"}
-          placeholder={stateFields?.[field?.name] || field?.label}
-          required
-        />
-      </TextFieldEditable>
-    ));
 
   if (isLoading) return <h2 className="text">Загрузка...</h2>;
   if (error) return <h2 className="text">{error}</h2>;
@@ -103,13 +102,32 @@ const BriefForm = ({ useQuery, useQueryParams, fields = [], articleId }) => {
       className={classNames("brief-form", {
         disabled: isUpdating
       })}
-      noValidate
-      onSubmit={handleSubmit}
       onKeyPress={(e) => {
         e.key === "Enter" && e.preventDefault();
       }}
+      noValidate
     >
-      {getFields()}
+      {fields.map((field) => (
+        <TextFieldEditable
+          className="brief-form__input"
+          name={field?.name}
+          label={field?.label}
+          description={field?.description}
+          key={field?.name}
+          handlers={{ handleChange: handleFieldChange, handleSubmit: isFieldSubmit ? handleFieldSubmit : null }}
+          error={errorFields && errorFields[field?.name]}
+          requiredError={requiredErrors.includes(field?.name) || false}
+          defaultValue={stateFields?.[field?.name]}
+        >
+          <Input
+            type={field?.type || "text"}
+            placeholder={stateFields?.[field?.name] || (requiredErrors.includes(field?.name)
+              ? `Укажите ${field?.label?.toLowerCase()}`
+              : field?.label?.toLowerCase())}
+            required
+          />
+        </TextFieldEditable>
+      ))}
     </form>
   );
 };
