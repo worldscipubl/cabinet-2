@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/images/icons/error.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FormField/FormField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FormField/FormField.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/AuthorForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArticleBriefForms/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleBriefForms/BriefForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextField.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ViewPager/ViewPager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ViewPager/ViewPager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Faq/Faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Faq/Faq.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="83813" />
+    <option name="totalTimeSeconds" value="107630" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="Git.Settings">
@@ -38,6 +37,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -84,7 +84,9 @@
       <workItem from="1631086895266" duration="28540000" />
       <workItem from="1631252847621" duration="15557000" />
       <workItem from="1631292847096" duration="176000" />
-      <workItem from="1631339904101" duration="702000" />
+      <workItem from="1631339904101" duration="8523000" />
+      <workItem from="1631377814223" duration="6083000" />
+      <workItem from="1631431514968" duration="9184000" />
     </task>
     <servers />
   </component>

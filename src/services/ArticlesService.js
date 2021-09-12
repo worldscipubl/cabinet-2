@@ -4,7 +4,7 @@ class ArticlesService extends ApiService {
   getArticles = () => {
     return new Promise((resolve, reject) => {
       this.getResource({
-        url: `/articles`,
+        url: `/articles`
       })
         .then((response) => {
           if (response.data) resolve(response.data);
@@ -19,7 +19,7 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.getResource({
         url: `/articles/${id}`,
-        params: { expand: "currentStage,currentStatus" },
+        params: { expand: "currentStage,currentStatus" }
       })
         .then((response) => {
           if (response.data) resolve(response.data);
@@ -34,7 +34,7 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.getResource({
         url: `/article-files/${id}`,
-        responseType: "blob",
+        responseType: "blob"
       })
         .then((response) => {
           resolve(response);
@@ -48,7 +48,7 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.getResource({
         url: "/article-changes",
-        params: { articleId, stage, start, count },
+        params: { articleId, stage, start, count }
       })
         .then((response) => {
           if (response.data) resolve(response.data);
@@ -64,10 +64,10 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.setResource({
         url: "/brief/article",
-        data,
+        data
       })
         .then((response) => {
-          response(response);
+          resolve(response);
         })
         .catch((reason) => {
           reject(reason);
@@ -78,10 +78,10 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.setResource({
         url: "/brief/contact",
-        data,
+        data
       })
         .then((response) => {
-          response(response);
+          resolve(response);
         })
         .catch((reason) => {
           reject(reason);
@@ -92,7 +92,7 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.setResource({
         url: "/reg-forms/add",
-        data,
+        data
       })
         .then((response) => {
           response(response);
@@ -107,7 +107,7 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.setResource({
         url: "/article-files/add",
-        data,
+        data
       })
         .then((response) => {
           response(response);

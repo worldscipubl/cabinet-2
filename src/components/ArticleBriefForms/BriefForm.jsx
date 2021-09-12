@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { articlesService } from "../../services/ArticlesService";
-import TextFieldEditable from "../TextField/TextFieldEditable";
 import Input from "../Input/Input";
+import FormField from "../FormField/FormField";
 
 const BriefForm = ({
                      nameForm,
@@ -16,7 +16,7 @@ const BriefForm = ({
                    }) => {
   const { data, error, isLoading } = useQuery(useQueryParams);
   const [stateFields, setStateFields] = useState({});
-  const [errorFields, setErrorFields] = useState(null);
+  const [errorFields, setErrorFields] = useState({});
   const [requiredErrors, setRequiredErrors] = useState([]);
   const [isUpdating, setUpdating] = useState(false);
 
@@ -27,7 +27,6 @@ const BriefForm = ({
 
   useEffect(() => {
     if (!stateFields) return;
-    console.log(stateFields);
 
     const res = fields.map((item) => {
       const name = item?.name;
@@ -70,27 +69,30 @@ const BriefForm = ({
     return data;
   };
 
-  const handleFieldSubmit = (valueField) => {
+  const handleFieldSubmit = (nameField, valueField) => {
     // TODO: сделать отправку данных на сервре и только после успешного о
     if (!valueField) return;
 
-    setUpdating(true);
+    // setUpdating(true);
     const form_data = new FormData();
-    for (let key in valueField) form_data.append(key, valueField[key]);
+    form_data.append(nameField, valueField);
     form_data.append("articleId", articleId);
 
-    articlesService
-      .setArticleBriefContact(form_data)
-      .then((response) => {
-        console.log(response);
-        setStateFields({ ...stateFields, ...valueField });
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setUpdating(false);
-      });
+    return new Promise((resolve, reject) => {
+      articlesService
+        .setArticleBriefArticle(form_data)
+        .then((response) => {
+          setStateFields({ ...stateFields, ...{ [nameField]: valueField } });
+          resolve(true);
+        })
+        .catch((error) => {
+          setErrorFields({ ...errorFields, ...{ [nameField]: error?.message || "Ошибка при отправке данных." } });
+          reject(false);
+        })
+        .finally(() => {
+          // setUpdating(false);
+        });
+    });
   };
 
 
@@ -108,25 +110,25 @@ const BriefForm = ({
       noValidate
     >
       {fields.map((field) => (
-        <TextFieldEditable
+        <FormField
           className="brief-form__input"
           name={field?.name}
+          key={field?.name}
+          defaultValue={stateFields[field?.name]}
+          defaultError={errorFields[field?.name]}
           label={field?.label}
           description={field?.description}
-          key={field?.name}
-          handlers={{ handleChange: handleFieldChange, handleSubmit: isFieldSubmit ? handleFieldSubmit : null }}
-          error={errorFields && errorFields[field?.name]}
-          requiredError={requiredErrors.includes(field?.name) || false}
-          defaultValue={stateFields?.[field?.name]}
-        >
-          <Input
-            type={field?.type || "text"}
-            placeholder={stateFields?.[field?.name] || (requiredErrors.includes(field?.name)
+          propsInput={{
+            type: field?.type || "text",
+            placeholder: stateFields?.[field?.name] || (requiredErrors.includes(field?.name)
               ? `Укажите ${field?.label?.toLowerCase()}`
-              : field?.label?.toLowerCase())}
-            required
-          />
-        </TextFieldEditable>
+              : field?.label?.toLowerCase())
+            ,
+            required: true
+          }}
+          component={<Input />}
+          handlers={{ handleFieldSubmit }}
+        />
       ))}
     </form>
   );
