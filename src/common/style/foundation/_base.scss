@@ -55,6 +55,14 @@ $app-padding-tablet: 12px 12px 12px 12px;
   padding: 24px 24px 0px;
 }
 
+hr {
+  margin: 2em 0;
+  padding: 0;
+  height: 0;
+  border: none;
+  border-top: 2px solid #ced4da;
+}
+
 @media screen and (max-width: $bp-tablet) {
   .app__aside-menu {
     flex-basis: 86px;

@@ -20,7 +20,16 @@ export const axiosBaseQuery = (
     console.groupEnd();
   };
 
+  const logMessageSend = (msg, data) => {
+    if (!hasLogging) return;
+    console.groupCollapsed(`${msg}`);
+    console.table(data);
+    console.groupEnd();
+  };
+
   return async ({ url, method, data, params, auth }) => {
+    if (method === "post")
+      logMessageSend("Request API", data);
     try {
       const response = await wspAxios({
         url: baseUrl + url,
@@ -30,6 +39,7 @@ export const axiosBaseQuery = (
         auth
       });
       logMessage("Response API", response);
+      console.log(response);
       return { data: response };
     } catch (error) {
       const handledError = new HTTPError(error);

@@ -1,0 +1,22 @@
+@use './src/common/style/global' as *;
+
+.author-form {
+  position: relative;
+
+  &.loading {
+    pointer-events: none;
+    opacity: 0.6;
+
+    .author-form__loader {
+      visibility: visible;
+    }
+  }
+}
+
+.author-form__loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}

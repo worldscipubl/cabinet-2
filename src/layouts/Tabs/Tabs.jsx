@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tab from "./Tab/Tab";
 import PropTypes from "prop-types";
 import "./Tabs.scss";
 
 const Tabs = ({
-  children,
-  handlers: { handlerAddTab } = {},
-  options: { isExtensible, tabsLimit } = {},
-}) => {
+                children,
+                handlers: { handlerAddTab } = {},
+                options: { isExtensible, tabsLimit } = {}
+              }) => {
   if (!Array.isArray(children)) children = React.Children.toArray(children);
 
   const [activeTab, setActiveTab] = useState(children[0].props?.label);
@@ -18,6 +18,10 @@ const Tabs = ({
     setTabs([...tabs, newTab]);
     setActiveTab(newTab.props.label);
   };
+
+  useEffect(() => {
+    setTabs(children);
+  }, [children]);
 
   const getTabs = () => {
     return tabs.map((child) => {
@@ -58,10 +62,6 @@ const Tabs = ({
       </section>
     </div>
   );
-};
-
-Tabs.propTypes = {
-  children: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default Tabs;

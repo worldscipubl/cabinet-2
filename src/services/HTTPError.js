@@ -8,14 +8,13 @@ class HTTPError extends Error {
 
     this.message = Array.isArray(error.message)
       ? error.message
-      : [error.message];
+      : [error.message].join(" ");
     this.status = error.status || "";
   }
 
   handleError(error) {
     const response = error.response;
     const request = error.request;
-
     if (response) {
       // client received an error response (5xx, 4xx)
       const status = response.status;
@@ -25,9 +24,9 @@ class HTTPError extends Error {
       if (status === 400) {
         return {
           name: "BadRequestError",
-          message: message || `Неверно введены данные (Код ${status})`,
+          message: `${message} (Код ${status})` || `Неверно введены данные (Код ${status})`,
           status,
-          details,
+          details
         };
       }
 
@@ -37,25 +36,25 @@ class HTTPError extends Error {
           message:
             message || `Такой пары логин\\пароль не существет (Код ${status})`,
           status,
-          details,
+          details
         };
       }
 
       if (status >= 400 && status < 500) {
         return {
           name: "ClientError",
-          message: message || `Неверно введены данные (Код ${status})`,
+          message: `${message} (Код ${status})` || `Неверно введены данные (Код ${status})`,
           status,
-          details,
+          details
         };
       }
 
       if (status >= 500 && status < 600) {
         return {
           name: "ServerError",
-          message: message || `Ошибка сервера (Код ${status})`,
+          message: `${message} (Код ${status})` || `Ошибка сервера (Код ${status})`,
           status,
-          details,
+          details
         };
       }
     } else if (request) {
@@ -64,23 +63,25 @@ class HTTPError extends Error {
         name: "NetworkError",
         message:
           "Ошибка сети. Проверьте интернет-подключение или повторите попытку позже",
-        details: request,
+        details: request
       };
     } else {
       // anything else
       return {
         name: "AxiosError",
         message: "Ошибка конфигурации",
-        details: error.message,
+        details: error.message
       };
     }
   }
 
   parseResponseDataMsg(response) {
+    if (!response.data) return;
+    if (!response.data.message) return;
     try {
       return JSON.parse(response.data.message);
     } catch (e) {
-      return null;
+      return response.data.message;
     }
   }
 }

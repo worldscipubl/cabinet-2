@@ -1,4 +1,4 @@
-@use './src/common/style/global' as *;
+@use './src/common/style/global'as *;
 
 .progress-bar {
   height: 0.8em;
@@ -36,6 +36,7 @@
     opacity: .4;
     width: 0
   }
+
   100% {
     opacity: 0;
     width: 100%

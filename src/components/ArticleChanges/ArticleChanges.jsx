@@ -11,15 +11,14 @@ const ArticleChanges = ({ article }) => {
 
   useEffect(() => {
     if (!updateStatuses) return;
-    console.log(updateStatuses);
-    setStatuses([...statuses, ...updateStatuses]);
-  }, [updateStatuses, statuses]);
+    setStatuses((prev) => [...prev, ...updateStatuses]);
+  }, [updateStatuses]);
 
   const getMore = (nextStatus) => {
     trigger({
       articleId,
       stage,
-      start: nextStatus,
+      start: nextStatus
     });
   };
 

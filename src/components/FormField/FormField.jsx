@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import styles from "./FormField.module.scss";
 import errorImg from "../../common/images/icons/error.svg";
@@ -11,19 +11,22 @@ const FormField = ({
                      label,
                      description,
                      defaultValue,
-                     defaultError,
+                     defaultError = null,
+                     isViewOnly = false,
                      propsInput = {},
                      helperText = "Нажмите Enter, чтобы сохранить изменения",
                      options: { startIcon, endIcon } = {},
-                     handlers: { handleFieldChange, handleFieldSubmit } = {}
+                     handlers: { handleFieldSubmit, handleFieldFileSubmit } = {}
                    }) => {
   const [value, setValue] = useState(defaultValue);
+  const [fileName, setFileName] = useState("");
   const [error, setError] = useState(defaultError);
   const [disabled, setDisabled] = useState(false);
   const [isReadOnly, setReadOnly] = useState(true);
+  const inputRef = useRef(null);
 
   useEffect(() => {
-    if (value !== defaultValue) setValue(defaultValue);
+    resetField();
   }, [defaultValue]);
 
   useEffect(() => {
@@ -33,11 +36,13 @@ const FormField = ({
   const resetField = () => {
     setValue(defaultValue);
     setError(defaultError);
+    setDisabled(false);
     setReadOnly(true);
+    setFileName("");
   };
 
   const handleBlur = (event) => {
-    !disabled && resetField();
+    !disabled && !error && resetField();
   };
   const handleKeyDown = (event) => {
     if (!event) return;
@@ -52,35 +57,65 @@ const FormField = ({
     if (key === "Escape") {
       resetField();
     } else if (key === "Enter") {
-      if (!!error || !handleFieldSubmit) return;
-      setReadOnly(true);
-      setDisabled(true);
-      handleFieldSubmit(name, value)
-        .then((error) => {
-        })
-        .catch((error) => {
-          resetField();
-        })
-        .finally(() => {
-          setDisabled(false);
-        });
+      submitField();
     }
   };
+
+  const submitField = () => {
+    if (!!error || !handleFieldSubmit) return;
+    setReadOnly(true);
+    setDisabled(true);
+
+    handleFieldSubmit(name, value)
+      .catch((err) => {
+        resetField();
+        setError(err);
+      });
+  };
+
+  const submitFieldFile = () => {
+    if (!!error || !handleFieldFileSubmit) return;
+    setReadOnly(true);
+    setDisabled(true);
+
+    const formData = new FormData();
+    formData.append("userTypeFileId", 1);
+
+    for (let i = 0; i < value.length; i++) {
+      formData.append("UserFile[file][]", value[i]);
+    }
+
+    handleFieldFileSubmit(formData)
+      .catch((err) => {
+        resetField();
+        setError(err);
+      });
+  };
+
   const handleChange = (event) => {
     const input = event.target;
     if (!input) return;
 
-    const value = input?.value;
-    //  Пропустить value через переданный валидатор
-    if (!input.validity.valid) {
-      setError("Ошибка!");
+    if (input.type === "file") {
+      const files = input?.files;
+      if (!files) {
+        setError("Ошибка!");
+      } else {
+        setError("");
+      }
+      setFileName(files[0]?.name);
+      setValue(files);
     } else {
-      setError("");
+      const value = input?.value;
+      //  Пропустить value через переданный валидатор
+      if (!input.validity.valid) {
+        setError("Ошибка!");
+      } else {
+        setError("");
+      }
+      //  Пропустить value через маску
+      setValue(value);
     }
-
-    //  Пропустить value через маску
-
-    setValue(value);
   };
 
   const styleField = classNames(styles.textField, className, {
@@ -91,7 +126,7 @@ const FormField = ({
 
   return (
     <div className={styleField}>
-      <label>
+      <div>
         <h4 className={classNames("text", styles.textField__label)}>{label}</h4>
         <p className={classNames("text text_color_gray", styles.textField__description)}>
           {description}
@@ -101,33 +136,55 @@ const FormField = ({
             <img className={styles.startIcon} src={errorImg} alt="start-icon" />
           )}
 
-          {isReadOnly && (
+          {isReadOnly && !isViewOnly && (
             <img
               className={styles.endIcon}
               src={pencilImg}
               alt="end-icon"
-              onClick={() => setReadOnly(false)}
+              onClick={() => {
+                if (propsInput.type === "file") {
+                  inputRef.current.click();
+                } else {
+                  if (inputRef) inputRef.current.focus();
+                  setReadOnly(false);
+                }
+              }}
             />
           )}
 
-          {isReadOnly && !defaultValue && (
+          {isReadOnly && !isViewOnly && (!defaultValue || fileName) && (
             <i className={classNames("button button_type_tabs active", styles.actionBtn)}
-               onClick={() => setReadOnly(false)}>
-              Добавить
+               onClick={() => {
+                 if (fileName) {
+                   submitFieldFile();
+                   return;
+                 }
+
+                 if (propsInput.type === "file")
+                   inputRef.current.click();
+                 else {
+                   if (inputRef) inputRef.current.focus();
+                   setReadOnly(false);
+                 }
+               }}>
+              {fileName ? "Отправить" : "Добавить"}
             </i>
           )}
 
           {component && <component.type
+            className={classNames(styles.textField__input)}
+            inputRef={inputRef}
             {...propsInput}
             name={name}
             readOnly={isReadOnly || false}
             onKeyDown={handleKeyDown}
             onChange={handleChange}
             onBlur={handleBlur}
+            fileName={fileName || ""}
             value={value || ""}
           />}
         </div>
-      </label>
+      </div>
       <div className={classNames(styles.textField__helper)}>
         <p className={classNames(styles.textField__helperMsgError)}>{error}</p>
         <p className={classNames(styles.textField__helperMsg)}>{!isReadOnly && helperText}</p>

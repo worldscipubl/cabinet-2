@@ -11,6 +11,7 @@ import Chat from "./pages/Chat/Chat";
 import { Header } from "./components/Header/Header";
 import MainContent from "./components/MainContent/MainContent";
 import ArticlePage from "./pages/ArticlePage/ArticlePage";
+import MyArticles from "./pages/MyArticles/MyArticles";
 
 export const AppRouter = () => {
   const [user] = useState(true);
@@ -23,7 +24,10 @@ export const AppRouter = () => {
           <Switch>
             <Route path="/" exact>
               <Redirect to="/article" />
+            </Route>
 
+            <Route path="/article" exact>
+              <MyArticles />
             </Route>
 
             <Route path="/article/:articleId?/:tabId?">

@@ -11,7 +11,7 @@ const TextField = ({
                      className,
                      appearance: { type } = {},
                      options: { startIcon, endIcon } = {},
-                     handlers: { handlerEndIcon }
+                     handlers: { handlerEndIcon } = {}
                    }) => {
   const textFieldStyle = classNames("text-field", className, {
     error: error

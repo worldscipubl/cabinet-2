@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProgressBar from "../../../components/ProgressBar/ProgressBar";
-import imgPlus from "../../../common/images/icons/plus.svg";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
+import imgPlus from "../../common/images/icons/plus.svg";
 import "./MyArticles.scss";
-import { useGetArticlesQuery } from "../../../api/endpoints/ArticlesApi";
+import MainContent from "../../components/MainContent/MainContent";
+import { useGetArticlesQuery } from "../../api/endpoints/ArticlesApi";
+import Loader from "../../components/Loader";
 
 const MyArticles = () => {
   const { data: articles, error, isLoading } = useGetArticlesQuery();
@@ -67,12 +69,11 @@ const MyArticles = () => {
     );
   };
 
-  if (isLoading) return <h2 className="text">Загрузка...</h2>;
-  if (error) return <h2 className="text">{error}</h2>;
-  if (!articles) return <h2 className="text">Пусто...</h2>;
-
-  return (
-    <article>
+  const getContent = () => {
+    if (isLoading) return <Loader />;
+    if (error) return <h2 className="text text_align_center text_color_red">{error}</h2>;
+    if (!articles) return <h2 className="text">Пусто...</h2>;
+    return <article>
       <div className="articles">
         <NewArticleCard />
         {articles.map((article) => {
@@ -84,7 +85,14 @@ const MyArticles = () => {
           );
         })}
       </div>
-    </article>
+    </article>;
+  };
+
+  return (
+    <MainContent title="Мои статьи">
+      {getContent()}
+    </MainContent>
+
   );
 };
 export default MyArticles;

@@ -1,0 +1,20 @@
+@use './src/common/style/global' as *;
+
+.field-file {
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.field-file__input-original {
+  display: none;
+}
+
+.field-file__input-surrogate {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding-right: 2.6em;
+  color: $label-text-gray;
+}
