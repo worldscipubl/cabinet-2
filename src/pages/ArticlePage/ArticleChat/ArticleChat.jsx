@@ -3,7 +3,7 @@ import React from "react";
 const ArticleChat = ({ children }) => {
   return (
     <div>
-      <h2 className="text">{children}</h2>
+      <h2 className="text">Переписка</h2>
     </div>
   );
 };

@@ -6,40 +6,38 @@ import ArticleChat from "./ArticleChat/ArticleChat";
 import ArticleBrief from "./ArticleBrief/ArticleBrief";
 import { useGetArticleByIdQuery } from "../../api/endpoints/ArticlesApi";
 import Loader from "../../components/Loader";
+import ArticlePayment from "./ArticlePayment/ArticlePayment";
+import ArticleRequest from "./ArticleRequest/ArticleRequest";
 
 const ArticlePage = () => {
   const { articleId } = useParams();
   const { data: article, error, isLoading } = useGetArticleByIdQuery(articleId);
 
+
   const articleTabs = [
+    <ArticleRequest tabId="article-request" tabLabel="Заявка" key="ArticlePipeline" />,
     <ArticlePipeline
       tabId="article-pipeline"
       tabLabel="Процесс публикации"
       key="ArticlePipeline"
       article={article}
     />,
-    <ArticleChat tabId="article-chat" key="article-chat" tabLabel="Переписка">
-      Переписка
-    </ArticleChat>,
+    <ArticleChat tabId="article-chat" key="article-chat" tabLabel="Переписка" />,
     <ArticleBrief
       articleId={articleId}
       statusId={article?.statusId}
       tabId="article-brief"
       key="article-brief"
-      tabLabel="Договор"
-    >
-      Договор
-    </ArticleBrief>,
-    <ArticleChat tabId="tab-4" tabLabel="Оплата" key="tab-4">
-      Оплата
-    </ArticleChat>
+      tabLabel="Договор" />,
+    <ArticlePayment articleId={articleId} tabId="article-payment" key="article-payment" tabLabel="Оплата" />
   ];
 
   const getContent = () => {
     if (isLoading) return <Loader />;
     if (error) return <h2 className="text text_align_center text_color_red">{error}</h2>;
     if (!article) return <h2 className="text">Пусто...</h2>;
-    if (article?.statusId < 4) return articleTabs.filter((tab) => tab.props?.tabId !== "article-brief");
+    if (article?.statusId < 4) return articleTabs.filter((tab) => !["article-brief", "article-payment"].includes(tab.props?.tabId));
+    if (article?.statusId >= 4 && article?.statusId < 9) return articleTabs.filter((tab) => !["article-payment"].includes(tab.props?.tabId));
     return articleTabs;
   };
 

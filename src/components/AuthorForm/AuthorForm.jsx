@@ -8,7 +8,6 @@ import Input from "../Input/Input";
 import Field from "../Field/Field";
 import { useAddAuthorsMutation, useGetAuthorsQuery } from "../../api/endpoints/BriefApi";
 import FromErrorList from "../FromErrorList/FromErrorList";
-import { instanceOf } from "prop-types";
 
 const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
   const { data: { authorInfo, regInfo } = {}, error, isLoading } = useGetAuthorsQuery(articleId);

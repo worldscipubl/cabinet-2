@@ -1,0 +1,46 @@
+@use './src/common/style/global' as *;
+
+.article-payment {
+  display: flex;
+}
+
+.article-payment__item {
+  &:not(:first-child) {
+    margin-top: 12px;
+  }
+}
+
+.article-payment-card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media screen and (max-width: $bp-tablet) {
+    flex-direction: column;
+  }
+}
+
+.article-payment-card__price {
+  @media screen and (max-width: $bp-tablet) {
+    font-size: 38px;
+    margin: 12px 0;
+  }
+}
+
+.article-payment-card__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (max-width: $bp-tablet) {
+    text-align: center;
+  }
+}
+
+.article-payment-card__row {
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+
+

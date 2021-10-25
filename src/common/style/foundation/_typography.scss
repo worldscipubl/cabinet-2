@@ -19,6 +19,7 @@
 
 $text-sizes: (
         large: 64px,
+        extra-title: 48px,
         title: 36px,
         subtitle: 24px,
         header-logo: 22px,
@@ -84,6 +85,14 @@ $text-colors: (
     &_center {
       text-align: center;
       vertical-align: center;
+    }
+
+    &_right {
+      text-align: right;
+    }
+
+    &_left {
+      text-align: left;
     }
   }
 }
