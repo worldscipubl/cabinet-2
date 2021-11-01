@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/endpoints/ArticlePaymentApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePayment/ArticlePayment.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePayment/ArticlePayment.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/DateField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/Field.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldBuilder.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FileField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/TextField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/entryApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/entryApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/partials/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/partials/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/endpoints/ArticlesApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/ArticlesApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Field/Field.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Field/Field.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="133424" />
+    <option name="totalTimeSeconds" value="16194" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -48,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/FieldBuilder" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -60,11 +59,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/FieldBuilder" />
+      <recent name="$PROJECT_DIR$/src/components/Fields" />
+      <recent name="$PROJECT_DIR$/src/components/Fields/FileField" />
+      <recent name="$PROJECT_DIR$/src/components/Fields/TextField" />
       <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/services" />
-      <recent name="$PROJECT_DIR$/src/common/images/icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Fields" />
       <recent name="$PROJECT_DIR$/src/components/AuthorForm" />
       <recent name="$PROJECT_DIR$/src/pages" />
     </key>
@@ -123,7 +125,16 @@
       <workItem from="1634880988490" duration="25236000" />
       <workItem from="1635001689215" duration="152000" />
       <workItem from="1635141345103" duration="10013000" />
-      <workItem from="1635166036845" duration="5034000" />
+      <workItem from="1635166036845" duration="5488000" />
+      <workItem from="1635232068675" duration="4262000" />
+      <workItem from="1635246528107" duration="7813000" />
+      <workItem from="1635330563601" duration="1440000" />
+      <workItem from="1635393265453" duration="78000" />
+      <workItem from="1635421191249" duration="3528000" />
+      <workItem from="1635527652683" duration="69000" />
+      <workItem from="1635762626662" duration="130000" />
+      <workItem from="1635763148962" duration="15000" />
+      <workItem from="1635763208833" duration="16736000" />
     </task>
     <servers />
   </component>

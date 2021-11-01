@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import styles from "./Field.module.scss";
 import errorImg from "../../common/images/icons/error.svg";
-import pencilImg from "../../common/images/icons/pencil.svg";
 
 const Field = ({
                  className,
@@ -106,7 +105,7 @@ const Field = ({
       </div>
       <div className={classNames(styles.textField__helper)}>
         <p className={classNames(styles.textField__helperMsgError)}>{error}</p>
-        <p className={classNames(styles.textField__helperMsg)}>{helperText}</p>
+        <p>{helperText}</p>
       </div>
     </div>
   );

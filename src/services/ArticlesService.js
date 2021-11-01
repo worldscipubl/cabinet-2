@@ -19,7 +19,7 @@ class ArticlesService extends ApiService {
     return new Promise((resolve, reject) => {
       this.getResource({
         url: `/articles/${id}`,
-        params: { expand: "currentStage,currentStatus" }
+        params: { expand: "articleUploaded,currentStage,currentStatus" }
       })
         .then((response) => {
           if (response.data) resolve(response.data);

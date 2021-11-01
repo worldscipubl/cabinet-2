@@ -1,35 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
-import Field from "../../../components/Field/Field";
-import Input from "../../../components/Input/Input";
+import Card, { CardBody, CardHeader } from "../../../components/Card/Card";
+import FieldBuilder from "../../../components/FieldBuilder";
+import { useApplyArticleMutation } from "../../../api/endpoints/ArticlesApi";
+
 
 const ArticleRequest = () => {
+  const [applyArticle, {}] = useApplyArticleMutation();
+  const [values, setValues] = useState({});
+  const [errors, setErrors] = useState({});
 
-  const ArticleRequestForm = () => {
-    return (
-      <div className={classNames("brief-form", {})} key={"RegFormInputs"}>
-        {fieldsArticleRequestForm.map((field) => {
-          return <Field
-            className="brief-form__input"
-            name={field?.name}
-            key={field?.name}
-            label={field?.label}
-            description={field?.description}
-            propsInput={{
-              type: field?.type || "text",
-              required: true
-            }}
-            component={<Input />}
-            // handlers={{ handleChange }}
-          />;
-        })}
-      </div>
-    );
+  const handlerField = (name, value, err) => {
+    if (!err)
+      setValues(prevState => ({ ...prevState, [name]: value }));
+    else
+      setErrors(prevState => ({ ...prevState, [name]: err }));
+  };
+
+  const handlerSubmit = (e) => {
+    e.preventDefault();
+    if (!validationForm()) return;
+    applyArticle(values)
+      .then((res) => {
+        console.log(res);
+      }).catch((err) => {
+      console.log(err);
+    });
+  };
+
+  const validationForm = () => {
+    return fieldsArticleRequestForm.map(({ name, placeholder }) => {
+      const isValid = values.hasOwnProperty(name) && !!values[name];
+      !isValid && setErrors(prevState => ({ ...prevState, [name]: placeholder }));
+      return isValid;
+    }).every((el) => el);
   };
 
   return (
     <div>
-      <ArticleRequestForm />
+      <Card appearance={{ type: "paper" }}>
+        <CardHeader>
+          <h3 className="text text_size_title text_weight_bold text_align_center">
+            Загрузите свою работу в личный кабинет
+          </h3>
+        </CardHeader>
+        <CardBody>
+          <div className={classNames("brief-form", {})} key={"RegFormInputs"}>
+            {fieldsArticleRequestForm.map((field) => {
+              return <FieldBuilder
+                key={field?.name}
+                name={field?.name}
+                type={field?.type}
+                label={field?.label}
+                description={field?.description}
+                defaultError={errors[field?.name] || ""}
+                handlers={{ handlerField }} />;
+            })}
+          </div>
+          <button className="button button_type_main brief-form__submit" onClick={handlerSubmit}>Отправить</button>
+        </CardBody>
+      </Card>
     </div>
   );
 };
@@ -48,31 +78,31 @@ const fieldsArticleRequestForm = [
   },
 
   {
-    name: "vuz_name",
-    label: "Университет",
-    placeholder: "Укажите университет"
-  },
-
-  {
     name: "country",
     label: "Страна",
     placeholder: "Укажите страна"
   },
 
   {
-    name: "article_tema",
+    name: "articleSubject",
     label: "Тема",
     placeholder: "Укажите тему"
   },
 
   {
-    name: "wishes_journal",
+    name: "universityName",
+    label: "Университет",
+    placeholder: "Укажите университет"
+  },
+
+  {
+    name: "wishes",
     label: "Пожелания",
     placeholder: "Ваши пожелания"
   },
 
   {
-    name: "new_file_order",
+    name: "NewArticle[file]",
     label: "Файл статьи",
     placeholder: "Загрузите статью",
     type: "file"

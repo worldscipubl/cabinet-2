@@ -15,7 +15,7 @@ const ArticlePage = () => {
 
 
   const articleTabs = [
-    <ArticleRequest tabId="article-request" tabLabel="Заявка" key="ArticlePipeline" />,
+    <ArticleRequest tabId="article-request" tabLabel="Заявка" key="article-request" />,
     <ArticlePipeline
       tabId="article-pipeline"
       tabLabel="Процесс публикации"
@@ -32,18 +32,26 @@ const ArticlePage = () => {
     <ArticlePayment articleId={articleId} tabId="article-payment" key="article-payment" tabLabel="Оплата" />
   ];
 
-  const getContent = () => {
+  const getFilterPages = ({ statusId = 0, articleUploaded = false } = {}) => {
+    const filters = [];
+    if (statusId < 4) filters.push("article-brief", "article-payment");
+    if (statusId >= 4 && statusId < 9) filters.push("article-payment");
+    if (articleUploaded) filters.push("article-request");
+    return filters;
+  };
+
+  const getContent = (article) => {
     if (isLoading) return <Loader />;
     if (error) return <h2 className="text text_align_center text_color_red">{error}</h2>;
     if (!article) return <h2 className="text">Пусто...</h2>;
-    if (article?.statusId < 4) return articleTabs.filter((tab) => !["article-brief", "article-payment"].includes(tab.props?.tabId));
-    if (article?.statusId >= 4 && article?.statusId < 9) return articleTabs.filter((tab) => !["article-payment"].includes(tab.props?.tabId));
+    const filterPages = getFilterPages(article);
+    if (filterPages.length) return articleTabs.filter((tab) => !filterPages.includes(tab.props?.tabId));
     return articleTabs;
   };
 
   return (
     <MainContent title={getTitle(articleId)}>
-      {getContent()}
+      {getContent(article)}
     </MainContent>
   );
 };

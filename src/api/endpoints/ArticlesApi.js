@@ -13,7 +13,7 @@ const ArticlesApi = entryApi.injectEndpoints({
       query: (articleId) => ({
         url: `/articles/${articleId}`,
         method: "get",
-        params: { expand: "currentStage,currentStatus" }
+        params: { expand: "articleUploaded,currentStage,currentStatus" }
       }),
       transformResponse: (response) => {
         if (response.data) return response.data;
@@ -30,6 +30,13 @@ const ArticlesApi = entryApi.injectEndpoints({
         if (response.data) return response.data;
         else retry.fail(new Error("No data"));
       }
+    }),
+    applyArticle: build.mutation({
+      query: (data) => ({
+        url: "/articles/add",
+        method: "post",
+        data
+      })
     })
   }),
   overrideExisting: false
@@ -38,6 +45,7 @@ const ArticlesApi = entryApi.injectEndpoints({
 export const {
   useGetArticlesQuery,
   useGetArticleByIdQuery,
+  useApplyArticleMutation,
   useGetArticleChangesQuery,
   useLazyGetArticleChangesQuery
 } = ArticlesApi;
