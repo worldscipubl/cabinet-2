@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/DateField.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/Field.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldBuilder.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FileField.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/TextField.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/firebase-messaging-sw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Notifications/Notifications.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/firebaseInit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/ArticlesApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/ArticlesApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Field/Field.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Field/Field.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ArticlesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ArticlesService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="16194" />
+    <option name="totalTimeSeconds" value="33472" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -66,6 +61,8 @@
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/components/Fields" />
       <recent name="$PROJECT_DIR$/src/components/AuthorForm" />
       <recent name="$PROJECT_DIR$/src/pages" />
@@ -134,7 +131,9 @@
       <workItem from="1635527652683" duration="69000" />
       <workItem from="1635762626662" duration="130000" />
       <workItem from="1635763148962" duration="15000" />
-      <workItem from="1635763208833" duration="16736000" />
+      <workItem from="1635763208833" duration="16774000" />
+      <workItem from="1635790830543" duration="14510000" />
+      <workItem from="1635879676751" duration="1950000" />
     </task>
     <servers />
   </component>
