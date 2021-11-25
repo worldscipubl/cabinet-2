@@ -19,7 +19,7 @@ const BriefApi = entryApi.injectEndpoints({
     }),
     getContact: build.query({
       query: () => ({
-        url: "/brief/contact",
+        url: "/users/self",
         method: "get"
       }),
       providesTags: (result) => result ?
@@ -57,15 +57,15 @@ const BriefApi = entryApi.injectEndpoints({
     }),
     addContact: build.mutation({
       query: ({ data, isFile = false }) => ({
-        url: isFile ? "/user-files/add" : "/brief/contact",
-        method: "post",
+        url: isFile ? "/user-files" : "/users/self",
+        method: isFile ? "post" : "put",
         data
       }),
       invalidatesTags: ["briefContact"]
     }),
     addAuthors: build.mutation({
       query: (data) => ({
-        url: "/reg-forms/add",
+        url: "/reg-forms",
         method: "post",
         data
       }),

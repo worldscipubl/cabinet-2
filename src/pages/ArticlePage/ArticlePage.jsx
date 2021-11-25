@@ -22,7 +22,7 @@ const ArticlePage = () => {
       key="ArticlePipeline"
       article={article}
     />,
-    <ArticleChat tabId="article-chat" key="article-chat" tabLabel="Переписка" />,
+    <ArticleChat tabId="article-chat" articleId={articleId} key="article-chat" tabLabel="Переписка" />,
     <ArticleBrief
       articleId={articleId}
       statusId={article?.statusId}

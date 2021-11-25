@@ -4,8 +4,10 @@ $loader-color: $label-text-gray;
 
 .loader__wrapper {
   width: 100%;
-  min-height: 5em;
-  position: relative;
+  height: 6.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .loader,

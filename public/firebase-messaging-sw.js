@@ -26,7 +26,7 @@ messaging.getToken({ vapidKey: "BKpYzuendmlVgUbA2X0VMTL4xOV587JS4AegLdGk4aA7zP3y
   .then((currentToken) => {
     if (currentToken) {
       // Send the token to your server and update the UI if necessary
-      console.log(currentToken);
+      // console.log(currentToken);
       // ...
     } else {
       // Show permission request UI

@@ -1,10 +1,10 @@
 import React from "react";
+import ChatBox from "../../../components/ChatBox/ChatBox";
 
-const ArticleChat = ({ children }) => {
+
+const ArticleChat = ({ children, articleId }) => {
   return (
-    <div>
-      <h2 className="text">Переписка</h2>
-    </div>
+    <ChatBox articleId={articleId} />
   );
 };
 

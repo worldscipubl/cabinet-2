@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import "./common/style/app.scss";
 import { NotFoundPage } from "./domain/NotFoundPage/NotFoundPage";
 import { Faq } from "./pages/Faq/Faq";
 import { Profile } from "./pages/Profile/Profile";

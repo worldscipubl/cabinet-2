@@ -13,7 +13,6 @@
   padding: 0.8em;
   text-decoration: none;
 
-
   &:hover {
     text-decoration: none;
     background-color: $green;
@@ -76,5 +75,10 @@
       background-color: $colorSecondaryDark;
       border: 1px solid $colorSecondaryDark;
     }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
   }
 }

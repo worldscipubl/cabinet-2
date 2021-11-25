@@ -33,7 +33,7 @@ const ArticlesApi = entryApi.injectEndpoints({
     }),
     applyArticle: build.mutation({
       query: (data) => ({
-        url: "/articles/add",
+        url: "/articles",
         method: "post",
         data
       })

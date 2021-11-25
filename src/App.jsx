@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Provider as StateProvider } from "react-redux";
 import { AppRouter } from "./AppRouter";
 import store from "./store";
-import "./common/style/app.scss";
 import { onMessageListener } from "./firebaseInit";
 
 export const App = () => {

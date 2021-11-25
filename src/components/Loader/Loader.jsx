@@ -1,11 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./Loader.scss";
 
-const Loader = ({ className = "" }) => {
+const Loader = forwardRef(({ className = "", ...props }, ref) => {
   const style = "loader__wrapper " + className;
-  return <div className={style}>
+  return <div ref={ref} className={style} {...props}>
     <div className="loader"></div>
   </div>;
-};
+});
 
 export default Loader;

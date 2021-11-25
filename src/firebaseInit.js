@@ -18,7 +18,7 @@ export const messaging = getMessaging();
 getToken(messaging, { vapidKey: REACT_APP_FIREBASE_VAPID_KEY }).then((currentToken) => {
   if (currentToken) {
     // Send the token to your server and update the UI if necessary
-    console.log(currentToken);
+    // console.log(currentToken);
     // ...
   } else {
     // Show permission request UI
@@ -37,7 +37,7 @@ export const getTokenInit = async (setTokenFound) => {
   try {
     currentToken = await getToken(messaging, { vapidKey: REACT_APP_FIREBASE_VAPID_KEY });
     if (currentToken) {
-      console.log(currentToken);
+      // console.log(currentToken);
       setTokenFound(true);
     } else {
       setTokenFound(false);

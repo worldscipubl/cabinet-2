@@ -4,7 +4,7 @@ class UserFilesService extends ApiService {
   addFiles = (data) => {
     return new Promise((resolve, reject) => {
       this.setResource({
-        url: "/user-files/add",
+        url: "/user-files",
         data
       })
         .then((response) => {

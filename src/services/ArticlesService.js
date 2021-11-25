@@ -77,7 +77,7 @@ class ArticlesService extends ApiService {
   setArticleBriefContact = (data) => {
     return new Promise((resolve, reject) => {
       this.setResource({
-        url: "/brief/contact",
+        url: "/users/self",
         data
       })
         .then((response) => {
@@ -91,7 +91,7 @@ class ArticlesService extends ApiService {
   setArticleBriefAuthors = (data) => {
     return new Promise((resolve, reject) => {
       this.setResource({
-        url: "/reg-forms/add",
+        url: "/reg-forms",
         data
       })
         .then((response) => {
@@ -106,7 +106,7 @@ class ArticlesService extends ApiService {
   uploadFile = (data) => {
     return new Promise((resolve, reject) => {
       this.setResource({
-        url: "/article-files/add",
+        url: "/article-files",
         data
       })
         .then((response) => {
