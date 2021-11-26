@@ -1,25 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Provider as StateProvider } from "react-redux";
 import { AppRouter } from "./AppRouter";
 import store from "./store";
-import { onMessageListener } from "./firebaseInit";
+import { getTokenMessaging, onMessageListener } from "./firebase";
 
 export const App = () => {
-  const [show, setShow] = useState(false);
-  const [notification, setNotification] = useState({ title: "", body: "" });
 
-  console.log(show, notification);
-
-  onMessageListener()
-    .then((payload) => {
-      setShow(true);
-      setNotification({
-        title: payload.notification.title,
-        body: payload.notification.body
+  useEffect(() => {
+    getTokenMessaging()
+      .then((currentToken) => {
+        console.log(currentToken);
+      })
+      .catch((err) => {
+        console.log("failed: ", err);
       });
-      console.log(payload);
-    })
-    .catch((err) => console.log("failed: ", err));
+
+    onMessageListener()
+      .then((payload) => {
+        console.log(payload);
+      })
+      .catch((err) => {
+        console.log("failed: ", err);
+      });
+  }, []);
 
   return (
     <StateProvider store={store}>
