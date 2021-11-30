@@ -1,0 +1,38 @@
+.link-tab {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-tab__title {
+
+}
+
+.link-tab__subtitle {
+  margin-top: 1em;
+}
+
+.link-tab__img {
+  display: block;
+  object-fit: contain;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.link-tab__img-label {
+  margin-top: 0.5em;
+}
+
+.link-tab__clipboard {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+}
+
+.clipboard__field {
+  flex: 5;
+}
+
+.clipboard__btn {
+  margin-left: 0.5em;
+  flex: 1;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function EmptyState(props) {
+const EmptyState = (props) => {
   let imageHeight;
 
   switch (props.size) {
@@ -30,7 +30,7 @@ function EmptyState(props) {
           position: "absolute",
           top: "50%",
           left: "50%",
-          textAlign: "center",
+          textAlign: "center"
         }}
       >
         {props.image && (
@@ -38,7 +38,7 @@ function EmptyState(props) {
             style={{
               width: `${imageHeight}%`,
               height: `${imageHeight}%`,
-              margin: "auto",
+              margin: "auto"
             }}
           >
             {props.image}
@@ -72,7 +72,7 @@ function EmptyState(props) {
             style={{
               width: `${imageHeight}%`,
               height: `${imageHeight}%`,
-              margin: "auto",
+              margin: "auto"
             }}
           >
             {props.image}
@@ -99,12 +99,12 @@ function EmptyState(props) {
   }
 
   return null;
-}
+};
 
 EmptyState.defaultProps = {
   type: "page",
   size: "medium",
-  padding: 2,
+  padding: 2
 };
 
 EmptyState.propTypes = {
@@ -115,7 +115,7 @@ EmptyState.propTypes = {
   image: PropTypes.element,
   title: PropTypes.string,
   description: PropTypes.string,
-  button: PropTypes.element,
+  button: PropTypes.element
 };
 
 export default EmptyState;

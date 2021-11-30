@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
-import "./Field.module.scss";
+import "../Field.module.scss";
 
-const DateField = ({
+const SelectField = ({
                      label,
                      description,
                      error,
@@ -12,12 +12,12 @@ const DateField = ({
                      handlers: { handlerEndIcon, handlerField } = {},
                      ...props
                    }) => {
-  const DataFieldStyle = classNames("field", className, {
+  const SelectFieldStyle = classNames("field", className, {
     error: error
   });
 
   return (
-    <div className={DataFieldStyle}>
+    <div className={SelectFieldStyle}>
       <label>
         <h4 className="text field__label">{label}</h4>
         <p className="text text_color_gray field__description">
@@ -45,4 +45,4 @@ const DateField = ({
   );
 };
 
-export default DateField;
+export default SelectField;

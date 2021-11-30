@@ -1,5 +1,4 @@
 import React from "react";
-import "./NavMenu.scss";
 import myArticlesImg from "../../common/images/nav-menu/my_articles.svg";
 import faqImg from "../../common/images/nav-menu/faq.svg";
 import loyaltyImg from "../../common/images/nav-menu/loyalty.svg";
@@ -8,24 +7,25 @@ import chatImg from "../../common/images/nav-menu/chat.svg";
 import { Link } from "react-router-dom";
 import clientImg from "../../common/images/illustrations/client.svg";
 import NavMenuItem from "./NavMenuItem/NavMenuItem";
+import "./NavMenu.scss";
 
-export const NavMenu = () => {
+const NavMenu = () => {
   const navMenuList = [
     {
       img: myArticlesImg,
       title: "Мои статьи",
       linkTo: "/article",
-      id: "article",
+      id: "article"
     },
     {
       img: loyaltyImg,
       title: "Партнерка",
-      linkTo: "/loyalty",
-      id: "loyalty",
+      linkTo: "/referral",
+      id: "referral"
     },
     { img: profileImg, title: "Профиль", linkTo: "/profile", id: "profile" },
     { img: chatImg, title: "Чат", linkTo: "/chat", id: "chat" },
-    { img: faqImg, title: "FAQ", linkTo: "/faq", id: "faq" },
+    { img: faqImg, title: "FAQ", linkTo: "/faq", id: "faq" }
   ];
 
   return (
@@ -44,3 +44,5 @@ export const NavMenu = () => {
     </nav>
   );
 };
+
+export default NavMenu;

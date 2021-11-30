@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import imgPlus from "../../common/images/icons/plus.svg";
 import "./MyArticles.scss";
-import MainContent from "../../components/MainContent/MainContent";
 import { useGetArticlesQuery } from "../../api/endpoints/ArticlesApi";
 import Loader from "../../components/Loader";
+import MainLayout from "../../layouts/MainLayout";
+import TabLayout from "../../layouts/TabLayout";
 
 const MyArticles = () => {
   const { data: articles, error, isLoading } = useGetArticlesQuery();
@@ -89,10 +90,10 @@ const MyArticles = () => {
   };
 
   return (
-    <MainContent title="Мои статьи">
+    <TabLayout title="Мои статьи">
       {getContent()}
-    </MainContent>
-
+    </TabLayout>
   );
 };
+
 export default MyArticles;

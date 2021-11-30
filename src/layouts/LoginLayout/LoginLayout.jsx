@@ -1,13 +1,12 @@
 import React from "react";
 import "./LoginLayout.scss";
-import Card, {
-  CardHeader,
-  CardBody,
-  CardFooter,
-} from "../../components/Card/Card";
 import { LogoBanner } from "../../components/LogoBanner/LogoBanner";
 import Copyright from "../../components/Copyright/Copyright";
 import PrivacyPolicy from "../../components/PrivacyPolicy/PrivacyPolicy";
+import Card from "../../components/Card";
+import CardHeader from "../../components/Card/CardHeader";
+import CardBody from "../../components/Card/CardBody";
+import CardFooter from "../../components/Card/CardFooter";
 
 export const LoginLayout = ({ children }) => {
   return (

@@ -82,7 +82,11 @@ hr {
     flex-direction: column-reverse;
   }
 
-  .app__main {
+  .app__inner {
     padding: 12px 12px 0px;
+  }
+
+  .app__main {
+    padding: 0;
   }
 }

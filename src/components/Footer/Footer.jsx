@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.scss";
 import Copyright from "../Copyright/Copyright";
 
-export const Footer = () => {
+const Footer = () => {
   const style = `app__footer footer`;
 
   return (
@@ -11,3 +11,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

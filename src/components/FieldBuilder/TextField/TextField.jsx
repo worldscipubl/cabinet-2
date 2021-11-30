@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
-import styles from "./Field.module.scss";
-import errorImg from "../../common/images/icons/error.svg";
+import styles from "../Field.module.scss";
+import errorImg from "../../../common/images/icons/error.svg";
 
 const TextField = ({
                      label,

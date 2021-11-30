@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import MainContent from "../../components/MainContent/MainContent";
 import ArticlePipeline from "./ArticlePipeline/ArticlePipeline";
 import ArticleChat from "./ArticleChat/ArticleChat";
 import ArticleBrief from "./ArticleBrief/ArticleBrief";
@@ -8,6 +7,7 @@ import { useGetArticleByIdQuery } from "../../api/endpoints/ArticlesApi";
 import Loader from "../../components/Loader";
 import ArticlePayment from "./ArticlePayment/ArticlePayment";
 import ArticleRequest from "./ArticleRequest/ArticleRequest";
+import TabLayout from "../../layouts/TabLayout";
 
 const ArticlePage = () => {
   const { articleId } = useParams();
@@ -50,9 +50,9 @@ const ArticlePage = () => {
   };
 
   return (
-    <MainContent title={getTitle(articleId)}>
+    <TabLayout title={getTitle(articleId)}>
       {getContent(article)}
-    </MainContent>
+    </TabLayout>
   );
 };
 

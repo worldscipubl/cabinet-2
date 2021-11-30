@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
-import "./Field.module.scss";
-import styles from "./Field.module.scss";
-import errorImg from "../../common/images/icons/error.svg";
+import "../Field.module.scss";
+import styles from "../Field.module.scss";
+import errorImg from "../../../common/images/icons/error.svg";
 
 const FileField = ({
                      label,

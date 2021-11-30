@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./Faq.scss";
+import "./FaqPage.scss";
 import Input from "../../components/Input/Input";
 import FormField from "../../components/FormField/FormField";
 
-export const Faq = (props) => {
+const FaqPage = (props) => {
   const [stateField, setStateField] = useState({
     "input1": "Вася",
     "input2": "Москва",
@@ -71,3 +71,5 @@ export const Faq = (props) => {
     />
   </div>;
 };
+
+export default FaqPage;

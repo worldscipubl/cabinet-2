@@ -29,14 +29,11 @@
     background-color: #EEEEEE;
   }
 
-  @media (hover: none) {
-    &:hover {
-      transform: none;
-    }
-  }
-
   &:hover {
     transform: scale(1.05);
+    @media screen and (max-width: $bp-tablet) {
+      transform: none;
+    }
   }
 }
 

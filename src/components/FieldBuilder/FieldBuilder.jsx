@@ -1,8 +1,9 @@
 import React from "react";
 import FileField from "./FileField";
-import TextField from "./TextField";
 import SelectField from "./SelectField";
 import DateField from "./DateField";
+import TextField from "./TextField";
+
 
 const FieldBuilder = ({ type, ...props }) => {
   if (type === "file") return <FileField type={type} {...props} />;

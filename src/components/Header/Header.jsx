@@ -6,7 +6,7 @@ import { Avatar } from "../Avatar/Avatar";
 import { NavLink } from "react-router-dom";
 import couponImg from "../../common/images/icons/coupon.svg";
 
-export const Header = () => {
+const Header = () => {
   const style = `app__header header`;
 
   return (
@@ -40,3 +40,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

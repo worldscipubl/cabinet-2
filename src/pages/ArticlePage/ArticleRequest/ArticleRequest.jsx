@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-import Card, { CardBody, CardHeader } from "../../../components/Card/Card";
 import FieldBuilder from "../../../components/FieldBuilder";
 import { useApplyArticleMutation } from "../../../api/endpoints/ArticlesApi";
+import Card from "../../../components/Card";
+import CardHeader from "../../../components/Card/CardHeader";
+import CardBody from "../../../components/Card/CardBody";
 
 
 const ArticleRequest = () => {
