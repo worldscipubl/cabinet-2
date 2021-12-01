@@ -50,6 +50,7 @@ const ArticleRequest = () => {
           <div className={classNames("brief-form", {})} key={"RegFormInputs"}>
             {fieldsArticleRequestForm.map((field) => {
               return <FieldBuilder
+                className="brief-form__input"
                 key={field?.name}
                 name={field?.name}
                 type={field?.type}

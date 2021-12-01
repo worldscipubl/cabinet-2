@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import Input from "../Input/Input";
-import FormField from "../FormField/FormField";
 import Loader from "../Loader";
+import FormField from "../FormField";
 
 const BriefForm = ({
                      nameForm,

@@ -4,10 +4,10 @@ import { useHistory } from "react-router-dom";
 import "./AuthorForm.scss";
 import Tabs from "../../layouts/Tabs/Tabs";
 import Loader from "../Loader";
-import Input from "../Input/Input";
-import Field from "../Field/Field";
 import { useAddAuthorsMutation, useGetAuthorsQuery } from "../../api/endpoints/BriefApi";
 import FromErrorList from "../FromErrorList/FromErrorList";
+import Input from "../Input";
+import Field from "../Field";
 
 const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
   const { data: { authorInfo, regInfo } = {}, error, isLoading } = useGetAuthorsQuery(articleId);

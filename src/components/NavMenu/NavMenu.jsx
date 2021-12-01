@@ -1,10 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import myArticlesImg from "../../common/images/nav-menu/my_articles.svg";
-import faqImg from "../../common/images/nav-menu/faq.svg";
 import loyaltyImg from "../../common/images/nav-menu/loyalty.svg";
 import profileImg from "../../common/images/nav-menu/profile.svg";
 import chatImg from "../../common/images/nav-menu/chat.svg";
-import { Link } from "react-router-dom";
 import clientImg from "../../common/images/illustrations/client.svg";
 import NavMenuItem from "./NavMenuItem/NavMenuItem";
 import "./NavMenu.scss";
@@ -24,8 +23,7 @@ const NavMenu = () => {
       id: "referral"
     },
     { img: profileImg, title: "Профиль", linkTo: "/profile", id: "profile" },
-    { img: chatImg, title: "Чат", linkTo: "/chat", id: "chat" },
-    { img: faqImg, title: "FAQ", linkTo: "/faq", id: "faq" }
+    { img: chatImg, title: "Чат", linkTo: "/chat", id: "chat" }
   ];
 
   return (

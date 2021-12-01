@@ -10,10 +10,7 @@ $btn-offset-size: -#{$border-thickness / 2};
 .field {
   font-family: $fontMain;
   font-size: $main-font-size;
-
-  @media screen and (min-width: $bp-large) {
-    font-size: #{get-vw($main-font-size, $bp-large)};
-  }
+  position: relative;
 
   &.disabled {
     pointer-events: none;
@@ -81,13 +78,17 @@ $btn-offset-size: -#{$border-thickness / 2};
       padding: 0;
     }
   }
+
+  @media screen and (min-width: $bp-large) {
+    font-size: #{get-vw($main-font-size, $bp-large)};
+  }
 }
 
 .field__label {
   display: inline-block;
   font-size: inherit;
   cursor: text;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
 }
 
 .field__description {
@@ -176,4 +177,11 @@ $btn-offset-size: -#{$border-thickness / 2};
 
 .field__helper_error {
   color: red;
+}
+
+.field__helperBox {
+  position: absolute;
+  transform: translateY(100%);
+  bottom: 0;
+  left: 0;
 }

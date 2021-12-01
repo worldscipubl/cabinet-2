@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./FaqPage.scss";
 import Input from "../../components/Input/Input";
-import FormField from "../../components/FormField/FormField";
+import FormField from "../../components/FormField";
 
 const FaqPage = (props) => {
   const [stateField, setStateField] = useState({

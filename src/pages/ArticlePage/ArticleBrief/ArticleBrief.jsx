@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Card from "../../../components/Card/Card";
 import ViewPager from "../../../components/ViewPager/ViewPager";
-import "../../../components/DatePicker/DatePicker.scss";
 import "./ArticleBrief.scss";
 import {
   useAddArticleMutation, useAddContactMutation,

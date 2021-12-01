@@ -1,6 +1,17 @@
+@use './src/common/style/global' as *;
+
 .link-tab {
+}
+
+.link-tab__inner {
   display: flex;
   flex-direction: column;
+  width: 75%;
+  margin: 0 auto;
+
+  @media screen and (max-width: $bp-tablet) {
+    width: 100%;
+  }
 }
 
 .link-tab__title {
@@ -28,6 +39,20 @@
   display: flex;
 }
 
+.clipboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.clipboard__title {
+
+}
+
+.clipboard__form {
+  margin: 1em 0 2em;
+  display: flex;
+}
+
 .clipboard__field {
   flex: 5;
 }
@@ -35,4 +60,5 @@
 .clipboard__btn {
   margin-left: 0.5em;
   flex: 1;
+  max-height: 4em;
 }

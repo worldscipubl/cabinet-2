@@ -5,78 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/images/illustrations/promocode.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardBody/CardBody.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardBody/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardFooter/CardFooter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardFooter/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardHeader/CardHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardHeader/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/DateField/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FileField/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/TextField/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NavMenu/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/EmptyState/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/NotFoundPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/MainLayout/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabBar/TabBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabBar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabContent/TabContent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabContent/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ChatPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/FaqPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MyArticles/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ProfilePage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/ReferralPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AdTab/AdTab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AdTab/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/AmountTab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/PayoutTab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Field/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldWrapper/FieldWrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldWrapper/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FormField/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Input/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/DateField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/DateField/DateField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/DateField/DateField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/DateField/DateField.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/Field.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/Field.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/FieldBuilder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldBuilder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/FileField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FileField/FileField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField/SelectField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/TextField/TextField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainContent/MainContent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/FileField/FileField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FileField/FileField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField/SelectField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField/SelectField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/TextField/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/TextField/TextField.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/ErrorBoundary/ErrorBoundary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/ErrorBoundary/ErrorBoundary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/NotFoundPage/NotFoundPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/NotFoundPage/NotFoundPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Chat/Chat.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ChatPage/ChatPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Chat/Chat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ChatPage/ChatPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Faq/Faq.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Faq/Faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Loyalty/Loyalty.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Loyalty/Loyalty.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfilePage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfilePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/ReferralPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +35,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="151538" />
+    <option name="totalTimeSeconds" value="161276" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -224,7 +175,9 @@
       <workItem from="1637901577704" duration="289000" />
       <workItem from="1637920797359" duration="5178000" />
       <workItem from="1638181418439" duration="1631000" />
-      <workItem from="1638252899827" duration="16807000" />
+      <workItem from="1638252899827" duration="16873000" />
+      <workItem from="1638296841222" duration="277000" />
+      <workItem from="1638336265651" duration="9971000" />
     </task>
     <servers />
   </component>
