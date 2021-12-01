@@ -13,6 +13,7 @@ import { SignIn } from "./pages/SignIn/SignIn";
 import { SignUp } from "./pages/SignUp/SignUp";
 import { Forgot } from "./pages/Forgot/Forgot";
 import MainLayout from "./layouts/MainLayout";
+import SettingsPage from "./pages/SettingsPage";
 
 export const AppRouter = () => {
   const [user] = useState(true);
@@ -49,6 +50,11 @@ export const AppRouter = () => {
     <Route path="/faq">
       <MainLayout title="FAQ">
         <FaqPage />
+      </MainLayout>
+    </Route>,
+    <Route path="/settings">
+      <MainLayout>
+        <SettingsPage />
       </MainLayout>
     </Route>
   ];

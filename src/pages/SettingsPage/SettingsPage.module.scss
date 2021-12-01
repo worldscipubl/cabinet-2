@@ -1,0 +1,23 @@
+@use './src/common/style/global' as *;
+
+.settings {
+
+}
+
+.settings__subtitle {
+  margin-bottom: 1em;
+}
+
+.settings__form {
+
+}
+
+.settings__input {
+  margin-bottom: 1em;
+}
+
+.settings__driver {
+  border-top: 1px solid rgba(196, 196, 196, 0.3);
+  padding: 0;
+  margin: 0.8em 0;
+}

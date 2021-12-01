@@ -79,12 +79,14 @@ const FormField = ({
     setDisabled(true);
 
     const formData = new FormData();
+    // TODO: userTypeFileId <- Должен приходить извне
     formData.append("userTypeFileId", 1);
 
     for (let i = 0; i < value.length; i++) {
       formData.append("UserFile[file][]", value[i]);
     }
 
+    console.log(formData);
     handleFieldFileSubmit(formData)
       .catch((err) => {
         resetField();
