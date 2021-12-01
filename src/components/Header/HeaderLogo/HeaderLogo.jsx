@@ -1,7 +1,7 @@
 import React from "react";
-import "./HeaderLogo.scss";
-import logoImg from "../../common/images/logo/logo_black.svg";
 import { NavLink } from "react-router-dom";
+import "./HeaderLogo.scss";
+import logoImg from "../../../common/images/logo/logo_black.svg";
 
 export const HeaderLogo = () => {
   const style = `header__logo logo-header`;
@@ -19,3 +19,5 @@ export const HeaderLogo = () => {
     </NavLink>
   );
 };
+
+export default HeaderLogo;

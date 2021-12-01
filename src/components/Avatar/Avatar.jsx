@@ -1,21 +1,7 @@
 import React from "react";
 import "./Avatar.scss";
 
-export const Avatar = (props) => {
-  const style = initStyleAvatar(props);
-
-  return (
-    <div className={style}>
-      <img
-        className="avatar__img"
-        src="https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg"
-        alt="avatar"
-      />
-    </div>
-  );
-};
-
-function initStyleAvatar({ size, type, border }) {
+const initStyleAvatar = ({ size, type, border }) => {
   let style = "avatar";
 
   if (size) {
@@ -61,4 +47,20 @@ function initStyleAvatar({ size, type, border }) {
   }
 
   return style;
-}
+};
+
+export const Avatar = (props) => {
+  const style = initStyleAvatar(props);
+
+  return (
+    <div className={style}>
+      <img
+        className="avatar__img"
+        src="https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg"
+        alt="avatar"
+      />
+    </div>
+  );
+};
+
+export default Avatar;

@@ -6,10 +6,17 @@ import TextField from "./TextField";
 import FieldWrapper from "./FieldWrapper";
 
 
-const FieldBuilder = ({ type, defaultError, defaultValue, ...props }) => {
+const FieldBuilder = ({ type, defaultError, defaultValue, handleChange, ...props }) => {
   const [error, setError] = useState(defaultError);
   const [value, setValue] = useState(defaultValue);
   const [fileName, setFileName] = useState("");
+
+  useEffect(() => {
+    if (!handleChange) return;
+    const { handleChange: handler, ...props } = handleChange();
+    if (!handler) return;
+    handler({ ...props, value });
+  }, [value]);
 
   useEffect(() => {
     setError(defaultError);

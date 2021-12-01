@@ -7,7 +7,7 @@ import Loader from "../Loader";
 import { useAddAuthorsMutation, useGetAuthorsQuery } from "../../api/endpoints/BriefApi";
 import FromErrorList from "../FromErrorList/FromErrorList";
 import Input from "../Input";
-import Field from "../Field";
+import FieldBuilder from "../FieldBuilder";
 
 const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
   const { data: { authorInfo, regInfo } = {}, error, isLoading } = useGetAuthorsQuery(articleId);
@@ -97,7 +97,7 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
       handleChange={handleChange} />);
   };
 
-  const handleChange = (idAuthor, name, value) => {
+  const handleChange = ({ idAuthor, name, value }) => {
     if (Number.isInteger(idAuthor)) {
       setValueAuthors(prevState => idAuthor < prevState.length ?
         prevState.map((author, index) => (index === Number.parseInt(idAuthor)) ? {
@@ -114,7 +114,7 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
     return (
       <div className={classNames("brief-form", {})} key={"RegFormInputs"}>
         {fieldsSecond.map((field) => {
-          return <Field
+          return <FieldBuilder
             className="brief-form__input"
             name={field?.name}
             key={field?.name}
@@ -122,12 +122,9 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
             defaultValue={regInfo && regInfo[field?.name]}
             defaultError={errorReg && errorReg[field?.name]}
             description={field?.description}
-            propsInput={{
-              type: field?.type || "text",
-              required: true
-            }}
-            component={<Input />}
-            handlers={{ handleChange }}
+            type={field?.type || "text"}
+            required
+            handleChange={() => ({ handleChange, name: field?.name })}
           />;
         })}
       </div>
@@ -172,21 +169,17 @@ const AuthorFormInputs = ({ label, id, fields, valueAuthors = [], errorAuthors =
       {fields.map((field) => {
         const defaultValue = valueAuthors && valueAuthors[id] && valueAuthors[id][field?.name];
         const defaultError = errorAuthors && errorAuthors[`${id}_${field?.name}`];
-        return (<Field
+        return (<FieldBuilder
           key={field?.name + id}
           className="brief-form__input"
           name={field?.name}
-          idAuthor={id}
           label={field?.label}
           defaultValue={defaultValue}
           defaultError={defaultError}
           description={field?.description}
-          propsInput={{
-            type: field?.type || "text",
-            required: true
-          }}
-          component={<Input />}
-          handlers={{ handleChange }}
+          type={field?.type || "text"}
+          required
+          handleChange={() => ({ handleChange, idAuthor: id, name: field?.name })}
         />);
       })}
     </div>

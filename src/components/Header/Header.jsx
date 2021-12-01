@@ -1,10 +1,9 @@
 import React from "react";
-import "./Header.scss";
-import { HeaderLogo } from "../HeaderLogo/HeaderLogo";
-import { BurgerBtn } from "../BurgerBtn/BurgerBtn";
-import { Avatar } from "../Avatar/Avatar";
 import { NavLink } from "react-router-dom";
 import couponImg from "../../common/images/icons/coupon.svg";
+import HeaderLogo from "./HeaderLogo";
+import "./Header.scss";
+import Avatar from "../Avatar";
 
 const Header = () => {
   const style = `app__header header`;
@@ -12,7 +11,6 @@ const Header = () => {
   return (
     <header className={style}>
       <div className="header__inner">
-        <BurgerBtn />
         <HeaderLogo />
         <ul className="header__action">
           <li className="header__action-item">

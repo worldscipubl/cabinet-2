@@ -5,29 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Field/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldWrapper/FieldWrapper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldWrapper/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FormField/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Input/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Avatar/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/HeaderLogo/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/DateField/DateField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/DateField/DateField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/Field.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/Field.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar/Avatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Avatar/Avatar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerBtn/BurgerBtn.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerBtn/BurgerBtn.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Field/Field.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Field/Field.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Field/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/FieldBuilder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldBuilder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/FileField/FileField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FileField/FileField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField/SelectField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/SelectField/SelectField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/TextField/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/TextField/TextField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLogo/HeaderLogo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderLogo/HeaderLogo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLogo/HeaderLogo.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleRequest/ArticleRequest.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="161276" />
+    <option name="totalTimeSeconds" value="164670" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -76,11 +69,11 @@
       <recent name="$PROJECT_DIR$/src/components/FieldBuilder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Header" />
       <recent name="$PROJECT_DIR$/src/components/FieldBuilder/TextField" />
       <recent name="$PROJECT_DIR$/src/components/FieldBuilder/SelectField" />
       <recent name="$PROJECT_DIR$/src/components/FieldBuilder/FileField" />
       <recent name="$PROJECT_DIR$/src/components/FieldBuilder/DateField" />
-      <recent name="$PROJECT_DIR$/src/layouts" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -177,7 +170,7 @@
       <workItem from="1638181418439" duration="1631000" />
       <workItem from="1638252899827" duration="16873000" />
       <workItem from="1638296841222" duration="277000" />
-      <workItem from="1638336265651" duration="9971000" />
+      <workItem from="1638336265651" duration="13600000" />
     </task>
     <servers />
   </component>

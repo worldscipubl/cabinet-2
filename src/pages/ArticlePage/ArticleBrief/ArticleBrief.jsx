@@ -27,17 +27,14 @@ const ArticleBrief = ({ articleId, statusId }) => {
   };
 
   const handleNext = () => {
-    console.log("handleNext");
     return true;
   };
 
   const handleBack = () => {
-    console.log("handleBack");
     return true;
   };
 
   const handleReset = () => {
-    console.log("handleReset");
     return true;
   };
 
