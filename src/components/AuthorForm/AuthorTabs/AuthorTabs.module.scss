@@ -1,0 +1,17 @@
+@use './src/common/style/global' as *;
+
+.Container {
+
+}
+
+.Content {
+  margin-top: 12px;
+}
+
+.TabBar {
+  margin-top: -12px;
+
+  @media screen and (max-width: $bp-mobile) {
+    margin-top: -8px;
+  }
+}

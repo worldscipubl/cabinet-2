@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { useHistory } from "react-router-dom";
-import "./AuthorForm.scss";
-import Tabs from "../../layouts/Tabs/Tabs";
 import Loader from "../Loader";
-import { useAddAuthorsMutation, useGetAuthorsQuery } from "../../api/endpoints/BriefApi";
 import FromErrorList from "../FromErrorList/FromErrorList";
-import Input from "../Input";
 import FieldBuilder from "../FieldBuilder";
+import { useAddAuthorsMutation, useGetAuthorsQuery } from "../../api/endpoints/BriefApi";
+import "./AuthorForm.scss";
+import AuthorTabs from "./AuthorTabs";
 
 const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
   const { data: { authorInfo, regInfo } = {}, error, isLoading } = useGetAuthorsQuery(articleId);
@@ -140,7 +139,7 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
       <h3 className="text text_size_subtitle brief-form__description">
         Заполните данные об авторах
       </h3>
-      <Tabs
+      <AuthorTabs
         options={{
           isExtensible: true,
           tabsLimit: 5
@@ -148,7 +147,7 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
         handlers={{ handlerAddTab }}
       >
         {getContent({ fields, valueAuthors, errorAuthors, handleChange })}
-      </Tabs>
+      </AuthorTabs>
       <hr />
       <h3 className="text text_size_subtitle brief-form__description">
         Заполните регистрационную форму

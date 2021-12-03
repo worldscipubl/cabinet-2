@@ -1,10 +1,6 @@
 @use './src/common/style/global' as *;
 
-.tabs__bar {
-  margin-top: -12px;
-}
-
-.tabs-item {
+.Tab {
   margin-top: 12px;
 
   &:not(:last-child) {
@@ -13,11 +9,7 @@
 }
 
 @media screen and (max-width: $bp-mobile) {
-  .tabs__bar {
-    margin-top: -8px;
-  }
-
-  .tabs-item {
+  .Tab {
     margin-top: 8px;
 
     &:not(:last-child) {

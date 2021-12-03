@@ -1,8 +1,9 @@
 import React from "react";
-import Tab from "../../Tabs/Tab/Tab";
 import AppBar from "../../AppBar/AppBar";
+import TabButton from "../TabButton";
+import classNames from "classnames";
 
-const TabBar = ({ activeTab, title, hideTabsBar = false, children, handleTab }) => {
+const TabBar = ({ className, activeTab, title, hideTabsBar = false, children, handleTab }) => {
 
   const handlerTab = (tabId) => {
     if (!tabId) return;
@@ -12,11 +13,11 @@ const TabBar = ({ activeTab, title, hideTabsBar = false, children, handleTab }) 
 
   return (
     <AppBar title={title} hideTabsBar={hideTabsBar}>
-      {activeTab && <ul className="app-bar__tabs">
+      {activeTab && <ul className={classNames("app-bar__tabs", className)}>
         {children.map((child) => {
           const { tabId = "default", tabLabel = "default" } = child.props;
           return (
-            <Tab
+            <TabButton
               activeTab={activeTab}
               id={tabId}
               key={tabId}

@@ -1,0 +1,15 @@
+@use './src/common/style/global' as *;
+
+.Tab {
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+}
+
+@media screen and (max-width: $bp-mobile) {
+  .Tab {
+    &:not(:last-child) {
+      margin-right: 18px;
+    }
+  }
+}

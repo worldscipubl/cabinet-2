@@ -5,54 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/endpoints/FiendsApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Paper/Paper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Paper/Paper.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Paper/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralDashboard/DashboardCard/DashboardCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralDashboard/DashboardCard/DashboardCard.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralDashboard/DashboardCard/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralDashboard/ReferralDashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralDashboard/ReferralDashboard.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralDashboard/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralTable/ReferralTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralTable/ReferralTable.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralTable/ReferralTableHeader/ReferralTableHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralTable/ReferralTableHeader/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReferralTable/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/Table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/Table.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableBody/TableBody.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableBody/TableBody.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableBody/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableCell/TableCell.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableCell/TableCell.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableCell/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableContainer/TableContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableContainer/TableContainer.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableContainer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableHead/TableHead.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableHead/TableHead.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableHead/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableRow/TableRow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableRow/TableRow.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/TableRow/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/AmountTab.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabBtn/AuthorTabBtn.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabBtn/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabs/AuthorTabs.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabButton/TabButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabButton/TabButton.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabButton/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/UserApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/UserApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormField/FormField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormField/FormField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormField/FormField.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormField/FormField.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/TabLayout/TabLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/ReferralPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/ReferralPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/AmountTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/AmountTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/SettingsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/SettingsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/TabLayout/TabBar/TabBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabBar/TabBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabBtn/AuthorTabBtn.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabs/AuthorTabs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="19356" />
+    <option name="totalTimeSeconds" value="23108" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -82,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/ReferralTable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/AuthorForm" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -94,18 +62,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/AuthorForm" />
       <recent name="$PROJECT_DIR$/src/components/ReferralTable" />
       <recent name="$PROJECT_DIR$/src/components/Table/TableContainer" />
       <recent name="$PROJECT_DIR$/src/components/Table/TableBody" />
       <recent name="$PROJECT_DIR$/src/components/Table/TableCell" />
-      <recent name="$PROJECT_DIR$/src/common/images/illustrations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/layouts/TabLayout" />
+      <recent name="$PROJECT_DIR$/src/components/AuthorForm" />
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/ReferralTable" />
       <recent name="$PROJECT_DIR$/src/components/Header" />
-      <recent name="$PROJECT_DIR$/src/components/FieldBuilder/TextField" />
-      <recent name="$PROJECT_DIR$/src/components/FieldBuilder/SelectField" />
-      <recent name="$PROJECT_DIR$/src/components/FieldBuilder/FileField" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -204,7 +172,8 @@
       <workItem from="1638296841222" duration="277000" />
       <workItem from="1638336265651" duration="21980000" />
       <workItem from="1638426585641" duration="3861000" />
-      <workItem from="1638511515714" duration="15453000" />
+      <workItem from="1638511515714" duration="15853000" />
+      <workItem from="1638536239943" duration="3300000" />
     </task>
     <servers />
   </component>
