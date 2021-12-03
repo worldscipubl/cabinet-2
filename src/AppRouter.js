@@ -19,40 +19,40 @@ export const AppRouter = () => {
   const [user] = useState(true);
 
   const getPrivateRoutes = () => [
-    <Route path="/" exact>
+    <Route path="/" exact key="index">
       <Redirect to="/article" />
     </Route>,
-    <Route path="/article" exact>
+    <Route path="/article" exact key="MyArticles">
       <MainLayout>
         <MyArticles />
       </MainLayout>
     </Route>,
-    <Route path="/article/:articleId?/:tabId?">
+    <Route path="/article/:articleId?/:tabId?" key="ArticlePage">
       <MainLayout>
         <ArticlePage />
       </MainLayout>
     </Route>,
-    <Route path="/referral">
+    <Route path="/referral/:tabId?" key="ReferralPage">
       <MainLayout>
         <ReferralPage />
       </MainLayout>
     </Route>,
-    <Route path="/profile">
-      <MainLayout title="Партнерка">
+    <Route path="/profile" key="ProfilePage">
+      <MainLayout>
         <ProfilePage />
       </MainLayout>
     </Route>,
-    <Route path="/chat">
+    <Route path="/chat" key="ChatPage">
       <MainLayout title="Чат">
         <ChatPage />
       </MainLayout>
     </Route>,
-    <Route path="/faq">
+    <Route path="/faq" key="FaqPage">
       <MainLayout title="FAQ">
         <FaqPage />
       </MainLayout>
     </Route>,
-    <Route path="/settings">
+    <Route path="/settings" key="SettingsPage">
       <MainLayout>
         <SettingsPage />
       </MainLayout>
@@ -60,17 +60,17 @@ export const AppRouter = () => {
   ];
 
   const getPublicRoutes = () => [
-    <Route path="/" exact>
+    <Route path="/" exact key="SignIn">
       <SignIn />
     </Route>,
-    <Route path="/sign-up">
+    <Route path="/sign-up" key="SignUp">
       <SignUp />
     </Route>,
-    <Route path="/forgot">
+    <Route path="/forgot" key="Forgot">
       <Forgot />
     </Route>,
     <Route>
-      <Redirect to="/" />
+      <Redirect to="/" key="index" />
     </Route>
   ];
 

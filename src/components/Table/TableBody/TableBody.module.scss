@@ -1,0 +1,5 @@
+@use './src/common/style/global' as *;
+
+.TableBody {
+  display: table-row-group;
+}

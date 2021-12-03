@@ -1,0 +1,12 @@
+@use './src/common/style/global' as *;
+
+.TableRow {
+  color: inherit;
+  display: table-row;
+  vertical-align: middle;
+  outline: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: initial;
+  font-weight: inherit;
+}

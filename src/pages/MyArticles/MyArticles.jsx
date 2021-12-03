@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import imgPlus from "../../common/images/icons/plus.svg";
 import "./MyArticles.scss";
@@ -10,6 +10,7 @@ import TabLayout from "../../layouts/TabLayout";
 
 const MyArticles = () => {
   const { data: articles, error, isLoading } = useGetArticlesQuery();
+  const { tabId } = useParams();
 
   const ArticleCard = ({ article }) => {
     const { articleId, statusTitle, title, journal, tariff, progress } =
@@ -90,7 +91,7 @@ const MyArticles = () => {
   };
 
   return (
-    <TabLayout title="Мои статьи">
+    <TabLayout title="Мои статьи" defaultTabs={tabId}>
       {getContent()}
     </TabLayout>
   );

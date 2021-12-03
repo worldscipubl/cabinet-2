@@ -1,0 +1,20 @@
+@use './src/common/style/global' as *;
+
+.TableCell {
+  font-family: $fontMain;
+  font-weight: inherit;
+  font-size: 0.875em;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: table-cell;
+  text-align: center;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  color: rgba(0, 0, 0, 0.87);
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: 1em;
+
+  @media screen and (max-width: $bp-tablet) {
+    padding: 0.8em 0.5em;
+  }
+}

@@ -1,0 +1,36 @@
+@use './src/common/style/global' as *;
+
+.TableHead {
+
+}
+
+.TableBody {
+
+}
+
+.TableCell {
+
+}
+
+.TableSkeleton {
+  width: 100%;
+}
+
+.TableCellID {
+  text-align: left;
+  @media screen and (max-width: $bp-tablet) {
+    display: none;
+  }
+}
+
+.TableCellReg {
+  @media screen and (max-width: $bp-mobile) {
+    display: none;
+  }
+}
+
+.TableCellUser {
+  @media screen and (max-width: $bp-tablet) {
+    text-align: left;
+  }
+}

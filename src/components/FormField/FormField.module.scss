@@ -140,6 +140,10 @@ $main-font-size: 16px;
   position: relative;
 }
 
+.textField__skeleton {
+  min-height: 1.25em;
+}
+
 .textField__helper {
   padding: 0 .75em;
   font-size: $label-font-size;

@@ -10,7 +10,7 @@ import ArticleRequest from "./ArticleRequest/ArticleRequest";
 import TabLayout from "../../layouts/TabLayout";
 
 const ArticlePage = () => {
-  const { articleId } = useParams();
+  const { articleId, tabId } = useParams();
   const { data: article, error, isLoading } = useGetArticleByIdQuery(articleId);
 
 
@@ -50,7 +50,7 @@ const ArticlePage = () => {
   };
 
   return (
-    <TabLayout title={getTitle(articleId)}>
+    <TabLayout title={getTitle(articleId)} defaultTabs={tabId}>
       {getContent(article)}
     </TabLayout>
   );

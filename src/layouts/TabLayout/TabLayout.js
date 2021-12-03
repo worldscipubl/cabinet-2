@@ -11,8 +11,7 @@ const getActiveTabDefault = (children, defaultTabs) => {
   return children[0].props.tabId || "default";
 };
 
-const TabLayout = ({ children, title, hideTabsBar }) => {
-  const { tabId: defaultTabs } = useParams();
+const TabLayout = ({ children, title, hideTabsBar, defaultTabs }) => {
   const [activeTab, setActiveTab] = useState(
     getActiveTabDefault(children, defaultTabs)
   );

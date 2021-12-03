@@ -1,0 +1,6 @@
+@use './src/common/style/global' as *;
+
+.TableContainer {
+  padding: 0;
+  overflow-x: scroll;
+}

@@ -19,6 +19,13 @@ const UserApi = entryApi.injectEndpoints({
         data
       }),
       invalidatesTags: ["userData"]
+    }),
+    setUserPassword: build.mutation({
+      query: (data) => ({
+        url: "users/password",
+        method: "put",
+        data
+      })
     })
   }),
   overrideExisting: false
@@ -26,5 +33,6 @@ const UserApi = entryApi.injectEndpoints({
 
 export const {
   useGetUserDataQuery,
-  useSetUserDataMutation
+  useSetUserDataMutation,
+  useSetUserPasswordMutation
 } = UserApi;
