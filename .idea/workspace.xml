@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabBtn/AuthorTabBtn.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabBtn/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabs/AuthorTabs.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabs/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AuthorForm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabButton/TabButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabButton/TabButton.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabButton/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/TabLayout/TabBar/TabBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabBar/TabBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tab/Tab.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabBtn/AuthorTabBtn.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorTabs/AuthorTabs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Tabs/Tabs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReferralTable/ReferralTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReferralTable/ReferralTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/functions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="23108" />
+    <option name="totalTimeSeconds" value="27460" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -173,7 +160,8 @@
       <workItem from="1638336265651" duration="21980000" />
       <workItem from="1638426585641" duration="3861000" />
       <workItem from="1638511515714" duration="15853000" />
-      <workItem from="1638536239943" duration="3300000" />
+      <workItem from="1638536239943" duration="3558000" />
+      <workItem from="1638778378792" duration="4776000" />
     </task>
     <servers />
   </component>

@@ -11,6 +11,7 @@ import TableBody from "../Table/TableBody";
 import TableRow from "../Table/TableRow";
 import TableCell from "../Table/TableCell";
 import cn from "./ReferralTable.module.scss";
+import { getDate } from "../../utils/functions";
 
 const ReferralTable = ({ className, data, isLoading }) => {
   if (!data) return <h3 className="text">empty</h3>;
@@ -37,8 +38,17 @@ const ReferralTable = ({ className, data, isLoading }) => {
               <TableRow key={id}>
                 <TableCell className={classNames(cn.TableCell, cn.TableCellID)}>{id}</TableCell>
                 <TableCell className={classNames(cn.TableCell, cn.TableCellUser)}>{name}</TableCell>
-                <TableCell className={classNames(cn.TableCell, cn.TableCellReg)}>{dateRegistration}</TableCell>
-                <TableCell className={classNames(cn.TableCell)}>{datePay}</TableCell>
+                <TableCell
+                  className={classNames(cn.TableCell, cn.TableCellReg)}>
+                  Регистрация <br />
+                  {getDate(dateRegistration)}
+                </TableCell>
+                <TableCell
+                  className={classNames(cn.TableCell)}>
+                  {datePay ? "Оплата" : "Ожидание оплаты"}
+                  <br />
+                  {datePay && getDate(datePay)}
+                </TableCell>
                 <TableCell className={classNames(cn.TableCell)}>{sum}</TableCell>
               </TableRow>
             ))}
