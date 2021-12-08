@@ -28,7 +28,7 @@ const TextField = ({
     }
     setError(err);
     setValue(value);
-    console.log(value);
+
     handlerField && handlerField(name, value, err);
   };
 

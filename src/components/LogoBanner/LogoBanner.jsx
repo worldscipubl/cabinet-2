@@ -2,10 +2,10 @@ import React from "react";
 import "./LogoBanner.scss";
 import Logo from "../../common/images/logo/logo_black.svg";
 
-export const LogoBanner = (props) => {
+const LogoBanner = (props) => {
   const linkBanner = {
     to: "https://www.worldscipubl.com/",
-    title: "www.worldscipubl.com",
+    title: "www.worldscipubl.com"
   };
 
   return (
@@ -22,3 +22,5 @@ export const LogoBanner = (props) => {
     </div>
   );
 };
+
+export default LogoBanner;

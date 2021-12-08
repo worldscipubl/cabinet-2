@@ -1,11 +1,11 @@
 import React from "react";
-import "./ReferralPage.scss";
+import { useParams } from "react-router-dom";
 import TabLayout from "../../layouts/TabLayout";
 import AdTab from "./tabs/AdTab";
 import AmountTab from "./tabs/AmountTab";
 import LinkTab from "./tabs/LinkTab";
-import PayoutTab from "./tabs/PayoutTab/PayoutTab";
-import { useParams } from "react-router-dom";
+import PayoutTab from "./tabs/PayoutTab";
+import "./ReferralPage.scss";
 
 
 const ReferralPage = (props) => {

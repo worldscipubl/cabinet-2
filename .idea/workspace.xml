@@ -5,8 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/endpoints/NotificationsApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/endpoints/PayoutsApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LogoBanner/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PreloadingScreen/PreloadingScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PreloadingScreen/PreloadingScreen.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PreloadingScreen/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Spinner/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/AuthForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/AuthForm.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormErrorsBoard/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormLogin/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormRegistration/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormReset/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthPage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/TextField/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/NotificationsPage/NotificationsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/NotificationsPage/NotificationsPage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/NotificationsPage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/PayoutTab.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReferralTable/ReferralTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReferralTable/ReferralTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keytmp.pem" beforeDir="false" afterPath="$PROJECT_DIR$/keytmp.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/endpoints/ChatApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/ChatApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/endpoints/UserApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/UserApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/entryApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/entryApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar/Avatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Avatar/Avatar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/TextField/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/TextField/TextField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loader/Loader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/Loader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LogoBanner/LogoBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogoBanner/LogoBanner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/TextField/TextField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextField.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/TextField/TextField.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField/TextFieldEditable.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormErrorsBoard/FormErrorsBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormErrorsBoard/FormErrorsBoard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormReset/FormReset.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormForgot/FormForgot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormSignIn/FormSignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormLogin/FormLogin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormRegistration/FormRegistration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/FormSignUp/FormSignUp.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/LoginLayout/LoginLayout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Forgot/Forgot.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Forgot/Forgot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticles/MyArticles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/ReferralPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/ReferralPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/PayoutTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/PayoutTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignIn/SignIn.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignIn/SignIn.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignUp/SignUp.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignUp/SignUp.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/articlesSlice/articlesSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/articlesSlice/articlesSliceAsync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/userSlice.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/functions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +77,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="27460" />
+    <option name="totalTimeSeconds" value="69626" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -56,11 +118,11 @@
       <recent name="$PROJECT_DIR$/src/components/Table/TableCell" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/AuthPage" />
       <recent name="$PROJECT_DIR$/src/layouts/TabLayout" />
       <recent name="$PROJECT_DIR$/src/components/AuthorForm" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/ReferralTable" />
-      <recent name="$PROJECT_DIR$/src/components/Header" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -161,7 +223,10 @@
       <workItem from="1638426585641" duration="3861000" />
       <workItem from="1638511515714" duration="15853000" />
       <workItem from="1638536239943" duration="3558000" />
-      <workItem from="1638778378792" duration="4776000" />
+      <workItem from="1638778378792" duration="8631000" />
+      <workItem from="1638854046980" duration="369000" />
+      <workItem from="1638856666778" duration="23043000" />
+      <workItem from="1638942805471" duration="13535000" />
     </task>
     <servers />
   </component>

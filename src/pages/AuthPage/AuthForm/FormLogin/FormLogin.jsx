@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import TextField from "../../components/TextField/TextField";
-import constraints from "../../utils/constraints";
-import FormErrorsBoard from "../FormErrorsBoard/FormErrorsBoard";
-import UserService from "../../services/UserService";
+import { Link, useHistory } from "react-router-dom";
+import constraints from "../../../../utils/constraints";
+import FormErrorsBoard from "../FormErrorsBoard";
+import TextField from "../../TextField";
+import { useLoginUserMutation } from "../../../../api/endpoints/UserApi";
 
-const FormSignIn = () => {
-  const [, setSubmitted] = useState(false);
-  const [, setLoading] = useState(false);
+const FormLogin = () => {
+  const [loginUser, { error: errorLoginUser } = {}] = useLoginUserMutation();
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
-  const userService = new UserService();
+  const history = useHistory();
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const input = e.target;
     if (!input) return;
 
@@ -24,40 +23,31 @@ const FormSignIn = () => {
 
     if (!isValid) {
       constraints[name] &&
-        setErrors({ ...errors, [name]: constraints[name].msg });
+      setErrors({ ...errors, [name]: constraints[name].msg });
     } else {
       setErrors(null);
     }
-  }
+  };
 
-  function handleForm(e) {
+  const handleForm = (e) => {
     e.preventDefault();
-    setSubmitted(true);
 
-    // stop here if form is invalid
-    if (!(state.password && state.email)) {
-      console.log("Form is invalid");
-      return;
-    }
+    if (!(state.password && state.email)) return;
 
-    setLoading(true);
     signIn(state.email, state.password);
-  }
+  };
 
-  function signIn(email, password) {
-    userService
-      .signIn({ email, password })
-      .then((userData) => {
-        console.log(userData);
+  const signIn = (email, password) => {
+    const userToken = window.btoa(email + ":" + password);
+    loginUser(userToken).unwrap()
+      .then((res) => {
+        localStorage.setItem("user_token", JSON.stringify(userToken));
+        history.push("/");
       })
       .catch((error) => {
-        if (error.extras) setErrors({ ...errors, form: error.extras });
-        else setErrors({ ...errors, form: error.message });
-      })
-      .finally(() => {
-        setLoading(false);
+        console.log(error);
       });
-  }
+  };
 
   return (
     <form className="auth-form" onSubmit={handleForm} noValidate>
@@ -82,8 +72,8 @@ const FormSignIn = () => {
                 name="email"
                 placeholder="Email"
                 required
-                onChange={(e) => handleChange(e)}
-                value={state.email}
+                onChange={handleChange}
+                value={state?.email || ""}
                 pattern={constraints.email.pattern}
               />
             </TextField>
@@ -96,17 +86,18 @@ const FormSignIn = () => {
             >
               <input
                 name="password"
+                autoComplete="on"
                 placeholder="Пароль"
                 type="password"
-                onChange={(e) => handleChange(e)}
-                value={state.password}
+                onChange={handleChange}
+                value={state?.password || ""}
                 required
               />
             </TextField>
           </div>
         </div>
 
-        <div className="divider"></div>
+        <i className="divider" />
         <div className="auth-form__other">
           <span className="text text_weight_bold auth-form__other-item">
             Нет аккаунта?
@@ -120,7 +111,7 @@ const FormSignIn = () => {
         </div>
         <div className="auth-form__actions">
           <div className="auth-form__action">
-            <Link className="link" to="/forgot">
+            <Link className="link" to="/reset">
               Восстановить пароль
             </Link>
           </div>
@@ -135,4 +126,4 @@ const FormSignIn = () => {
   );
 };
 
-export default FormSignIn;
+export default FormLogin;

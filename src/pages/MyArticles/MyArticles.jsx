@@ -5,8 +5,8 @@ import imgPlus from "../../common/images/icons/plus.svg";
 import "./MyArticles.scss";
 import { useGetArticlesQuery } from "../../api/endpoints/ArticlesApi";
 import Loader from "../../components/Loader";
-import MainLayout from "../../layouts/MainLayout";
 import TabLayout from "../../layouts/TabLayout";
+import Spinner from "../../components/Spinner";
 
 const MyArticles = () => {
   const { data: articles, error, isLoading } = useGetArticlesQuery();
@@ -72,7 +72,7 @@ const MyArticles = () => {
   };
 
   const getContent = () => {
-    if (isLoading) return <Loader />;
+    if (isLoading) return <Spinner />;
     if (error) return <h2 className="text text_align_center text_color_red">{error}</h2>;
     if (!articles) return <h2 className="text">Пусто...</h2>;
     return <article>

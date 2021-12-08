@@ -19,7 +19,7 @@ class UserService extends ApiService {
 
       this.setResource({
         url: "/users/registration",
-        data: fields,
+        data: fields
       })
         .then((response) => {
           if (response.status === 204) {
@@ -45,7 +45,7 @@ class UserService extends ApiService {
 
       this.setResource({
         url: "/users/login",
-        auth: { username: email, password },
+        auth: { username: email, password }
       })
         .then((response) => {
           if (response.status === 200) {

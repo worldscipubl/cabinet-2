@@ -1,20 +1,16 @@
 import React, { useState } from "react";
-import TextField from "../../components/TextField/TextField";
-import UserService from "../../services/UserService";
-import constraints from "../../utils/constraints";
 import { Link } from "react-router-dom";
-import Checkbox from "../../components/Checkbox/Checkbox";
-import FormErrorsBoard from "../FormErrorsBoard/FormErrorsBoard";
+import constraints from "../../../../utils/constraints";
+import FormErrorsBoard from "../FormErrorsBoard";
+import TextField from "../../TextField";
+import Checkbox from "../../../../components/Checkbox/Checkbox";
 
-const FormSignUp = () => {
-  const [, setSubmitted] = useState(false);
-  const [, setLoading] = useState(false);
+const FormRegistration = () => {
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const [checked, setChecked] = useState(false);
-  const userService = new UserService();
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const input = e.target;
     if (!input) return;
 
@@ -26,43 +22,23 @@ const FormSignUp = () => {
 
     if (!isValid) {
       constraints[name] &&
-        setErrors({ ...errors, [name]: constraints[name].msg });
+      setErrors({ ...errors, [name]: constraints[name].msg });
       return;
     } else {
       setErrors(null);
       return;
     }
-  }
+  };
 
-  function handleCheckbox(e) {
+  const handleCheckbox = (e) => {
     const value = e.target.checked;
     setChecked(value);
-  }
+  };
 
-  function handleForm(e) {
+  const handleForm = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    // stop here if form is invalid
-    if (!(state.name && state.email)) {
-      console.log("name: ", state.name);
-      console.log("email: ", state.email);
-      return;
-    }
-
-    setLoading(true);
-
-    userService
-      .signUp({ name: state.name, email: state.email })
-      .then((userData) => {
-        console.log(userData);
-      })
-      .catch((error) => {
-        setErrors({ ...errors, form: error.message });
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }
+    if (!(state.name && state.email)) return;
+  };
 
   return (
     <form className="auth-form" onSubmit={handleForm} noValidate>
@@ -127,13 +103,11 @@ const FormSignUp = () => {
               />
             </TextField>
           </div>
-
           <div className="auth-form__input">
             <Checkbox label="У меня есть купон">
               <input type="checkbox" onChange={(e) => handleCheckbox(e)} />
             </Checkbox>
           </div>
-
           <div className={`auth-form__input ${!checked && "hidden"}`}>
             <TextField
               label="Купон"
@@ -151,14 +125,14 @@ const FormSignUp = () => {
           </div>
         </div>
 
-        <div className="divider"></div>
+        <i className="divider" />
         <div className="auth-form__other">
           <div className="auth-form__other-item">
             <p className="text">Уже есть аккаунт?</p>
           </div>
 
           <div className="auth-form__other-item">
-            <Link className="link" to="/">
+            <Link className="link" to="/auth">
               Войти
             </Link>
           </div>
@@ -166,7 +140,7 @@ const FormSignUp = () => {
           <div className="auth-form__other-item">|</div>
 
           <div className="auth-form__other-item">
-            <Link className="link" to="/forgot">
+            <Link className="link" to="/reset">
               Восстановить пароль
             </Link>
           </div>
@@ -183,4 +157,4 @@ const FormSignUp = () => {
   );
 };
 
-export default FormSignUp;
+export default FormRegistration;

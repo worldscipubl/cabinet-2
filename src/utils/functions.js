@@ -12,9 +12,14 @@ export const getHashFromString = (str) => {
 
 export const getDate = (value) => {
   const SERVER_TIME_ZONE = 3;
-  const serverTimeZoneOffset = SERVER_TIME_ZONE * 3600;
-  const dateByUTC = (+value) - serverTimeZoneOffset;
-  const date = new Date(dateByUTC * 1000);
+  // Смещение времени сервера относительно UTC
+  const timeZoneOffsetServer = SERVER_TIME_ZONE * 3600;
+  // Смещение времени пользователя относительно UTC
+  const timezoneOffsetUTC = new Date().getTimezoneOffset() * 60;
+
+  const dateUTC = (+value) - timeZoneOffsetServer;
+  const dateLocal = dateUTC - timezoneOffsetUTC;
+  const date = new Date(dateLocal * 1000);
   const day = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();

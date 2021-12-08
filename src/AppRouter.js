@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "./common/style/app.scss";
 import Header from "./components/Header";
@@ -9,14 +9,14 @@ import ProfilePage from "./pages/ProfilePage";
 import ChatPage from "./pages/ChatPage";
 import FaqPage from "./pages/FaqPage";
 import NotFoundPage from "./domain/NotFoundPage";
-import { SignIn } from "./pages/SignIn/SignIn";
-import { SignUp } from "./pages/SignUp/SignUp";
-import { Forgot } from "./pages/Forgot/Forgot";
 import MainLayout from "./layouts/MainLayout";
 import SettingsPage from "./pages/SettingsPage";
+import AuthPage from "./pages/AuthPage";
+import { useGetUserQuery } from "./api/endpoints/UserApi";
+import PreloadingScreen from "./components/PreloadingScreen";
 
 export const AppRouter = () => {
-  const [user] = useState(true);
+  const { data: user, error, isLoading } = useGetUserQuery();
 
   const getPrivateRoutes = () => [
     <Route path="/" exact key="index">
@@ -60,17 +60,8 @@ export const AppRouter = () => {
   ];
 
   const getPublicRoutes = () => [
-    <Route path="/" exact key="SignIn">
-      <SignIn />
-    </Route>,
-    <Route path="/sign-up" key="SignUp">
-      <SignUp />
-    </Route>,
-    <Route path="/forgot" key="Forgot">
-      <Forgot />
-    </Route>,
-    <Route>
-      <Redirect to="/" key="index" />
+    <Route path="/:tabId?" exact key="authPage">
+      <AuthPage />
     </Route>
   ];
 
@@ -78,7 +69,7 @@ export const AppRouter = () => {
     <Switch>
       {user ? getPrivateRoutes() : getPublicRoutes()}
       <Route>
-        <NotFoundPage />
+        <NotFoundPage key="NotFoundPage" />
       </Route>
     </Switch>
   );
@@ -86,6 +77,7 @@ export const AppRouter = () => {
   return (
     <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
       <div className="app">
+        <PreloadingScreen isLoading={isLoading} />
         {user && <Header />}
         <Routes />
       </div>

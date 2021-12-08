@@ -30,7 +30,6 @@ const ChatApi = entryApi.injectEndpoints({
           //общее количество ресурсов
           const totalCount = +response?.headers["x-pagination-total-count"] || 0;
 
-          // return transResponse;
           const res = messagesAdapter.addMany(messagesAdapter.getInitialState(), response.data).entities;
           return { data: Object.values(res), currentPage, pageCount };
 

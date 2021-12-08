@@ -49,11 +49,11 @@ const initStyleAvatar = ({ size, type, border }) => {
   return style;
 };
 
-export const Avatar = (props) => {
+export const Avatar = ({ onClick, ...props }) => {
   const style = initStyleAvatar(props);
 
   return (
-    <div className={style}>
+    <div className={style} onClick={onClick}>
       <img
         className="avatar__img"
         src="https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg"

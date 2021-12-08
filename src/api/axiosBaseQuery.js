@@ -2,15 +2,22 @@ import axios from "axios";
 import HTTPError from "../services/HTTPError";
 
 export const axiosBaseQuery = (
-  { baseUrl, auth } = { baseUrl: "", auth: {} }
-) => {
+  { baseUrl, auth, prepareHeaders } = { baseUrl: "", auth: {} }) => {
   const hasLogging = true;
+
   const wspAxios = axios.create({
     baseUrl,
     headers: { "Content-Type": "application/json" },
     withCredentials: false,
     auth
   });
+
+  const checkTokenInterceptor = (config) => {
+    const token = localStorage.getItem("user_token");
+    console.log(token);
+    if (token) config.headers.Authorization = `Basic ${token}`;
+    return config;
+  };
 
   const logMessage = (msg, data) => {
     if (!hasLogging) return;
@@ -27,7 +34,9 @@ export const axiosBaseQuery = (
     console.groupEnd();
   };
 
-  return async ({ url, method, data, params, auth }) => {
+  wspAxios.interceptors.request.use(checkTokenInterceptor);
+
+  return async ({ url, method, data, params, auth, headers }) => {
     if (method === "post")
       logMessageSend("Request API", data);
     try {
@@ -36,7 +45,8 @@ export const axiosBaseQuery = (
         method,
         data,
         params,
-        auth
+        auth,
+        headers
       });
       logMessage("Response API", response);
       console.log(response);

@@ -1,11 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import couponImg from "../../common/images/icons/coupon.svg";
 import HeaderLogo from "./HeaderLogo";
 import "./Header.scss";
 import Avatar from "../Avatar";
 
 const Header = () => {
+  const history = useHistory();
   const style = `app__header header`;
 
   return (
@@ -31,7 +32,10 @@ const Header = () => {
             </NavLink>
           </li>
           <li className="header__action-item">
-            <Avatar size="small" type="button" border="primary" />
+            <Avatar size="small" type="button" border="primary" onClick={() => {
+              localStorage.removeItem("user_token");
+              history.push("/");
+            }} />
           </li>
         </ul>
       </div>

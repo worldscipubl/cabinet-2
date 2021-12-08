@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import TextField from "../../components/TextField/TextField";
-import constraints from "../../utils/constraints";
-import UserService from "../../services/UserService";
+import constraints from "../../../../utils/constraints";
+import TextField from "../../TextField";
 
-const FormForgot = () => {
-  const [, setSubmitted] = useState(false);
-  const [, setLoading] = useState(false);
+const FormReset = () => {
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
-  const userService = new UserService();
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const input = e.target;
     if (!input) return;
 
@@ -28,31 +24,12 @@ const FormForgot = () => {
       setErrors(null);
       return;
     }
-  }
+  };
 
-  function handleForm(e) {
+  const handleForm = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    // stop here if form is invalid
-    if (!(state.name && state.email)) {
-      console.log("name: ", state.name);
-      console.log("email: ", state.email);
-      return;
-    }
-
-    setLoading(true);
-
-    userService.signUp({ name: state.name, email: state.email }).then(
-      (userData) => {
-        console.log(userData);
-        setLoading(false);
-      },
-      (error) => {
-        setErrors(error);
-        setLoading(false);
-      }
-    );
-  }
+    if (!(state.name && state.email)) return;
+  };
 
   return (
     <form className="auth-form" onSubmit={handleForm}>
@@ -84,10 +61,10 @@ const FormForgot = () => {
           </div>
         </div>
 
-        <div className="divider"></div>
+        <i className="divider" />
         <div className="auth-form__other">
           <h6 className="">
-            <Link className="link" to="/">
+            <Link className="link" to="/auth">
               Войти в личный кабинет
             </Link>
           </h6>
@@ -104,4 +81,4 @@ const FormForgot = () => {
   );
 };
 
-export default FormForgot;
+export default FormReset;
