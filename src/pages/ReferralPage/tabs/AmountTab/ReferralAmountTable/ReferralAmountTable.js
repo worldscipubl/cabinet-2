@@ -3,17 +3,18 @@ import PropTypes from "prop-types";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import classNames from "classnames";
-import TableContainer from "../Table/TableContainer";
-import Table from "../Table";
-import Paper from "../Paper";
-import ReferralTableHeader from "./ReferralTableHeader";
-import TableBody from "../Table/TableBody";
-import TableRow from "../Table/TableRow";
-import TableCell from "../Table/TableCell";
-import cn from "./ReferralTable.module.scss";
-import { getDate } from "../../utils/functions";
+import cn from "./ReferralAmountTable.module.scss";
 
-const ReferralTable = ({ className, data, isLoading }) => {
+import ReferralTableHeader from "./ReferralTableHeader";
+import TableRow from "../../../../../components/Table/TableRow";
+import TableCell from "../../../../../components/Table/TableCell";
+import TableContainer from "../../../../../components/Table/TableContainer";
+import Table from "../../../../../components/Table";
+import TableBody from "../../../../../components/Table/TableBody";
+import Paper from "../../../../../components/Paper";
+import { getDate } from "../../../../../utils/functions";
+
+const ReferralAmountTable = ({ className, data, isLoading }) => {
   if (!data) return <h3 className="text">empty</h3>;
 
   const SkeletonRow = () => {
@@ -58,8 +59,8 @@ const ReferralTable = ({ className, data, isLoading }) => {
   );
 };
 
-ReferralTable.propTypes = {
+ReferralAmountTable.propTypes = {
   data: PropTypes.array.isRequired
 };
 
-export default ReferralTable;
+export default ReferralAmountTable;

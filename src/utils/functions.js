@@ -10,7 +10,7 @@ export const getHashFromString = (str) => {
 };
 
 
-export const getDate = (value) => {
+export const getDate = (value, isFull) => {
   const SERVER_TIME_ZONE = 3;
   // Смещение времени сервера относительно UTC
   const timeZoneOffsetServer = SERVER_TIME_ZONE * 3600;
@@ -23,5 +23,10 @@ export const getDate = (value) => {
   const day = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();
-  return `${day}.${(0 + String(month + 1).slice(-2))}.${year}`;
+  const hour = date.getHours();
+  const minutes = date.getMinutes();
+
+  if (isFull) return `${day}.${(0 + String(month + 1).slice(-2))}.${year} / ${String(hour).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+
+  return `${String(day).padStart(2, "0")}.${(String(month + 1).padStart(2, "0"))}.${year}`;
 };

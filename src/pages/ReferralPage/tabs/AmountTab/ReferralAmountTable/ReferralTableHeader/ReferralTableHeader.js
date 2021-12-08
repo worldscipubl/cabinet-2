@@ -1,9 +1,9 @@
 import React from "react";
 import classNames from "classnames";
-import TableHead from "../../Table/TableHead";
-import TableCell from "../../Table/TableCell";
-import TableRow from "../../Table/TableRow";
-import cn from "../ReferralTable.module.scss";
+import cn from "../ReferralAmountTable.module.scss";
+import TableHead from "../../../../../../components/Table/TableHead";
+import TableRow from "../../../../../../components/Table/TableRow";
+import TableCell from "../../../../../../components/Table/TableCell";
 
 
 const ReferralTableHeader = () => {
