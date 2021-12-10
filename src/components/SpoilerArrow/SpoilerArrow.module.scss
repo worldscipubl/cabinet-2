@@ -1,0 +1,23 @@
+@use './src/common/style/global' as *;
+
+.ArrowWrapper {
+  margin-left: auto;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+
+.ArrowImg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  fill: rgba(0, 0, 0, 0.54);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}

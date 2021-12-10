@@ -9,10 +9,9 @@ const ReferralTableHeader = () => {
   return (
     <TableHead className={classNames(cn.TableHead)}>
       <TableRow>
-        <TableCell className={classNames(cn.TableCell, cn.TableCellFirst)}>Название</TableCell>
-        <TableCell className={classNames(cn.TableCell)}>Дата</TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellFirst)}>Дата</TableCell>
         <TableCell className={classNames(cn.TableCell)}>Сумма</TableCell>
-        <TableCell className={classNames(cn.TableCell)}>Кошелек</TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}>Кошелек</TableCell>
       </TableRow>
     </TableHead>
   );

@@ -14,6 +14,7 @@ import SettingsPage from "./pages/SettingsPage";
 import AuthPage from "./pages/AuthPage";
 import { useGetUserQuery } from "./api/endpoints/UserApi";
 import PreloadingScreen from "./components/PreloadingScreen";
+import NotificationsPage from "./pages/NotificationsPage";
 
 export const AppRouter = () => {
   const { data: user, error, isLoading } = useGetUserQuery();
@@ -37,19 +38,24 @@ export const AppRouter = () => {
         <ReferralPage />
       </MainLayout>
     </Route>,
-    <Route path="/profile" key="ProfilePage">
+    <Route path="/profile" exact key="ProfilePage">
       <MainLayout>
         <ProfilePage />
       </MainLayout>
     </Route>,
-    <Route path="/chat" key="ChatPage">
+    <Route path="/chat" exact key="ChatPage">
       <MainLayout title="Чат">
         <ChatPage />
       </MainLayout>
     </Route>,
-    <Route path="/faq" key="FaqPage">
+    <Route path="/faq" exact key="FaqPage">
       <MainLayout title="FAQ">
         <FaqPage />
+      </MainLayout>
+    </Route>,
+    <Route path="/notifications" exact key="NotificationsPage">
+      <MainLayout>
+        <NotificationsPage />
       </MainLayout>
     </Route>,
     <Route path="/settings" key="SettingsPage">

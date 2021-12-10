@@ -10,7 +10,7 @@ import TableContainer from "../../../../../components/Table/TableContainer";
 import Table from "../../../../../components/Table";
 import TableBody from "../../../../../components/Table/TableBody";
 import Paper from "../../../../../components/Paper";
-import { getDate } from "../../../../../utils/functions";
+import { getDate, getTime } from "../../../../../utils/functions";
 import cn from "./ReferralPayoutTable.module.scss";
 
 const ReferralPayoutTable = ({ className, data, isLoading }) => {
@@ -35,16 +35,21 @@ const ReferralPayoutTable = ({ className, data, isLoading }) => {
           {isLoading ? <SkeletonRow />
             : data.map(({ sum, date, walletName, walletValue }) => (
               <TableRow key={walletValue + date}>
-                <TableCell className={classNames(cn.TableCell, cn.TableCellFirst)}>{walletName}</TableCell>
                 <TableCell
-                  className={classNames(cn.TableCell, cn.TableCellReg)}>
-                  {getDate(date, true)}
+                  className={classNames(cn.TableCell, cn.TableCellFirst)}>
+                  {getDate(date)}
+                  <br />
+                  {getTime(date)}
                 </TableCell>
                 <TableCell
                   className={classNames(cn.TableCell)}>
                   {sum}
                 </TableCell>
-                <TableCell className={classNames(cn.TableCell)}>{walletValue}</TableCell>
+                <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}>
+                  {walletName}
+                  <br />
+                  {walletValue}
+                </TableCell>
               </TableRow>
             ))}
         </TableBody>

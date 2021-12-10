@@ -1,0 +1,62 @@
+@use './src/common/style/global' as *;
+
+.Accordion {
+  position: relative;
+  margin: 0;
+  border-left: 2px solid salmon;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &.isRead {
+    border-color: $colorShadow;
+  }
+
+  &:not(:first-child) {
+    &:before {
+      content: "";
+      position: absolute;
+      top: -0.5em;
+      left: 0;
+      right: 0;
+      border-top: 1px solid $label-bg-gray;
+    }
+  }
+}
+
+.AccordionHeader {
+  padding: 0.5em;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.AccordionSubHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AccordionBody {
+  overflow: hidden;
+  max-height: 1000px;
+  transition: max-height 1s ease-in-out;
+
+  &[aria-expanded="true"] {
+    max-height: 0px;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  }
+}
+
+.AccordionInner {
+  padding: 0.5em;
+  padding-top: 0;
+  margin-top: 0.3em;
+}
+
+.Skeleton {
+  min-width: 98px;
+}

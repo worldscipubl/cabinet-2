@@ -2,8 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import ReferralDashboard from "../../../../components/ReferralDashboard";
 import { useGetPayoutsQuery } from "../../../../api/endpoints/PayoutsApi";
+import ReferralPayoutTable from "./ReferralPayoutTable";
 import cn from "../AmountTab/AmountTab.module.scss";
-import ReferralPayoutTable from "../AmountTab/ReferralPayoutTable";
 
 const PayoutTab = () => {
   const { data, error, isLoading } = useGetPayoutsQuery();

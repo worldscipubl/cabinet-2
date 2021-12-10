@@ -30,3 +30,21 @@ export const getDate = (value, isFull) => {
 
   return `${String(day).padStart(2, "0")}.${(String(month + 1).padStart(2, "0"))}.${year}`;
 };
+
+
+export const getTime = (value) => {
+  const SERVER_TIME_ZONE = 3;
+  // Смещение времени сервера относительно UTC
+  const timeZoneOffsetServer = SERVER_TIME_ZONE * 3600;
+  // Смещение времени пользователя относительно UTC
+  const timezoneOffsetUTC = new Date().getTimezoneOffset() * 60;
+
+  const dateUTC = (+value) - timeZoneOffsetServer;
+  const dateLocal = dateUTC - timezoneOffsetUTC;
+  const date = new Date(dateLocal * 1000);
+
+  const hour = date.getHours();
+  const minutes = date.getMinutes();
+
+  return `${String(hour).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+};

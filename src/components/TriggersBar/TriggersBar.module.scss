@@ -1,0 +1,33 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.Item {
+  position: relative;
+  font-family: $fontMain;
+  font-size: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &:hover {
+    border-bottom: 1px solid black;
+  }
+
+  &:not(:first-child) {
+    margin-left: 1em;
+  }
+
+  &.active {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+  }
+}
+
+.Skeleton {
+  width: 85px;
+}
