@@ -1,11 +1,12 @@
 @use './src/common/style/global' as *;
+@use "sass:math";
 
 $border-thickness: .12em;
 $border-color: #ced4da;
 $border-color-focus: #4D90FE;
 $label-font-size: 0.876em;
 $main-font-size: 16px;
-$btn-offset-size: -#{$border-thickness / 2};
+$btn-offset-size: -#{math.div($border-thickness, 2)};
 
 .field {
   font-family: $fontMain;

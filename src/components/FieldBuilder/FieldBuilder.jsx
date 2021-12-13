@@ -16,7 +16,7 @@ const FieldBuilder = ({ type, defaultError, defaultValue, handleChange, ...props
     const { handleChange: handler, ...props } = handleChange();
     if (!handler) return;
     handler({ ...props, value });
-  }, [value]);
+  }, [value, handleChange]);
 
   useEffect(() => {
     setError(defaultError);

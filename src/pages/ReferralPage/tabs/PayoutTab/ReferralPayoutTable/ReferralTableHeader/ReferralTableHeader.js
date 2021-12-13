@@ -11,7 +11,8 @@ const ReferralTableHeader = () => {
       <TableRow>
         <TableCell className={classNames(cn.TableCell, cn.TableCellFirst)}>Дата</TableCell>
         <TableCell className={classNames(cn.TableCell)}>Сумма</TableCell>
-        <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}>Кошелек</TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellName)}>Карта</TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}>Номер карты</TableCell>
       </TableRow>
     </TableHead>
   );

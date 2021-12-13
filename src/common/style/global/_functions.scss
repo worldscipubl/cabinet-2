@@ -1,13 +1,14 @@
 @use 'variables' as *;
+@use "sass:math";
 
 @function rem($px) {
-  @return #{$px / 16}rem;
+  @return #{math.div($px / 16)}rem;
 }
 
 @function get-vw($px-vw, $base-vw: 1280px) {
-  @return ($px-vw * 100vw) / $base-vw;
+  @return math.div($px-vw * 100vw, $base-vw)
 }
 
 @function get-vh($px-vh, $base-vh: 600px) {
-  @return ($px-vh * 100vh) / $base-vh;
+  @return math.div($px-vh * 100vw, $base-vh)
 }

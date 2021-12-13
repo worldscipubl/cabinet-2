@@ -8,14 +8,15 @@ import cn from "../AmountTab/AmountTab.module.scss";
 const PayoutTab = () => {
   const { data, error, isLoading } = useGetPayoutsQuery();
   const metrics = [
-    { label: "Ваш баланс", field: "current" },
-    { label: "Выведено средств", field: "output" }
+    { label: "Баланс", field: "current" },
+    { label: "Выведено", field: "output" }
   ];
 
   return (
     <div className={classNames(cn.Container)}>
       <ReferralDashboard isLoading={isLoading} data={data?.metrics} metrics={metrics}
                          className={classNames(cn.Dashboard)} />
+      <button className={classNames(cn.BtnCashout, "button button_type_main")}>Вывести денежные средства</button>
       <ReferralPayoutTable isLoading={isLoading} data={data?.data || []} className={classNames(cn.Table)} />
     </div>
   );

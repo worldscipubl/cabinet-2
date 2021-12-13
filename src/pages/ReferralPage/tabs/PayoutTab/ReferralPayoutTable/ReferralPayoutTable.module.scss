@@ -20,6 +20,12 @@
   text-align: right;
 }
 
+.TableCellName {
+  @media screen and (max-width: $bp-mobile) {
+    display: none;
+  }
+}
+
 .TableSkeleton {
   width: 100%;
 }

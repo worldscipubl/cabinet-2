@@ -21,8 +21,8 @@ const ReferralPayoutTable = ({ className, data, isLoading }) => {
       <TableRow key={id}>
         <TableCell className={classNames(cn.TableCell)}><Skeleton /></TableCell>
         <TableCell className={classNames(cn.TableCell)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell)}><Skeleton /></TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellName)}><Skeleton /></TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}><Skeleton /></TableCell>
       </TableRow>
     ));
   };
@@ -45,10 +45,12 @@ const ReferralPayoutTable = ({ className, data, isLoading }) => {
                   className={classNames(cn.TableCell)}>
                   {sum}
                 </TableCell>
-                <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}>
+                <TableCell
+                  className={classNames(cn.TableCell, cn.TableCellName)}>
                   {walletName}
-                  <br />
-                  {walletValue}
+                </TableCell>
+                <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}>
+                  ...{walletValue}
                 </TableCell>
               </TableRow>
             ))}

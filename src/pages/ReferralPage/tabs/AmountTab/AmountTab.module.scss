@@ -4,6 +4,15 @@
 
 }
 
+.BtnCashout {
+  margin: 1em 0;
+
+  @media screen and (max-width: $bp-mobile) {
+    display: block;
+    margin: 1em auto;
+  }
+}
+
 .Dashboard {
   margin-bottom: 1em;
 }

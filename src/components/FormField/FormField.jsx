@@ -29,14 +29,18 @@ const FormField = ({
   const inputRef = useRef(null);
 
   useEffect(() => {
-    resetField();
-  }, [defaultValue]);
+    setValue(defaultValue);
+    setError(defaultError);
+    setDisabled(false);
+    setReadOnly(true);
+    setFileName("");
+  }, [defaultValue, defaultError]);
 
   useEffect(() => {
     if (error !== defaultError) setError(defaultError);
-  }, [defaultError]);
+  }, [defaultError, error]);
 
-  const resetField = () => {
+  function resetField() {
     setValue(defaultValue);
     setError(defaultError);
     setDisabled(false);

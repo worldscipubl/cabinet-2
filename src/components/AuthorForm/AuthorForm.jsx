@@ -38,8 +38,8 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
   const validationForm = () => {
     resetError();
     let isValid = true;
-    valueAuthors.map((author, idAuthor) => {
-      fields.map(({ name, placeholder }) => {
+    valueAuthors.foreach((author, idAuthor) => {
+      fields.foreach(({ name, placeholder }) => {
         const isFieldValid = (author.hasOwnProperty(name) && !!author[name]);
         if (!isFieldValid) {
           isValid = false;
@@ -52,7 +52,7 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
       });
     });
 
-    fieldsSecond.map(({ name, placeholder }) => {
+    fieldsSecond.foreach(({ name, placeholder }) => {
       const isFieldValid = (valueReg.hasOwnProperty(name) && !!valueReg[name]);
       if (!isFieldValid) {
         isValid = false;

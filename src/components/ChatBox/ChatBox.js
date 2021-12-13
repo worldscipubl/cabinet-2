@@ -41,13 +41,13 @@ const ChatBox = ({ articleId }) => {
       setMessages(prevMessages => [...newMessages, ...prevMessages]);
     else
       setMessages(prevMessages => [...prevMessages, ...newMessages]);
-  }, [newMessages]);
+  }, [newMessages, currentPage, page]);
 
   useEffect(() => {
     if (!Number.isInteger(page)) return;
     if (page === 0) return;
     trigger({ articleId, page });
-  }, [page]);
+  }, [page, articleId, trigger]);
 
   return (
     <div className="chat-box" id="chat-box">

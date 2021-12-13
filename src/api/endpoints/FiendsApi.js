@@ -1,4 +1,3 @@
-import React from "react";
 import entryApi from "../entryApi";
 
 const FiendsApi = entryApi.injectEndpoints({

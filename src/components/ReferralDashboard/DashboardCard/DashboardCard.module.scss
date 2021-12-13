@@ -13,6 +13,7 @@
 }
 
 .CardLabel {
+  font-family: $fontMain;
   text-align: center;
   font-weight: bold;
   font-size: 24px;
@@ -22,14 +23,16 @@
   }
 
   @media screen and (max-width: $bp-mobile) {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
 .CardValue {
+  font-family: $fontMain;
   text-align: center;
   font-weight: bold;
   font-size: 58px;
+  line-height: 100%;
   margin-top: 0.2em;
 
   min-width: 75%;
@@ -39,6 +42,6 @@
   }
 
   @media screen and (max-width: $bp-mobile) {
-    font-size: 18px;
+    font-size: 24px;
   }
 }

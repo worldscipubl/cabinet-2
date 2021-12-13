@@ -19,34 +19,36 @@ const ChatListMessages = ({ messages, error, isLoading, currentPage, pageCount, 
     handlePagination(page);
   };
 
-
-  const options = {
-    root: parentScrollRef.current,
-    rootMargin: "20%",
-    threshold: 0
-  };
-
-  const handleObserver = ((entries) => {
-    const [entry] = entries;
-    if (!entry) return;
-    const entryName = entry.target.dataset.name;
-    if (entry.isIntersecting && entryName) {
-      console.log("handleObserver:", entryName);
-      handlePagination && handlePagination(entryName);
-    }
-  });
-
   useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver, options);
-    if (prevRef.current) observer.observe(prevRef.current);
-    if (nextRef.current) observer.observe(nextRef.current);
-
-    return () => {
-      if (prevRef.current) observer.unobserve(prevRef.current);
-      if (nextRef.current) observer.unobserve(nextRef.current);
+    const options = {
+      root: parentScrollRef.current,
+      rootMargin: "20%",
+      threshold: 0
     };
 
-  }, [prevRef, nextRef, options]);
+    const handleObserver = ((entries) => {
+      const [entry] = entries;
+      if (!entry) return;
+      const entryName = entry.target.dataset.name;
+      if (entry.isIntersecting && entryName) {
+        console.log("handleObserver:", entryName);
+        handlePagination && handlePagination(entryName);
+      }
+    });
+
+    const observer = new IntersectionObserver(handleObserver, options);
+    const prevRefCurrent = prevRef.current;
+    const nextRefCurrent = nextRef.current;
+
+    if (prevRefCurrent) observer.observe(prevRef.current);
+    if (nextRefCurrent) observer.observe(nextRef.current);
+
+    return () => {
+      if (prevRefCurrent) observer.unobserve(prevRefCurrent);
+      if (nextRefCurrent) observer.unobserve(nextRefCurrent);
+    };
+
+  }, [prevRef, nextRef, handlePagination]);
 
   const Messages = ({ data }) => {
     // if (isLoading) return <Loader />;

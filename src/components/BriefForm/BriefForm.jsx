@@ -15,12 +15,12 @@ const BriefForm = ({
                      checkLoading
                    }) => {
   const { data, error, isLoading } = useQuery(articleId);
-  const [mutationBrief, {}] = useMutation();
+  const [mutationBrief] = useMutation();
   const [stateFields, setStateFields] = useState({});
 
   useEffect(() => {
     checkLoading(isLoading);
-  }, [isLoading]);
+  }, [isLoading, checkLoading]);
 
   useEffect(() => {
     if (!data) return;
@@ -34,7 +34,7 @@ const BriefForm = ({
     if (!checkValidationForm) return;
     checkValidationForm(nameForm, status);
 
-  }, [stateFields]);
+  }, [stateFields, checkValidationForm, isLoading, nameForm]);
 
   const handleFieldSubmit = async (nameField, valueField) => {
     if (!valueField) return;

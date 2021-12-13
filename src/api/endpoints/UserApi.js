@@ -1,13 +1,4 @@
-import React from "react";
 import entryApi from "../entryApi";
-import { createEntityAdapter } from "@reduxjs/toolkit";
-import { getHashFromString } from "../../utils/functions";
-
-const userAdapter = createEntityAdapter({
-  selectId: (user) => {
-    return user?.email;
-  }
-});
 
 const UserApi = entryApi.injectEndpoints({
   endpoints: (build) => ({

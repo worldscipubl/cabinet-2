@@ -1,4 +1,3 @@
-import React from "react";
 import entryApi from "../entryApi";
 
 const NotificationsApi = entryApi.injectEndpoints({
