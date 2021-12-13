@@ -5,30 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotificationItem/NotificationItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotificationItem/NotificationItem.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotificationItem/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SpoilerArrow/SpoilerArrow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SpoilerArrow/SpoilerArrow.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SpoilerArrow/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TriggersBar/TriggersBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TriggersBar/TriggersBar.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TriggersBar/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/NotificationsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/NotificationsApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/global/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/global/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotificationsPage/NotificationsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotificationsPage/NotificationsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotificationsPage/NotificationsPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotificationsPage/NotificationsPage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/ReferralPayoutTable/ReferralPayoutTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralPayoutTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/ReferralPayoutTable/ReferralPayoutTable.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralPayoutTable.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/ReferralPayoutTable/ReferralTableHeader/ReferralTableHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralTableHeader/ReferralTableHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/ReferralPayoutTable/ReferralTableHeader/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralTableHeader/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/ReferralPayoutTable/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/PayoutTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/PayoutTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="97806" />
+    <option name="totalTimeSeconds" value="97850" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -188,7 +168,8 @@
       <workItem from="1638942805471" duration="19731000" />
       <workItem from="1639029810521" duration="734000" />
       <workItem from="1639116615256" duration="13467000" />
-      <workItem from="1639139452292" duration="6513000" />
+      <workItem from="1639139452292" duration="6555000" />
+      <workItem from="1639391977413" duration="711000" />
     </task>
     <servers />
   </component>
