@@ -8,9 +8,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/common/style/partials/_partials.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/partials/_partials.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLogo/HeaderLogo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLogo/HeaderLogo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/TabLayout/TabLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.scss" afterDir="false" />
+>>>>>>> 17a334399e027c623b1383ea458c5840e863ec47
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +30,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
+<<<<<<< HEAD
     <option name="totalTimeSeconds" value="125296" />
+=======
+    <option name="totalTimeSeconds" value="120320" />
+>>>>>>> 17a334399e027c623b1383ea458c5840e863ec47
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -172,7 +188,11 @@
       <workItem from="1639116615256" duration="13467000" />
       <workItem from="1639139452292" duration="6555000" />
       <workItem from="1639391977413" duration="15713000" />
+<<<<<<< HEAD
       <workItem from="1639474860946" duration="12472000" />
+=======
+      <workItem from="1639474860946" duration="7254000" />
+>>>>>>> 17a334399e027c623b1383ea458c5840e863ec47
     </task>
     <servers />
   </component>
