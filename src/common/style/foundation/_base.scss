@@ -21,7 +21,7 @@ ion-icon {
 
 .app__aside-menu {
   overflow: hidden;
-  flex: 0 0 283px;
+  flex: 0 0 $navbar-width;
   z-index: 1;
 }
 
@@ -43,6 +43,7 @@ ion-icon {
   position: relative;
   z-index: 2;
   overflow: hidden;
+  padding: 12px 24px 12px 17px;
 }
 
 .app__body {
@@ -75,17 +76,24 @@ hr {
 
 @media screen and (max-width: $bp-tablet) {
   .app__aside-menu {
-    flex-basis: 86px;
+    flex-basis: 70px;
+    padding: 8px 6px;
+  }
+
+  .app__main {
+    padding: 8px;
   }
 }
 
 @media screen and (max-width: $bp-mobile) {
-  .app__header {
-    display: none;
-  }
 
   .app__aside-menu {
     flex: 0 1 auto;
+  }
+
+  .app__header {
+    flex-basis: 50px;
+    padding: 4px 8px;
   }
 
   .app__body {
@@ -97,6 +105,11 @@ hr {
   }
 
   .app__main {
-    padding: 0;
+    padding: 8px;
+  }
+
+  .app__aside-menu {
+    flex-basis: 50px;
+    padding: 4px 8px;
   }
 }

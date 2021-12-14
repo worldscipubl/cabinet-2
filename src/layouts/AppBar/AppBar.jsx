@@ -10,7 +10,6 @@ const AppBar = ({ title, hideTabsBar, children }) => {
   return (
     <header className="app-bar">
       <ul className="app-bar__actions">
-        {/*TODO: не самая лучшая реализация. Надо переделать так, чтобы кнопка назаж появлял только на...*/}
         {!["/article", "/"].includes(location.pathname) && (
           <li className="app-bar__action app-bar__action_back">
             <Link to="/">

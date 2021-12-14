@@ -24,14 +24,12 @@ const TabLayout = ({ children, title, hideTabsBar, defaultTabs }) => {
 
   return (
     <>
-      <TabBar title={title} activeTab={activeTab} handleTab={setActiveTab} hideTabsBar={hideTabsBar}>
+      {/*<TabBar title={title} activeTab={activeTab} handleTab={setActiveTab} hideTabsBar={hideTabsBar}>*/}
+      {/*  {children}*/}
+      {/*</TabBar>*/}
+      <TabContent activeTab={activeTab}>
         {children}
-      </TabBar>
-      <div className="app__inner">
-        <TabContent activeTab={activeTab}>
-          {children}
-        </TabContent>
-      </div>
+      </TabContent>
     </>
   );
 };

@@ -10,7 +10,7 @@
 }
 
 .menu__inner {
-  padding: 16px 18px;
+  padding: 16px 12px;
 }
 
 .menu__bottom {
@@ -39,7 +39,7 @@
 
 @media screen and (max-width: $bp-tablet) {
   .menu__inner {
-    padding: 12px;
+    padding: 0;
   }
 
   .menu__bottom {
@@ -49,8 +49,7 @@
 
 @media screen and (max-width: $bp-mobile) {
   .menu__inner {
-    padding: 8px 12px;
-
+    padding: 0;
     display: flex;
     flex-direction: row;
     width: 100%;

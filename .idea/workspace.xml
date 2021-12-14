@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/IonIcon/IonIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/IonIcon/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MenuList/MenuList.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MenuList/MenuList.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/global/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/global/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="113123" />
+    <option name="totalTimeSeconds" value="122177" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -179,12 +172,22 @@
       <workItem from="1639116615256" duration="13467000" />
       <workItem from="1639139452292" duration="6555000" />
       <workItem from="1639391977413" duration="15713000" />
-      <workItem from="1639474860946" duration="416000" />
+      <workItem from="1639474860946" duration="9146000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

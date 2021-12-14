@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "./common/style/app.scss";
 import Header from "./components/Header";
@@ -17,7 +17,10 @@ import PreloadingScreen from "./components/PreloadingScreen";
 import NotificationsPage from "./pages/NotificationsPage";
 
 export const AppRouter = () => {
-  const { data: user, error, isLoading } = useGetUserQuery();
+  // const { data: user, error, isLoading } = useGetUserQuery();
+  const [user, setUser] = useState(true);
+  const [error] = useState(false);
+  const [isLoading] = useState(false);
 
   const getPrivateRoutes = () => [
     <Route path="/" exact key="index">

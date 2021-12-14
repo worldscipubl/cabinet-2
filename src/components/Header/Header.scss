@@ -45,9 +45,7 @@
   height: 100%;
   justify-content: space-between;
   overflow: hidden;
-  padding: 12px 24px 12px 17px;
   width: 100%;
-  height: 100%;
 }
 
 .doter {
@@ -86,12 +84,5 @@
     &::after {
       top: 10px;
     }
-  }
-}
-
-
-@media screen and (max-width: $bp-mobile) {
-  .header__inner {
-    padding: 12px;
   }
 }

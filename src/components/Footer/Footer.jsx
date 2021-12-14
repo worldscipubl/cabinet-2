@@ -3,10 +3,9 @@ import "./Footer.scss";
 import Copyright from "../Copyright/Copyright";
 
 const Footer = () => {
-  const style = `app__footer footer`;
 
   return (
-    <footer className={style}>
+    <footer className="app__footer footer">
       <Copyright />
     </footer>
   );
