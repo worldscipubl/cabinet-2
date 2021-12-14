@@ -37,12 +37,12 @@ export const AppRouter = () => {
       </MainLayout>
     </Route>,
     <Route path="/referral/:tabId?" key="ReferralPage">
-      <MainLayout>
+      <MainLayout title="Программа лояльности">
         <ReferralPage />
       </MainLayout>
     </Route>,
     <Route path="/profile" exact key="ProfilePage">
-      <MainLayout>
+      <MainLayout title="ProfilePage">
         <ProfilePage />
       </MainLayout>
     </Route>,
@@ -57,12 +57,12 @@ export const AppRouter = () => {
       </MainLayout>
     </Route>,
     <Route path="/notifications" exact key="NotificationsPage">
-      <MainLayout>
+      <MainLayout title="История уведомлений">
         <NotificationsPage />
       </MainLayout>
     </Route>,
     <Route path="/settings" key="SettingsPage">
-      <MainLayout>
+      <MainLayout title="Настройки">
         <SettingsPage />
       </MainLayout>
     </Route>

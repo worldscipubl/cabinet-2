@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/global/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/global/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/AppBar/AppBar.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/MainLayout/MainLayout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="122177" />
+    <option name="totalTimeSeconds" value="125296" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -172,7 +172,7 @@
       <workItem from="1639116615256" duration="13467000" />
       <workItem from="1639139452292" duration="6555000" />
       <workItem from="1639391977413" duration="15713000" />
-      <workItem from="1639474860946" duration="9146000" />
+      <workItem from="1639474860946" duration="12472000" />
     </task>
     <servers />
   </component>

@@ -6,7 +6,8 @@ import AppBar from "../AppBar/AppBar";
 const MainLayout = ({
                       children,
                       hideMenu,
-                      hideFooter
+                      hideFooter,
+                      title
                     }) => {
 
   return (
@@ -14,6 +15,7 @@ const MainLayout = ({
       {!hideMenu && <NavMenu />}
       <div className="app__content">
         <main className="app__main">
+          {title && <AppBar className="app__bar" title={title} />}
           <div className="app__inner">
             {children}
           </div>
