@@ -10,6 +10,7 @@
   border-radius: .25em;
   cursor: pointer;
   text-decoration: none;
+  flex: 1 0 auto;
 
   &.show {
     background-color: #d1f3ff;
@@ -27,8 +28,18 @@
 .nav-menu__img {
   object-position: center;
   object-fit: contain;
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
+
+  @media screen and (max-width: $bp-tablet) {
+    width: 21px;
+    height: 21px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .nav-menu__title {
@@ -53,27 +64,18 @@
     justify-content: center;
     margin: 0;
   }
-
-  .nav-menu__img {
-    width: 21px;
-    height: 21px;
-  }
 }
 
 @media screen and (max-width: $bp-mobile) {
   .nav-menu__item {
     margin: auto 0;
+    padding: .25em;
+    flex: 1 0 calc(100% / 4 - 6px);
 
     & + & {
       margin: inherit;
+      margin-left: 6px;
     }
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .nav-menu__img {
-    width: 18px;
-    height: 18px;
   }
 }
 

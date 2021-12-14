@@ -4,6 +4,7 @@ import couponImg from "../../common/images/icons/coupon.svg";
 import HeaderLogo from "./HeaderLogo";
 import "./Header.scss";
 import Avatar from "../Avatar";
+import IonIcon from "../IonIcon";
 
 const Header = () => {
   const history = useHistory();
@@ -15,20 +16,8 @@ const Header = () => {
         <HeaderLogo />
         <ul className="header__action">
           <li className="header__action-item">
-            <NavLink className="amounts" to="/">
-              <div className="amounts__item">
-                <img className="amounts__img" src={couponImg} alt="coupon" />
-              </div>
-              <div className="amounts__item amount">
-                <h3
-                  className="text text_size_text
-                                            text_weight_bold text_color_black
-                                            amount__title"
-                >
-                  ₽6000
-                </h3>
-                <p className="amount__status text">На счету</p>
-              </div>
+            <NavLink className="amounts" to="/notifications">
+              <IonIcon className="amounts__item" name="notifications" size="large" />
             </NavLink>
           </li>
           <li className="header__action-item">

@@ -5,27 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5df0a446-a988-4d69-b896-07f89b3ac172" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/IonIcon/IonIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/IonIcon/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/FiendsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/FiendsApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/NotificationsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/NotificationsApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/PayoutsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/PayoutsApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/UserApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/UserApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/global/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/global/_functions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthorForm/AuthorForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatBox/ChatBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatBox/ChatBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatBox/ChatListMessages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatBox/ChatListMessages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/Field.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/Field.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FieldBuilder/FieldBuilder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldBuilder/FieldBuilder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormField/FormField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormField/FormField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReferralDashboard/DashboardCard/DashboardCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReferralDashboard/DashboardCard/DashboardCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReferralDashboard/DashboardCard/DashboardCard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReferralDashboard/DashboardCard/DashboardCard.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/TabLayout/TabContent/TabContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/TabLayout/TabContent/TabContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/AmountTab.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/AmountTab/AmountTab.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/PayoutTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/PayoutTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralPayoutTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralPayoutTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralPayoutTable.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralPayoutTable.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralTableHeader/ReferralTableHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/PayoutTab/ReferralPayoutTable/ReferralTableHeader/ReferralTableHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MenuList/MenuList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MenuList/MenuList.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavMenu/NavMenuItem/NavMenuItem.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="104682" />
+    <option name="totalTimeSeconds" value="113123" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -186,7 +178,8 @@
       <workItem from="1639029810521" duration="734000" />
       <workItem from="1639116615256" duration="13467000" />
       <workItem from="1639139452292" duration="6555000" />
-      <workItem from="1639391977413" duration="7594000" />
+      <workItem from="1639391977413" duration="15713000" />
+      <workItem from="1639474860946" duration="416000" />
     </task>
     <servers />
   </component>
