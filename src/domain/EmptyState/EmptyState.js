@@ -1,121 +1,56 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
+import Undraw from "react-undraw";
+import cn from "./EmptyState.module.scss";
 
-const EmptyState = (props) => {
-  let imageHeight;
+const EmptyState = ({ className, type, title, description, imgName, children }) => {
 
-  switch (props.size) {
-    case "small":
-      imageHeight = 40;
-      break;
+  function getImgName() {
+    if (type === "warning") return "warning";
 
-    case "medium":
-      imageHeight = 60;
-      break;
-
-    case "large":
-      imageHeight = 100;
-      break;
-
-    default:
-      imageHeight = 60;
-      break;
+    if (!imgName) return "not_found";
+    return imgName;
   }
 
-  if (props.type === "page") {
-    return (
-      <div
-        style={{
-          transform: "translate(-50%, -50%)",
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          textAlign: "center"
-        }}
-      >
-        {props.image && (
-          <div
-            style={{
-              width: `${imageHeight}%`,
-              height: `${imageHeight}%`,
-              margin: "auto"
-            }}
-          >
-            {props.image}
-          </div>
+  return (
+    <div className={classNames(className, cn.Wrapper)}>
+      <div className={classNames(cn.Container)}>
+        <Undraw name={getImgName()} height="auto" className={classNames(cn.ContainerItem, cn.Img)} />
+        {title && (
+          <h3 className={classNames(cn.ContainerItem, cn.Title, "text")}>
+            {title}
+          </h3>
         )}
 
-        {props.title && (
-          <div mb={!props.description && props.button ? 2 : 0.5}>
-            <h3 className="text text_size_title text_weight_bold">
-              {props.title}
-            </h3>
-          </div>
+        {description && (
+          <p
+            className={classNames(cn.ContainerItem, cn.Description, "text", { "text_color_red": (type === "warning") })}>
+            {description}
+          </p>
         )}
 
-        {props.description && (
-          <div mb={props.button && 3}>
-            <p className="text">{props.description}</p>
+        {children && (
+          <div className={classNames(cn.ContainerItem, cn.ContainerItemAction)}>
+            {children}
           </div>
         )}
-
-        {props.button && props.button}
       </div>
-    );
-  }
-
-  if (props.type === "card") {
-    return (
-      <div padding={props.padding} textAlign="center">
-        {props.image && (
-          <div
-            style={{
-              width: `${imageHeight}%`,
-              height: `${imageHeight}%`,
-              margin: "auto"
-            }}
-          >
-            {props.image}
-          </div>
-        )}
-
-        {props.title && (
-          <div mb={!props.description && props.button ? 2 : 0}>
-            <h3 className="text text_size_title text_weight_bold">
-              {props.title}
-            </h3>
-          </div>
-        )}
-
-        {props.description && (
-          <div mb={props.button && 2}>
-            <p>{props.description}</p>
-          </div>
-        )}
-
-        {props.button && props.button}
-      </div>
-    );
-  }
-
-  return null;
+    </div>
+  );
 };
 
 EmptyState.defaultProps = {
-  type: "page",
-  size: "medium",
-  padding: 2
+  title: "",
+  description: "",
+  imgName: "",
+  type: ""
 };
 
 EmptyState.propTypes = {
-  type: PropTypes.string,
-  size: PropTypes.string,
-  padding: PropTypes.number,
-
-  image: PropTypes.element,
   title: PropTypes.string,
   description: PropTypes.string,
-  button: PropTypes.element
+  imgName: PropTypes.string
 };
 
 export default EmptyState;

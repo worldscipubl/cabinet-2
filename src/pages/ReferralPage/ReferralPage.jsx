@@ -1,11 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Route, useParams } from "react-router-dom";
 import TabLayout from "../../layouts/TabLayout";
 import AdTab from "./tabs/AdTab";
 import AmountTab from "./tabs/AmountTab";
 import LinkTab from "./tabs/LinkTab";
 import PayoutTab from "./tabs/PayoutTab";
 import "./ReferralPage.scss";
+import MainLayout from "../../layouts/MainLayout";
 
 
 const ReferralPage = (props) => {
@@ -29,9 +30,11 @@ const ReferralPage = (props) => {
   ];
 
   return (
-    <TabLayout title="Программа лояльности" defaultTabs={tabId}>
-      {ReferralTabs}
-    </TabLayout>
+    <MainLayout title="Программа лояльности">
+      <TabLayout defaultTabs={tabId}>
+        {ReferralTabs}
+      </TabLayout>
+    </MainLayout>
   );
 };
 

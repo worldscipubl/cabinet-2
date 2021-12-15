@@ -1,9 +1,9 @@
 import React from "react";
-import AppBar from "../../AppBar/AppBar";
 import TabButton from "../TabButton";
 import classNames from "classnames";
+import cn from "./TabBar.module.scss";
 
-const TabBar = ({ className, activeTab, title, hideTabsBar = false, children, handleTab }) => {
+const TabBar = ({ className, activeTab, children, handleTab }) => {
 
   const handlerTab = (tabId) => {
     if (!tabId) return;
@@ -12,8 +12,8 @@ const TabBar = ({ className, activeTab, title, hideTabsBar = false, children, ha
   };
 
   return (
-    <AppBar title={title} hideTabsBar={hideTabsBar}>
-      {activeTab && <ul className={classNames("app-bar__tabs", className)}>
+    <div className={classNames(cn.TabBar)}>
+      {activeTab && <ul className={classNames(cn.TabBarTabs, className)}>
         {children.map((child) => {
           const { tabId = "default", tabLabel = "default" } = child.props;
           return (
@@ -27,7 +27,7 @@ const TabBar = ({ className, activeTab, title, hideTabsBar = false, children, ha
           );
         })}
       </ul>}
-    </AppBar>
+    </div>
   );
 };
 

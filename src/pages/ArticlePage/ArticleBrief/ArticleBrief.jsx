@@ -90,31 +90,33 @@ const ArticleBrief = ({ articleId, statusId }) => {
   };
 
   return (
-    <Card appearance={{ type: "paper" }}>
-      <h2 className="text text_size_subtitle brief-form__description">
-        Форма заключения договора
-      </h2>
-      <ViewPager
-        tabs={getTabs()}
-        pages={getPages}
-        handlers={{
-          handleNext,
-          handleBack,
-          handleReset
-        }}
-        options={{
-          initStep: 0,
-          hideActionBar: isLoadingPage,
-          hideBackBtn: false,
-          clickableTabs: !!(statusId >= 9),
-          nextBtnLabel: "Далее",
-          backBtnLabel: "Назад",
-          resetBtnLabel: "Сбросить",
-          finishBtnLabel: "Завершить",
-          statePages: statePages
-        }}
-      />
-    </Card>
+    <div>
+      <Card appearance={{ type: "paper" }}>
+        <h2 className="text text_size_subtitle brief-form__description">
+          Форма заключения договора
+        </h2>
+        <ViewPager
+          tabs={getTabs()}
+          pages={getPages}
+          handlers={{
+            handleNext,
+            handleBack,
+            handleReset
+          }}
+          options={{
+            initStep: 0,
+            hideActionBar: isLoadingPage,
+            hideBackBtn: false,
+            clickableTabs: !!(statusId >= 9),
+            nextBtnLabel: "Далее",
+            backBtnLabel: "Назад",
+            resetBtnLabel: "Сбросить",
+            finishBtnLabel: "Завершить",
+            statePages: statePages
+          }}
+        />
+      </Card>
+    </div>
   );
 };
 

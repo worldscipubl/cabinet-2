@@ -5,6 +5,8 @@ import FormField from "../../components/FormField";
 import Input from "../../components/Input";
 import styles from "./SettingsPage.module.scss";
 import { useGetUserDataQuery, useSetUserDataMutation, useSetUserPasswordMutation } from "../../api/endpoints/UserApi";
+import MainLayout from "../../layouts/MainLayout";
+import { Route } from "react-router-dom";
 
 const fieldsProfile = [
   {
@@ -117,104 +119,106 @@ const SettingsPage = () => {
   };
 
   return (
-    <Card appearance={{ type: "paper" }}>
-      <h3 className={classNames(styles.settings__subtitle, "text text_weight_bold text_size_subtitle", {})}>
-        Данные профиля:
-      </h3>
-      <div className={classNames(styles.settings__form, {})}>
-        {fieldsProfile.map((field) => (
-          <FormField
-            className={classNames(styles.settings__input, {})}
-            name={field?.name}
-            key={field?.name}
-            label={field?.label}
-            isLoading={isLoading}
-            description={field?.description}
-            defaultValue={data?.[field?.name]}
-            propsInput={{
-              type: field?.type || "text",
-              placeholder: field?.placeholder,
-              required: true,
-              multiple: !!(field?.type === "file")
-            }}
-            component={<Input />}
-            handlers={{ handleFieldSubmit }}
-          />
-        ))}
-      </div>
+    <MainLayout title="Настройки">
+      <Card appearance={{ type: "paper" }}>
+        <h3 className={classNames(styles.settings__subtitle, "text text_weight_bold text_size_subtitle", {})}>
+          Данные профиля:
+        </h3>
+        <div className={classNames(styles.settings__form, {})}>
+          {fieldsProfile.map((field) => (
+            <FormField
+              className={classNames(styles.settings__input, {})}
+              name={field?.name}
+              key={field?.name}
+              label={field?.label}
+              isLoading={isLoading}
+              description={field?.description}
+              defaultValue={data?.[field?.name]}
+              propsInput={{
+                type: field?.type || "text",
+                placeholder: field?.placeholder,
+                required: true,
+                multiple: !!(field?.type === "file")
+              }}
+              component={<Input />}
+              handlers={{ handleFieldSubmit }}
+            />
+          ))}
+        </div>
 
-      <hr />
-      <h3 className="text text_weight_bold text_size_subtitle">Данные для договора:</h3>
-      <div className={classNames("brief-form", {})}>
-        {fieldsContract.map((field) => (
-          <FormField
-            className="brief-form__input"
-            name={field?.name}
-            key={field?.name}
-            label={field?.label}
-            isLoading={isLoading}
-            description={field?.description}
-            defaultValue={data?.[field?.name]}
-            propsInput={{
-              type: field?.type || "text",
-              placeholder: field?.placeholder,
-              required: true,
-              multiple: !!(field?.type === "file")
-            }}
-            component={<Input />}
-            handlers={{ handleFieldSubmit, handleFieldFileSubmit }}
-          />
-        ))}
-      </div>
+        <hr />
+        <h3 className="text text_weight_bold text_size_subtitle">Данные для договора:</h3>
+        <div className={classNames("brief-form", {})}>
+          {fieldsContract.map((field) => (
+            <FormField
+              className="brief-form__input"
+              name={field?.name}
+              key={field?.name}
+              label={field?.label}
+              isLoading={isLoading}
+              description={field?.description}
+              defaultValue={data?.[field?.name]}
+              propsInput={{
+                type: field?.type || "text",
+                placeholder: field?.placeholder,
+                required: true,
+                multiple: !!(field?.type === "file")
+              }}
+              component={<Input />}
+              handlers={{ handleFieldSubmit, handleFieldFileSubmit }}
+            />
+          ))}
+        </div>
 
-      <hr />
-      <h3 className="text text_weight_bold text_size_subtitle">Настройки профиля:</h3>
-      <div className={classNames("brief-form", {})}>
-        {fieldsSettings.map((field) => (
-          <FormField
-            className="brief-form__input"
-            name={field?.name}
-            key={field?.name}
-            label={field?.label}
-            isLoading={isLoading}
-            description={field?.description}
-            defaultValue={data?.[field?.name]}
-            propsInput={{
-              type: field?.type || "text",
-              placeholder: field?.placeholder,
-              required: true,
-              multiple: !!(field?.type === "file")
-            }}
-            component={<Input />}
-            handlers={{ handleFieldSubmit, handleFieldFileSubmit }}
-          />
-        ))}
-      </div>
+        <hr />
+        <h3 className="text text_weight_bold text_size_subtitle">Настройки профиля:</h3>
+        <div className={classNames("brief-form", {})}>
+          {fieldsSettings.map((field) => (
+            <FormField
+              className="brief-form__input"
+              name={field?.name}
+              key={field?.name}
+              label={field?.label}
+              isLoading={isLoading}
+              description={field?.description}
+              defaultValue={data?.[field?.name]}
+              propsInput={{
+                type: field?.type || "text",
+                placeholder: field?.placeholder,
+                required: true,
+                multiple: !!(field?.type === "file")
+              }}
+              component={<Input />}
+              handlers={{ handleFieldSubmit, handleFieldFileSubmit }}
+            />
+          ))}
+        </div>
 
-      <hr />
-      <h3 className="text text_weight_bold text_size_subtitle">Настройки уведомлений:</h3>
-      <div className={classNames("brief-form", {})}>
-        {fieldsNotifications.map((field) => (
-          <FormField
-            className="brief-form__input"
-            name={field?.name}
-            key={field?.name}
-            label={field?.label}
-            isLoading={isLoading}
-            description={field?.description}
-            defaultValue={data?.[field?.name]}
-            propsInput={{
-              type: field?.type || "text",
-              placeholder: field?.placeholder,
-              required: true,
-              multiple: !!(field?.type === "file")
-            }}
-            component={<Input />}
-            handlers={{ handleFieldSubmit, handleFieldFileSubmit }}
-          />
-        ))}
-      </div>
-    </Card>
+        <hr />
+        <h3 className="text text_weight_bold text_size_subtitle">Настройки уведомлений:</h3>
+        <div className={classNames("brief-form", {})}>
+          {fieldsNotifications.map((field) => (
+            <FormField
+              className="brief-form__input"
+              name={field?.name}
+              key={field?.name}
+              label={field?.label}
+              isLoading={isLoading}
+              description={field?.description}
+              defaultValue={data?.[field?.name]}
+              propsInput={{
+                type: field?.type || "text",
+                placeholder: field?.placeholder,
+                required: true,
+                multiple: !!(field?.type === "file")
+              }}
+              component={<Input />}
+              handlers={{ handleFieldSubmit, handleFieldFileSubmit }}
+            />
+          ))}
+        </div>
+      </Card>
+    </MainLayout>
   );
 };
 

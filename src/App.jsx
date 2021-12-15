@@ -3,8 +3,10 @@ import { Provider as StateProvider } from "react-redux";
 import { AppRouter } from "./AppRouter";
 import store from "./store";
 import { getTokenMessaging, onMessageListener } from "./firebase";
+import Undraw from "react-undraw";
 
 export const App = () => {
+  Undraw.defaultProps.primaryColor = "#0D1D47";
 
   useEffect(() => {
     getTokenMessaging()

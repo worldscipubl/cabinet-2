@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "./common/style/app.scss";
 import Header from "./components/Header";
 import MyArticles from "./pages/MyArticles";
 import ArticlePage from "./pages/ArticlePage";
 import ReferralPage from "./pages/ReferralPage";
-import ProfilePage from "./pages/ProfilePage";
-import ChatPage from "./pages/ChatPage";
+import HomePage from "./pages/HomePage";
+import EducationPage from "./pages/Education";
 import FaqPage from "./pages/FaqPage";
 import NotFoundPage from "./domain/NotFoundPage";
-import MainLayout from "./layouts/MainLayout";
 import SettingsPage from "./pages/SettingsPage";
 import AuthPage from "./pages/AuthPage";
 import { useGetUserQuery } from "./api/endpoints/UserApi";
@@ -17,54 +16,38 @@ import PreloadingScreen from "./components/PreloadingScreen";
 import NotificationsPage from "./pages/NotificationsPage";
 
 export const AppRouter = () => {
-  // const { data: user, error, isLoading } = useGetUserQuery();
-  const [user, setUser] = useState(true);
-  const [error] = useState(false);
-  const [isLoading] = useState(false);
+  const { data: user, error, isLoading } = useGetUserQuery();
 
   const getPrivateRoutes = () => [
     <Route path="/" exact key="index">
-      <Redirect to="/article" />
+      <Redirect to="/home" />
     </Route>,
-    <Route path="/article" exact key="MyArticles">
-      <MainLayout>
-        <MyArticles />
-      </MainLayout>
+    <Route path="/home" exact key="HomePage">
+      <HomePage />
+    </Route>,
+    <Route path="/articles" exact key="MyArticles">
+      <MyArticles />
+    </Route>,
+    <Route path="/article" exact key="ArticleRedirect">
+      <Redirect to="/articles" />
     </Route>,
     <Route path="/article/:articleId?/:tabId?" key="ArticlePage">
-      <MainLayout>
-        <ArticlePage />
-      </MainLayout>
+      <ArticlePage />
     </Route>,
     <Route path="/referral/:tabId?" key="ReferralPage">
-      <MainLayout title="Программа лояльности">
-        <ReferralPage />
-      </MainLayout>
+      <ReferralPage />
     </Route>,
-    <Route path="/profile" exact key="ProfilePage">
-      <MainLayout title="ProfilePage">
-        <ProfilePage />
-      </MainLayout>
-    </Route>,
-    <Route path="/chat" exact key="ChatPage">
-      <MainLayout title="Чат">
-        <ChatPage />
-      </MainLayout>
+    <Route path="/education" exact key="EducationPage">
+      <EducationPage />
     </Route>,
     <Route path="/faq" exact key="FaqPage">
-      <MainLayout title="FAQ">
-        <FaqPage />
-      </MainLayout>
+      <FaqPage />
     </Route>,
     <Route path="/notifications" exact key="NotificationsPage">
-      <MainLayout title="История уведомлений">
-        <NotificationsPage />
-      </MainLayout>
+      <NotificationsPage />
     </Route>,
     <Route path="/settings" key="SettingsPage">
-      <MainLayout title="Настройки">
-        <SettingsPage />
-      </MainLayout>
+      <SettingsPage />
     </Route>
   ];
 

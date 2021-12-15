@@ -11,11 +11,15 @@ const TAG_TYPES = [
   "userData",
   "user"
 ];
+const _TEST_USER = {
+  username: "rayec89552@aline9.com",
+  password: "DzeG3Jx@}G$p"
+};
 
 const entryApi = createApi({
   reducerPath: "wspApi",
   tagTypes: TAG_TYPES,
-  baseQuery: axiosBaseQuery({ baseUrl: BASE_URL }),
+  baseQuery: axiosBaseQuery({ baseUrl: BASE_URL, auth: _TEST_USER }),
   endpoints: () => ({})
 });
 

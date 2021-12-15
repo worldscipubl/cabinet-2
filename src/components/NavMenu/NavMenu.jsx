@@ -6,11 +6,11 @@ import "./NavMenu.scss";
 
 const NavMenu = () => {
   const navMenuList = [
-    { img: "home-outline", title: "Главная", linkTo: "/profile", id: "home" },
+    { img: "home-outline", title: "Главная", linkTo: "/home", id: "home" },
     {
       img: "albums-outline",
       title: "Мои статьи",
-      linkTo: "/article",
+      linkTo: "/articles",
       id: "article"
     },
     {
@@ -19,7 +19,7 @@ const NavMenu = () => {
       linkTo: "/referral",
       id: "referral"
     },
-    { img: "school-outline", title: "Обучение", linkTo: "/chat", id: "school" }
+    { img: "school-outline", title: "Обучение", linkTo: "/education", id: "school" }
   ];
 
   return (

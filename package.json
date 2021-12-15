@@ -16,14 +16,16 @@
     "react-loading-skeleton": "^3.0.1",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "react-undraw": "^2.0.3"
   },
   "scripts": {
     "start": "HTTPS=true SSL_CRT_FILE=./.cert/cert.pem SSL_KEY_FILE=./.cert/key.pem react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "git push --tags origin"
+    "deploy": "git push --tags origin",
+    "undraw-build": "react-undraw-cli"
   },
   "eslintConfig": {
     "extends": [

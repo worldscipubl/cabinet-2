@@ -1,18 +1,19 @@
 import React from "react";
+import "./HomePage.module.scss";
 import MainLayout from "../../layouts/MainLayout";
+import { Route } from "react-router-dom";
+import classNames from "classnames";
 import EmptyState from "../../domain/EmptyState";
-import "./FaqPage.scss";
 
-const FaqPage = (props) => {
-
+const HomePage = (props) => {
   return (
-    <MainLayout title="FAQ">
+    <MainLayout title="Главная">
       <EmptyState
-        title="FAQ"
+        title="Главная"
         description="Данная страница находиться в разработке"
         imgName="under_construction" />
     </MainLayout>
   );
 };
 
-export default FaqPage;
+export default HomePage;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Route, useParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import imgPlus from "../../common/images/icons/plus.svg";
 import "./MyArticles.scss";
@@ -7,6 +7,7 @@ import { useGetArticlesQuery } from "../../api/endpoints/ArticlesApi";
 import Loader from "../../components/Loader";
 import TabLayout from "../../layouts/TabLayout";
 import Spinner from "../../components/Spinner";
+import MainLayout from "../../layouts/MainLayout";
 
 const MyArticles = () => {
   const { data: articles, error, isLoading } = useGetArticlesQuery();
@@ -91,9 +92,9 @@ const MyArticles = () => {
   };
 
   return (
-    <TabLayout title="Мои статьи" defaultTabs={tabId}>
+    <MainLayout title="Мои статьи">
       {getContent()}
-    </TabLayout>
+    </MainLayout>
   );
 };
 

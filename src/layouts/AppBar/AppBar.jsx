@@ -11,7 +11,7 @@ const AppBar = ({ title }) => {
   return (
     <header className={classNames(cn.AppBar)}>
       <ul className={classNames(cn.AppBarList)}>
-        {!["/article", "/"].includes(location.pathname) && (
+        {!["/home", "/"].includes(location.pathname) && (
           <li className={classNames(cn.Action, cn.ActionBack)}>
             <Link to="/">
               <img className={classNames(cn.ActionBackImg)} src={btnImg} alt="back" />

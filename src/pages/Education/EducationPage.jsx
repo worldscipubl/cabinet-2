@@ -1,18 +1,16 @@
 import React from "react";
 import MainLayout from "../../layouts/MainLayout";
 import EmptyState from "../../domain/EmptyState";
-import "./FaqPage.scss";
 
-const FaqPage = (props) => {
-
+const EducationPage = () => {
   return (
-    <MainLayout title="FAQ">
+    <MainLayout title="Обучние">
       <EmptyState
-        title="FAQ"
+        title="Обучние"
         description="Данная страница находиться в разработке"
         imgName="under_construction" />
     </MainLayout>
   );
 };
 
-export default FaqPage;
+export default EducationPage;

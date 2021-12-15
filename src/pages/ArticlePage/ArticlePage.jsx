@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Route, useHistory, useParams } from "react-router-dom";
 import ArticlePipeline from "./ArticlePipeline/ArticlePipeline";
 import ArticleChat from "./ArticleChat/ArticleChat";
 import ArticleBrief from "./ArticleBrief/ArticleBrief";
@@ -8,9 +8,13 @@ import Loader from "../../components/Loader";
 import ArticlePayment from "./ArticlePayment/ArticlePayment";
 import ArticleRequest from "./ArticleRequest/ArticleRequest";
 import TabLayout from "../../layouts/TabLayout";
+import MainLayout from "../../layouts/MainLayout";
+import Spinner from "../../components/Spinner";
+import EmptyState from "../../domain/EmptyState";
 
 const ArticlePage = () => {
   const { articleId, tabId } = useParams();
+  const history = useHistory();
   const { data: article, error, isLoading } = useGetArticleByIdQuery(articleId);
 
   const articleTabs = [
@@ -39,20 +43,46 @@ const ArticlePage = () => {
     return filters;
   };
 
-  const getContent = (article) => {
-    if (isLoading) return <Loader />;
+  const Content = ({ article }) => {
+    if (isLoading) return <Spinner />;
 
-    if (error) return <h2 className="text text_align_center text_color_red">{error}</h2>;
-    if (!article) return <h2 className="text">Пусто...</h2>;
+    if (error) return (
+      <EmptyState
+        type="warning"
+        title="Упс... Произошла ошибка!"
+        description={error}>
+        <button className="button button_type_main" onClick={() => history.push("/article")}>
+          Вернуться к статьям
+        </button>
+      </EmptyState>
+    );
+
+    if (!article) return (
+      <EmptyState
+        title="Статьи не существет"
+        description="Данные об этой статье отсутсвуют.">
+        <button className="button button_type_main" onClick={() => history.push("/articles")}>
+          Вернуться к статьям
+        </button>
+      </EmptyState>
+    );
+
     const filterPages = getFilterPages(article);
-    if (filterPages.length) return articleTabs.filter((tab) => !filterPages.includes(tab.props?.tabId));
-    return articleTabs;
+
+    return (
+      <TabLayout defaultTabs={tabId}>
+        {filterPages.length ?
+          articleTabs.filter((tab) => !filterPages.includes(tab.props?.tabId)) :
+          articleTabs
+        }
+      </TabLayout>
+    );
   };
 
   return (
-    <TabLayout title={getTitle(articleId)} defaultTabs={tabId}>
-      {getContent(article)}
-    </TabLayout>
+    <MainLayout title={getTitle(articleId)}>
+      <Content article={article} />
+    </MainLayout>
   );
 };
 

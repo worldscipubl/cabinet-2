@@ -1,14 +1,19 @@
 import React from "react";
-import { ReactComponent as NotFoundIllustration } from "../../common/images/illustrations/not-found.svg";
+import { useHistory } from "react-router-dom";
 import EmptyState from "../EmptyState/EmptyState";
 
 const NotFoundPage = () => {
+  const history = useHistory();
   return (
     <EmptyState
-      image={<NotFoundIllustration style={{ width: "100%", height: "100%" }} />}
-      title="СТРАНИЦА НЕ СУЩЕСТВУЕТ"
+      imgName="page_not_found"
+      title="Страницы не существует"
       description="Страница, к которой вы пытаетесь получить доступ, не существует."
-    />
+    >
+      <button className="button button_type_main" onClick={() => history.push("/")}>
+        Вернуться на главную
+      </button>
+    </EmptyState>
   );
 };
 
