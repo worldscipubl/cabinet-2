@@ -1,7 +1,7 @@
 @use './src/common/style/global' as *;
 
 .header {
-  background: #FBFCFD;
+  background: $white;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   height: 100%;
   width: 100%;
@@ -84,5 +84,17 @@
     &::after {
       top: 10px;
     }
+  }
+}
+
+.header-menu__notification {
+}
+
+.header-menu__profile {
+  width: 25%;
+  min-width: 275px;
+
+  @media screen and (max-width: $bp-tablet) {
+    width: 100%;
   }
 }

@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Undraw from "react-undraw";
 import cn from "./EmptyState.module.scss";
 
-const EmptyState = ({ className, type, title, description, imgName, children }) => {
+const EmptyState = ({ className, type, title, description, imgName, children, fullScreen }) => {
 
   function getImgName() {
     if (type === "warning") return "warning";
@@ -16,7 +16,8 @@ const EmptyState = ({ className, type, title, description, imgName, children }) 
   return (
     <div className={classNames(className, cn.Wrapper)}>
       <div className={classNames(cn.Container)}>
-        <Undraw name={getImgName()} height="auto" className={classNames(cn.ContainerItem, cn.Img)} />
+        <Undraw name={getImgName()} height="auto" style={{ width: "70%" }}
+                className={classNames(cn.ContainerItem, cn.Img)} />
         {title && (
           <h3 className={classNames(cn.ContainerItem, cn.Title, "text")}>
             {title}

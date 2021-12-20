@@ -1,0 +1,50 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  display: block;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-index-modal;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 350ms;
+
+  @media screen and (max-width: $bp-tablet) {
+    left: var(--navbar-width);
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    left: 0;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    bottom: var(--navbar-width);
+  }
+}
+
+.Inner {
+  opacity: 1;
+  width: 50%;
+  min-height: 50%;
+  max-height: 100%;
+  overflow: hidden;
+  cursor: initial;
+  padding: 0.5em;
+
+  @media screen and (max-width: $bp-mobile) {
+    width: 100%;
+  }
+}

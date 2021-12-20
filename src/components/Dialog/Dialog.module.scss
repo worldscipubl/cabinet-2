@@ -1,0 +1,27 @@
+@use './src/common/style/global' as *;
+
+.Dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+.Content {
+  padding: 1em;
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 4px;
+  border-radius: 6px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.Inner {
+  width: 50%;
+  min-height: 50%;
+  max-height: 50%;
+  transform: scale(0);
+  transition: transform 500ms;
+  margin: auto;
+}

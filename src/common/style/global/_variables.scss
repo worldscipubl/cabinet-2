@@ -1,5 +1,5 @@
 $light-gray: #eee;
-$white: #fbfcfd;
+$white: #FFFFFF;
 $gray: #f5f5f5;
 $green: #219653;
 $red: #c62828;
@@ -32,13 +32,10 @@ $timestamp-text-gray-hover: #757575;
 //$fontMain: 'Helvetica', Arial, sans-serif;
 $fontMain: 'Roboto', Arial, sans-serif;
 
-
-$header-height: 58px;
-$navbar-width: 275px;
-
 $z-index-nav: 5;
 $z-index-header: 10;
 $z-index-drop-down-menu: 20;
+$z-index-modal: 30;
 
 // Sass Screen Variables
 $bp-xxl-1440: 1440px;
@@ -51,3 +48,17 @@ $bp-mobile: 486px;
 $bp-tablet: 924px;
 $bp-laptop: 1024px;
 $bp-large: 1440px;
+
+:root {
+  --header-height: 58px;
+  --navbar-width: 275px;
+
+  @media screen and (max-width: $bp-tablet) {
+    --navbar-width: 70px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    --header-height: 50px;
+    --navbar-width: 50px;
+  }
+}

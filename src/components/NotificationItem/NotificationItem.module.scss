@@ -1,5 +1,29 @@
 @use './src/common/style/global' as *;
 
+.ItemWrapper {
+  padding: 0.8em 1em;
+  width: 100%;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &:not(:last-child):after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 0.08em solid $label-bg-gray-hover;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    padding: 0.8em 0.5em;
+  }
+}
+
 .Accordion {
   position: relative;
   margin: 0;
@@ -11,26 +35,10 @@
   &.isRead {
     border-color: $colorShadow;
   }
-
-  &:not(:first-child) {
-    &:before {
-      content: "";
-      position: absolute;
-      top: -0.5em;
-      left: 0;
-      right: 0;
-      border-top: 1px solid $label-bg-gray;
-    }
-  }
 }
 
 .AccordionHeader {
   padding: 0.5em;
-
-  &:hover {
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.04);
-  }
 }
 
 .AccordionSubHeader {
@@ -44,6 +52,8 @@
   overflow: hidden;
   max-height: 1000px;
   transition: max-height 1s ease-in-out;
+  cursor: initial;
+  will-change: max-height;
 
   &[aria-expanded="true"] {
     max-height: 0px;

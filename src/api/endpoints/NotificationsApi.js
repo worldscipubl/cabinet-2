@@ -85,6 +85,7 @@ const NotificationsApi = entryApi.injectEndpoints({
 
 export const {
   useGetNotificationsQuery,
+  useLazyGetNotificationsQuery,
   useGetTriggersQuery,
   useLazyGetNotificationByIdQuery,
   useGetNotificationByIdMutation
