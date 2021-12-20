@@ -5,7 +5,7 @@ import classNames from "classnames";
 import btnImg from "../../common/images/icons/arrow-back.svg";
 import cn from "./AppBar.module.scss";
 
-const AppBar = ({ title }) => {
+const AppBar = ({ title, description }) => {
   const location = useLocation();
 
   return (
@@ -24,6 +24,9 @@ const AppBar = ({ title }) => {
           </h2>
         </li>
       </ul>
+      <h2 className={classNames(cn.AppBarDescription, "text text_size_default text_color_gray")}>
+        {description || ""}
+      </h2>
     </header>
   );
 };

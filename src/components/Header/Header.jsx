@@ -35,6 +35,7 @@ const Header = () => {
           </li>
           <li className="header__action-item" ref={profileRef}>
             <Avatar size="small" type="button" border="primary" onClick={handleProfile} />
+            <span className="text header__username">Иван</span>
           </li>
         </ul>
       </div>

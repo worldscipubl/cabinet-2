@@ -6,7 +6,7 @@ import Spinner from "../Spinner";
 import cn from "./ListNotifications.module.scss";
 
 const ListNotifications = ({ isLoading, wrapper, error, data, spinner = false }) => {
-  if (isLoading) return spinner ? <Spinner /> : <SkeletonNotification isLoading={true} />;
+  if (isLoading) return spinner ? <Spinner /> : <SkeletonNotification />;
 
   if (error) return (
     <EmptyState
@@ -18,7 +18,7 @@ const ListNotifications = ({ isLoading, wrapper, error, data, spinner = false })
 
   if (!data?.length) return (
     <EmptyState
-      title="Уведомлений пока нет"
+      title="У вас пока нет уведомлений"
       description="Тут будет отображаться список ваших уведомлений" />
   );
   return data.map((item) => (
@@ -26,9 +26,9 @@ const ListNotifications = ({ isLoading, wrapper, error, data, spinner = false })
   ));
 };
 
-function SkeletonNotification({ isLoading }) {
+function SkeletonNotification() {
   return [0, 1, 2, 3, 4].map((id) => (
-    <NotificationItem className={classNames(cn.ItemContent)} isLoadingItem={isLoading} key={id} />
+    <NotificationItem className={classNames(cn.ItemContent)} isLoadingItem={true} key={id} />
   ));
 }
 

@@ -30,12 +30,34 @@
   }
 
   &__action-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0.3em;
+    padding: 0.25em;
+    position: relative;
+
     & + & {
-      margin-left: 12px;
-      border-left: 1px solid #C4C4C4;
-      padding-left: 12px;
+      margin-left: 1em;
+
+      &:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: -0.5em;
+        border-left: 1px solid #C4C4C4;
+      }
+    }
+
+    &:hover {
+      background-color: #d1f3ff;
     }
   }
+}
+
+.header__username {
+  margin-left: 0.5em;
 }
 
 .header__inner {
