@@ -21,8 +21,8 @@ const ListNotifications = ({ isLoading, wrapper, error, data, spinner = false })
       title="У вас пока нет уведомлений"
       description="Тут будет отображаться список ваших уведомлений" />
   );
-  return data.map((item) => (
-    <NotificationItem className={classNames(cn.ItemContent)} {...item} />
+  return data.map((item, index) => (
+    <NotificationItem className={classNames(cn.ItemContent)} {...item} key={item?.id || index} />
   ));
 };
 

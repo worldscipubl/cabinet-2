@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import classNames from "classnames";
-import { useLazyGetNotificationsQuery } from "../../api/endpoints/NotificationsApi";
-import ListNotifications from "../ListNotifications";
-import cn from "./NotificationsMenu.module.scss";
 import { useHistory } from "react-router-dom";
+import classNames from "classnames";
+import ListNotifications from "../ListNotifications";
 import IonIcon from "../IonIcon";
+import { useLazyGetNotificationsQuery } from "../../api/endpoints/NotificationsApi";
+import cn from "./NotificationsMenu.module.scss";
 
 const NotificationsMenu = ({ open, setOpen }) => {
   const [trigger, { data, error, isLoading }] = useLazyGetNotificationsQuery();

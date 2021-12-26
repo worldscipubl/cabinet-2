@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import cn from "./Modal.module.scss";

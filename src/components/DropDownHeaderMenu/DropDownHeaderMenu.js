@@ -39,7 +39,7 @@ DropDownHeaderMenu.defaultProps = {
 DropDownHeaderMenu.propTypes = {
   open: PropTypes.bool.isRequired,
   setOpen: PropTypes.func.isRequired,
-  anchorEl: PropTypes.element,
+  anchorEl: PropTypes.object,
   autoFocus: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)])
 };

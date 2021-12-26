@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
-import classNames from "classnames";
 import HeaderLogo from "./HeaderLogo";
 import Avatar from "../Avatar";
 import IonIcon from "../IonIcon";
 import DropDownHeaderMenu from "../DropDownHeaderMenu";
 import NotificationsMenu from "../NotificationsMenu";
+import ProfileMenu from "../ProfileMenu";
 import "./Header.scss";
 
 const Header = () => {
@@ -28,13 +28,13 @@ const Header = () => {
       <div className="header__inner">
         <HeaderLogo />
         <ul className="header__action">
-          <li className="header__action-item" ref={bellRef}>
+          <li className="header__action-item" ref={bellRef} onClick={handleBell}>
             <div className="bell">
-              <IonIcon className="bell__img" name="notifications" onClick={handleBell} />
+              <IonIcon className="bell__img" name="notifications" />
             </div>
           </li>
-          <li className="header__action-item" ref={profileRef}>
-            <Avatar size="small" type="button" border="primary" onClick={handleProfile} />
+          <li className="header__action-item" ref={profileRef} onClick={handleProfile}>
+            <Avatar size="small" type="button" border="primary" />
             <span className="text header__username">Иван</span>
           </li>
         </ul>
@@ -44,26 +44,10 @@ const Header = () => {
                           anchorEl={bellRef}>
         <NotificationsMenu open={openNotification} setOpen={setOpenNotification} />
       </DropDownHeaderMenu>
+
       <DropDownHeaderMenu className="header-menu__profile"
                           open={openProfile} setOpen={setOpenProfile} anchorEl={profileRef}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ex id illum inventore natus nesciunt
-          quisquam recusandae similique. Assumenda dignissimos dolore enim iure nam provident quis quos ratione sequi,
-          veritatis!
-        </p>
-        <br />
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ex id illum inventore natus nesciunt
-          quisquam recusandae similique. Assumenda dignissimos dolore enim iure nam provident quis quos ratione sequi,
-          veritatis!
-        </p>
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ex id illum inventore natus nesciunt
-          quisquam recusandae similique. Assumenda dignissimos dolore enim iure nam provident quis quos ratione sequi,
-          veritatis!
-        </p>
+        <ProfileMenu open={openProfile} setOpen={setOpenProfile} />
       </DropDownHeaderMenu>
     </header>
   );

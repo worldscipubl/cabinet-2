@@ -1,0 +1,56 @@
+@use './src/common/style/global'as *;
+
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  border-bottom: 0.08em solid $label-bg-gray-hover;
+}
+
+.Title {
+  margin-left: 0.5em;
+}
+
+.BackBtn {
+  font-size: 1.25em;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 250ms;
+  padding: 0.25em;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 0.5em;
+  overflow-y: scroll;
+}
+
+.Item {
+  display: flex;
+  padding: 0.8em 0.5em;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    border-bottom: 0.08em solid $label-bg-gray-hover;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.ItemLabel {
+
+}

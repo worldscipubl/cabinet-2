@@ -11,9 +11,9 @@ import FaqPage from "./pages/FaqPage";
 import NotFoundPage from "./domain/NotFoundPage";
 import SettingsPage from "./pages/SettingsPage";
 import AuthPage from "./pages/AuthPage";
-import { useGetUserQuery } from "./api/endpoints/UserApi";
 import PreloadingScreen from "./components/PreloadingScreen";
 import NotificationsPage from "./pages/NotificationsPage";
+import { useGetUserQuery } from "./api/endpoints/UserApi";
 
 export const AppRouter = () => {
   const { data: user, error, isLoading } = useGetUserQuery();

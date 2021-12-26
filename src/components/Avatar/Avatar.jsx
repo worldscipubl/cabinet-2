@@ -1,5 +1,20 @@
 import React from "react";
-import "./Avatar.scss";
+import classNames from "classnames";
+import IonIcon from "../IonIcon";
+import cn from "./Avatar.module.scss";
+
+export const Avatar = ({ className, avatar, onClick, ...props }) => {
+
+  return (
+    <div className={classNames(cn.Wrapper)} onClick={onClick}>
+      {avatar ? <img
+        className={classNames(cn.Img, { [cn.border]: true })}
+        src={avatar}
+        alt="avatar"
+      /> : <IonIcon className={classNames(cn.Img)} name="person-circle-outline" />}
+    </div>
+  );
+};
 
 const initStyleAvatar = ({ size, type, border }) => {
   let style = "avatar";
@@ -47,20 +62,6 @@ const initStyleAvatar = ({ size, type, border }) => {
   }
 
   return style;
-};
-
-export const Avatar = ({ onClick, ...props }) => {
-  const style = initStyleAvatar(props);
-
-  return (
-    <div className={style} onClick={onClick}>
-      <img
-        className="avatar__img"
-        src="https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg"
-        alt="avatar"
-      />
-    </div>
-  );
 };
 
 export default Avatar;

@@ -1,6 +1,28 @@
 @use './src/common/style/global' as *;
 
+.Wrapper {
+  height: 2em;
+  width: 2em;
+}
+
+.Img {
+  display: inline-block;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center bottom;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  &.border {
+    border: 0.08em solid $label-bg-gray-hover;
+  }
+}
+
 .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   min-height: 32px;
   min-width: 32px;
@@ -13,15 +35,6 @@
     }
   }
 
-  &_border {
-    &_primary {
-      border: 2px solid #C4C4C4;
-
-      &:hover {
-        border: 2px solid $green;
-      }
-    }
-  }
 
   &_size {
     &_stretch-x {
@@ -43,13 +56,4 @@
     }
 
   }
-}
-
-.avatar__img {
-  display: inline-block;
-  border-radius: 50%;
-  object-fit: contain;
-  object-position: center;
-  height: 100%;
-  width: 100%;
 }

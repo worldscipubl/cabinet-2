@@ -1,0 +1,52 @@
+@use './src/common/style/global'as *;
+
+.Options {
+  display: flex;
+  justify-content: space-between;
+  min-height: 54px;
+  width: 100%;
+}
+
+.Option {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  padding: 0.5em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 250ms;
+
+  & + & {
+    border-left: 0.08em solid $label-bg-gray-hover;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.OptionLabel {
+  width: 78%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.OptionIcon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -4px;
+  bottom: -8px;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.Skeleton {
+  width: 65%;
+}

@@ -114,9 +114,10 @@
 
 .header-menu__profile {
   width: 25%;
-  min-width: 275px;
+  min-width: 320px;
 
   @media screen and (max-width: $bp-tablet) {
+    min-width: 280px;
     width: 100%;
   }
 }

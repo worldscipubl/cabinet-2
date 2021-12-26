@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Provider as StateProvider } from "react-redux";
-import { AppRouter } from "./AppRouter";
-import store from "./store";
 import { getTokenMessaging, onMessageListener } from "./firebase";
 import Undraw from "react-undraw";
+import store from "./store";
+import { AppRouter } from "./AppRouter";
 
 export const App = () => {
   Undraw.defaultProps.primaryColor = "#0D1D47";
