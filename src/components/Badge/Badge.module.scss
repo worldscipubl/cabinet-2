@@ -1,0 +1,68 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  position: relative;
+}
+
+.Badge {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  pointer-events: none;
+
+  min-width: 24px;
+  line-height: 1;
+  padding: 0 6px;
+  height: 24px;
+  border-radius: 12px;
+  z-index: 1;
+  transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #DD3848;
+  color: white;
+  transform-origin: 100% 0%;
+  position: absolute;
+
+  &.anchorOriginTopLeft {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    transform: scale(1) translate(-50%, -50%);
+  }
+
+  &.anchorOriginTopRight {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    transform: scale(1) translate(50%, -50%);
+  }
+
+  &.anchorOriginBottomLeft {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    transform: scale(1) translate(-50%, 50%);
+  }
+
+  &.anchorOriginBottomRight {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    transform: scale(1) translate(50%, 50%);
+  }
+
+  &.anchorOriginYCenterRight {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    transform: scale(1) translate(50%, -50%);
+  }
+}

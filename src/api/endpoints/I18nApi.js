@@ -1,6 +1,6 @@
 import entryApi from "../entryApi";
 
-const I18n = entryApi.injectEndpoints({
+const I18nApi = entryApi.injectEndpoints({
   endpoints: (build) => ({
     /* Получить текущую валюту пользователя */
     getCurrentCurrency: build.query({
@@ -50,4 +50,4 @@ const I18n = entryApi.injectEndpoints({
 export const {
   useGetCurrentCurrencyQuery,
   useGetCurrentLangQuery
-} = I18n;
+} = I18nApi;

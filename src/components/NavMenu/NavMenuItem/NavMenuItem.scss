@@ -19,10 +19,6 @@
   &:hover {
     background-color: #d1f3ff;
   }
-
-  & + & {
-    margin-top: 6px;
-  }
 }
 
 .nav-menu__img {
@@ -46,6 +42,37 @@
   margin-left: 8px;
   line-height: 120%;
   transform: translateY(5%);
+}
+
+.nav-menu__badge {
+  top: 50%;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  transform: scale(1) translate(-50%, -50%);
+
+  @media screen and (max-width: $bp-tablet) {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    transform: scale(1) translate(25%, -25%);
+    padding: 0 4px;
+    min-width: 14px;
+    height: 14px;
+    font-size: 9px;
+    border-radius: 7px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+
+  }
+
+  &-wrapper {
+    & + & {
+      margin-top: 6px;
+    }
+  }
 }
 
 @media screen and (max-width: $bp-tablet) {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classNames from "classnames";
 import Skeleton from "react-loading-skeleton";
 import IonIcon from "../../IonIcon";

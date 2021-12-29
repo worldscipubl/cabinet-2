@@ -1,0 +1,20 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+
+.Title {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.List {
+  margin-top: 1em;
+}
+
+.Answer {
+  padding: 0.7em 1em;
+}

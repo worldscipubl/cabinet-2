@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./NavMenuItem.scss";
 import IonIcon from "../../IonIcon";
+import withBadge from "../../../hoc/withBadge";
+import "./NavMenuItem.scss";
 
-const NavMenuItem = ({ img, title, linkTo, onClick }) => {
+const NavMenuItem = ({ img, title, linkTo, onClick, useBadgeId }) => {
+  const [badgeId, setBadgeId] = useBadgeId();
+
   return (
     <NavLink
       className="nav-menu__item"
@@ -17,4 +20,11 @@ const NavMenuItem = ({ img, title, linkTo, onClick }) => {
   );
 };
 
-export default NavMenuItem;
+export default withBadge(NavMenuItem,
+  {
+    anchorOrigin: { horizontal: "left", vertical: "center" },
+    className: "nav-menu__badge-wrapper",
+    classesBadge: "nav-menu__badge"
+  });
+
+

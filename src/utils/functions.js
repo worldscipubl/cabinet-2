@@ -11,6 +11,8 @@ export const getHashFromString = (str) => {
 
 
 export const getDate = (value, isFull) => {
+  if (!value) return "00.00.00";
+
   const SERVER_TIME_ZONE = 3;
   // Смещение времени сервера относительно UTC
   const timeZoneOffsetServer = SERVER_TIME_ZONE * 3600;

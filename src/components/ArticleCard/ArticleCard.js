@@ -3,9 +3,10 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import withBadge from "../../hoc/withBadge";
 import cn from "./ArticleCard.module.scss";
 
-const ArticleCard = ({ article, isLoading }) => {
+const ArticleCard = ({ className, article, isLoading, badge }) => {
   const {
     articleId,
     statusTitle,
@@ -16,7 +17,7 @@ const ArticleCard = ({ article, isLoading }) => {
   } = article || {};
 
   return (
-    <Link className={classNames(cn.LinkWrapper)}
+    <Link className={classNames(cn.LinkWrapper, className)}
           to={`/article/${articleId}`}>
       <div className={classNames(cn.Container)}>
         <div className={classNames(cn.Item)}>
@@ -55,8 +56,9 @@ const ArticleCard = ({ article, isLoading }) => {
           </h4>
         </div>
       </div>
+      {badge}
     </Link>
   );
 };
 
-export default ArticleCard;
+export default withBadge(ArticleCard, { injecting: true });

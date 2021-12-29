@@ -1,0 +1,36 @@
+@use './src/common/style/global' as *;
+
+.Container {
+
+}
+
+.Header {
+
+}
+
+.Title {
+  background-color: $green;
+  padding: 0.6em 2em 0.6em 12px;
+  display: inline-block;
+  margin-top: 12px;
+  border-top-right-radius: 0.36em;
+  border-bottom-right-radius: 0.36em;
+}
+
+.SubHeader {
+  padding: 12px 12px 0;
+  width: 100%;
+
+  &:after {
+    display: block;
+    content: "";
+    height: 1px;
+    width: 100%;
+    margin: 12px 0 0;
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+}
+
+.Body {
+  padding: 8px 12px;
+}

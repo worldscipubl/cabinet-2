@@ -1,21 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import classNames from "classnames";
 import btnImg from "../../common/images/icons/arrow-back.svg";
 import cn from "./AppBar.module.scss";
 
 const AppBar = ({ title, description }) => {
   const location = useLocation();
+  const history = useHistory();
 
   return (
     <header className={classNames(cn.AppBar)}>
       <ul className={classNames(cn.AppBarList)}>
         {!["/home", "/"].includes(location.pathname) && (
-          <li className={classNames(cn.Action, cn.ActionBack)}>
-            <Link to="/">
-              <img className={classNames(cn.ActionBackImg)} src={btnImg} alt="back" />
-            </Link>
+          <li className={classNames(cn.Action, cn.ActionBack)} onClick={() => history.goBack()}>
+            <img className={classNames(cn.ActionBackImg)} src={btnImg} alt="back" />
           </li>
         )}
         <li className={classNames(cn.Action)}>

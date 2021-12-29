@@ -27,7 +27,6 @@ const NavMenu = () => {
       <div className="menu__inner">
         {navMenuList.map(({ img, title, linkTo, id }) => (
           <NavMenuItem key={id} img={img} title={title} linkTo={linkTo} />
-
         ))}
       </div>
       <div className="menu__bottom">

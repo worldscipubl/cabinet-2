@@ -46,7 +46,8 @@ const Header = () => {
       </DropDownHeaderMenu>
 
       <DropDownHeaderMenu className="header-menu__profile"
-                          open={openProfile} setOpen={setOpenProfile} anchorEl={profileRef}>
+                          open={openProfile} setOpen={setOpenProfile}
+                          anchorEl={profileRef}>
         <ProfileMenu open={openProfile} setOpen={setOpenProfile} />
       </DropDownHeaderMenu>
     </header>

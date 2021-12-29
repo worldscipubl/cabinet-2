@@ -7,9 +7,6 @@
 }
 
 .card-status__inner {
-  background: #FFFFFF;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
   width: 75%;
 
   @media screen and (max-width: $bp-laptop) {
