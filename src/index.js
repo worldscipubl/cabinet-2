@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
-import { App } from "./App";
+import "./common/style/app.scss";
+import App from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+    <App/>,
+    document.getElementById("root")
 );
 serviceWorker.register();

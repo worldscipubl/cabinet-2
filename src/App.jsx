@@ -1,34 +1,45 @@
-import React, { useEffect } from "react";
-import { Provider as StateProvider } from "react-redux";
-import { getTokenMessaging, onMessageListener } from "./firebase";
-import Undraw from "react-undraw";
-import store from "./store";
-import { AppRouter } from "./AppRouter";
+import React, {useEffect} from "react";
+import {getTokenMessaging} from "./firebase";
+import AppRouter from "./routers/AppRouter";
+import PreloadingScreen from "./components/PreloadingScreen";
+import Header from "./components/Header";
+import withAppPresets from "./hoc/withAppPresets";
+import EmptyState from "./domain/EmptyState";
+import {useGetUserQuery} from "./api/endpoints/UserApi";
 
-export const App = () => {
-  Undraw.defaultProps.primaryColor = "#0D1D47";
+const App = () => {
+    const {data: user, error, isLoading} = useGetUserQuery();
 
-  useEffect(() => {
-    getTokenMessaging()
-      .then((currentToken) => {
-        console.log(currentToken);
-      })
-      .catch((err) => {
-        console.log("failed: ", err);
-      });
+    useEffect(() => {
+        getTokenMessaging()
+            .then((currentToken) => {
+                console.log(currentToken);
+            })
+            .catch((err) => {
+                console.log("failed: ", err);
+            });
+    }, []);
 
-    onMessageListener()
-      .then((payload) => {
-        console.log(payload);
-      })
-      .catch((err) => {
-        console.log("failed: ", err);
-      });
-  }, []);
+    if (isLoading) return <PreloadingScreen isLoading={isLoading}/>;
 
-  return (
-    <StateProvider store={store}>
-      <AppRouter />
-    </StateProvider>
-  );
+    if (error) return (
+        <EmptyState
+            fullScreen={true}
+            type="warning"
+            title="Упс... Произошла ошибка!"
+            description={error}>
+            <button className="button button_type_main" onClick={() => document.location.reload()}>
+                Обновить страницу
+            </button>
+        </EmptyState>
+    );
+
+    return (
+        <div className="app">
+            <Header isShow={!!user}/>
+            <AppRouter user={user}/>
+        </div>
+    );
 };
+
+export default withAppPresets(App);
