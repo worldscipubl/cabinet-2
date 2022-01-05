@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "./common/style/app.scss";
 import Header from "./components/Header";
 import MyArticles from "./pages/MyArticles";
-import ArticlePage from "./pages/ArticlePage";
 import ReferralPage from "./pages/ReferralPage";
 import HomePage from "./pages/HomePage";
 import EducationPage from "./pages/Education";
@@ -14,6 +13,7 @@ import AuthPage from "./pages/AuthPage";
 import PreloadingScreen from "./components/PreloadingScreen";
 import NotificationsPage from "./pages/NotificationsPage";
 import { useGetUserQuery } from "./api/endpoints/UserApi";
+import ArticlePage from "./pages/ArticlePage";
 
 export const AppRouter = () => {
   const { data: user, error, isLoading } = useGetUserQuery();

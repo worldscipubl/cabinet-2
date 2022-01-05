@@ -1,5 +1,6 @@
 import axios from "axios";
 import HTTPError from "./HTTPError";
+import { downloadBlobFile } from "../utils/functions";
 
 class ApiService {
   constructor() {
@@ -34,6 +35,27 @@ class ApiService {
       this.logMessage("Response Error", handledError);
       throw handledError;
     }
+  }
+
+  async downloadResource(url) {
+    return new Promise((resolve, reject) => {
+      this.getResource({
+        responseType: "blob",
+        url
+      })
+        .then((response) => {
+          const blob = response?.data;
+          if (!blob) reject(new Error("File not found!"));
+          return blob;
+        })
+        .then((blob) => {
+          downloadBlobFile(blob);
+          resolve(blob);
+        })
+        .catch((reason) => {
+          reject(reason);
+        });
+    });
   }
 
   async setResource({ url = null, data = null, params = null, auth = null }) {

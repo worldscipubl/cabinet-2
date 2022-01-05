@@ -1,21 +1,20 @@
 import React from "react";
-import { Route, useHistory, useParams } from "react-router-dom";
-import ArticlePipeline from "./ArticlePipeline/ArticlePipeline";
+import { useHistory, useParams } from "react-router-dom";
 import ArticleChat from "./ArticleChat/ArticleChat";
 import ArticleBrief from "./ArticleBrief/ArticleBrief";
 import { useGetArticleByIdQuery } from "../../api/endpoints/ArticlesApi";
-import Loader from "../../components/Loader";
 import ArticlePayment from "./ArticlePayment/ArticlePayment";
 import ArticleRequest from "./ArticleRequest/ArticleRequest";
 import TabLayout from "../../layouts/TabLayout";
 import MainLayout from "../../layouts/MainLayout";
 import Spinner from "../../components/Spinner";
 import EmptyState from "../../domain/EmptyState";
+import ArticlePipeline from "./ArticlePipeline";
 
 const ArticlePage = () => {
   const { articleId, tabId } = useParams();
-  const history = useHistory();
   const { data: article, error, isLoading } = useGetArticleByIdQuery(articleId);
+  const history = useHistory();
 
   const articleTabs = [
     <ArticleRequest tabId="article-request" tabLabel="Заявка" key="article-request" />,

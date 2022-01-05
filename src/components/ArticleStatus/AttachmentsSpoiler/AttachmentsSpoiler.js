@@ -3,28 +3,17 @@ import Spoiler from "../../Spoiler/Spoiler";
 import List from "../../List/List";
 import ListItem from "../../List/ListItem/ListItem";
 import downloadImg from "../../../common/images/icons/download.svg";
-import ArticlesService from "../../../services/ArticlesService";
+import ApiService from "../../../services/ApiService";
+
 
 const AttachmentsSpoiler = ({ attachments }) => {
 
-  function handleDownloadBtn(fileId, typeName) {
-    const articlesService = new ArticlesService();
-    articlesService
-      .getArticleFileById(fileId)
-      .then((response) => {
-        const url = window.URL.createObjectURL(
-          new Blob([response.data], { type: response.data.type })
-        );
-
-        const link = document.createElement("a");
-        link.href = url;
-        link.target = "_blank";
-        link.setAttribute("download", typeName);
-        link.click();
-        link.remove();
-        window.URL.revokeObjectURL(url);
-      })
-      .catch();
+  function handleDownloadBtn(fileId) {
+    const apiService = new ApiService();
+    apiService
+      .downloadResource(`/article-files/${fileId}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 
   return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import ArticleStatus from "../ArticleStatus";
+import { useLazyGetArticleChangesQuery } from "../../api/endpoints/TimeLineArticleApi";
 import "./ArticleChanges.scss";
-import { useLazyGetArticleChangesQuery } from "../../api/endpoints/ArticlesApi";
-import ArticleStatus from "../ArticleStatus/ArticleStatus";
 
 const ArticleChanges = ({ article }) => {
   const { currentStage: stage, articleId } = article;
@@ -33,6 +33,7 @@ const ArticleChanges = ({ article }) => {
             key={stage + status.statusChangeId + Math.random()}
             status={status}
             stage={stage}
+            articleId={articleId}
           />
         );
       })}

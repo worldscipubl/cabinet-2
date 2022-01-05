@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import classNames from "classnames";
 import btnImg from "../../common/images/icons/arrow-back.svg";
 import cn from "./AppBar.module.scss";

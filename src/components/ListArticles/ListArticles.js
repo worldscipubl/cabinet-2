@@ -67,7 +67,7 @@ ListArticles.defaultProps = {
 };
 
 ListArticles.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.array,
   error: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
   spinner: PropTypes.bool

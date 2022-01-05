@@ -1,22 +1,31 @@
 import React from "react";
-import ArticlesService from "../../../services/ArticlesService";
 import Spoiler from "../../Spoiler/Spoiler";
-import List from "../../List/List";
-import ListItem from "../../List/ListItem/ListItem";
 import uploadImg from "../../../common/images/icons/upload.svg";
+import List from "../../List/List";
+import ListItem from "../../List";
+import { useUploadFileMutation } from "../../../api/endpoints/ArticleFilesApi";
 
-const FileUploadSpoiler = ({ filesUpload }) => {
-  const articlesService = new ArticlesService();
-  const fileUploader = (data) => {
-    articlesService
-      .uploadFile(data)
-      .then((response) => {
-        console.log(response);
+const FileUploadSpoiler = ({ filesUpload, articleId }) => {
+  const [uploadFile, { data, error, isLoading }] = useUploadFileMutation();
+
+  function fileUploader(data) {
+    uploadFile(data).unwrap()
+      .then((res) => {
+        console.log(res);
       })
       .catch((error) => {
         console.log(error);
       });
-  };
+  }
+
+  function submitFile(file, fileArticleTypeId) {
+    const formData = new FormData();
+    formData.append("articleId", articleId);
+    formData.append("typeId", fileArticleTypeId);
+    formData.append("ArticleFile[file]", file);
+
+    fileUploader(formData);
+  }
 
   return (
     <Spoiler title="Загрузить документы">
@@ -27,20 +36,14 @@ const FileUploadSpoiler = ({ filesUpload }) => {
         at delectus tempore.
       </p>
       <List>
-        {filesUpload.map(({ typeId, typeName }) => (
+        {filesUpload.map(({ fileArticleTypeId, typeName }) => (
           <ListItem
-            key={typeName + Math.random()}
+            key={`${typeName}-${fileArticleTypeId}`}
             startIcon={uploadImg}
             title={typeName || "Безымянный файл"}
             hint="Загрузить файл"
-            fileUpload={(file) => {
-              const formData = new FormData();
-              formData.append("articleId", typeId);
-              formData.append("type", 1);
-              formData.append("ArticleFile[file]", file);
-
-              fileUploader(formData);
-            }}
+            disabled={isLoading}
+            fileUpload={(file) => submitFile(file, fileArticleTypeId)}
           />
         ))}
       </List>

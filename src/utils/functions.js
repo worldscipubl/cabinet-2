@@ -9,7 +9,6 @@ export const getHashFromString = (str) => {
   return hash;
 };
 
-
 export const getDate = (value, isFull) => {
   if (!value) return "00.00.00";
 
@@ -33,7 +32,6 @@ export const getDate = (value, isFull) => {
   return `${String(day).padStart(2, "0")}.${(String(month + 1).padStart(2, "0"))}.${year}`;
 };
 
-
 export const getTime = (value) => {
   const SERVER_TIME_ZONE = 3;
   // Смещение времени сервера относительно UTC
@@ -49,4 +47,20 @@ export const getTime = (value) => {
   const minutes = date.getMinutes();
 
   return `${String(hour).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+};
+
+export const downloadBlobFile = (blob) => {
+  if (!blob) return;
+  const type = blob.type;
+  const url = window.URL.createObjectURL(
+    new Blob([blob], { type })
+  );
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.setAttribute("download", type);
+  link.click();
+  link.remove();
+  window.URL.revokeObjectURL(url);
 };

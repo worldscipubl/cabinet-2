@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import NavMenu from "../../components/NavMenu";
-import AppBar from "../AppBar/AppBar";
+import AppBar from "../AppBar";
 
 const MainLayout = ({
                       children,

@@ -10,8 +10,18 @@ const TAG_TYPES = [
   "articlePayment",
   "messagesByArticle",
   "userData",
-  "user"
+  "user",
+  "articleCard"
 ];
+
+export function providesList({ data, key = "id", tagType }) {
+  return data
+    ? [
+      { type: tagType, id: "LIST" },
+      ...data.map((item) => ({ type: tagType, id: item[key] }))
+    ]
+    : [{ type: tagType, id: "LIST" }];
+}
 
 const entryApi = createApi({
   reducerPath: "wspApi",

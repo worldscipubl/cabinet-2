@@ -64,4 +64,9 @@
     position: relative;
     z-index: 2;
   }
+
+  &_disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }

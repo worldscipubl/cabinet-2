@@ -1,32 +1,32 @@
 import React, { useRef, useState } from "react";
-import "./ListItem.scss";
 import doneImg from "../../../common/images/icons/done.svg";
-import { Link } from "react-router-dom";
+import ListItemContainer from "../ListItemContainer";
+import "./ListItem.scss";
 
 const ListItem = ({
-  fileUpload,
-  startIcon,
-  endIcon,
-  title,
-  hint,
-  onClick,
-  link,
-}) => {
+                    fileUpload,
+                    startIcon,
+                    endIcon,
+                    title,
+                    hint,
+                    onClick,
+                    disabled,
+                    link
+                  }) => {
   const inputFile = useRef(null);
   const [state, setState] = useState({
     startIcon,
     endIcon,
     title,
-    fileUpload: null,
+    fileUpload: null
   });
 
   fileUpload && (onClick = () => inputFile.current.click());
 
   return (
-    <ContainerItem
-      link={link}
-      className={`list-item ${onClick ? "list-item_type_button" : ""}`}
-      onClick={onClick}
+    <ListItemContainer
+      className={`list-item ${onClick ? "list-item_type_button" : ""} ${disabled ? "list-item_disabled" : ""}`}
+      onClick={onClick} link={link}
     >
       {startIcon && (
         <span className="list-item__icon">
@@ -73,7 +73,7 @@ const ListItem = ({
                   ...state,
                   startIcon: doneImg,
                   fileUpload: file,
-                  title: file.name,
+                  title: file.name
                 });
               }
             }}
@@ -83,17 +83,8 @@ const ListItem = ({
           />
         </div>
       )}
-    </ContainerItem>
+    </ListItemContainer>
   );
 };
-
-const ContainerItem = ({ link, children, ...props }) =>
-  link ? (
-    <Link to={link} target="_blank" {...props}>
-      {children}
-    </Link>
-  ) : (
-    <div {...props}>{children}</div>
-  );
 
 export default ListItem;

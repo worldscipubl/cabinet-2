@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./ArticleStatus.scss";
-import Spoiler from "../../components/Spoiler/Spoiler";
-import List from "../../components/List/List";
-import ListItem from "../../components/List/ListItem/ListItem";
-import downloadImg from "../../common/images/icons/download.svg";
-import uploadImg from "../../common/images/icons/upload.svg";
 import { instructions } from "../../utils/textStatic";
-import ArticlesService from "../../services/ArticlesService";
 import AttachmentsSpoiler from "./AttachmentsSpoiler";
 import FileUploadSpoiler from "./FileUploadSpoiler";
 import { getDate } from "../../utils/functions";
 import CardHeadband from "../CardHeadband";
+import "./ArticleStatus.scss";
+import Spinner from "../Spinner";
 
-const ArticleStatus = ({ status, stage }) => {
+const ArticleStatus = ({ status, articleId }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,9 +15,9 @@ const ArticleStatus = ({ status, stage }) => {
     setLoading(false);
   }, [status]);
 
-  return loading ? (
-    <h2 className="text">Загрузка...</h2>
-  ) : (
+  if (loading) return <Spinner />;
+
+  return (
     <div className="card-status">
       <span className="text text_color_gray">
         {getDate(status.dateCreate)}
@@ -35,7 +30,7 @@ const ArticleStatus = ({ status, stage }) => {
                       {StatusInstruction(status.statusChangeId)}
                     </>}>
         <AttachmentsSpoiler attachments={status.files} />
-        <FileUploadSpoiler filesUpload={status.filesUpload} />
+        <FileUploadSpoiler filesUpload={status.filesUpload} articleId={articleId} />
       </CardHeadband>
     </div>
   );
