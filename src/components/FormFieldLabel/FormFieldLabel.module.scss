@@ -1,0 +1,12 @@
+@use './src/common/style/global' as *;
+
+.textField__description {
+  margin-bottom: 0.25em;
+}
+
+.textField__label {
+  display: inline-block;
+  font-size: inherit;
+  cursor: text;
+  margin-bottom: 0.25em;
+}

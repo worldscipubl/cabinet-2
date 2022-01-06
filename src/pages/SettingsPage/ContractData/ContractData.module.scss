@@ -1,0 +1,10 @@
+@use './src/common/style/global' as *;
+
+.UserFile {
+  width: calc(100% / 2 - 1em);
+  margin-top: 1em;
+
+  & + & {
+    margin-left: 1em;
+  }
+}

@@ -3,7 +3,6 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Paper from "../../Paper";
 import cn from "./DashboardCard.module.scss";
 import Card from "../../Card";
 

@@ -1,0 +1,16 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Start {
+  flex: 1 0 auto;
+}
+
+.End {
+  flex: 0 1 auto;
+}
