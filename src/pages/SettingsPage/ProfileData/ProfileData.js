@@ -1,12 +1,12 @@
 import React from 'react';
-import {useHistory} from "react-router-dom";
 import classNames from "classnames";
-import styles from "../SettingsPage.module.scss";
 import FormField from "../../../components/FormField";
 import Input from "../../../components/Input";
-import {useGetUserDataQuery, useSetUserDataMutation} from "../../../api/endpoints/UserApi";
 import CardHeadband from "../../../components/CardHeadband";
 import EmptyState from "../../../domain/EmptyState";
+import FieldAvatar from "../../../components/FieldAvatar";
+import {useGetUserDataQuery, useSetUserDataMutation} from "../../../api/endpoints/UserApi";
+import styles from "../SettingsPage.module.scss";
 
 const fieldsProfile = [
     {
@@ -66,27 +66,30 @@ const ProfileData = () => {
     );
 
     return (
-        <CardHeadband title="Данные профиля:">
-            <div className={classNames(styles.settings__form, {})}>
-                {fieldsProfile.map((field) => (
-                    <FormField
-                        className={classNames(styles.settings__input, {})}
-                        name={field?.name}
-                        key={field?.name}
-                        label={field?.label}
-                        isLoading={isLoading}
-                        description={field?.description}
-                        defaultValue={data?.[field?.name]}
-                        propsInput={{
-                            type: field?.type || "text",
-                            placeholder: field?.placeholder,
-                            required: true,
-                            multiple: !!(field?.type === "file")
-                        }}
-                        component={<Input/>}
-                        handlers={{handleFieldSubmit}}
-                    />
-                ))}
+        <CardHeadband title="Данные профиля">
+            <div className={classNames(styles.settings__avatarGroup)}>
+                <FieldAvatar className={classNames(styles.settings__avatar)}/>
+                <div className={classNames(styles.settings__avatarForm, {})}>
+                    {fieldsProfile.map((field) => (
+                        <FormField
+                            className={classNames(styles.settings__input, {})}
+                            name={field?.name}
+                            key={field?.name}
+                            label={field?.label}
+                            isLoading={isLoading}
+                            description={field?.description}
+                            defaultValue={data?.[field?.name]}
+                            propsInput={{
+                                type: field?.type || "text",
+                                placeholder: field?.placeholder,
+                                required: true,
+                                multiple: !!(field?.type === "file")
+                            }}
+                            component={<Input/>}
+                            handlers={{handleFieldSubmit}}
+                        />
+                    ))}
+                </div>
             </div>
         </CardHeadband>
     );

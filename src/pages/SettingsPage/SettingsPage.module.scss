@@ -12,6 +12,23 @@
 
 }
 
+.settings__avatarGroup {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings__avatarForm {
+  flex: 1 1 auto;
+}
+
+.settings__avatar {
+  display: flex;
+  margin-bottom: 1em;
+  padding: 2em;
+}
+
 .settings__input {
   margin-bottom: 1em;
 }

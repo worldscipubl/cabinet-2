@@ -12,7 +12,9 @@ const TAG_TYPES = [
     "userData",
     "user",
     "articleCard",
-    "article"
+    "article",
+    "trigger",
+    "categoryTrigger",
 ];
 
 export function providesList({data, keyID = "id", tagType}) {

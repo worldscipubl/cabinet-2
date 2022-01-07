@@ -5,7 +5,7 @@ import FormFieldRow from "../../../components/FormFieldRow";
 const ProfileSettings = () => {
 
     return (
-        <CardHeadband title="Настройки профиля:">
+        <CardHeadband title="Настройки профиля">
             <FormFieldRow className="brief-form__title" label="Карта оплаты">
                 <button className="button button_type_tabs">
                     Добавить

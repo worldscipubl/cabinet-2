@@ -1,0 +1,16 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Avatar {
+  width: 90px;
+  height: 90px;
+}
+
+.UploadBtn {
+  margin-top: 1em;
+}

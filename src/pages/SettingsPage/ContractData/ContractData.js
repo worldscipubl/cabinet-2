@@ -68,7 +68,7 @@ const ContractData = () => {
     };
 
     return (
-        <CardHeadband title="Данные для договора:">
+        <CardHeadband title="Данные для договора">
             <div className={classNames("brief-form", {})}>
                 {fieldsContract.map((field) => (
                     <FormField
