@@ -4,13 +4,25 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+
+  &.isLoading {
+    pointer-events: none;
+
+    .UploadBtn {
+      opacity: 0.5;
+    }
+  }
 }
 
 .Avatar {
-  width: 90px;
-  height: 90px;
+  width: 112px;
+  height: 112px;
 }
 
 .UploadBtn {
   margin-top: 1em;
+}
+
+.Input {
+  display: none;
 }

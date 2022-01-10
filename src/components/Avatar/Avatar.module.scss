@@ -3,13 +3,20 @@
 .Wrapper {
   height: 2em;
   width: 2em;
+
+  &.isLoading {
+    .Img {
+      border: none;
+      opacity: 0.5;
+    }
+  }
 }
 
 .Img {
   display: inline-block;
   border-radius: 50%;
-  object-fit: contain;
-  object-position: center bottom;
+  object-fit: cover;
+  object-position: center top;
   height: 100%;
   width: 100%;
 

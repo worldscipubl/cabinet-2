@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/endpoints/WalletsApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ChatMessage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WalletsList/WalletsList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WalletsList/WalletsList.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WalletsList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CircularProgress/CircularProgress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CircularProgress/CircularProgress.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CircularProgress/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useGetAvatar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/style/foundation/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArticleCard/ArticleCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleCard/ArticleCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArticleCard/ArticleCard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArticleCard/ArticleCard.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatBox/ChatBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatBox/ChatBox.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatBox/ChatListMessages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatBox/ChatMessageForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatMessageForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListArticles/ListArticles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListArticles/ListArticles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListNotifications/ListNotifications.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListNotifications/ListNotifications.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/EmptyState/EmptyState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleBrief/ArticleBrief.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ReferralPage/tabs/LinkTab/LinkTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/ContractData/ContractData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/ContractData/ContractData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/NotificationSettings/NotificationSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/NotificationSettings/NotificationSettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/ProfileSettings/ProfileSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/ProfileSettings/ProfileSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/endpoints/UserApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/UserApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar/Avatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Avatar/Avatar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar/Avatar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Avatar/Avatar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FieldAvatar/FieldAvatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldAvatar/FieldAvatar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FieldAvatar/FieldAvatar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FieldAvatar/FieldAvatar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/SettingsPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/SettingsPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/functions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="69528" />
+    <option name="totalTimeSeconds" value="81732" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -78,6 +60,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -110,7 +93,7 @@
       <workItem from="1641797159773" duration="196000" />
       <workItem from="1641797368456" duration="41000" />
       <workItem from="1641797422429" duration="2406000" />
-      <workItem from="1641804679504" duration="2533000" />
+      <workItem from="1641804679504" duration="14095000" />
     </task>
     <servers />
   </component>

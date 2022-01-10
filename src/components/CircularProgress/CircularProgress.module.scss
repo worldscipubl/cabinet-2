@@ -1,0 +1,59 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  display: flex;
+  min-width: 50px;
+  min-height: 50px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.Progress {
+  display: inline-block;
+  color: #1976d2;
+  animation: animation-circular 1.4s linear infinite;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.Circular {
+  display: block;
+  color: #1976d2;
+}
+
+.CircularInner {
+  color: #1976d2;
+  stroke: currentColor;
+  stroke-dasharray: 80px, 200px;
+  stroke-dashoffset: 0;
+  animation: animation-progress 1.4s ease-in-out infinite;
+}
+
+@keyframes animation-circular {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animation-progress {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
