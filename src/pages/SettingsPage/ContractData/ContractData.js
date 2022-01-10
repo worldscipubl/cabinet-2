@@ -34,13 +34,6 @@ const fieldsContract = [
         name: "passportWhenIssued",
         label: "Когда выдан паспорт",
         placeholder: "Укажите когда выдан паспорт"
-    },
-    {
-        name: "UserFile[file][]",
-        type: "file",
-        label: "Загрузить скан паспорта",
-        placeholder: "Скан паспорта",
-        description: "страница с фотографией и страница с пропиской"
     }
 ];
 

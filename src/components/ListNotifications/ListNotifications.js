@@ -10,7 +10,6 @@ const ListNotifications = ({ isLoading, wrapper, error, data, spinner = false })
 
   if (error) return (
     <EmptyState
-      fullScreen={true}
       type="warning"
       title="Упс... Произошла ошибка!"
       description={error} />

@@ -43,6 +43,12 @@
   }
 }
 
+.brief-form__toggle {
+  & + & {
+    margin-top: 0.5em;
+  }
+}
+
 .brief-form__submit {
   display: block;
   margin: 2em 0 1em auto;

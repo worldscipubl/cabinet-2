@@ -52,7 +52,7 @@ const NotificationSettings = () => {
             <ItemCategory key={categoryId} title={name}>
                 {
                     items?.map(({id, name, status}) => (
-                        <FormFieldRow className="brief-form__title" key={id} label={name}>
+                        <FormFieldRow key={id} label={name}>
                             <Toggle value={status} isLoading={isLoadingTrigger === id}
                                     setValue={() => handleToggle(id)}/>
                         </FormFieldRow>

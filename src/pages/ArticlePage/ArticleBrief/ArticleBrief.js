@@ -92,9 +92,9 @@ const ArticleBrief = ({ articleId, statusId }) => {
   return (
     <div>
       <Card appearance={{ type: "paper" }}>
-        <h2 className="text text_size_subtitle brief-form__description">
-          Форма заключения договора
-        </h2>
+          <h2 className="text text_size_subtitle brief-form__description">
+              Форма заключения договора
+          </h2>
         <ViewPager
           tabs={getTabs()}
           pages={getPages}

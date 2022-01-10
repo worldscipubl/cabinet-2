@@ -24,6 +24,11 @@
     background-color: #EEEEEE;
   }
 
+  &.isLoading {
+    pointer-events: none;
+    opacity: 0.9;
+  }
+
   &:hover {
     transform: scale(1.05);
     @media screen and (max-width: $bp-tablet) {
