@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {useGetUserDataQuery, useSetUserDataMutation, useSetUserPasswordMutation} from "../../../api/endpoints/UserApi";
 import classNames from "classnames";
-import FormField from "../../../components/FormField";
 import Input from "../../../components/Input";
 import CardHeadband from "../../../components/CardHeadband";
 import {useGetUserFilesQuery} from "../../../api/endpoints/UserFilesApi";
 import FormFieldContainer from "../../../components/FormFieldContainer";
 import UserFile from "../../../components/UserFile";
+import FormField from "../../../components/FormField";
 import cn from "./ContractData.module.scss"
 
 const fieldsContract = [
@@ -86,8 +86,8 @@ const ContractData = () => {
                 <FormFieldContainer className="brief-form__title"
                                     label="Загрузить скан паспорта"
                                     description="страница с фотографией и страница с пропиской">
-                    <UserFile className={cn.UserFile} userFileId={1} label="Загрузить страницу с фотографией"/>
-                    <UserFile className={cn.UserFile} userFileId={2} label="Загрузить страницу с пропиской"/>
+                    <UserFile className={cn.UserFile} fileId={1} label="Загрузить страницу с фотографией"/>
+                    <UserFile className={cn.UserFile} fileId={2} label="Загрузить страницу с пропиской"/>
                 </FormFieldContainer>
             </div>
         </CardHeadband>

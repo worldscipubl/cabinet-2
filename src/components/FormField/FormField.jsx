@@ -3,8 +3,8 @@ import classNames from "classnames";
 import "react-loading-skeleton/dist/skeleton.css";
 import errorImg from "../../common/images/icons/error.svg";
 import pencilImg from "../../common/images/icons/pencil.svg";
-import styles from "./FormField.module.scss";
 import FormFieldContainer from "../FormFieldContainer";
+import styles from "./FormField.module.scss";
 
 const FormField = ({
                        className,
@@ -137,12 +137,12 @@ const FormField = ({
                             disabled={disabled}>
             <>
                 {isReadOnly && !!error && (
-                    <img className={styles.startIcon} src={errorImg} alt="start-icon"/>
+                    <img className={classNames(styles.Img, styles.startIcon)} src={errorImg} alt="start-icon"/>
                 )}
 
                 {isReadOnly && !isViewOnly && (
                     <img
-                        className={styles.endIcon}
+                        className={classNames(styles.Img, styles.endIcon)}
                         src={pencilImg}
                         alt="end-icon"
                         onClick={() => {

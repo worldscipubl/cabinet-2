@@ -3,11 +3,15 @@ import classNames from "classnames";
 import "react-loading-skeleton/dist/skeleton.css";
 import IonIcon from "../IonIcon";
 import {useUploadUserFileMutation} from "../../api/endpoints/UserFilesApi";
+import useGetPassport from "../../hooks/useGetPassport";
+import {getImgFromFile} from "../../utils/functions";
 import cn from "./UserFile.module.scss"
 
 const UserFile = ({className, fileId, fileName, label = "label"}) => {
-    const [uploadFile, {data, error, isLoading}] = useUploadUserFileMutation();
-    const [file, setFile] = useState(null);
+    const {scanFile, errorPage, isLoadingPage} = useGetPassport(fileId);
+
+    const [uploadFile, {error, isLoading}] = useUploadUserFileMutation();
+    const [file, setFile] = useState(scanFile);
     const [titleFile, setTitleFile] = useState(label);
 
     function handleUploadFile(e) {
@@ -26,8 +30,8 @@ const UserFile = ({className, fileId, fileName, label = "label"}) => {
     function handleSubmitFile(e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("userTypeFileId", 1);
-        formData.append("UserFile[file][]", file);
+        formData.append("fileUserTypeId", fileId);
+        formData.append("UserFile[file]", file);
 
         uploadFile(formData).unwrap()
             .then((res) => {
@@ -40,40 +44,41 @@ const UserFile = ({className, fileId, fileName, label = "label"}) => {
 
     return (
         <label className={classNames(cn.Wrapper, className, {
-                [cn.done]: !!data,
+                [cn.done]: !!file,
                 [cn.disabled]: isLoading,
                 [cn.error]: error
             }
         )}>
-            <input className={classNames(cn.InputFile)} type="file" onChange={handleUploadFile} hidden
-                   accept=".pdf, .doc, .docx"
-                   required/>
+            <input className={classNames(cn.InputFile)} onChange={handleUploadFile}
+                   type="file" accept="image/*"
+                   hidden required/>
             <div className={classNames(cn.ImgGroup)}>
-                <IonIcon className={classNames(cn.ImgPlaceholder, {
-                        [cn.error]: (!!error),
-                        [cn.done]: (!!data),
-                    }
-                )}
-                         name={data ?
-                             "cloud-done-outline" :
-                             "cloud-upload-outline"}/>
+                {file ?
+                    <img className={classNames(cn.ImgFile)} src={getImgFromFile(file)}/> :
+                    <IonIcon className={classNames(cn.ImgPlaceholder, {
+                            [cn.error]: (!!error),
+                            [cn.done]: (!!file),
+                        }
+                    )}
+                             name={"cloud-upload-outline"}/>
+                }
             </div>
-            <div className={classNames(cn.LabelGroup)}>
-                <p className={classNames("text text_color_gray", cn.Label)}>
+            <div className={classNames(cn.Footer)}>
+                {!file && <p className={classNames("text text_color_gray", cn.Label)}>
                     {titleFile}
-                </p>
+                </p>}
+                {file && <div className={classNames(cn.SubmitGroup)}>
+                    <button className={classNames("button button_type_main")}
+                            onClick={handleSubmitFile}>
+                        Отправить
+                    </button>
+                </div>}
+                {error && <div className={classNames(cn.LabelGroup)}>
+                    <p className={classNames("text text_color_red", cn.Label)}>
+                        {error}
+                    </p>
+                </div>}
             </div>
-            {file && <div className={classNames(cn.SubmitGroup)}>
-                <button className={classNames("button button_type_table")}
-                        onClick={handleSubmitFile}>
-                    Отправить
-                </button>
-            </div>}
-            {error && <div className={classNames(cn.LabelGroup)}>
-                <p className={classNames("text text_color_red", cn.Label)}>
-                    {error}
-                </p>
-            </div>}
         </label>
     );
 };
