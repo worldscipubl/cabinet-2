@@ -1,0 +1,18 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  padding: 1em;
+  position: relative;
+
+  &.isLoading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.Progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}

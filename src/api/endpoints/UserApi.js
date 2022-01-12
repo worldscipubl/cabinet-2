@@ -26,7 +26,7 @@ const UserApi = entryApi.injectEndpoints({
                 headers: {"Authorization": `Basic ${userToken}`}
             }),
             transformResponse: (response) => {
-                return response.data?.data?.user;
+                return response.data;
             },
             invalidatesTags: ["user"]
         }),
@@ -41,7 +41,7 @@ const UserApi = entryApi.injectEndpoints({
                 tagType: "user"
             }),
             transformResponse: (response) => {
-                return response.data?.data?.user;
+                return response.data;
             }
         }),
         /**

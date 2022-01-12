@@ -1,0 +1,26 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  padding: 1em;
+}
+
+.FieldItem {
+  & + & {
+    margin-top: 1em;
+  }
+}
+
+.SubmitBtn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.Error {
+  margin-top: 1em;
+}
+
+.ActionGroup {
+  margin-top: 1em;
+  width: 100%;
+}

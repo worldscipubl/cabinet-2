@@ -1,0 +1,45 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0.7em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  &.isLoading {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.CardName {
+}
+
+.Skeleton {
+  display: flex;
+  width: max(28%, 56px);
+}
+
+.ImgCard, .ImgTrash {
+  height: 2em;
+  width: 2em;
+}
+
+.ImgCard {
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.CardNumber {
+}
+
+.ImgTrash {
+  color: $red;
+  margin-left: 1em;
+  cursor: pointer;
+}

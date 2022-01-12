@@ -14,6 +14,7 @@ const TAG_TYPES = [
     "articleCard",
     "article",
     "trigger",
+    "paymentCard",
     "categoryTrigger",
 ];
 

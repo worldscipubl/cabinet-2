@@ -8,10 +8,6 @@
 
 .Header {
   display: none;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5em 1em;
-  border-bottom: 0.08em solid $label-bg-gray-hover;
 
   @media screen and (max-width: $bp-tablet) {
     display: flex;
@@ -30,17 +26,4 @@
   text-align: center;
   width: 100%;
   border-top: 0.08em solid $label-bg-gray-hover;
-}
-
-.CloseBtn {
-  cursor: pointer;
-  display: inline-block;
-  object-position: center;
-  object-fit: contain;
-  font-size: 1.75em;
-  transition: 500ms;
-
-  &:hover {
-    transform: scale(1.15);
-  }
 }

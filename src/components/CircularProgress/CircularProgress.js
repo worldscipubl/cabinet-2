@@ -4,7 +4,7 @@ import cn from "./CircularProgress.module.scss"
 
 const CircularProgress = ({className, children, isLoading}) => {
 
-    if (!isLoading) return children;
+    if (!isLoading) return children || null;
 
     return (
         <div className={classNames(cn.Wrapper, className)}>

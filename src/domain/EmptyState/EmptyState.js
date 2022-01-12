@@ -14,8 +14,8 @@ const EmptyState = ({className, type, title, description, imgName, children}) =>
     }
 
     return (
-        <div className={classNames(className, cn.Wrapper)}>
-            <div className={classNames(cn.Container)}>
+        <div className={classNames(cn.Wrapper)}>
+            <div className={classNames(cn.Container, className)}>
                 <Undraw name={getImgName()} height="auto" style={{width: "65%"}}
                         className={classNames(cn.ContainerItem, cn.Img)}/>
                 {title && (

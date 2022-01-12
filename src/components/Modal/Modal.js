@@ -15,6 +15,7 @@ const Modal = forwardRef(({className, classNameWrapper, overlay, children, open,
 
     function handleKeyDown(event) {
         if (event.keyCode === 27) {
+            event.preventDefault();
             setOpen(false);
         }
     }

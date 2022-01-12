@@ -1,0 +1,62 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  width: 100%;
+  position: relative;
+
+  &.isLoading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.EmptyState {
+  width: 50%;
+
+  @media screen and (max-width: $bp-tablet) {
+    width: 75%;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    width: 100%;
+  }
+}
+
+.WrapperAddBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AddBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0.6em 1em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+}
+
+.AddImg {
+  height: 2em;
+  width: 2em;
+}
+
+.AddLabel {
+  font-size: 1em;
+  margin-left: 0.5em;
+}
+
+.Progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

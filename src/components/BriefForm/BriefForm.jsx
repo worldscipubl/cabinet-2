@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import classNames from "classnames";
 import Input from "../Input/Input";
-import Loader from "../Loader";
 import FormField from "../FormField";
 import EmptyState from "../../domain/EmptyState";
 
