@@ -3,6 +3,10 @@
 .Wrapper {
   height: 2em;
   width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
 
   &.isLoading {
     .Img {

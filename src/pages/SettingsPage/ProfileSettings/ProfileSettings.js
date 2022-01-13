@@ -1,13 +1,9 @@
 import React from 'react';
 import CardHeadband from "../../../components/CardHeadband";
 import FormFieldRow from "../../../components/FormFieldRow";
-import {useGetWalletsQuery} from "../../../api/endpoints/WalletsApi";
 import FormFieldContainer from "../../../components/FormFieldContainer";
-import List from "../../../components/List/List";
-import ListItem from "../../../components/List";
-import ListItemContainer from "../../../components/List/ListItemContainer";
-import CardItem from "../../../components/CardList/CardItem";
 import CardList from "../../../components/CardList";
+import DialogResetPassword from "../../../components/DialogResetPassword";
 
 const ProfileSettings = () => {
     return (
@@ -21,18 +17,10 @@ const ProfileSettings = () => {
             <FormFieldRow className=" brief-form__title"
                           label=" Пароль"
                           description=" Введите новый, если хотите изменить">
-                <button className=" button button_type_tabs">
-                    Изменить
-                </button>
+                <DialogResetPassword/>
             </FormFieldRow>
         </CardHeadband>
     );
 };
-
-function LoadingList() {
-    return [1, 2, 3, 4, 5].map(() => (
-        <CardItem/>
-    ))
-}
 
 export default ProfileSettings;

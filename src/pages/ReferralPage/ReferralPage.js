@@ -25,8 +25,7 @@ const ReferralPage = (props) => {
         <PayoutTab
             tabId="payout"
             tabLabel="Выплаты"
-            key="payout-tab"/>,
-        <AdTab tabId="ad-tab" key="ad-tab" tabLabel="Рекламные материалы"/>
+            key="payout-tab"/>
     ];
 
     return (

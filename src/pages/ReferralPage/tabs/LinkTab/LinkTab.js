@@ -3,10 +3,11 @@ import Card from "../../../../components/Card";
 import promoCodeImg from "../../../../common/images/illustrations/promocode.svg";
 import FieldBuilder from "../../../../components/FieldBuilder";
 import "./LinkTab.scss";
+import useGetAvatar from "../../../../hooks/useGetUserId";
 
 const LinkTab = () => {
-    // TODO: Подставить userId из контекста (стора)
-    const referralLink = `${window.location.origin}/partner/${'userId'}`;
+    const {userId} = useGetAvatar();
+    const referralLink = `${window.location.origin}/partner/${userId}`;
 
     const handleClipboard = (e) => {
         e.preventDefault();

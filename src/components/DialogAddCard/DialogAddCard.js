@@ -8,6 +8,7 @@ import classNames from "classnames";
 import Dialog from "../Dialog";
 import {useAddWalletMutation} from "../../api/endpoints/WalletsApi";
 import cn from "./DialogAddCard.module.scss";
+import DialogSubmit from "../DialogSubmit";
 
 const DialogAddCard = ({className, open, setOpen}) => {
     const [addWallet, {error}] = useAddWalletMutation();
@@ -59,17 +60,8 @@ const DialogAddCard = ({className, open, setOpen}) => {
             <DialogBody isLoading={isLoading}>
                 <AddCardForm values={values} errors={errors}
                              handlerField={handlerField}/>
-                {error &&
-                    <p className={classNames(cn.Error, "text text_color_red")}>
-                        {error}
-                    </p>
-                }
-                <div className={classNames(cn.ActionGroup)}>
-                    <button className={classNames(cn.SubmitBtn, "button button_type_main")} onClick={handleSubmit}>
-                        Добавить карту
-                    </button>
-                </div>
             </DialogBody>
+            <DialogSubmit handleSubmit={handleSubmit} error={error} label="Добавить карту"/>
         </Dialog>
     );
 };

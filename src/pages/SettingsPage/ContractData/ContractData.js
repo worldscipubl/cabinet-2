@@ -86,8 +86,12 @@ const ContractData = () => {
                 <FormFieldContainer className="brief-form__title"
                                     label="Загрузить скан паспорта"
                                     description="страница с фотографией и страница с пропиской">
-                    <UserFile className={cn.UserFile} fileId={1} label="Загрузить страницу с фотографией"/>
-                    <UserFile className={cn.UserFile} fileId={2} label="Загрузить страницу с пропиской"/>
+                    <UserFile className={cn.UserFile} typeId={1}
+                              fileId={dataUserFiles?.[2]?.userFileId}
+                              label="Загрузить страницу с фотографией"/>
+                    <UserFile className={cn.UserFile} typeId={2}
+                              fileId={dataUserFiles?.[3]?.userFileId}
+                              label="Загрузить страницу с пропиской"/>
                 </FormFieldContainer>
             </div>
         </CardHeadband>

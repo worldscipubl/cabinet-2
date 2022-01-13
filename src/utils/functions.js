@@ -1,3 +1,5 @@
+import {BASE_URL} from "./constants";
+
 export const getHashFromString = (str) => {
     let hash = 0, i, chr;
     if (str.length === 0) return hash;
@@ -66,10 +68,23 @@ export const downloadBlobFile = (blob) => {
 };
 
 export const getImgFromFile = (file) => {
-    console.log(file)
     const isString = typeof (file) === 'string'
     if (isString) return file;
 
     const isValid = (file instanceof Blob) || (file instanceof File);
     if (isValid) return URL.createObjectURL((file));
+}
+
+export const makeFullUrl = (link) => {
+    return `${BASE_URL}${link}`;
+}
+
+export const getSrcBase64 = (data) => {
+    if (!data) return null;
+    return `data:image/jpeg;base64,${hexToBase64(data)}`;
+}
+
+
+function hexToBase64(str) {
+    return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
 }

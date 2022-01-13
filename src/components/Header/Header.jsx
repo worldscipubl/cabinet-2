@@ -7,8 +7,10 @@ import NotificationsMenu from "../NotificationsMenu";
 import ProfileMenu from "../ProfileMenu";
 import "./Header.scss";
 import classNames from "classnames";
+import {useGetUserQuery} from "../../api/endpoints/UserApi";
 
 const Header = ({className, isShow}) => {
+    const {data: user} = useGetUserQuery();
     const [openNotification, setOpenNotification] = useState(false);
     const [openProfile, setOpenProfile] = useState(false);
     const bellRef = useRef();
@@ -37,8 +39,8 @@ const Header = ({className, isShow}) => {
                         </div>
                     </li>
                     <li className="header__action-item" ref={profileRef} onClick={handleProfile}>
-                        <Avatar size="small" type="button" border="primary"/>
-                        <span className="text header__username">Иван</span>
+                        <Avatar size="small" img={user?.avatar} type="button" border="primary"/>
+                        <span className="text header__username">{user?.name || "no name"}</span>
                     </li>
                 </ul>
             </div>

@@ -1,4 +1,4 @@
-import entryApi, {providesList, providesObject} from "../entryApi";
+import entryApi, {providesObject} from "../entryApi";
 
 const UserApi = entryApi.injectEndpoints({
     endpoints: (build) => ({
@@ -116,7 +116,7 @@ const UserApi = entryApi.injectEndpoints({
          */
         setUserPassword: build.mutation({
             query: (data) => ({
-                url: "users/password",
+                url: "/users/password",
                 method: "put",
                 data
             })

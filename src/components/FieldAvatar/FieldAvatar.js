@@ -28,23 +28,19 @@ const FieldAvatar = ({className}) => {
         formData.append("ChangeAvatar[avatar]", file);
 
         uploadFile(formData).unwrap()
-            .then((res) => {
-                console.log(res)
-            })
             .catch((err) => {
                 console.log(err);
                 // TODO: Сделать вывод ошибки в snackBar
                 setFile(avatar);
-                setLoading(false);
             })
             .finally(() => {
+                setLoading(false);
                 setUploading(false);
             })
     }
 
     useEffect(() => {
         setFile(avatar);
-        setLoading(false);
     }, [avatar])
 
     return (

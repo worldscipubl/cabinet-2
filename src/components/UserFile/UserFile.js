@@ -1,18 +1,20 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import classNames from "classnames";
 import "react-loading-skeleton/dist/skeleton.css";
 import IonIcon from "../IonIcon";
 import {useUploadUserFileMutation} from "../../api/endpoints/UserFilesApi";
 import useGetPassport from "../../hooks/useGetPassport";
-import {getImgFromFile} from "../../utils/functions";
+import {getImgFromFile, getSrcBase64} from "../../utils/functions";
 import cn from "./UserFile.module.scss"
+import CircularProgress from "../CircularProgress";
 
-const UserFile = ({className, fileId, fileName, label = "label"}) => {
-    const {scanFile, errorPage, isLoadingPage} = useGetPassport(fileId);
-
+const UserFile = ({className, fileId, typeId, label = "label"}) => {
+    const {scan, isLoadingScan} = useGetPassport(fileId);
     const [uploadFile, {error, isLoading}] = useUploadUserFileMutation();
-    const [file, setFile] = useState(scanFile);
-    const [titleFile, setTitleFile] = useState(label);
+    const [file, setFile] = useState(getSrcBase64(scan));
+    const [titleFile, setTitleFile] = useState();
+
+    useEffect(() => setFile(getSrcBase64(scan)), [scan]);
 
     function handleUploadFile(e) {
         const input = e.target;
@@ -23,14 +25,14 @@ const UserFile = ({className, fileId, fileName, label = "label"}) => {
             setFile(file);
             setTitleFile(file.name);
         } else {
-            setTitleFile(label);
+            setTitleFile(null);
         }
     }
 
     function handleSubmitFile(e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("fileUserTypeId", fileId);
+        formData.append("fileUserTypeId", typeId);
         formData.append("UserFile[file]", file);
 
         uploadFile(formData).unwrap()
@@ -39,19 +41,19 @@ const UserFile = ({className, fileId, fileName, label = "label"}) => {
             })
             .catch((error) => {
                 console.log(error);
+            })
+            .finally(() => {
+                setTitleFile(null);
             });
     }
 
     return (
         <label className={classNames(cn.Wrapper, className, {
                 [cn.done]: !!file,
-                [cn.disabled]: isLoading,
+                [cn.disabled]: (isLoading || isLoadingScan),
                 [cn.error]: error
             }
         )}>
-            <input className={classNames(cn.InputFile)} onChange={handleUploadFile}
-                   type="file" accept="image/*"
-                   hidden required/>
             <div className={classNames(cn.ImgGroup)}>
                 {file ?
                     <img className={classNames(cn.ImgFile)} src={getImgFromFile(file)}/> :
@@ -64,10 +66,10 @@ const UserFile = ({className, fileId, fileName, label = "label"}) => {
                 }
             </div>
             <div className={classNames(cn.Footer)}>
-                {!file && <p className={classNames("text text_color_gray", cn.Label)}>
-                    {titleFile}
+                {!titleFile && <p className={classNames("text text_color_gray", cn.Label)}>
+                    {label}
                 </p>}
-                {file && <div className={classNames(cn.SubmitGroup)}>
+                {titleFile && <div className={classNames(cn.SubmitGroup)}>
                     <button className={classNames("button button_type_main")}
                             onClick={handleSubmitFile}>
                         Отправить
@@ -79,6 +81,10 @@ const UserFile = ({className, fileId, fileName, label = "label"}) => {
                     </p>
                 </div>}
             </div>
+            <input className={classNames(cn.InputFile)} onChange={handleUploadFile}
+                   type="file" accept="image/*"
+                   hidden required/>
+            <CircularProgress className={classNames(cn.Progress)} isLoading={(isLoading || isLoadingScan)}/>
         </label>
     );
 };

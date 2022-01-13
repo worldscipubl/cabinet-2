@@ -1,8 +1,8 @@
 import {useGetUserFileByIdQuery} from "../api/endpoints/UserFilesApi";
 
 const useGetPassport = (fileId) => {
-    const {data: scanFile, error: errorPage, isLoading: isLoadingPage} = useGetUserFileByIdQuery(fileId);
-    return {scanFile, errorPage, isLoadingPage};
+    const {data: scan, error: errorScan, isLoading: isLoadingScan} = useGetUserFileByIdQuery(fileId);
+    return {scan, errorScan, isLoadingScan};
 }
 
 export default useGetPassport;

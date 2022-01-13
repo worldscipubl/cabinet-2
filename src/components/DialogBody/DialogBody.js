@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from "classnames";
-import cn from "./DialogBody.module.scss";
 import CircularProgress from "../CircularProgress";
+import cn from "./DialogBody.module.scss";
 
 const DialogBody = ({className, children, isLoading}) => {
     return (
