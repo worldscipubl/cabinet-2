@@ -11,7 +11,7 @@ import SettingsPage from "../../pages/SettingsPage";
 
 const PrivateRoutes = () => [
     <Route path="/" exact key="index">
-        <Redirect to="/home"/>
+        <Redirect to="/articles"/>
     </Route>,
     <Route path="/home" exact key="HomePage">
         <HomePage/>

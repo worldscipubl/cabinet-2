@@ -1,6 +1,6 @@
 import {createApi} from "@reduxjs/toolkit/query/react";
 import {axiosBaseQuery} from "./axiosBaseQuery";
-import {BASE_URL, TEST_USER} from "../utils/constants";
+import {BASE_URL} from "../utils/constants";
 
 const TAG_TYPES = [
     "briefArticle",
@@ -34,7 +34,7 @@ export function providesObject({data, tagType}) {
 const entryApi = createApi({
     reducerPath: "wspApi",
     tagTypes: TAG_TYPES,
-    baseQuery: axiosBaseQuery({baseUrl: BASE_URL, auth: TEST_USER}),
+    baseQuery: axiosBaseQuery({baseUrl: BASE_URL}),
     endpoints: () => ({})
 });
 

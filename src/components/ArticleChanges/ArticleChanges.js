@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import ArticleStatus from "../ArticleStatus";
 import { useLazyGetArticleChangesQuery } from "../../api/endpoints/TimeLineArticleApi";
 import "./ArticleChanges.scss";
+import {useGetHasPayQuery} from "../../api/endpoints/ArticlePaymentApi";
 
 const ArticleChanges = ({ article }) => {
   const { currentStage: stage, articleId } = article;
   const [statuses, setStatuses] = useState(article?.currentStatus || []);
   const [trigger, { data: updateStatuses, error, isLoading, isError }] =
     useLazyGetArticleChangesQuery();
+
+  const {data: hasPay} = useGetHasPayQuery(articleId);
 
   useEffect(() => {
     if (!updateStatuses) return;
@@ -34,6 +37,8 @@ const ArticleChanges = ({ article }) => {
             status={status}
             stage={stage}
             articleId={articleId}
+            article={article}
+            hasPay={hasPay}
           />
         );
       })}

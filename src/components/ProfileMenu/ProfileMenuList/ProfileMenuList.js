@@ -29,6 +29,9 @@ const ProfileMenuList = ({ handleOpenMenu }) => {
       name: "Выйти",
       icon: "log-out-outline",
       onClick() {
+        localStorage.setItem("user_token", JSON.stringify(""));
+        history.push("/");
+        document.location.reload();
       }
     }
   ];

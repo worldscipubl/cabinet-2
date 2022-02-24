@@ -29,12 +29,6 @@ const FileUploadSpoiler = ({ filesUpload, articleId }) => {
 
   return (
     <Spoiler title="Загрузить документы">
-      <p className="text text_color_gray card-status__desc-spoiler">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        architecto, aspernatur cumque cupiditate dicta ea exercitationem ipsa
-        iste molestias non numquam obcaecati possimus quia reiciendis ullam. Ad
-        at delectus tempore.
-      </p>
       <List>
         {filesUpload.map(({ fileArticleTypeId, typeName }) => (
           <ListItem

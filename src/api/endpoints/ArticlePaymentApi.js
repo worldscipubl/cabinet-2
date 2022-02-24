@@ -41,6 +41,13 @@ const ArticlePaymentApi = entryApi.injectEndpoints({
         data
       }),
       invalidatesTags: ["articlePayment"]
+    }),
+
+    getHasPay: build.query({
+      query: (articleId) => ({url: `/payments/has-pay/${articleId}`, method: "get"}),
+      transformResponse: (response) => {
+        return response.data;
+      }
     })
   }),
   overrideExisting: false
@@ -50,5 +57,6 @@ export const {
   useGetPaymentsQuery,
   usePaymentByLinkMutation,
   usePaymentByPdfMutation,
-  useAlreadyPayMutation
+  useAlreadyPayMutation,
+  useGetHasPayQuery
 } = ArticlePaymentApi;

@@ -41,7 +41,11 @@ const UserApi = entryApi.injectEndpoints({
                 tagType: "user"
             }),
             transformResponse: (response) => {
-                return response.data;
+                if (response.status !== 401) {
+                    return response.data;
+                }
+                return false;
+                // return response.data;
             }
         }),
         /**

@@ -4,7 +4,7 @@ import "./Copyright.scss";
 const Copyright = () => {
   return (
     <p className="text copyright">
-      Copyright @ 2021 WorldSciPubl, Все права защищены.
+      Copyright © 2022 WorldSciPubl, Все права защищены.
     </p>
   );
 };

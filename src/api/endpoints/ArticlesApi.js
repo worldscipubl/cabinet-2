@@ -41,6 +41,15 @@ const ArticlesApi = entryApi.injectEndpoints({
                 method: "post",
                 data
             })
+        }),
+
+        /* Изменить этап сделки в срм */
+        updateStatusArticle: build.mutation({
+            query: (data) => ({
+                url: "/articles/update-status",
+                method: "put",
+                data
+            })
         })
     }),
     overrideExisting: false
@@ -49,5 +58,6 @@ const ArticlesApi = entryApi.injectEndpoints({
 export const {
     useGetArticlesQuery,
     useGetArticleByIdQuery,
-    useApplyArticleMutation
+    useApplyArticleMutation,
+    useUpdateStatusArticleMutation
 } = ArticlesApi;

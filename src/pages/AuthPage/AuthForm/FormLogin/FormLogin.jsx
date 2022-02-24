@@ -43,6 +43,7 @@ const FormLogin = () => {
       .then((res) => {
         localStorage.setItem("user_token", JSON.stringify(userToken));
         history.push("/");
+        document.location.reload();
       })
       .catch((error) => {
         console.log(error);

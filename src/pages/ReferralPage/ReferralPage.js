@@ -35,4 +35,4 @@ const ReferralPage = (props) => {
     );
 };
 
-export default withMainLayout(ReferralPage, {title: "Программа лояльности"});
+export default withMainLayout(ReferralPage, {title: "Партнерская программа"});

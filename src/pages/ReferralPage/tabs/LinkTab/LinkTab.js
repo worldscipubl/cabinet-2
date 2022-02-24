@@ -19,21 +19,16 @@ const LinkTab = () => {
             <Card className="link-tab" appearance={{type: "paper"}}>
                 <div className="link-tab__inner">
                     <p className="text text_size_accent link-tab__subtitle text_align_center">
-                        Мы создали продукт который не стыдно рекомендовать коллегам. <br/>
                         Каждый профиль в личном кабинете World Sci Publ <br/>
                         автоматически участвует в партнерской программе.
                     </p>
                     <p className="text text_size_accent link-tab__subtitle text_align_center">
-                        За приглашенных авторов мы готовы выплачивать 75$
+                        Сервис выплатит Вам 75$ если партнер выполнит следующие условия: <br/>
+                        1. зарегистрируется в личном кабинете по Вашей реферальной ссылке; <br/>
+                        2. оплатил услуги сервиса.
                     </p>
 
                     <img className="link-tab__img" src={promoCodeImg} alt="/"/>
-                    <p className="link-tab__img-label text text_size_accent text_align_center">
-                        Выплата происходит сразу если по вашей реферальной ссылке автор зарегистрировался в личном
-                        кабинете и
-                        оплатил
-                        услуги сервиса.
-                    </p>
 
                     <div className="link-tab__clipboard clipboard">
                         <h4 className="clipboard__title text text_size_accent text_weight_bold">

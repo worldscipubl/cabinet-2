@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { instructions } from "../../utils/textStatic";
+import { buttons } from "../../utils/textStatic";
 import AttachmentsSpoiler from "./AttachmentsSpoiler";
 import FileUploadSpoiler from "./FileUploadSpoiler";
 import { getDate } from "../../utils/functions";
 import CardHeadband from "../CardHeadband";
 import "./ArticleStatus.scss";
 import Spinner from "../Spinner";
+import {useUpdateStatusArticleMutation} from "../../api/endpoints/ArticlesApi";
 
-const ArticleStatus = ({ status, articleId }) => {
+const ArticleStatus = ({ status, articleId, article, hasPay }) => {
   const [loading, setLoading] = useState(true);
+    const [updateStatusArticle, {}] = useUpdateStatusArticleMutation();
 
   useEffect(() => {
     if (!status) return;
@@ -28,6 +31,7 @@ const ArticleStatus = ({ status, articleId }) => {
                       {StatusDescription(status.statusDescription)}
                       {StatusMessage(status.note)}
                       {StatusInstruction(status.statusChangeId)}
+                      {StatusButtons(status.statusChangeId, articleId, article, hasPay, updateStatusArticle)}
                     </>}>
         <AttachmentsSpoiler attachments={status.files} />
         <FileUploadSpoiler filesUpload={status.filesUpload} articleId={articleId} />
@@ -39,7 +43,7 @@ const ArticleStatus = ({ status, articleId }) => {
 const StatusDescription = (statusDescription) => {
   return (
     <p className="text text_size_default card-status__desc">
-      {statusDescription || "Замечание отсутствует"}
+      {statusDescription || "Описание отсутствует"}
     </p>
   );
 };
@@ -62,7 +66,26 @@ const StatusInstruction = (statusId) => {
   return instruction ? (
     <div className="card-status__msg">
       <h3 className="text text_weight_bold text_size_default">Инструкция</h3>
-      <p className="text text_size_default card-status__desc">{instruction}</p>
+        {instruction.map((item, index) => {
+            return (
+                <p className="text text_size_default card-status__desc">{index + 1}) {item}</p>
+            );
+        })}
+    </div>
+  ) : null;
+};
+
+const StatusButtons = (statusId, articleId, article, hasPay, updateStatusArticle) => {
+  const button = buttons.getButton(4);
+  return button ? (
+    <div className="card-status__msg">
+        {button.map((item) => {
+            if (item.active({hasPay: hasPay})) {
+                return (
+                    <button className={item.class} type="submit" onClick={() => item.action({articleId: articleId, article: article, updateStatusArticle: updateStatusArticle})}>{item.text}</button>
+                );
+            }
+        })}
     </div>
   ) : null;
 };

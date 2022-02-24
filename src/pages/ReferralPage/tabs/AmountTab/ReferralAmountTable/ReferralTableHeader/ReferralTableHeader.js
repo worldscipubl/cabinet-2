@@ -13,7 +13,7 @@ const ReferralTableHeader = () => {
         <TableCell className={classNames(cn.TableCell, cn.TableCellID)}>ID</TableCell>
         <TableCell className={classNames(cn.TableCell, cn.TableCellUser)}>Пользователь</TableCell>
         <TableCell className={classNames(cn.TableCell, cn.TableCellReg)}>Регистрация</TableCell>
-        <TableCell className={classNames(cn.TableCell)}>Стутус</TableCell>
+        <TableCell className={classNames(cn.TableCell)}>Статус</TableCell>
         <TableCell className={classNames(cn.TableCell)}>Сумма</TableCell>
       </TableRow>
     </TableHead>

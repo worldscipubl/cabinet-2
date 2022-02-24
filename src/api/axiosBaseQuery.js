@@ -54,6 +54,9 @@ export const axiosBaseQuery = (
     } catch (error) {
       const handledError = new HTTPError(error);
       logMessage("Response Error", handledError);
+      if (handledError.handleError(error).status === 401) {
+        return { data: { status: 401 } };
+      }
       return { error: handledError?.message };
     }
   };
