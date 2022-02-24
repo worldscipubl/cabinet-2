@@ -76,7 +76,7 @@ const StatusInstruction = (statusId) => {
 };
 
 const StatusButtons = (statusId, articleId, article, hasPay, updateStatusArticle) => {
-  const button = buttons.getButton(4);
+  const button = buttons.getButton(statusId);
   return button ? (
     <div className="card-status__msg">
         {button.map((item) => {
