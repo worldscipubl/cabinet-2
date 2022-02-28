@@ -4,8 +4,8 @@ import { useLazyGetArticleChangesQuery } from "../../api/endpoints/TimeLineArtic
 import "./ArticleChanges.scss";
 import {useGetHasPayQuery} from "../../api/endpoints/ArticlePaymentApi";
 
-const ArticleChanges = ({ article }) => {
-  const { currentStage: stage, articleId } = article;
+const ArticleChanges = ({ article, stage }) => {
+  const { /*currentStage: stage, */articleId } = article;
   const [statuses, setStatuses] = useState(article?.currentStatus || []);
   const [trigger, { data: updateStatuses, error, isLoading, isError }] =
     useLazyGetArticleChangesQuery();

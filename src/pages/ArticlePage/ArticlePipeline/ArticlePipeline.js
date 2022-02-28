@@ -17,7 +17,7 @@ const ArticlePipeline = ({ article }) => {
           title={title}
           id={stage}
         >
-          <ArticleChanges article={article} />
+          <ArticleChanges article={article} stage={stage} />
         </StepperItem>
       ))}
     </Stepper>
