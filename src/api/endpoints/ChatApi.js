@@ -14,7 +14,7 @@ const ChatApi = entryApi.injectEndpoints({
   endpoints: (build) => ({
     getMessagesByArticle: build.query({
       query: ({ articleId, page = 1 }) => ({
-        url: `/message-articles?articleId=${articleId}&page=${page}`,
+        url: `/message-articles/${articleId}?page=${page}`,
         method: "get"
       }),
 
@@ -23,6 +23,11 @@ const ChatApi = entryApi.injectEndpoints({
         ["messagesByArticle"],
       transformResponse: (response) => {
         if (response.data) {
+
+          if ((Array.isArray(response.data.messages) && !!response.data.messages.length)) {
+            response.data.messages = response.data.messages.reverse();
+          }
+
           //текущая страница (начиная с 1)
           const currentPage = +response?.headers["x-pagination-current-page"] || 1;
           //количество страниц
@@ -31,7 +36,8 @@ const ChatApi = entryApi.injectEndpoints({
           const totalCount = +response?.headers["x-pagination-total-count"] || 0;
 
           const res = messagesAdapter.addMany(messagesAdapter.getInitialState(), response.data).entities;
-          return { data: Object.values(res), currentPage, pageCount };
+
+          return { data: Object.values(response.data), currentPage, pageCount };
 
         } else retry.fail(new Error("No data"));
       },
@@ -40,8 +46,8 @@ const ChatApi = entryApi.injectEndpoints({
         { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
       ) {
         // create a websocket connection when the cache subscription starts
-        const auth = { email: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" };
-        const authToken = window.btoa(auth.email + ":" + auth.password);
+        // const auth = { email: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" };
+        const authToken = localStorage.getItem("user_token");
         const ws = new WebSocket(`wss://api.worldscipubl.com:8001?basic=${authToken}&articleId=${articleId}`);
         try {
           // wait for the initial query to resolve before proceeding

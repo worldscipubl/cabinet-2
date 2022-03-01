@@ -93,7 +93,7 @@ const ChatListMessages = ({messages, error, isLoading, currentPage, pageCount, h
                 useWindow={false}
                 loader={<Loader key={0}/>}
             >
-                <Messages data={messages}/>
+                <Messages data={messages[2]}/>
             </InfiniteScroll>
         </div>
     );
