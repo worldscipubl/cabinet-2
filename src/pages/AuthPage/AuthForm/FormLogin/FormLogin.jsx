@@ -105,7 +105,7 @@ const FormLogin = () => {
           </span>
           <Link
             className="text text_size_default text_color_gray-blue auth-form__other-item"
-            to="/sign-up"
+            to="/sing-up"
           >
             Зарегистрироваться
           </Link>

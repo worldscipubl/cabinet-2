@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useResetUserPasswordMutation } from "../../../../api/endpoints/UserApi";
 import constraints from "../../../../utils/constraints";
 import TextField from "../../TextField";
 
 const FormReset = () => {
+  const [resetUser, { error: errorResetUser } = {}] =
+    useResetUserPasswordMutation();
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
 
@@ -28,8 +32,26 @@ const FormReset = () => {
 
   const handleForm = (e) => {
     e.preventDefault();
-    if (!(state.name && state.email)) return;
+    if (!state.email) return;
+    e.preventDefault();
+    resetPass();
   };
+
+  const history = useHistory();
+  const resetPass = () => {
+    resetUser({ email: state })
+      .unwrap()
+      .then((res) => {
+        history.push("/");
+        // window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  let userData = {};
+  localStorage.setItem(userData, state.email);
+  console.log(localStorage.getItem(userData));
 
   return (
     <form className="auth-form" onSubmit={handleForm}>

@@ -4,8 +4,10 @@ import constraints from "../../../../utils/constraints";
 import FormErrorsBoard from "../FormErrorsBoard";
 import TextField from "../../TextField";
 import Checkbox from "../../../../components/Checkbox/Checkbox";
-
+import { useRegistrationUserMutation } from "../../../../api/endpoints/UserApi";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const FormRegistration = () => {
+  const [regUser, { error: errorRegUser } = {}] = useRegistrationUserMutation();
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const [checked, setChecked] = useState(false);
@@ -22,12 +24,24 @@ const FormRegistration = () => {
 
     if (!isValid) {
       constraints[name] &&
-      setErrors({ ...errors, [name]: constraints[name].msg });
+        setErrors({ ...errors, [name]: constraints[name].msg });
       return;
     } else {
       setErrors(null);
       return;
     }
+  };
+  const history = useHistory();
+  const signUp = () => {
+    regUser({ user: state })
+      .unwrap()
+      .then((res) => {
+        history.push("/");
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleCheckbox = (e) => {
@@ -38,6 +52,7 @@ const FormRegistration = () => {
   const handleForm = (e) => {
     e.preventDefault();
     if (!(state.name && state.email)) return;
+    signUp();
   };
 
   return (

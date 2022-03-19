@@ -1,15 +1,15 @@
 import axios from "axios";
 import HTTPError from "../services/HTTPError";
-
 export const axiosBaseQuery = (
-  { baseUrl, auth, prepareHeaders } = { baseUrl: "", auth: {} }) => {
+  { baseUrl, auth, prepareHeaders } = { baseUrl: "", auth: {} }
+) => {
   const hasLogging = true;
 
   const wspAxios = axios.create({
     baseUrl,
     headers: { "Content-Type": "application/json" },
     withCredentials: false,
-    auth
+    auth,
   });
 
   const checkTokenInterceptor = (config) => {
@@ -37,8 +37,7 @@ export const axiosBaseQuery = (
   wspAxios.interceptors.request.use(checkTokenInterceptor);
 
   return async ({ url, method, data, params, auth, headers }) => {
-    if (method === "post")
-      logMessageSend("Request API", data);
+    if (method === "post") logMessageSend("Request API", data);
     try {
       const response = await wspAxios({
         url: baseUrl + url,
@@ -46,7 +45,7 @@ export const axiosBaseQuery = (
         data,
         params,
         auth,
-        headers
+        headers,
       });
       logMessage("Response API", response);
       console.log(response);
