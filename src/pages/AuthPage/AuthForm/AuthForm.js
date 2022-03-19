@@ -3,14 +3,17 @@ import FormReset from "./FormReset";
 import FormRegistration from "./FormRegistration";
 import FormLogin from "./FormLogin";
 import "./AuthForm.scss";
+import PageResetPassword from "../PageResetPassword/PageResetPassword";
 
 const AuthForm = ({ tabId }) => {
   switch (tabId) {
     case "reset":
       return <FormReset />;
-    case "sign-up":
+    case "sing-up":
       return <FormRegistration />;
-    default :
+    case "reset-password":
+      return <PageResetPassword />;
+    default:
       return <FormLogin />;
   }
 };

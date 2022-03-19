@@ -6,26 +6,25 @@ class ApiService {
   constructor() {
     this._API_BASE = "https://api.worldscipubl.com/v1";
     this.hasLogging = true;
-
-    const token = localStorage.getItem("user_token");
-
+    // const token = localStorage.getItem("user_token");
     this.wspAxios = axios.create({
       baseURL: this._API_BASE,
-      headers: { "Content-Type": "application/json", "Authorization": `Basic ${token}` },
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: `Basic ${token}`,
+      },
       // headers: { "Content-Type": "multipart/form-data"},
-      withCredentials: false
-      // auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" }
+      withCredentials: false,
+      auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" },
     });
   }
 
-
-
   async getResource({
-                      url = null,
-                      params = null,
-                      auth = null,
-                      responseType = null
-                    }) {
+    url = null,
+    params = null,
+    auth = null,
+    responseType = null,
+  }) {
     const config = {};
     params && (config.params = params);
     auth && (config.auth = auth);
@@ -46,7 +45,7 @@ class ApiService {
     return new Promise((resolve, reject) => {
       this.getResource({
         responseType: "blob",
-        url
+        url,
       })
         .then((response) => {
           const blob = response?.data;
