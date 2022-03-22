@@ -13,6 +13,8 @@ const AuthForm = ({ tabId }) => {
       return <FormRegistration />;
     case "reset-password":
       return <PageResetPassword />;
+    // case "sing-up-secсess":
+    //   return <PageRegSuccess />;
     default:
       return <FormLogin />;
   }

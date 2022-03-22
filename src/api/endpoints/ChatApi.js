@@ -7,7 +7,7 @@ const messagesAdapter = createEntityAdapter({
   selectId: (message) => {
     const str = message?.dateCreate + message?.text + message?.role;
     return getHashFromString(str);
-  }
+  },
 });
 
 const ChatApi = entryApi.injectEndpoints({
@@ -15,30 +15,40 @@ const ChatApi = entryApi.injectEndpoints({
     getMessagesByArticle: build.query({
       query: ({ articleId, page = 1 }) => ({
         url: `/message-articles/${articleId}?page=${page}`,
-        method: "get"
+        method: "get",
       }),
 
-      providesTags: (result) => result ?
-        [{ ...result, ...{ type: "messagesByArticle" } }, "messagesByArticle"] :
-        ["messagesByArticle"],
+      providesTags: (result) =>
+        result
+          ? [
+              { ...result, ...{ type: "messagesByArticle" } },
+              "messagesByArticle",
+            ]
+          : ["messagesByArticle"],
       transformResponse: (response) => {
         if (response.data) {
-
-          if ((Array.isArray(response.data.messages) && !!response.data.messages.length)) {
+          if (
+            Array.isArray(response.data.messages) &&
+            !!response.data.messages.length
+          ) {
             response.data.messages = response.data.messages.reverse();
           }
 
           //текущая страница (начиная с 1)
-          const currentPage = +response?.headers["x-pagination-current-page"] || 1;
+          const currentPage =
+            +response?.headers["x-pagination-current-page"] || 1;
           //количество страниц
           const pageCount = +response?.headers["x-pagination-page-count"] || 0;
           //общее количество ресурсов
-          const totalCount = +response?.headers["x-pagination-total-count"] || 0;
+          const totalCount =
+            +response?.headers["x-pagination-total-count"] || 0;
 
-          const res = messagesAdapter.addMany(messagesAdapter.getInitialState(), response.data).entities;
+          const res = messagesAdapter.addMany(
+            messagesAdapter.getInitialState(),
+            response.data
+          ).entities;
 
           return { data: Object.values(response.data), currentPage, pageCount };
-
         } else retry.fail(new Error("No data"));
       },
       async onCacheEntryAdded(
@@ -48,7 +58,9 @@ const ChatApi = entryApi.injectEndpoints({
         // create a websocket connection when the cache subscription starts
         // const auth = { email: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" };
         const authToken = localStorage.getItem("user_token");
-        const ws = new WebSocket(`wss://api.worldscipubl.com:8001?basic=${authToken}&articleId=${articleId}`);
+        const ws = new WebSocket(
+          `wss://api.worldscipubl.com:8001?basic=${authToken}&articleId=${articleId}`
+        );
         try {
           // wait for the initial query to resolve before proceeding
           await cacheDataLoaded;
@@ -78,23 +90,23 @@ const ChatApi = entryApi.injectEndpoints({
         await cacheEntryRemoved;
         // perform cleanup steps once the `cacheEntryRemoved` promise resolves
         ws.close();
-      }
+      },
     }),
     sendMessagesByArticle: build.mutation({
       query: (data) => ({
         url: "/message-articles",
         method: "post",
-        data
-      })
+        data,
+      }),
       // invalidatesTags: ["messagesByArticle"]
-    })
+    }),
   }),
-  overrideExisting: false
+  overrideExisting: false,
 });
 
 export const {
   useGetMessagesByArticlePrefetch,
   useGetMessagesByArticleQuery,
   useLazyGetMessagesByArticleQuery,
-  useSendMessagesByArticleMutation
+  useSendMessagesByArticleMutation,
 } = ChatApi;

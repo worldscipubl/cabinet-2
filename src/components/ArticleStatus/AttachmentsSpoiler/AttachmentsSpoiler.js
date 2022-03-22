@@ -5,9 +5,7 @@ import ListItem from "../../List/ListItem/ListItem";
 import downloadImg from "../../../common/images/icons/download.svg";
 import ApiService from "../../../services/ApiService";
 
-
 const AttachmentsSpoiler = ({ attachments }) => {
-
   function handleDownloadBtn(fileId) {
     const apiService = new ApiService();
     apiService
@@ -16,6 +14,7 @@ const AttachmentsSpoiler = ({ attachments }) => {
       .catch((err) => console.log(err));
   }
 
+  console.log(attachments.length);
   return (
     <Spoiler title="Показать вложения">
       <List>

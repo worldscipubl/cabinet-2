@@ -6,12 +6,13 @@ import TextField from "../../TextField";
 import Checkbox from "../../../../components/Checkbox/Checkbox";
 import { useRegistrationUserMutation } from "../../../../api/endpoints/UserApi";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { getCookie } from "../../../../utils/functions";
 const FormRegistration = () => {
   const [regUser, { error: errorRegUser } = {}] = useRegistrationUserMutation();
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const [checked, setChecked] = useState(false);
-
+  const postCookie = getCookie("partnerId");
   const handleChange = (e) => {
     const input = e.target;
     if (!input) return;
@@ -33,7 +34,7 @@ const FormRegistration = () => {
   };
   const history = useHistory();
   const signUp = () => {
-    regUser({ user: state })
+    regUser({ user: state, postCookie })
       .unwrap()
       .then((res) => {
         history.push("/");

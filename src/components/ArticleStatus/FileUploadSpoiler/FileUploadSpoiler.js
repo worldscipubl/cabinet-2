@@ -9,7 +9,8 @@ const FileUploadSpoiler = ({ filesUpload, articleId }) => {
   const [uploadFile, { data, error, isLoading }] = useUploadFileMutation();
 
   function fileUploader(data) {
-    uploadFile(data).unwrap()
+    uploadFile(data)
+      .unwrap()
       .then((res) => {
         console.log(res);
       })
