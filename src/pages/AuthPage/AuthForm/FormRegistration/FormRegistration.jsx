@@ -12,7 +12,7 @@ const FormRegistration = () => {
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const [checked, setChecked] = useState(false);
-  const postCookie = getCookie("partnerId");
+  const partnerId = getCookie("partnerId");
   const handleChange = (e) => {
     const input = e.target;
     if (!input) return;
@@ -21,7 +21,7 @@ const FormRegistration = () => {
     const { name, value } = input;
     if (!name) return;
 
-    setState({ ...state, [name]: value, postCookie });
+    setState({ ...state, [name]: value, partnerId });
 
     if (!isValid) {
       constraints[name] &&
