@@ -21,7 +21,7 @@ const FormRegistration = () => {
     const { name, value } = input;
     if (!name) return;
 
-    setState({ ...state, [name]: value });
+    setState({ ...state, [name]: value, postCookie });
 
     if (!isValid) {
       constraints[name] &&
@@ -34,7 +34,9 @@ const FormRegistration = () => {
   };
   const history = useHistory();
   const signUp = () => {
-    regUser({ user: state, postCookie })
+    regUser({
+      user: { ...state },
+    })
       .unwrap()
       .then((res) => {
         history.push("/");
