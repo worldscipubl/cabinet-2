@@ -6,16 +6,16 @@ class ApiService {
   constructor() {
     this._API_BASE = "https://api.worldscipubl.com/v1";
     this.hasLogging = true;
-    // const token = localStorage.getItem("user_token");
+    const token = localStorage.getItem("user_token");
     this.wspAxios = axios.create({
       baseURL: this._API_BASE,
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Basic ${token}`,
+        Authorization: `Basic ${token}`,
       },
       // headers: { "Content-Type": "multipart/form-data"},
       withCredentials: false,
-      auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" },
+      // auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" },
     });
   }
 
