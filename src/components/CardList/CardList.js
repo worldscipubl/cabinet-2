@@ -43,7 +43,7 @@ const CardList = ({children}) => {
             className={classNames(cn.EmptyState)}
             type="warning"
             title="Упс... Произошла ошибка!"
-            description={error}/>
+            description={error.message}/>
     );
 
     if (!data?.length) return (

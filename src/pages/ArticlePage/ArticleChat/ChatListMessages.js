@@ -65,7 +65,7 @@ const ChatListMessages = ({
         <EmptyState
           type="warning"
           title="Упс... Произошла ошибка!"
-          description={error}
+          description={error.message}
         />
       );
     // console.log(Array.isArray(data));

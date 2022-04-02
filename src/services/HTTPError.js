@@ -33,8 +33,7 @@ class HTTPError extends Error {
       if (status === 401) {
         return {
           name: "UnauthorizedError",
-          message:
-            message || `Такой пары логин\\пароль не существет (Код ${status})`,
+          message: `Такой пары логин\\пароль не существет (Код ${status})`,
           status,
           details
         };

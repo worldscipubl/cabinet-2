@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="доработки">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/ChatApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/ChatApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardList/CardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardList/CardList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListArticles/ListArticles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListArticles/ListArticles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListNotifications/ListNotifications.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListNotifications/ListNotifications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileMenu/ProfileMenuList/ProfileMenuList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileMenu/ProfileMenuList/ProfileMenuList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormLogin/FormLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormLogin/FormLogin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormRegistration/FormRegistration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormRegistration/FormRegistration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/NotificationSettings/NotificationSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/NotificationSettings/NotificationSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/ProfileData/ProfileData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/ProfileData/ProfileData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/HTTPError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/HTTPError.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

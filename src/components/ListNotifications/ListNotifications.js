@@ -12,7 +12,7 @@ const ListNotifications = ({ isLoading, wrapper, error, data, spinner = false })
     <EmptyState
       type="warning"
       title="Упс... Произошла ошибка!"
-      description={error} />
+      description={error.message} />
   );
 
   if (!data?.length) return (

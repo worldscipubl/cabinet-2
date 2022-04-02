@@ -64,7 +64,7 @@ const BriefForm = ({
         <EmptyState
             type="warning"
             title="Упс... Произошла ошибка!"
-            description={error}/>
+            description={error.message}/>
     );
 
     return (

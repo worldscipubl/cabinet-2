@@ -58,7 +58,7 @@ const ProfileData = () => {
         <EmptyState
             type="warning"
             title="Упс... Произошла ошибка!"
-            description={error}>
+            description={error.message}>
             <button className="button button_type_main" onClick={() => document.location.reload()}>
                 Обновить страницу
             </button>
