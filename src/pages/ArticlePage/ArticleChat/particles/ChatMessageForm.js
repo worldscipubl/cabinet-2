@@ -1,9 +1,29 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useSendMessagesByArticleMutation } from "../../../../api/endpoints/ChatApi";
 
-const ChatMessageForm = ({ onSubmit }) => {
+const ChatMessageForm = ({ articleId }) => {
+  const [messagesMutation] = useSendMessagesByArticleMutation();
   const [message, setMessage] = useState("");
   const [files, setFiles] = useState([]);
+
+  const onSubmit = ({ message, messageFile }) => {
+    return new Promise((resolve, reject) => {
+      const sendData = {
+        articleId,
+        message,
+        "MessageArticleForm[file][]": messageFile,
+      };
+      messagesMutation(sendData)
+        .unwrap()
+        .then((res) => {
+          resolve("success");
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,7 +90,7 @@ const ChatMessageForm = ({ onSubmit }) => {
 };
 
 ChatMessageForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  articleId: PropTypes.string.isRequired,
 };
 
 export default ChatMessageForm;

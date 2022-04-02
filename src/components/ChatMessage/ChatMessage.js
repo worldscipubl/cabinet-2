@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useRef } from "react";
 import classNames from "classnames";
 import "./ChatMessage.scss";
 
@@ -10,17 +10,25 @@ const ChatMessage = forwardRef(
       name = "No name",
       text = "",
       date = "",
+      isLast = false,
+      isFirst = false,
     },
     ref
   ) => {
+    const refAvatar = useRef();
+
+    useEffect(() => {
+      if (refAvatar.current && isFirst) refAvatar.current.scrollIntoView();
+    }, []);
+
     return (
       <div
-        ref={ref}
+        ref={isLast ? ref : null}
         className={classNames("chat-message", {
           "chat-message_right": direction,
         })}
       >
-        <img className="chat-message__img" src={avatar} />
+        <img className="chat-message__img" src={avatar} ref={refAvatar} />
         <div className="chat-message-bubble">
           <div className="chat-message__info">
             <div className="chat-message__info-name text text_weight_bold">

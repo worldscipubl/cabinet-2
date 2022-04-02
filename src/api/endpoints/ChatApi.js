@@ -1,39 +1,30 @@
-import entryApi from "../entryApi";
+import entryApi, { providesList } from "../entryApi";
 import { retry } from "@reduxjs/toolkit/query";
 import { createEntityAdapter } from "@reduxjs/toolkit";
-import { getHashFromString } from "../../utils/functions";
 
 const messagesAdapter = createEntityAdapter({
-  selectId: (message) => {
-    const str = message?.dateCreate + message?.text + message?.role;
-    return getHashFromString(str);
-  },
+  selectId: (message) => message.articleMessageId,
+  sortComparer: (a, b) => a.dateCreate.localeCompare(b.dateCreate),
 });
 
 const ChatApi = entryApi.injectEndpoints({
   endpoints: (build) => ({
-    getMessagesByArticle: build.query({
+    getMessagesByArticle: build.mutation({
       query: ({ articleId, page = 1 }) => ({
         url: `/message-articles/${articleId}?page=${page}`,
         method: "get",
       }),
 
-      providesTags: (result) =>
-        result
-          ? [
-              { ...result, ...{ type: "messagesByArticle" } },
-              "messagesByArticle",
-            ]
-          : ["messagesByArticle"],
-      transformResponse: (response) => {
-        if (response.data) {
-          if (
-            Array.isArray(response.data.messages) &&
-            !!response.data.messages.length
-          ) {
-            response.data.messages = response.data.messages.reverse();
-          }
+      providesTags: ({ partMessages }) => {
+        return providesList({
+          data: partMessages,
+          keyID: "articleMessageId",
+          tagType: "messagesByArticle",
+        });
+      },
 
+      transformResponse: (response, meta, arg) => {
+        if (response.data) {
           //текущая страница (начиная с 1)
           const currentPage =
             +response?.headers["x-pagination-current-page"] || 1;
@@ -43,12 +34,15 @@ const ChatApi = entryApi.injectEndpoints({
           const totalCount =
             +response?.headers["x-pagination-total-count"] || 0;
 
-          const res = messagesAdapter.addMany(
-            messagesAdapter.getInitialState(),
-            response.data
-          ).entities;
+          const hasMore = currentPage !== pageCount;
 
-          return { data: Object.values(response.data), currentPage, pageCount };
+          const res = response.data.messages;
+
+          return {
+            messages: Object.values(res),
+            currentPage,
+            hasMore,
+          };
         } else retry.fail(new Error("No data"));
       },
       async onCacheEntryAdded(
@@ -58,6 +52,7 @@ const ChatApi = entryApi.injectEndpoints({
         // create a websocket connection when the cache subscription starts
         // const auth = { email: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" };
         const authToken = localStorage.getItem("user_token");
+        return;
         const ws = new WebSocket(
           `wss://api.worldscipubl.com:8001?basic=${authToken}&articleId=${articleId}`
         );
@@ -108,5 +103,6 @@ export const {
   useGetMessagesByArticlePrefetch,
   useGetMessagesByArticleQuery,
   useLazyGetMessagesByArticleQuery,
+  useGetMessagesByArticleMutation,
   useSendMessagesByArticleMutation,
 } = ChatApi;

@@ -25,7 +25,8 @@ $border-color-focus: #4d90fe;
   border-radius: 0.25em;
   padding: 0.512em 0.75em;
   overflow: auto;
-  //overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .chat-box__footer {
