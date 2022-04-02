@@ -1,1 +1,1 @@
-export {default} from "./DialogBody";
+export { default } from "./DialogBody";

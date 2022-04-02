@@ -4,17 +4,16 @@ import errorImg from "../../../common/images/icons/error.svg";
 import styles from "../Field.module.scss";
 
 const TextField = ({
-                     label,
-                     description,
-                     helperText,
-                     className,
-                     states: { error, value } = {},
-                     setters: { setError, setValue } = {},
-                     options: { startIcon, endIcon } = {},
-                     handlers: { handlerEndIcon, handlerStartIcon, handlerField } = {},
-                     ...props
-                   }) => {
-
+  label,
+  description,
+  helperText,
+  className,
+  states: { error, value } = {},
+  setters: { setError, setValue } = {},
+  options: { startIcon, endIcon } = {},
+  handlers: { handlerEndIcon, handlerStartIcon, handlerField } = {},
+  ...props
+}) => {
   const handleChange = (e) => {
     e.preventDefault();
     const { target } = e;
@@ -35,11 +34,18 @@ const TextField = ({
   return (
     <div className={styles.field__container}>
       {!!error && (
-        <img className={classNames(styles.field__icon, styles.field__icon_start)} src={errorImg} alt="start-icon" />
+        <img
+          className={classNames(styles.field__icon, styles.field__icon_start)}
+          src={errorImg}
+          alt="start-icon"
+        />
       )}
       {startIcon && (
-        <img className={classNames(styles.field__icon, styles.field__icon_start)} src={startIcon}
-             alt="start-icon" />
+        <img
+          className={classNames(styles.field__icon, styles.field__icon_start)}
+          src={startIcon}
+          alt="start-icon"
+        />
       )}
       {endIcon && (
         <img
@@ -49,7 +55,13 @@ const TextField = ({
           onClick={handlerEndIcon}
         />
       )}
-      <input className={styles.field__input} {...props} value={value || ""} onChange={handleChange} required />
+      <input
+        className={styles.field__input}
+        {...props}
+        value={value || ""}
+        onChange={handleChange}
+        required
+      />
     </div>
   );
 };

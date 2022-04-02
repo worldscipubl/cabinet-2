@@ -1,8 +1,8 @@
 @use '../../../common/style/global/index' as *;
 
-$border-thickness: .12em;
+$border-thickness: 0.12em;
 $border-color: #ced4da;
-$border-color-focus: #4D90FE;
+$border-color-focus: #4d90fe;
 
 .chat-box {
   display: flex;
@@ -22,8 +22,8 @@ $border-color-focus: #4D90FE;
   flex: 1 0 440px;
   background-color: transparent;
   //border: $border-thickness solid $border-color;
-  border-radius: .25em;
-  padding: .512em .75em;
+  border-radius: 0.25em;
+  padding: 0.512em 0.75em;
   overflow: auto;
   //overflow-y: scroll;
 }
@@ -34,7 +34,6 @@ $border-color-focus: #4D90FE;
 }
 
 .chat-box__send-bar {
-
 }
 
 .send-bar {
@@ -52,8 +51,8 @@ $border-color-focus: #4D90FE;
   color: black;
   background-color: $white;
   border: $border-thickness solid $border-color;
-  border-radius: .25em;
-  padding: .512em .75em 0;
+  border-radius: 0.25em;
+  padding: 0.512em 0.75em 0;
   outline: none;
   resize: none;
 

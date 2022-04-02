@@ -7,12 +7,10 @@ const FaqApi = entryApi.injectEndpoints({
       query: () => ({ url: "/faq", method: "get" }),
       transformResponse: (response) => {
         return response.data;
-      }
-    })
+      },
+    }),
   }),
-  overrideExisting: false
+  overrideExisting: false,
 });
 
-export const {
-  useGetFaqListQuery
-} = FaqApi;
+export const { useGetFaqListQuery } = FaqApi;

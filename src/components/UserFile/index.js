@@ -1,1 +1,1 @@
-export {default} from "./UserFile"
+export { default } from "./UserFile";

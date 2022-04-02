@@ -10,7 +10,10 @@ const NotFoundPage = () => {
       title="Страницы не существует"
       description="Страница, к которой вы пытаетесь получить доступ, не существует."
     >
-      <button className="button button_type_main" onClick={() => history.push("/")}>
+      <button
+        className="button button_type_main"
+        onClick={() => history.push("/")}
+      >
         Вернуться на главную
       </button>
     </EmptyState>

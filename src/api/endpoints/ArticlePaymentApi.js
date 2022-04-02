@@ -6,51 +6,55 @@ const ArticlePaymentApi = entryApi.injectEndpoints({
     getPayments: build.query({
       query: (articleId) => ({
         url: `/payments/${articleId}`,
-        method: "get"
+        method: "get",
       }),
-      providesTags: (result) => result ?
-        [{ ...result, ...{ type: "articlePayment" } }, "articlePayment"] :
-        ["articlePayment"],
+      providesTags: (result) =>
+        result
+          ? [{ ...result, ...{ type: "articlePayment" } }, "articlePayment"]
+          : ["articlePayment"],
       transformResponse: (response) => {
         if (response.data) return response.data;
         else retry.fail(new Error("No data"));
-      }
+      },
     }),
 
     paymentByLink: build.mutation({
       query: (data) => ({
         url: "/payments/url",
         method: "post",
-        data
+        data,
       }),
-      invalidatesTags: ["articlePayment"]
+      invalidatesTags: ["articlePayment"],
     }),
 
     paymentByPdf: build.mutation({
       query: (data) => ({
         url: "/payments/pdf",
         method: "post",
-        data
-      })
+        data,
+      }),
     }),
 
     alreadyPay: build.mutation({
       query: (data) => ({
         url: "/payments/already-pay",
         method: "post",
-        data
+        data,
       }),
-      invalidatesTags: ["articlePayment"]
+      invalidatesTags: ["articlePayment"],
     }),
 
     getHasPay: build.query({
-      query: (articleId) => ({url: `/payments/has-pay/${articleId}`, method: "get"}),
+      query: (articleId) => ({
+        url: `/payments/has-pay/${articleId}`,
+        method: "get",
+      }),
       transformResponse: (response) => {
         return response.data;
-      }
-    })
+      },
+    }),
   }),
-  overrideExisting: false
+  overrideExisting: false,
 });
 
 export const {
@@ -58,5 +62,5 @@ export const {
   usePaymentByLinkMutation,
   usePaymentByPdfMutation,
   useAlreadyPayMutation,
-  useGetHasPayQuery
+  useGetHasPayQuery,
 } = ArticlePaymentApi;

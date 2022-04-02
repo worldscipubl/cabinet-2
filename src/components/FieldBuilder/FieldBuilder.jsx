@@ -5,8 +5,13 @@ import DateField from "./DateField";
 import TextField from "./TextField";
 import FieldWrapper from "./FieldWrapper";
 
-
-const FieldBuilder = ({ type, defaultError, defaultValue, handleChange, ...props }) => {
+const FieldBuilder = ({
+  type,
+  defaultError,
+  defaultValue,
+  handleChange,
+  ...props
+}) => {
   const [error, setError] = useState(defaultError);
   const [value, setValue] = useState(defaultValue);
   const [fileName, setFileName] = useState("");
@@ -36,13 +41,13 @@ const FieldBuilder = ({ type, defaultError, defaultValue, handleChange, ...props
   return (
     <FieldWrapper {...props} isHelperBox>
       {getFieldByType({
-        type, ...props,
+        type,
+        ...props,
         states: { error, value, fileName },
-        setters: { setError, setValue, setFileName }
+        setters: { setError, setValue, setFileName },
       })}
     </FieldWrapper>
   );
 };
-
 
 export default FieldBuilder;

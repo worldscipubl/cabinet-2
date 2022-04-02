@@ -1,11 +1,10 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import classNames from "classnames";
 import IonIcon from "../../IonIcon";
 import cn from "./ProfileMenuList.module.scss";
 
-
-const ProfileMenuList = ({handleOpenMenu}) => {
+const ProfileMenuList = ({ handleOpenMenu }) => {
   const history = useHistory();
 
   const items = [
@@ -15,7 +14,7 @@ const ProfileMenuList = ({handleOpenMenu}) => {
       onClick() {
         history.push("/settings");
         handleOpenMenu?.(false);
-      }
+      },
     },
     {
       name: "Помощь",
@@ -23,7 +22,7 @@ const ProfileMenuList = ({handleOpenMenu}) => {
       onClick() {
         history.push("/faq");
         handleOpenMenu?.(false);
-      }
+      },
     },
     {
       name: "Выйти",
@@ -32,18 +31,19 @@ const ProfileMenuList = ({handleOpenMenu}) => {
         localStorage.removeItem("user_token");
         history.push("/");
         document.location.reload();
-      }
-    }
+      },
+    },
   ];
 
   return (
     <ul className={classNames(cn.List)}>
-      {items && items.map(({name, icon, onClick}) => (
-        <li className={classNames(cn.Item)} onClick={onClick} key={name}>
-          <IonIcon className={classNames(cn.ItemIcon)} name={icon}/>
-          <span className={classNames(cn.ItemLabel, "text")}>{name}</span>
-        </li>
-      ))}
+      {items &&
+        items.map(({ name, icon, onClick }) => (
+          <li className={classNames(cn.Item)} onClick={onClick} key={name}>
+            <IonIcon className={classNames(cn.ItemIcon)} name={icon} />
+            <span className={classNames(cn.ItemLabel, "text")}>{name}</span>
+          </li>
+        ))}
     </ul>
   );
 };

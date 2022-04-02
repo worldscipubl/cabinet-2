@@ -4,7 +4,13 @@ import unionImg from "../../common/images/logo/union.svg";
 import clientImg from "../../common/images/illustrations/client.svg";
 import "./Card.scss";
 
-const Card = ({ className, children, isUnion, isClient, appearance: { type } = {} }) => {
+const Card = ({
+  className,
+  children,
+  isUnion,
+  isClient,
+  appearance: { type } = {},
+}) => {
   const cardStyle = classNames("card", className, { [type]: type });
 
   return (

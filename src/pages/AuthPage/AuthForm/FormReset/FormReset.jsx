@@ -52,19 +52,19 @@ const FormReset = () => {
   let userData = {};
   localStorage.setItem(userData, state.email);
   console.log(localStorage.getItem(userData));
-//   if (isError)
-//     return (
-// <div>ошибка</div>
-//   )
+  //   if (isError)
+  //     return (
+  // <div>ошибка</div>
+  //   )
   if (isSuccess)
     return (
-    <div className="auth-form__inner">
-      <h1>Восстановление пароля</h1>
-      <p className="auth-form__description text text_size_accent">
-        Новый пароль отправлен на Вашу почту
-      </p>
-    </div>
-    )
+      <div className="auth-form__inner">
+        <h1>Восстановление пароля</h1>
+        <p className="auth-form__description text text_size_accent">
+          Новый пароль отправлен на Вашу почту
+        </p>
+      </div>
+    );
   return (
     <form className="auth-form" onSubmit={handleForm}>
       <div className="auth-form__inner">

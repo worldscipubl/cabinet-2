@@ -1,1 +1,1 @@
-export {default} from "./DialogSubmit";
+export { default } from "./DialogSubmit";

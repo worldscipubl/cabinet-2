@@ -5,21 +5,25 @@ import EmptyState from "../../domain/EmptyState";
 import ArticleCard from "../ArticleCard";
 import imgPlus from "../../common/images/icons/plus.svg";
 
-const ListArticles = ({data, error, isLoading, spinner}) => {
-  if (isLoading) return spinner ? <Spinner/> : <SkeletonArticles/>;
+const ListArticles = ({ data, error, isLoading, spinner }) => {
+  if (isLoading) return spinner ? <Spinner /> : <SkeletonArticles />;
 
-  if (error) return (
-    <EmptyState
-      type="warning"
-      title="Упс... Произошла ошибка!"
-      description={error.message}/>
-  );
+  if (error)
+    return (
+      <EmptyState
+        type="warning"
+        title="Упс... Произошла ошибка!"
+        description={error.message}
+      />
+    );
 
-  if (!data?.length) return (
-    <EmptyState
-      title="У вас пока нет статей"
-      description="Тут будет отображаться список ваших статей"/>
-  );
+  if (!data?.length)
+    return (
+      <EmptyState
+        title="У вас пока нет статей"
+        description="Тут будет отображаться список ваших статей"
+      />
+    );
 
   return (
     <div className="articles">
@@ -38,7 +42,9 @@ const ListArticles = ({data, error, isLoading, spinner}) => {
 const SkeletonArticles = () => {
   return (
     <div className="articles">
-      {[0, 1, 2].map((article, index) => <ArticleCard key={index} isLoading/>)}
+      {[0, 1, 2].map((article, index) => (
+        <ArticleCard key={index} isLoading />
+      ))}
     </div>
   );
 };
@@ -47,7 +53,7 @@ const NewArticleCard = () => {
   return (
     <div className="article-card new-article">
       <div className="article-card__inner article-card__inner_align_center">
-        <img className="article-card__img" src={imgPlus} alt="plus"/>
+        <img className="article-card__img" src={imgPlus} alt="plus" />
         <div className="article-card__row">
           <h4 className="text text_weight_bold text_color_gray">
             Подать заявку на публикацию
@@ -61,14 +67,14 @@ const NewArticleCard = () => {
 ListArticles.defaultProps = {
   data: null,
   isLoading: false,
-  spinner: false
+  spinner: false,
 };
 
 ListArticles.propTypes = {
   data: PropTypes.array,
   error: PropTypes.object,
   isLoading: PropTypes.bool.isRequired,
-  spinner: PropTypes.bool
+  spinner: PropTypes.bool,
 };
 
 export default ListArticles;

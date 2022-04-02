@@ -1,1 +1,1 @@
-export {default} from "./ArticleBrief"
+export { default } from "./ArticleBrief";

@@ -64,10 +64,10 @@
   min-height: 24px;
   position: relative;
   flex: 0 0 1.85em;
-  margin: .42em 0;
+  margin: 0.42em 0;
 
   &:before {
-    content: '';
+    content: "";
     height: 100%;
     opacity: 1;
     width: 1px;
@@ -83,7 +83,7 @@
   height: auto;
   overflow: visible;
   padding-bottom: 3em;
-  padding-top: .42em;
+  padding-top: 0.42em;
 }
 
 .stepper-item__inner {

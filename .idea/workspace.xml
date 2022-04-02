@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="доработки">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosBaseQuery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BriefForm/BriefForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardList/CardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardList/CardList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListArticles/ListArticles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListArticles/ListArticles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListNotifications/ListNotifications.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListNotifications/ListNotifications.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileMenu/ProfileMenuList/ProfileMenuList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileMenu/ProfileMenuList/ProfileMenuList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormLogin/FormLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormLogin/FormLogin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormRegistration/FormRegistration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/FormRegistration/FormRegistration.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FaqPage/FaqPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/NotificationSettings/NotificationSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/NotificationSettings/NotificationSettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SettingsPage/ProfileData/ProfileData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SettingsPage/ProfileData/ProfileData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/HTTPError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/HTTPError.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +54,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -110,6 +96,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="" />
@@ -188,7 +177,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="false" />
+                  <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
               <option name="FILTERS">
@@ -196,7 +185,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>

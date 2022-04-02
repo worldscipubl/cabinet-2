@@ -57,10 +57,10 @@
   margin: $t-margin $r-margin $b-margin $l-margin;
 
   @media (min-width: $bp-xxl-1440) {
-    margin: #{get-vw($t-margin, $bp-xxl-1440)}
-    #{get-vw($r-margin, $bp-xxl-1440)}
-    #{get-vw($b-margin, $bp-xxl-1440)}
-    #{get-vw($l-margin, $bp-xxl-1440)};
+    margin: #{get-vw($t-margin, $bp-xxl-1440)} #{get-vw(
+        $r-margin,
+        $bp-xxl-1440
+      )} #{get-vw($b-margin, $bp-xxl-1440)} #{get-vw($l-margin, $bp-xxl-1440)};
   }
 }
 

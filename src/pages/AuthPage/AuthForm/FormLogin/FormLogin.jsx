@@ -1,9 +1,9 @@
-import React, {useState} from "react";
-import {Link, useHistory} from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import constraints from "../../../../utils/constraints";
 import FormErrorsBoard from "../FormErrorsBoard";
 import TextField from "../../TextField";
-import {useLoginUserMutation} from "../../../../api/endpoints/UserApi";
+import { useLoginUserMutation } from "../../../../api/endpoints/UserApi";
 
 const FormLogin = () => {
   const [loginUser] = useLoginUserMutation();
@@ -16,14 +16,14 @@ const FormLogin = () => {
     if (!input) return;
 
     const isValid = input.validity.valid;
-    const {name, value} = input;
+    const { name, value } = input;
     if (!name) return;
 
-    setState({...state, [name]: value});
+    setState({ ...state, [name]: value });
 
     if (!isValid) {
       constraints[name] &&
-      setErrors({...errors, [name]: constraints[name].msg});
+        setErrors({ ...errors, [name]: constraints[name].msg });
     } else {
       setErrors(null);
     }
@@ -39,8 +39,9 @@ const FormLogin = () => {
 
   const signIn = (email, password) => {
     const userToken = window.btoa(email + ":" + password);
-    console.log({email, password})
-    loginUser(userToken).unwrap()
+    console.log({ email, password });
+    loginUser(userToken)
+      .unwrap()
       .then((res) => {
         localStorage.setItem("user_token", JSON.stringify(userToken));
         history.push("/");
@@ -60,7 +61,7 @@ const FormLogin = () => {
           Введите свои учетные данные
         </p>
 
-        {errors && errors.form && <FormErrorsBoard dataErrors={errors.form}/>}
+        {errors && errors.form && <FormErrorsBoard dataErrors={errors.form} />}
 
         <div className="auth-form__inputs">
           <div className="auth-form__input">
@@ -99,7 +100,7 @@ const FormLogin = () => {
           </div>
         </div>
 
-        <i className="divider"/>
+        <i className="divider" />
         <div className="auth-form__other">
           <span className="text text_weight_bold auth-form__other-item">
             Нет аккаунта?

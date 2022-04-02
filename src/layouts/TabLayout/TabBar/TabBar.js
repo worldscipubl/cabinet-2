@@ -4,7 +4,6 @@ import classNames from "classnames";
 import cn from "./TabBar.module.scss";
 
 const TabBar = ({ className, activeTab, children, handleTab }) => {
-
   const handlerTab = (tabId) => {
     if (!tabId) return;
     if (!handleTab) return;
@@ -13,20 +12,22 @@ const TabBar = ({ className, activeTab, children, handleTab }) => {
 
   return (
     <div className={classNames(cn.TabBar)}>
-      {activeTab && <ul className={classNames(cn.TabBarTabs, className)}>
-        {children.map((child) => {
-          const { tabId = "default", tabLabel = "default" } = child.props;
-          return (
-            <TabButton
-              activeTab={activeTab}
-              id={tabId}
-              key={tabId}
-              label={tabLabel}
-              onClick={() => handlerTab(tabId)}
-            />
-          );
-        })}
-      </ul>}
+      {activeTab && (
+        <ul className={classNames(cn.TabBarTabs, className)}>
+          {children.map((child) => {
+            const { tabId = "default", tabLabel = "default" } = child.props;
+            return (
+              <TabButton
+                activeTab={activeTab}
+                id={tabId}
+                key={tabId}
+                label={tabLabel}
+                onClick={() => handlerTab(tabId)}
+              />
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 };

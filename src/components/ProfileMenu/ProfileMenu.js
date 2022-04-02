@@ -14,13 +14,21 @@ const ProfileMenu = ({ open, setOpen }) => {
 
   switch (openSelect) {
     case "language":
-      return <SelectOption handleSelect={setOpenSelect}
-                           options={languageOptions}
-                           title="Выбрать язык" />;
+      return (
+        <SelectOption
+          handleSelect={setOpenSelect}
+          options={languageOptions}
+          title="Выбрать язык"
+        />
+      );
     case "currency":
-      return <SelectOption handleSelect={setOpenSelect}
-                           options={currencyOptions}
-                           title="Выбрать валюту" />;
+      return (
+        <SelectOption
+          handleSelect={setOpenSelect}
+          options={currencyOptions}
+          title="Выбрать валюту"
+        />
+      );
     default:
       return (
         <Fragment>

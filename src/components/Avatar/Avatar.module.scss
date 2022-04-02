@@ -37,14 +37,13 @@
   min-height: 32px;
   min-width: 32px;
   overflow: hidden;
-  transition: border .3s;
+  transition: border 0.3s;
 
   &_type {
     &_btn {
       cursor: pointer;
     }
   }
-
 
   &_size {
     &_stretch-x {
@@ -64,6 +63,5 @@
       height: 64px;
       width: 64px;
     }
-
   }
 }

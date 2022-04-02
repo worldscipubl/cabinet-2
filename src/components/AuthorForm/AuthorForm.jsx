@@ -4,12 +4,19 @@ import { useHistory } from "react-router-dom";
 import Loader from "../Loader";
 import FromErrorList from "../FromErrorList/FromErrorList";
 import FieldBuilder from "../FieldBuilder";
-import { useAddAuthorsMutation, useGetAuthorsQuery } from "../../api/endpoints/BriefApi";
+import {
+  useAddAuthorsMutation,
+  useGetAuthorsQuery,
+} from "../../api/endpoints/BriefApi";
 import "./AuthorForm.scss";
 import AuthorTabs from "./AuthorTabs";
 
 const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
-  const { data: { authorInfo, regInfo } = {}, error, isLoading } = useGetAuthorsQuery(articleId);
+  const {
+    data: { authorInfo, regInfo } = {},
+    error,
+    isLoading,
+  } = useGetAuthorsQuery(articleId);
   const [mutationBrief, { error: errorSubmit } = {}] = useAddAuthorsMutation();
   const [valueAuthors, setValueAuthors] = useState([]);
   const [errorAuthors, setErrorAuthors] = useState({});
@@ -28,7 +35,6 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
     console.log(errorAuthors);
   }, [errorAuthors]);
 
-
   const resetError = () => {
     setErrorAuthors({});
     setErrorReg({});
@@ -40,24 +46,33 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
     let isValid = true;
     valueAuthors.foreach((author, idAuthor) => {
       fields.foreach(({ name, placeholder }) => {
-        const isFieldValid = (author.hasOwnProperty(name) && !!author[name]);
+        const isFieldValid = author.hasOwnProperty(name) && !!author[name];
         if (!isFieldValid) {
           isValid = false;
-          setErrForm(prevState => [...prevState, `Автор ${idAuthor + 1}: ${placeholder} (данные об авторах)`]);
-          setErrorAuthors(prevState => ({
+          setErrForm((prevState) => [
             ...prevState,
-            [`${idAuthor}_${name}`]: "Пожалуйста, заполните это поле"
+            `Автор ${idAuthor + 1}: ${placeholder} (данные об авторах)`,
+          ]);
+          setErrorAuthors((prevState) => ({
+            ...prevState,
+            [`${idAuthor}_${name}`]: "Пожалуйста, заполните это поле",
           }));
         }
       });
     });
 
     fieldsSecond.foreach(({ name, placeholder }) => {
-      const isFieldValid = (valueReg.hasOwnProperty(name) && !!valueReg[name]);
+      const isFieldValid = valueReg.hasOwnProperty(name) && !!valueReg[name];
       if (!isFieldValid) {
         isValid = false;
-        setErrForm(prevState => [...prevState, `${placeholder} (регистрационная форма)`]);
-        setErrorReg(prevState => ({ ...prevState, [name]: "Пожалуйста, заполните это поле" }));
+        setErrForm((prevState) => [
+          ...prevState,
+          `${placeholder} (регистрационная форма)`,
+        ]);
+        setErrorReg((prevState) => ({
+          ...prevState,
+          [name]: "Пожалуйста, заполните это поле",
+        }));
       }
     });
 
@@ -70,11 +85,12 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
     const sendData = {
       articleId,
       ...valueReg,
-      authorInfo: valueAuthors
+      authorInfo: valueAuthors,
     };
 
     setLoadingForm(true);
-    await mutationBrief(JSON.stringify(sendData)).unwrap()
+    await mutationBrief(JSON.stringify(sendData))
+      .unwrap()
       .then((response) => {
         console.log(response);
         history.push(`/article/${articleId}/article-pipeline`);
@@ -88,24 +104,36 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
   };
 
   const handlerAddTab = ({ tabs }) => {
-    setValueAuthors(prevState => [...prevState, {}]);
+    setValueAuthors((prevState) => [...prevState, {}]);
     const label = `Автор ${tabs.length + 1}`;
-    return (<AuthorFormInputs
-      label={label} id={tabs.length} fields={fields} key={`BriefFormAuthors-${tabs.length + 1}`}
-      errorAuthors={errorAuthors}
-      handleChange={handleChange} />);
+    return (
+      <AuthorFormInputs
+        label={label}
+        id={tabs.length}
+        fields={fields}
+        key={`BriefFormAuthors-${tabs.length + 1}`}
+        errorAuthors={errorAuthors}
+        handleChange={handleChange}
+      />
+    );
   };
 
   const handleChange = ({ idAuthor, name, value }) => {
     if (Number.isInteger(idAuthor)) {
-      setValueAuthors(prevState => idAuthor < prevState.length ?
-        prevState.map((author, index) => (index === Number.parseInt(idAuthor)) ? {
-            ...author,
-            [name]: value
-          } : author
-        ) : [...prevState, { [name]: value }]);
+      setValueAuthors((prevState) =>
+        idAuthor < prevState.length
+          ? prevState.map((author, index) =>
+              index === Number.parseInt(idAuthor)
+                ? {
+                    ...author,
+                    [name]: value,
+                  }
+                : author
+            )
+          : [...prevState, { [name]: value }]
+      );
     } else {
-      setValueReg(prevState => ({ ...prevState, [name]: value }));
+      setValueReg((prevState) => ({ ...prevState, [name]: value }));
     }
   };
 
@@ -113,36 +141,41 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
     return (
       <div className={classNames("brief-form", {})} key={"RegFormInputs"}>
         {fieldsSecond.map((field) => {
-          return <FieldBuilder
-            className="brief-form__input"
-            name={field?.name}
-            key={field?.name}
-            label={field?.label}
-            defaultValue={regInfo && regInfo[field?.name]}
-            defaultError={errorReg && errorReg[field?.name]}
-            description={field?.description}
-            type={field?.type || "text"}
-            required
-            handleChange={() => ({ handleChange, name: field?.name })}
-          />;
+          return (
+            <FieldBuilder
+              className="brief-form__input"
+              name={field?.name}
+              key={field?.name}
+              label={field?.label}
+              defaultValue={regInfo && regInfo[field?.name]}
+              defaultError={errorReg && errorReg[field?.name]}
+              description={field?.description}
+              type={field?.type || "text"}
+              required
+              handleChange={() => ({ handleChange, name: field?.name })}
+            />
+          );
         })}
       </div>
     );
   };
 
   if (isLoading) return <Loader />;
-  if (error) return <h2 className="text text_align_center text_color_red">{error}</h2>;
+  if (error)
+    return <h2 className="text text_align_center text_color_red">{error}</h2>;
   return (
-    <div className={classNames("author-form", {
-      loading: isLoadingForm
-    })}>
+    <div
+      className={classNames("author-form", {
+        loading: isLoadingForm,
+      })}
+    >
       <h3 className="text text_size_subtitle brief-form__description">
         Заполните данные об авторах
       </h3>
       <AuthorTabs
         options={{
           isExtensible: true,
-          tabsLimit: 5
+          tabsLimit: 5,
         }}
         handlers={{ handlerAddTab }}
       >
@@ -154,49 +187,91 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
       </h3>
       {RegFormInputs()}
       <FromErrorList errorForm={errorSubmit || errForm} />
-      <button className="button button_type_main active brief-form__submit" type="button" onClick={handlerFromSubmit}>
-        {isLoadingForm ? "Данные обновляются..." : "Отправить данные для регистрационной формы"}
+      <button
+        className="button button_type_main active brief-form__submit"
+        type="button"
+        onClick={handlerFromSubmit}
+      >
+        {isLoadingForm
+          ? "Данные обновляются..."
+          : "Отправить данные для регистрационной формы"}
       </button>
       <Loader className="author-form__loader" />
     </div>
   );
 };
 
-const AuthorFormInputs = ({ label, id, fields, valueAuthors = [], errorAuthors = [], handleChange } = {}) => {
+const AuthorFormInputs = ({
+  label,
+  id,
+  fields,
+  valueAuthors = [],
+  errorAuthors = [],
+  handleChange,
+} = {}) => {
   return (
-    <div className={classNames("brief-form", {})} key={"AuthorFormInputs" + id} label={label}>
+    <div
+      className={classNames("brief-form", {})}
+      key={"AuthorFormInputs" + id}
+      label={label}
+    >
       {fields.map((field) => {
-        const defaultValue = valueAuthors && valueAuthors[id] && valueAuthors[id][field?.name];
-        const defaultError = errorAuthors && errorAuthors[`${id}_${field?.name}`];
-        return (<FieldBuilder
-          key={field?.name + id}
-          className="brief-form__input"
-          name={field?.name}
-          label={field?.label}
-          defaultValue={defaultValue}
-          defaultError={defaultError}
-          description={field?.description}
-          type={field?.type || "text"}
-          required
-          handleChange={() => ({ handleChange, idAuthor: id, name: field?.name })}
-        />);
+        const defaultValue =
+          valueAuthors && valueAuthors[id] && valueAuthors[id][field?.name];
+        const defaultError =
+          errorAuthors && errorAuthors[`${id}_${field?.name}`];
+        return (
+          <FieldBuilder
+            key={field?.name + id}
+            className="brief-form__input"
+            name={field?.name}
+            label={field?.label}
+            defaultValue={defaultValue}
+            defaultError={defaultError}
+            description={field?.description}
+            type={field?.type || "text"}
+            required
+            handleChange={() => ({
+              handleChange,
+              idAuthor: id,
+              name: field?.name,
+            })}
+          />
+        );
       })}
     </div>
   );
 };
 
-const getContent = ({ fields, valueAuthors, errorAuthors = {}, handleChange }) => {
+const getContent = ({
+  fields,
+  valueAuthors,
+  errorAuthors = {},
+  handleChange,
+}) => {
   const isEmptyAuthors = !(Array.isArray(valueAuthors) && valueAuthors.length);
-  if (isEmptyAuthors) return (<AuthorFormInputs
-    label="Автор 1" id={1} fields={fields} key="1_0"
-    errorAuthors={errorAuthors}
-    handleChange={handleChange} />);
-  return valueAuthors.map((author, index) => (<AuthorFormInputs
-    label={`Автор ${index + 1}`} id={index} fields={fields} key={author + "_" + index}
-    valueAuthors={valueAuthors}
-    errorAuthors={errorAuthors}
-    handleChange={handleChange} />)
-  );
+  if (isEmptyAuthors)
+    return (
+      <AuthorFormInputs
+        label="Автор 1"
+        id={1}
+        fields={fields}
+        key="1_0"
+        errorAuthors={errorAuthors}
+        handleChange={handleChange}
+      />
+    );
+  return valueAuthors.map((author, index) => (
+    <AuthorFormInputs
+      label={`Автор ${index + 1}`}
+      id={index}
+      fields={fields}
+      key={author + "_" + index}
+      valueAuthors={valueAuthors}
+      errorAuthors={errorAuthors}
+      handleChange={handleChange}
+    />
+  ));
 };
 
 export default AuthorForm;

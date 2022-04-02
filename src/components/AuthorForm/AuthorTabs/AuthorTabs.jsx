@@ -4,10 +4,10 @@ import cn from "./AuthorTabs.module.scss";
 import AuthorTabBtn from "../AuthorTabBtn";
 
 const AuthorTabs = ({
-                      children,
-                      handlers: { handlerAddTab } = {},
-                      options: { isExtensible, tabsLimit } = {}
-                    }) => {
+  children,
+  handlers: { handlerAddTab } = {},
+  options: { isExtensible, tabsLimit } = {},
+}) => {
   if (!Array.isArray(children)) children = React.Children.toArray(children);
   const [activeTab, setActiveTab] = useState(children[0].props?.label);
   const [tabs, setTabs] = useState(children);

@@ -19,10 +19,18 @@ const ReferralPayoutTable = ({ className, data, isLoading }) => {
   const SkeletonRow = () => {
     return [1, 2, 3].map((id) => (
       <TableRow key={id}>
-        <TableCell className={classNames(cn.TableCell)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell, cn.TableCellName)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}><Skeleton /></TableCell>
+        <TableCell className={classNames(cn.TableCell)}>
+          <Skeleton />
+        </TableCell>
+        <TableCell className={classNames(cn.TableCell)}>
+          <Skeleton />
+        </TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellName)}>
+          <Skeleton />
+        </TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}>
+          <Skeleton />
+        </TableCell>
       </TableRow>
     ));
   };
@@ -32,28 +40,34 @@ const ReferralPayoutTable = ({ className, data, isLoading }) => {
       <Table>
         <ReferralTableHeader />
         <TableBody className={classNames(cn.TableBody)}>
-          {isLoading ? <SkeletonRow />
-            : data.map(({ sum, date, walletName, walletValue }) => (
+          {isLoading ? (
+            <SkeletonRow />
+          ) : (
+            data.map(({ sum, date, walletName, walletValue }) => (
               <TableRow key={walletValue + date}>
                 <TableCell
-                  className={classNames(cn.TableCell, cn.TableCellFirst)}>
+                  className={classNames(cn.TableCell, cn.TableCellFirst)}
+                >
                   {getDate(date)}
                   <br />
                   {getTime(date)}
                 </TableCell>
-                <TableCell
-                  className={classNames(cn.TableCell)}>
+                <TableCell className={classNames(cn.TableCell)}>
                   {sum}
                 </TableCell>
                 <TableCell
-                  className={classNames(cn.TableCell, cn.TableCellName)}>
+                  className={classNames(cn.TableCell, cn.TableCellName)}
+                >
                   {walletName}
                 </TableCell>
-                <TableCell className={classNames(cn.TableCell, cn.TableCellEnd)}>
+                <TableCell
+                  className={classNames(cn.TableCell, cn.TableCellEnd)}
+                >
                   ...{walletValue}
                 </TableCell>
               </TableRow>
-            ))}
+            ))
+          )}
         </TableBody>
       </Table>
     </TableContainer>
@@ -61,7 +75,7 @@ const ReferralPayoutTable = ({ className, data, isLoading }) => {
 };
 
 ReferralPayoutTable.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
 };
 
 export default ReferralPayoutTable;

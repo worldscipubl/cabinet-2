@@ -1,7 +1,7 @@
 @use './src/common/style/global' as *;
 
 .Wrapper {
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1.5px solid $colorShadow;
   border-radius: 0.5em;
   min-height: 120px;
@@ -70,7 +70,6 @@
   object-fit: contain;
   height: 80%;
   width: 80%;
-
 
   &.done {
     color: $green;

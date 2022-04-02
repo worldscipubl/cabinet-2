@@ -13,17 +13,31 @@ const AppBar = ({ title, description }) => {
     <header className={classNames(cn.AppBar)}>
       <ul className={classNames(cn.AppBarList)}>
         {!["/home", "/"].includes(location.pathname) && (
-          <li className={classNames(cn.Action, cn.ActionBack)} onClick={() => history.goBack()}>
-            <img className={classNames(cn.ActionBackImg)} src={btnImg} alt="back" />
+          <li
+            className={classNames(cn.Action, cn.ActionBack)}
+            onClick={() => history.goBack()}
+          >
+            <img
+              className={classNames(cn.ActionBackImg)}
+              src={btnImg}
+              alt="back"
+            />
           </li>
         )}
         <li className={classNames(cn.Action)}>
-          <h2 className={classNames(cn.AppBarTitle, "text text_color_gray-blue")}>
+          <h2
+            className={classNames(cn.AppBarTitle, "text text_color_gray-blue")}
+          >
             {title || "Заголовок не указан"}
           </h2>
         </li>
       </ul>
-      <h2 className={classNames(cn.AppBarDescription, "text text_size_default text_color_gray")}>
+      <h2
+        className={classNames(
+          cn.AppBarDescription,
+          "text text_size_default text_color_gray"
+        )}
+      >
         {description || ""}
       </h2>
     </header>
@@ -31,7 +45,7 @@ const AppBar = ({ title, description }) => {
 };
 
 AppBar.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default AppBar;

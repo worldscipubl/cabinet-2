@@ -4,9 +4,7 @@ import cn from "./TableBody.module.scss";
 
 const TableBody = ({ className, children }) => {
   return (
-    <tbody className={classNames(cn.TableBody, className)}>
-    {children}
-    </tbody>
+    <tbody className={classNames(cn.TableBody, className)}>{children}</tbody>
   );
 };
 

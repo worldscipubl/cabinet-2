@@ -2,13 +2,13 @@ import axios from "axios";
 import HTTPError from "../services/HTTPError";
 
 export const axiosBaseQuery = (
-  {baseUrl, auth, prepareHeaders} = {baseUrl: "", auth: {}}
+  { baseUrl, auth, prepareHeaders } = { baseUrl: "", auth: {} }
 ) => {
   const hasLogging = true;
 
   const wspAxios = axios.create({
     baseUrl,
-    headers: {"Content-Type": "application/json"},
+    headers: { "Content-Type": "application/json" },
     withCredentials: false,
     auth,
   });
@@ -36,7 +36,7 @@ export const axiosBaseQuery = (
 
   wspAxios.interceptors.request.use(checkTokenInterceptor);
 
-  return async ({url, method, data, params, auth, headers}) => {
+  return async ({ url, method, data, params, auth, headers }) => {
     if (method === "post") logMessageSend("Request API", data);
     try {
       const response = await wspAxios({
@@ -48,11 +48,11 @@ export const axiosBaseQuery = (
         headers,
       });
       logMessage("Response API", response);
-      return {data: response};
+      return { data: response };
     } catch (error) {
       const handledError = new HTTPError(error);
       logMessage("Response Error", handledError);
-      return {error: handledError};
+      return { error: handledError };
     }
   };
 };

@@ -2,15 +2,15 @@ import React from "react";
 import "../Field.module.scss";
 
 const DateField = ({
-                     label,
-                     description,
-                     error,
-                     helperText,
-                     className,
-                     options: { startIcon, endIcon } = {},
-                     handlers: { handlerEndIcon, handlerField } = {},
-                     ...props
-                   }) => {
+  label,
+  description,
+  error,
+  helperText,
+  className,
+  options: { startIcon, endIcon } = {},
+  handlers: { handlerEndIcon, handlerField } = {},
+  ...props
+}) => {
   return (
     <label className="field__container">
       {startIcon && (

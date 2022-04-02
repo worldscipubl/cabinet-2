@@ -5,7 +5,7 @@ import Logo from "../../common/images/logo/logo_black.svg";
 const LogoBanner = (props) => {
   const linkBanner = {
     to: "https://www.worldscipubl.com/",
-    title: "www.worldscipubl.com"
+    title: "www.worldscipubl.com",
   };
 
   return (

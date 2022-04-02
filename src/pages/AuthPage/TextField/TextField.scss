@@ -1,12 +1,12 @@
 @use './src/common/style/global' as *;
 
-$border-thickness: .12em;
+$border-thickness: 0.12em;
 $border-color: #ced4da;
-$border-color-focus: #4D90FE;
+$border-color-focus: #4d90fe;
 $label-font-size: 0.876em;
 $main-font-size: 16px;
 
-input[type=date]:invalid::-webkit-datetime-edit {
+input[type="date"]:invalid::-webkit-datetime-edit {
   color: #8e8e8e;
 }
 
@@ -26,8 +26,8 @@ input[type=date]:invalid::-webkit-datetime-edit {
     color: black;
     background-color: #fff;
     border: $border-thickness solid $border-color;
-    border-radius: .25em;
-    padding: .512em .75em;
+    border-radius: 0.25em;
+    padding: 0.512em 0.75em;
     outline: none;
 
     &:focus {
@@ -94,7 +94,8 @@ input[type=date]:invalid::-webkit-datetime-edit {
   }
 
   &.readonly {
-    .end-icon, .action-btn {
+    .end-icon,
+    .action-btn {
       cursor: pointer;
       pointer-events: auto;
     }
@@ -139,13 +140,12 @@ input[type=date]:invalid::-webkit-datetime-edit {
 }
 
 .text-field__helper {
-  padding: 0 .75em;
+  padding: 0 0.75em;
   font-size: $label-font-size;
   color: #495057;
 }
 
 .text-field__helper-msg {
-
 }
 
 .text-field.error .text-field__helper-msg {

@@ -1,1 +1,1 @@
-export {default} from "./DialogResetPassword"
+export { default } from "./DialogResetPassword";

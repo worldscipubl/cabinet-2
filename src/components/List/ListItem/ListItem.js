@@ -4,29 +4,32 @@ import ListItemContainer from "../ListItemContainer";
 import "./ListItem.scss";
 
 const ListItem = ({
-                    fileUpload,
-                    startIcon,
-                    endIcon,
-                    title,
-                    hint,
-                    onClick,
-                    disabled,
-                    link
-                  }) => {
+  fileUpload,
+  startIcon,
+  endIcon,
+  title,
+  hint,
+  onClick,
+  disabled,
+  link,
+}) => {
   const inputFile = useRef(null);
   const [state, setState] = useState({
     startIcon,
     endIcon,
     title,
-    fileUpload: null
+    fileUpload: null,
   });
 
   fileUpload && (onClick = () => inputFile.current.click());
 
   return (
     <ListItemContainer
-      className={`list-item ${onClick ? "list-item_type_button" : ""} ${disabled ? "list-item_disabled" : ""}`}
-      onClick={onClick} link={link}
+      className={`list-item ${onClick ? "list-item_type_button" : ""} ${
+        disabled ? "list-item_disabled" : ""
+      }`}
+      onClick={onClick}
+      link={link}
     >
       {startIcon && (
         <span className="list-item__icon">
@@ -73,7 +76,7 @@ const ListItem = ({
                   ...state,
                   startIcon: doneImg,
                   fileUpload: file,
-                  title: file.name
+                  title: file.name,
                 });
               }
             }}

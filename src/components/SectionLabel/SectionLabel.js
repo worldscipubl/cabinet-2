@@ -9,7 +9,12 @@ const SectionLabel = ({ className, title, description, ...props }) => {
       <h2 className={classNames(cn.Title, "text text_color_gray-blue")}>
         {title || "Заголовок не указан"}
       </h2>
-      <h2 className={classNames(cn.Description, "text text_size_default text_color_gray")}>
+      <h2
+        className={classNames(
+          cn.Description,
+          "text text_size_default text_color_gray"
+        )}
+      >
         {description || ""}
       </h2>
     </div>
@@ -18,12 +23,12 @@ const SectionLabel = ({ className, title, description, ...props }) => {
 
 SectionLabel.defaultProps = {
   title: "",
-  description: ""
+  description: "",
 };
 
 SectionLabel.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string
+  description: PropTypes.string,
 };
 
 export default SectionLabel;

@@ -6,7 +6,6 @@ import { useGetArticlesQuery } from "../../api/endpoints/ArticlesApi";
 import { useGetApplicationsQuery } from "../../api/endpoints/BeforeArticleApi";
 import "./MyArticles.scss";
 
-
 const MyArticles = () => {
   const { data: dataArticles, error, isLoading } = useGetArticlesQuery();
   const { data: dataUploads } = useGetApplicationsQuery();
@@ -19,8 +18,8 @@ const MyArticles = () => {
   );
 };
 
-export default withMainLayout(MyArticles,
-  {
-    title: "Мои статьи",
-    description: "Выберите карточку статьи или подайте заявку на новую публикацию"
-  });
+export default withMainLayout(MyArticles, {
+  title: "Мои статьи",
+  description:
+    "Выберите карточку статьи или подайте заявку на новую публикацию",
+});

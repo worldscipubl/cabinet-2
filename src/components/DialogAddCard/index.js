@@ -1,1 +1,1 @@
-export {default} from "./DialogAddCard";
+export { default } from "./DialogAddCard";

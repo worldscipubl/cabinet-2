@@ -7,43 +7,46 @@ const BriefApi = entryApi.injectEndpoints({
     getArticle: build.query({
       query: (articleId) => ({
         url: `/brief/article/${articleId}`,
-        method: "get"
+        method: "get",
       }),
-      providesTags: (result) => result ?
-        [{ ...result, ...{ type: "briefArticle" } }, "briefArticle"] :
-        ["briefArticle"],
+      providesTags: (result) =>
+        result
+          ? [{ ...result, ...{ type: "briefArticle" } }, "briefArticle"]
+          : ["briefArticle"],
       transformResponse: (response) => {
         if (response.data) return response.data;
         else retry.fail(new Error("No data"));
-      }
+      },
     }),
     getContact: build.query({
       query: () => ({
         url: "/users/self",
-        method: "get"
+        method: "get",
       }),
-      providesTags: (result) => result ?
-        [{ ...result, ...{ type: "briefContact" } }, "briefContact"] :
-        ["briefContact"],
+      providesTags: (result) =>
+        result
+          ? [{ ...result, ...{ type: "briefContact" } }, "briefContact"]
+          : ["briefContact"],
       transformResponse: (response) => {
         if (response.data) return response.data;
         else retry.fail(new Error("No data"));
-      }
+      },
     }),
     getAuthors: build.query({
       query: (articleId) => ({
         url: `/reg-forms/${articleId}`,
-        method: "get"
+        method: "get",
       }),
-      providesTags: (result) => result ?
-        [{ ...result, ...{ type: "briefAuthors" } }, "briefAuthors"] :
-        ["briefAuthors"],
+      providesTags: (result) =>
+        result
+          ? [{ ...result, ...{ type: "briefAuthors" } }, "briefAuthors"]
+          : ["briefAuthors"],
       transformResponse: (response) => {
         if (response.data) {
           const { authorInfo, ...regInfo } = response.data;
           return { authorInfo, regInfo };
         } else retry.fail(new Error("No data"));
-      }
+      },
     }),
 
     /* Отправка данных по брифу */
@@ -51,28 +54,28 @@ const BriefApi = entryApi.injectEndpoints({
       query: ({ data }) => ({
         url: "/brief/article",
         method: "post",
-        data
+        data,
       }),
-      invalidatesTags: ["briefArticle"]
+      invalidatesTags: ["briefArticle"],
     }),
     addContact: build.mutation({
       query: ({ data, isFile = false }) => ({
         url: isFile ? "/user-files" : "/users/self",
         method: isFile ? "post" : "put",
-        data
+        data,
       }),
-      invalidatesTags: ["briefContact"]
+      invalidatesTags: ["briefContact"],
     }),
     addAuthors: build.mutation({
       query: (data) => ({
         url: "/reg-forms",
         method: "post",
-        data
+        data,
       }),
-      invalidatesTags: ["briefAuthors"]
-    })
+      invalidatesTags: ["briefAuthors"],
+    }),
   }),
-  overrideExisting: false
+  overrideExisting: false,
 });
 
 export const {
@@ -82,5 +85,5 @@ export const {
   useAddArticleMutation,
   useAddContactMutation,
   useAddAuthorsMutation,
-  useLazyGetArticleQuery
+  useLazyGetArticleQuery,
 } = BriefApi;

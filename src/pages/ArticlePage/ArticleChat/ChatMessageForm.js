@@ -8,10 +8,9 @@ const ChatMessageForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!onSubmit) return;
-    onSubmit({ message, files })
-      .then(() => {
-        setMessage("");
-      });
+    onSubmit({ message, files }).then(() => {
+      setMessage("");
+    });
   };
 
   const handleMessage = (e) => {
@@ -23,7 +22,6 @@ const ChatMessageForm = ({ onSubmit }) => {
     const { value } = input;
     setMessage(value);
   };
-
 
   const handleFile = (e) => {
     const input = e.target;
@@ -38,22 +36,32 @@ const ChatMessageForm = ({ onSubmit }) => {
 
   return (
     <div className="chat-box__footer">
-      <form className="chat-box__send-bar send-bar" onSubmit={handleSubmit} noValidate>
-          <textarea className="send-bar__field text text_size_default"
-                    placeholder="Введите ваше сообщение..."
-                    required
-                    value={message}
-                    onChange={handleMessage}
-          />
+      <form
+        className="chat-box__send-bar send-bar"
+        onSubmit={handleSubmit}
+        noValidate
+      >
+        <textarea
+          className="send-bar__field text text_size_default"
+          placeholder="Введите ваше сообщение..."
+          required
+          value={message}
+          onChange={handleMessage}
+        />
         <div className="send-bar__btn-group">
-          <button className="send-bar__btn button button_type_main active" type="submit">
+          <button
+            className="send-bar__btn button button_type_main active"
+            type="submit"
+          >
             Отправить
           </button>
           <label className="send-bar__btn">
-            <i className="button button_type_main">
-              Добавить файл
-            </i>
-            <input className="send-bar__origin-input" type="file" onChange={handleFile} />
+            <i className="button button_type_main">Добавить файл</i>
+            <input
+              className="send-bar__origin-input"
+              type="file"
+              onChange={handleFile}
+            />
           </label>
         </div>
       </form>
@@ -62,7 +70,7 @@ const ChatMessageForm = ({ onSubmit }) => {
 };
 
 ChatMessageForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default ChatMessageForm;

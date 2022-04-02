@@ -1,15 +1,15 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import constraints from "../../../../utils/constraints";
 import FormErrorsBoard from "../FormErrorsBoard";
 import TextField from "../../TextField";
 import Checkbox from "../../../../components/Checkbox/Checkbox";
-import {useRegistrationUserMutation} from "../../../../api/endpoints/UserApi";
-import {useHistory} from "react-router-dom/cjs/react-router-dom.min";
-import {getCookie} from "../../../../utils/functions";
+import { useRegistrationUserMutation } from "../../../../api/endpoints/UserApi";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { getCookie } from "../../../../utils/functions";
 
 const FormRegistration = () => {
-  const [regUser, {error: errorRegUser} = {}] = useRegistrationUserMutation();
+  const [regUser, { error: errorRegUser } = {}] = useRegistrationUserMutation();
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const [checked, setChecked] = useState(false);
@@ -19,14 +19,14 @@ const FormRegistration = () => {
     if (!input) return;
 
     const isValid = input.validity.valid;
-    const {name, value} = input;
+    const { name, value } = input;
     if (!name) return;
 
-    setState({...state, [name]: value, partnerId});
+    setState({ ...state, [name]: value, partnerId });
 
     if (!isValid) {
       constraints[name] &&
-      setErrors({...errors, [name]: constraints[name].msg});
+        setErrors({ ...errors, [name]: constraints[name].msg });
     } else {
       setErrors(null);
     }
@@ -34,7 +34,7 @@ const FormRegistration = () => {
   const history = useHistory();
   const signUp = () => {
     regUser({
-      user: {...state},
+      user: { ...state },
     })
       .unwrap()
       .then((res) => {
@@ -67,7 +67,7 @@ const FormRegistration = () => {
           Введите свои учетные данные
         </p>
 
-        {errors && errors.form && <FormErrorsBoard dataErrors={errors.form}/>}
+        {errors && errors.form && <FormErrorsBoard dataErrors={errors.form} />}
 
         <div className="auth-form__inputs">
           <div className="auth-form__input">
@@ -122,7 +122,7 @@ const FormRegistration = () => {
           </div>
           <div className="auth-form__input">
             <Checkbox label="У меня есть купон">
-              <input type="checkbox" onChange={(e) => handleCheckbox(e)}/>
+              <input type="checkbox" onChange={(e) => handleCheckbox(e)} />
             </Checkbox>
           </div>
           <div className={`auth-form__input ${!checked && "hidden"}`}>
@@ -142,7 +142,7 @@ const FormRegistration = () => {
           </div>
         </div>
 
-        <i className="divider"/>
+        <i className="divider" />
         <div className="auth-form__other">
           <div className="auth-form__other-item">
             <p className="text">Уже есть аккаунт?</p>
