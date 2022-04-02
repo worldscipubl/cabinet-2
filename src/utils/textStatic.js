@@ -1,4 +1,4 @@
-import {Redirect, useHistory} from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import React from "react";
 
 const textStatic = {
@@ -37,81 +37,90 @@ const textStatic = {
   buttons: {
     button: {
       4: [
-          {
-            active: function (data) {
-              return true;
-            },
-            text: "Приступить к подписанию договора",
-            class: "button button_type_blue",
-            action: function (data) {
-              data.updateStatusArticle({articleId: data.articleId, statusAmoId: 26763844})
-                  .then((res) => {
-                    console.log(res);
-                  }).catch((err) => {
+        {
+          active: function (data) {
+            return true;
+          },
+          text: "Приступить к подписанию договора",
+          class: "button button_type_blue",
+          action: function (data) {
+            data
+              .updateStatusArticle({
+                articleId: data.articleId,
+                statusAmoId: 26763844,
+              })
+              .then((res) => {
+                console.log(res);
+              })
+              .catch((err) => {
                 console.log(err);
               });
-            }
-          }
+          },
+        },
       ],
       5: [
-          {
-            active: function (data) {
-              return true;
-            },
-            text: "Ввести данные",
-            class: "button button_type_blue",
-            action: function (data) {
-              document.location.href = "/article/" + data.articleId + "/article-brief";
-            }
+        {
+          active: function (data) {
+            return true;
           },
+          text: "Ввести данные",
+          class: "button button_type_blue",
+          action: function (data) {
+            document.location.href =
+              "/article/" + data.articleId + "/article-brief";
+          },
+        },
       ],
       6: [
-          {
-            active: function (data) {
-              return true;
-            },
-            text: "Исправить",
-            class: "button button_type_red",
-            action: function (data) {
-              document.location.href = "/article/" + data.articleId + "/article-brief";
-            }
+        {
+          active: function (data) {
+            return true;
           },
+          text: "Исправить",
+          class: "button button_type_red",
+          action: function (data) {
+            document.location.href =
+              "/article/" + data.articleId + "/article-brief";
+          },
+        },
       ],
       9: [
-          {
-            active: function (data) {
-              return true;
-            },
-            text: "Оплатить",
-            class: "button button_type_blue",
-            action: function (data) {
-              document.location.href = "/article/" + data.articleId + "/article-payment";
-            }
+        {
+          active: function (data) {
+            return true;
           },
+          text: "Оплатить",
+          class: "button button_type_blue",
+          action: function (data) {
+            document.location.href =
+              "/article/" + data.articleId + "/article-payment";
+          },
+        },
       ],
       39: [
-          {
-            active: function (data) {
-              return true;
-            },
-            text: "Ссылка на выпуск",
-            class: "button button_type_green",
-            action: function (data) {
-              if (data.article.linkPublishedArticle) {
-                window.open(data.article.linkPublishedArticle, '_blank');
-              }
+        {
+          active: function (data) {
+            return true;
+          },
+          text: "Ссылка на выпуск",
+          class: "button button_type_green",
+          action: function (data) {
+            if (data.article.linkPublishedArticle) {
+              window.open(data.article.linkPublishedArticle, "_blank");
             }
           },
-          {
-            active: function (data) {
-              return data.hasPay;
-            },
-            text: "Оплатить остаток",
-            class: "button button_type_blue",
-            action: function (data) {
-              document.location.href = "/article/" + data.articleId + "/article-payment";
-            }
+        },
+        {
+          active: function (data) {
+            return data.hasPay;
           },
+          text: "Оплатить остаток",
+          class: "button button_type_blue",
+          action: function (data) {
+            document.location.href =
+              "/article/" + data.articleId + "/article-payment";
+          },
+        },
       ],
     },
 

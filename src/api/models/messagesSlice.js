@@ -5,7 +5,7 @@ const messagesAdapter = createEntityAdapter({
   selectId: (message) => {
     const str = message?.dateCreate + message?.text + message?.role;
     return getHashFromString(str);
-  }
+  },
   // sortComparer: (a, b) => a.dateCreate.localeCompare(b.dateCreate),
 });
 
@@ -33,10 +33,9 @@ export const messagesSlice = createSlice({
   reducers: {
     addMessage: messagesAdapter.addOne,
     addMessages: messagesAdapter.addMany,
-    setMessages: messagesAdapter.setAll
-  }
+    setMessages: messagesAdapter.setAll,
+  },
 });
-
 
 export const { addMessage, addMessages, setMessages } = messagesSlice.actions;
 export default messagesSlice.reducer;

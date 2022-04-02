@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="доработки">
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles/ChatInfiniteScroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles/ChatMessageForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles/ChatMessages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/utils/hooks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/utils/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/endpoints/ChatApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/ChatApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatMessage/ChatMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatMessage/ChatMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatMessage/ChatMessage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatMessage/ChatMessage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatMessageForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/AuthForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/AuthForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/PageRegSuccess/PageRegSuccess.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/PageRegSuccess/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/PageResetPassword/PageResetPassword.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/PageResetPassword/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +71,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -63,11 +81,12 @@
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles" />
       <recent name="$PROJECT_DIR$/src/pages/ArticlePage" />
       <recent name="$PROJECT_DIR$/src/pages/" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -95,6 +114,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="" />
@@ -120,6 +142,8 @@
       <workItem from="1645987625854" duration="516000" />
       <workItem from="1646068314104" duration="4406000" />
       <workItem from="1646168716714" duration="4614000" />
+      <workItem from="1648900036525" duration="14298000" />
+      <workItem from="1648916262201" duration="10366000" />
     </task>
     <task id="LOCAL-00001" summary="доработки">
       <created>1645742046425</created>
@@ -173,7 +197,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="false" />
+                  <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
               <option name="FILTERS">
@@ -181,7 +205,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>

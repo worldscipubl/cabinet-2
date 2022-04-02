@@ -20,11 +20,8 @@ const NavMenuItem = ({ img, title, linkTo, onClick, useBadgeId }) => {
   );
 };
 
-export default withBadge(NavMenuItem,
-  {
-    anchorOrigin: { horizontal: "left", vertical: "center" },
-    className: "nav-menu__badge-wrapper",
-    classesBadge: "nav-menu__badge"
-  });
-
-
+export default withBadge(NavMenuItem, {
+  anchorOrigin: { horizontal: "left", vertical: "center" },
+  className: "nav-menu__badge-wrapper",
+  classesBadge: "nav-menu__badge",
+});

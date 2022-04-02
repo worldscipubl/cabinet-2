@@ -28,7 +28,7 @@ const Stepper = ({ className, currentStage, children }) => {
             ...item.props.state,
             open: item.props.id === openItem,
             complete: item.props.id < currentStage,
-            disabled: item.props.id > currentStage
+            disabled: item.props.id > currentStage,
           }}
           onClick={() => toggleItem(item.props.id)}
         ></item.type>

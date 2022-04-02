@@ -1,1 +1,1 @@
-export {default} from "./FormFieldLabel"
+export { default } from "./FormFieldLabel";

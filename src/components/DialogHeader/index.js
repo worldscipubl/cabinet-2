@@ -1,1 +1,1 @@
-export {default} from "./DialogHeader"
+export { default } from "./DialogHeader";

@@ -1,7 +1,7 @@
 @use './src/common/style/global' as *;
 
 .article-summary {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
 }
@@ -13,7 +13,6 @@
 }
 
 .article-summary__header {
-
 }
 
 .article-summary__body {
@@ -27,5 +26,4 @@
 }
 
 .article-summary__col {
-
 }

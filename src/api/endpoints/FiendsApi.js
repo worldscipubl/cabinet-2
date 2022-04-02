@@ -6,12 +6,10 @@ const FiendsApi = entryApi.injectEndpoints({
       query: () => ({ url: "/friends", method: "get" }),
       transformResponse: (response) => {
         return response.data;
-      }
-    })
+      },
+    }),
   }),
-  overrideExisting: false
+  overrideExisting: false,
 });
 
-export const {
-  useGetFriendsQuery
-} = FiendsApi;
+export const { useGetFriendsQuery } = FiendsApi;

@@ -4,22 +4,22 @@ import ViewPagerBar from "../ViewPager/ViewPagerBar";
 import "./ViewPager.scss";
 
 const ViewPager = ({
-                     tabs = [],
-                     pages,
-                     handlers,
-                     options: {
-                       initStep,
-                       hideActionBar,
-                       hideBackBtn,
-                       hideNextBtn,
-                       nextBtnLabel,
-                       backBtnLabel,
-                       resetBtnLabel,
-                       finishBtnLabel,
-                       clickableTabs,
-                       statePages = false
-                     } = {}
-                   }) => {
+  tabs = [],
+  pages,
+  handlers,
+  options: {
+    initStep,
+    hideActionBar,
+    hideBackBtn,
+    hideNextBtn,
+    nextBtnLabel,
+    backBtnLabel,
+    resetBtnLabel,
+    finishBtnLabel,
+    clickableTabs,
+    statePages = false,
+  } = {},
+}) => {
   const [activeStep, setActiveStep] = useState(initStep || 0);
 
   const handleNext = () => {
@@ -54,14 +54,14 @@ const ViewPager = ({
         ) : (
           <div>
             {activeStep === 0 ||
-            (!hideBackBtn && (
-              <button
-                onClick={handleBack}
-                className="button button_type_main view-pager__action"
-              >
-                {backBtnLabel || "Назад"}
-              </button>
-            ))}
+              (!hideBackBtn && (
+                <button
+                  onClick={handleBack}
+                  className="button button_type_main view-pager__action"
+                >
+                  {backBtnLabel || "Назад"}
+                </button>
+              ))}
             {!hideNextBtn && statePages[activeStep] && (
               <button
                 onClick={handleNext}
@@ -70,7 +70,8 @@ const ViewPager = ({
                 {activeStep === tabs.length - 1
                   ? finishBtnLabel || "Закончить"
                   : nextBtnLabel || "Далее"}
-              </button>)}
+              </button>
+            )}
           </div>
         )}
       </div>
@@ -98,7 +99,7 @@ const getStepContent = (pages, step) => {
 ViewPager.propTypes = {
   // Properties
   tabs: PropTypes.instanceOf(Array).isRequired,
-  pages: PropTypes.instanceOf(Function).isRequired
+  pages: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default ViewPager;

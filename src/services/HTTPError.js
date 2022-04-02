@@ -24,37 +24,41 @@ class HTTPError extends Error {
       if (status === 400) {
         return {
           name: "BadRequestError",
-          message: `${message} (Код ${status})` || `Неверно введены данные (Код ${status})`,
+          message:
+            `${message} (Код ${status})` ||
+            `Неверно введены данные (Код ${status})`,
           status,
-          details
+          details,
         };
       }
 
       if (status === 401) {
         return {
           name: "UnauthorizedError",
-          message:
-            message || `Такой пары логин\\пароль не существет (Код ${status})`,
+          message: `Такой пары логин\\пароль не существет (Код ${status})`,
           status,
-          details
+          details,
         };
       }
 
       if (status >= 400 && status < 500) {
         return {
           name: "ClientError",
-          message: `${message} (Код ${status})` || `Неверно введены данные (Код ${status})`,
+          message:
+            `${message} (Код ${status})` ||
+            `Неверно введены данные (Код ${status})`,
           status,
-          details
+          details,
         };
       }
 
       if (status >= 500 && status < 600) {
         return {
           name: "ServerError",
-          message: `${message} (Код ${status})` || `Ошибка сервера (Код ${status})`,
+          message:
+            `${message} (Код ${status})` || `Ошибка сервера (Код ${status})`,
           status,
-          details
+          details,
         };
       }
     } else if (request) {
@@ -63,14 +67,14 @@ class HTTPError extends Error {
         name: "NetworkError",
         message:
           "Ошибка сети. Проверьте интернет-подключение или повторите попытку позже",
-        details: request
+        details: request,
       };
     } else {
       // anything else
       return {
         name: "AxiosError",
         message: "Ошибка конфигурации",
-        details: error.message
+        details: error.message,
       };
     }
   }

@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import ArticleStatus from "../ArticleStatus";
 import { useLazyGetArticleChangesQuery } from "../../api/endpoints/TimeLineArticleApi";
 import "./ArticleChanges.scss";
-import {useGetHasPayQuery} from "../../api/endpoints/ArticlePaymentApi";
+import { useGetHasPayQuery } from "../../api/endpoints/ArticlePaymentApi";
 
 const ArticleChanges = ({ article, stage }) => {
-  const { /*currentStage: stage, */articleId } = article;
+  const { /*currentStage: stage, */ articleId } = article;
   const [statuses, setStatuses] = useState(article?.currentStatus || []);
   const [trigger, { data: updateStatuses, error, isLoading, isError }] =
     useLazyGetArticleChangesQuery();
 
-  const {data: hasPay} = useGetHasPayQuery(articleId);
+  const { data: hasPay } = useGetHasPayQuery(articleId);
 
   useEffect(() => {
     if (!updateStatuses) return;
@@ -21,7 +21,7 @@ const ArticleChanges = ({ article, stage }) => {
     trigger({
       articleId,
       stage,
-      start: nextStatus
+      start: nextStatus,
     });
   };
 

@@ -7,6 +7,7 @@ import Checkbox from "../../../../components/Checkbox/Checkbox";
 import { useRegistrationUserMutation } from "../../../../api/endpoints/UserApi";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { getCookie } from "../../../../utils/functions";
+
 const FormRegistration = () => {
   const [regUser, { error: errorRegUser } = {}] = useRegistrationUserMutation();
   const [errors, setErrors] = useState(null);
@@ -26,10 +27,8 @@ const FormRegistration = () => {
     if (!isValid) {
       constraints[name] &&
         setErrors({ ...errors, [name]: constraints[name].msg });
-      return;
     } else {
       setErrors(null);
-      return;
     }
   };
   const history = useHistory();

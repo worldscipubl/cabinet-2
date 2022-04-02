@@ -6,14 +6,14 @@
   overflow: hidden;
   font-size: 16px;
   background-color: #e9ecef;
-  border-radius: .25em;
+  border-radius: 0.25em;
 
   &_animated {
     .progress-bar__indicator {
       position: relative;
 
       &::after {
-        content: '';
+        content: "";
         opacity: 0;
         position: absolute;
         top: 0;
@@ -33,12 +33,12 @@
 
 @keyframes progress-active {
   0% {
-    opacity: .4;
-    width: 0
+    opacity: 0.4;
+    width: 0;
   }
 
   100% {
     opacity: 0;
-    width: 100%
+    width: 100%;
   }
 }

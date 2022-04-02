@@ -14,7 +14,7 @@
     position: absolute;
 
     width: 100%;
-    background-color: #C4C4C4;
+    background-color: #c4c4c4;
 
     height: 5px;
 
@@ -33,7 +33,7 @@
 
     border-radius: 50%;
 
-    background: #C4C4C4;
+    background: #c4c4c4;
     transition: background-color 0.3s 0s;
 
     width: 1.85em;
@@ -45,7 +45,7 @@
     text-align: center;
     font-family: $fontMain;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 1em;
   }
 
@@ -69,11 +69,10 @@
   }
 
   &_step {
-
     &-0 {
       .stepper-bar {
         &__circle_1 {
-          background: #FFC700;
+          background: #ffc700;
           transition: background-color 0.3s 0.6s;
 
           .stepper-bar__circle-text {
@@ -96,7 +95,7 @@
         }
 
         &__circle_2 {
-          background: #FFC700;
+          background: #ffc700;
           transition: background-color 0.3s 0.6s;
 
           .stepper-bar__circle-text {
@@ -124,7 +123,7 @@
         }
 
         &__circle_3 {
-          background: #FFC700;
+          background: #ffc700;
           transition: background-color 0.3s 0.6s;
 
           .stepper-bar__circle-text {
@@ -157,7 +156,7 @@
         }
 
         &__circle_4 {
-          background: #FFC700;
+          background: #ffc700;
           transition: background-color 0.3s 0.6s;
 
           .stepper-bar__circle-text {
@@ -195,7 +194,7 @@
         }
 
         &__circle_5 {
-          background: #FFC700;
+          background: #ffc700;
           transition: background-color 0.3s 0.6s;
 
           .stepper-bar__circle-text {

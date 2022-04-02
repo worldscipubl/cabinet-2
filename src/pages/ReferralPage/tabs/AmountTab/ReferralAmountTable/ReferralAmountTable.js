@@ -20,11 +20,21 @@ const ReferralAmountTable = ({ className, data, isLoading }) => {
   const SkeletonRow = () => {
     return [1, 2, 3].map((id) => (
       <TableRow key={id}>
-        <TableCell className={classNames(cn.TableCell, cn.TableCellID)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell, cn.TableCellUser)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell, cn.TableCellReg)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell)}><Skeleton /></TableCell>
-        <TableCell className={classNames(cn.TableCell)}><Skeleton /></TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellID)}>
+          <Skeleton />
+        </TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellUser)}>
+          <Skeleton />
+        </TableCell>
+        <TableCell className={classNames(cn.TableCell, cn.TableCellReg)}>
+          <Skeleton />
+        </TableCell>
+        <TableCell className={classNames(cn.TableCell)}>
+          <Skeleton />
+        </TableCell>
+        <TableCell className={classNames(cn.TableCell)}>
+          <Skeleton />
+        </TableCell>
       </TableRow>
     ));
   };
@@ -34,25 +44,36 @@ const ReferralAmountTable = ({ className, data, isLoading }) => {
       <Table>
         <ReferralTableHeader />
         <TableBody className={classNames(cn.TableBody)}>
-          {isLoading ? <SkeletonRow />
-            : data.map(({ id, name, dateRegistration, datePay, sum }) => (
+          {isLoading ? (
+            <SkeletonRow />
+          ) : (
+            data.map(({ id, name, dateRegistration, datePay, sum }) => (
               <TableRow key={id}>
-                <TableCell className={classNames(cn.TableCell, cn.TableCellID)}>{id}</TableCell>
-                <TableCell className={classNames(cn.TableCell, cn.TableCellUser)}>{name}</TableCell>
+                <TableCell className={classNames(cn.TableCell, cn.TableCellID)}>
+                  {id}
+                </TableCell>
                 <TableCell
-                  className={classNames(cn.TableCell, cn.TableCellReg)}>
+                  className={classNames(cn.TableCell, cn.TableCellUser)}
+                >
+                  {name}
+                </TableCell>
+                <TableCell
+                  className={classNames(cn.TableCell, cn.TableCellReg)}
+                >
                   Регистрация <br />
                   {getDate(dateRegistration)}
                 </TableCell>
-                <TableCell
-                  className={classNames(cn.TableCell)}>
+                <TableCell className={classNames(cn.TableCell)}>
                   {datePay ? "Оплата" : "Ожидание оплаты"}
                   <br />
                   {datePay && getDate(datePay)}
                 </TableCell>
-                <TableCell className={classNames(cn.TableCell)}>{sum}</TableCell>
+                <TableCell className={classNames(cn.TableCell)}>
+                  {sum}
+                </TableCell>
               </TableRow>
-            ))}
+            ))
+          )}
         </TableBody>
       </Table>
     </TableContainer>
@@ -60,7 +81,7 @@ const ReferralAmountTable = ({ className, data, isLoading }) => {
 };
 
 ReferralAmountTable.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
 };
 
 export default ReferralAmountTable;

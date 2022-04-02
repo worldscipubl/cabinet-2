@@ -1,1 +1,1 @@
-export {default} from "./FieldAvatar"
+export { default } from "./FieldAvatar";

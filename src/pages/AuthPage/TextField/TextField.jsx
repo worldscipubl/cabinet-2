@@ -3,18 +3,18 @@ import classNames from "classnames";
 import "./TextField.scss";
 
 const TextField = ({
-                     label,
-                     description,
-                     children,
-                     error,
-                     helperText,
-                     className,
-                     appearance: { type } = {},
-                     options: { startIcon, endIcon } = {},
-                     handlers: { handlerEndIcon } = {}
-                   }) => {
+  label,
+  description,
+  children,
+  error,
+  helperText,
+  className,
+  appearance: { type } = {},
+  options: { startIcon, endIcon } = {},
+  handlers: { handlerEndIcon } = {},
+}) => {
   const textFieldStyle = classNames("text-field", className, {
-    error: error
+    error: error,
   });
 
   return (

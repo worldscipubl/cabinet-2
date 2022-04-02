@@ -18,8 +18,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding: .5em;
-  border-radius: .25em;
+  padding: 0.5em;
+  border-radius: 0.25em;
   cursor: pointer;
   text-decoration: none;
 
@@ -53,13 +53,13 @@
   transition: max-height 1s cubic-bezier(0, 1.17, 0.32, 1.12);
 
   &:before {
-    content: '';
+    content: "";
     height: 100%;
     opacity: 1;
     width: 3px;
     background: #d1f3ff;
     position: absolute;
-    left: calc(9px + .25em);
+    left: calc(9px + 0.25em);
     top: 0;
     border-radius: 15px;
   }

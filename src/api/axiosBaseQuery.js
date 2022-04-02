@@ -1,5 +1,6 @@
 import axios from "axios";
 import HTTPError from "../services/HTTPError";
+
 export const axiosBaseQuery = (
   { baseUrl, auth, prepareHeaders } = { baseUrl: "", auth: {} }
 ) => {
@@ -14,7 +15,6 @@ export const axiosBaseQuery = (
 
   const checkTokenInterceptor = (config) => {
     const token = localStorage.getItem("user_token");
-    console.log(token);
     if (token) config.headers.Authorization = `Basic ${token}`;
     return config;
   };
@@ -48,15 +48,11 @@ export const axiosBaseQuery = (
         headers,
       });
       logMessage("Response API", response);
-      console.log(response);
       return { data: response };
     } catch (error) {
       const handledError = new HTTPError(error);
       logMessage("Response Error", handledError);
-      if (handledError.handleError(error).status === 401) {
-        return { data: { status: 401 } };
-      }
-      return { error: handledError?.message };
+      return { error: handledError };
     }
   };
 };

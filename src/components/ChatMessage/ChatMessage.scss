@@ -1,8 +1,8 @@
 @use './src/common/style/global' as *;
 
-$border-thickness: .12em;
+$border-thickness: 0.12em;
 $border-color: #ced4da;
-$border-color-focus: #4D90FE;
+$border-color-focus: #4d90fe;
 //$chat-message_right-bg: #579ffb;
 $chat-message_right-bg: #d1f3ff;
 $chat-message_left-bg: #ececec;
@@ -11,7 +11,7 @@ $chat-message_radius: 0.75em;
 .chat-message {
   display: flex;
   align-items: flex-end;
-  margin-bottom: 10px;
+  margin-top: 10px;
 
   &:last-of-type {
     margin: 0;

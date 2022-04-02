@@ -1,1 +1,1 @@
-export {default} from "./ArticleChat"
+export { default } from "./ArticleChat";

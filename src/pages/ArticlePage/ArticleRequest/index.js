@@ -1,1 +1,1 @@
-export {default} from "./ArticleRequest"
+export { default } from "./ArticleRequest";

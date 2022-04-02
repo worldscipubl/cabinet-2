@@ -1,1 +1,1 @@
-export {default} from "./ItemCategory"
+export { default } from "./ItemCategory";

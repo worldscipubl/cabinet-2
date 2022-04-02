@@ -11,19 +11,15 @@ const TabLayout = ({ children, defaultTabs }) => {
     setActiveTab(getActiveTabDefault(children, defaultTabs));
   }, [children, defaultTabs]);
 
-
   return (
     <>
       <TabBar activeTab={activeTab} handleTab={setActiveTab}>
         {children}
       </TabBar>
-      <TabContent activeTab={activeTab}>
-        {children}
-      </TabContent>
+      <TabContent activeTab={activeTab}>{children}</TabContent>
     </>
   );
 };
-
 
 const getActiveTabDefault = (children, defaultTabs) => {
   if (!Array.isArray(children)) return;

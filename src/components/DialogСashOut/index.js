@@ -1,1 +1,1 @@
-export {default} from "./DialogСashOut"
+export { default } from "./DialogСashOut";

@@ -65,7 +65,7 @@ const ArticlePage = () => {
       <EmptyState
         type="warning"
         title="Упс... Произошла ошибка!"
-        description={error}
+        description={error.message}
       >
         <button
           className="button button_type_main"

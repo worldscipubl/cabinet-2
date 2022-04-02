@@ -1,1 +1,1 @@
-export {default} from "./ProfileData"
+export { default } from "./ProfileData";

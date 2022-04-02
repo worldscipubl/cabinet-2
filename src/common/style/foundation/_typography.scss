@@ -7,40 +7,40 @@
     font-style: $style;
     font-display: swap;
 
-    src: url('#{$file-path}.woff') format('woff'),
-    url('#{$file-path}.woff') format('woff2');
+    src: url("#{$file-path}.woff") format("woff"),
+      url("#{$file-path}.woff") format("woff2");
   }
 }
 
 //@include font-face("Helvetica", "../../fonts/helvetica-regular", 400);
 //@include font-face("Helvetica", "../../fonts/helvetica-light", 300);
 //@include font-face("Helvetica", "../../fonts/helvetica-bold", 700);
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 $text-sizes: (
-        large: 64px,
-        extra-title: 48px,
-        title: 36px,
-        subtitle: 24px,
-        header-logo: 22px,
-        accent: 18px,
-        default: 16px,
-        text: 14px,
-        small: 9px,
+  large: 64px,
+  extra-title: 48px,
+  title: 36px,
+  subtitle: 24px,
+  header-logo: 22px,
+  accent: 18px,
+  default: 16px,
+  text: 14px,
+  small: 9px,
 );
 
 $text-colors: (
-        "black": #000,
-        "white": #FFF,
-        "gray": #00000066,
-        "gray-blue": #0D1D47,
-        "yellow": #FFC700,
-        "green": #219653,
-        "bronze": #BD8C4E,
-        "silver": #B5B5B5,
-        "gold": #ECBA40,
-        "platinum": #9195A3,
-        "red": red,
+  "black": #000,
+  "white": #fff,
+  "gray": #00000066,
+  "gray-blue": #0d1d47,
+  "yellow": #ffc700,
+  "green": #219653,
+  "bronze": #bd8c4e,
+  "silver": #b5b5b5,
+  "gold": #ecba40,
+  "platinum": #9195a3,
+  "red": red,
 );
 
 .text {

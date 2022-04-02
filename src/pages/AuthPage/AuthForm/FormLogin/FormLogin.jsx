@@ -6,7 +6,7 @@ import TextField from "../../TextField";
 import { useLoginUserMutation } from "../../../../api/endpoints/UserApi";
 
 const FormLogin = () => {
-  const [loginUser, { error: errorLoginUser } = {}] = useLoginUserMutation();
+  const [loginUser] = useLoginUserMutation();
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
   const history = useHistory();
@@ -23,7 +23,7 @@ const FormLogin = () => {
 
     if (!isValid) {
       constraints[name] &&
-      setErrors({ ...errors, [name]: constraints[name].msg });
+        setErrors({ ...errors, [name]: constraints[name].msg });
     } else {
       setErrors(null);
     }
@@ -39,7 +39,9 @@ const FormLogin = () => {
 
   const signIn = (email, password) => {
     const userToken = window.btoa(email + ":" + password);
-    loginUser(userToken).unwrap()
+    console.log({ email, password });
+    loginUser(userToken)
+      .unwrap()
       .then((res) => {
         localStorage.setItem("user_token", JSON.stringify(userToken));
         history.push("/");

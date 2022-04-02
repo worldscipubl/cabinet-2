@@ -15,8 +15,7 @@ const TableContainer = ({ className, children, ...props }) => {
 
 TableContainer.propTypes = {
   children: PropTypes.object.isRequired,
-  component: PropTypes.func.isRequired
+  component: PropTypes.func.isRequired,
 };
-
 
 export default TableContainer;
