@@ -18,24 +18,24 @@ const BriefForm = ({
   const [mutationBrief] = useMutation();
   const [stateFields, setStateFields] = useState({});
 
-  useEffect(() => {
-    checkLoading(isLoading);
-  }, [isLoading, checkLoading]);
+  // useEffect(() => {
+  //   checkLoading(isLoading);
+  // }, [isLoading, checkLoading]);
 
   useEffect(() => {
     if (!data) return;
     setStateFields({ ...data });
   }, [data]);
 
-  useEffect(() => {
-    if (!stateFields || isLoading) return;
-    const status = Object.values(stateFields).every(
-      (stateField) => !!stateField
-    );
+  // useEffect(() => {
+  //   if (!stateFields || isLoading) return;
+  //   const status = Object.values(stateFields).every(
+  //     (stateField) => !!stateField
+  //   );
 
-    if (!checkValidationForm) return;
-    checkValidationForm(nameForm, status);
-  }, [stateFields, checkValidationForm, isLoading, nameForm]);
+  //   if (!checkValidationForm) return;
+  //   checkValidationForm(nameForm, status);
+  // }, [stateFields, checkValidationForm, isLoading, nameForm]);
 
   const handleFieldSubmit = async (nameField, valueField) => {
     if (!valueField) return;

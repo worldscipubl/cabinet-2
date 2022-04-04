@@ -16,12 +16,12 @@ const FieldBuilder = ({
   const [value, setValue] = useState(defaultValue);
   const [fileName, setFileName] = useState("");
 
-  useEffect(() => {
-    if (!handleChange) return;
-    const { handleChange: handler, ...props } = handleChange();
-    if (!handler) return;
-    handler({ ...props, value });
-  }, [value, handleChange]);
+  // useEffect(() => {
+  //   if (!handleChange) return;
+  //   const { handleChange: handler, ...props } = handleChange();
+  //   if (!handler) return;
+  //   handler({ ...props, value });
+  // }, [value, handleChange]);
 
   useEffect(() => {
     setError(defaultError);

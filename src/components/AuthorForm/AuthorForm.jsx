@@ -44,8 +44,8 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
   const validationForm = () => {
     resetError();
     let isValid = true;
-    valueAuthors.foreach((author, idAuthor) => {
-      fields.foreach(({ name, placeholder }) => {
+    valueAuthors.forEach((author, idAuthor) => {
+      fields.forEach(({ name, placeholder }) => {
         const isFieldValid = author.hasOwnProperty(name) && !!author[name];
         if (!isFieldValid) {
           isValid = false;
@@ -60,8 +60,11 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
         }
       });
     });
-
-    fieldsSecond.foreach(({ name, placeholder }) => {
+    console.log(regInfo);
+    fieldsSecond.forEach(({ name, placeholder }) => {
+      console.log(valueReg);
+      console.log(regInfo);
+      debugger;
       const isFieldValid = valueReg.hasOwnProperty(name) && !!valueReg[name];
       if (!isFieldValid) {
         isValid = false;
@@ -87,7 +90,7 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
       ...valueReg,
       authorInfo: valueAuthors,
     };
-
+    console.log(sendData);
     setLoadingForm(true);
     await mutationBrief(JSON.stringify(sendData))
       .unwrap()
@@ -161,8 +164,12 @@ const AuthorForm = ({ fields, fieldsSecond, articleId }) => {
   };
 
   if (isLoading) return <Loader />;
-  if (error)
-    return <h2 className="text text_align_center text_color_red">{error}</h2>;
+  // if (error)
+  //   return (
+  //     <div>
+  //       <h2 className="text text_align_center text_color_red">{error}</h2>
+  //     </div>
+  //   );
   return (
     <div
       className={classNames("author-form", {

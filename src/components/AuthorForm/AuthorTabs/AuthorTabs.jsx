@@ -46,9 +46,9 @@ const AuthorTabs = ({
     );
   };
 
-  useEffect(() => {
-    setTabs(children);
-  }, [children]);
+  // useEffect(() => {
+  //   setTabs(children);
+  // }, [children]);
 
   return (
     <div className={classNames(cn.Container)}>

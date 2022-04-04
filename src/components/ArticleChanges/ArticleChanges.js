@@ -3,17 +3,18 @@ import ArticleStatus from "../ArticleStatus";
 import { useLazyGetArticleChangesQuery } from "../../api/endpoints/TimeLineArticleApi";
 import "./ArticleChanges.scss";
 import { useGetHasPayQuery } from "../../api/endpoints/ArticlePaymentApi";
+import Loader from "../Loader/Loader";
 
 const ArticleChanges = ({ article, stage }) => {
   const { /*currentStage: stage, */ articleId } = article;
-  const [statuses, setStatuses] = useState(article?.currentStatus || []);
+  const [statuses, setStatuses] = useState(article?.status || []);
   const [trigger, { data: updateStatuses, error, isLoading, isError }] =
     useLazyGetArticleChangesQuery();
 
   const { data: hasPay } = useGetHasPayQuery(articleId);
 
   useEffect(() => {
-    if (!updateStatuses) return;
+    if (!updateStatuses) return getMore();
     setStatuses((prev) => [...prev, ...updateStatuses]);
   }, [updateStatuses]);
 
@@ -25,6 +26,7 @@ const ArticleChanges = ({ article, stage }) => {
     });
   };
 
+  if (isLoading) return <Loader />;
   if (!statuses || !statuses.length) return null;
   const lastStatus = statuses[statuses.length - 1];
   const nextStatus = lastStatus?.startNext;
