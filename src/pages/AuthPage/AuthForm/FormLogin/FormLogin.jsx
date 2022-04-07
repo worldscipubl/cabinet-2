@@ -38,7 +38,8 @@ const FormLogin = () => {
   };
 
   const signIn = (email, password) => {
-    const userToken = window.btoa(email + ":" + password);
+    localStorage.removeItem("user_token")
+    const userToken = window.btoa(email + ":" + password);console.log(userToken);
     console.log({ email, password });
     loginUser(userToken)
       .unwrap()

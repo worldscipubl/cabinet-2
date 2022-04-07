@@ -7,13 +7,16 @@ const ChatMessageForm = ({ articleId }) => {
   const [message, setMessage] = useState("");
   const [files, setFiles] = useState([]);
 
-  const onSubmit = ({ message, messageFile }) => {
+  const onSubmit = ({ message, files }) => {
     return new Promise((resolve, reject) => {
+      console.log(message);
+      console.log(files);
       const sendData = {
         articleId,
         message,
-        "MessageArticleForm[file][]": messageFile,
+        "MessageArticleForm[file][]": files,
       };
+    console.log(sendData);
       messagesMutation(sendData)
         .unwrap()
         .then((res) => {
@@ -22,6 +25,7 @@ const ChatMessageForm = ({ articleId }) => {
         .catch((err) => {
           reject(err);
         });
+
     });
   };
 
@@ -44,15 +48,14 @@ const ChatMessageForm = ({ articleId }) => {
   };
 
   const handleFile = (e) => {
-    const input = e.target;
-    if (!input) return;
 
-    const isValid = input.validity.valid;
-    if (!isValid) return;
-
-    const { files } = input.files;
+    const files = e.target.value;
+    console.log(files);
+    // if(!files) return
     setFiles(files);
+    console.log(files);
   };
+
 
   return (
     <div className="chat-box__footer">
@@ -80,7 +83,9 @@ const ChatMessageForm = ({ articleId }) => {
             <input
               className="send-bar__origin-input"
               type="file"
+              name="MessageArticleForm[file][]"
               onChange={handleFile}
+
             />
           </label>
         </div>

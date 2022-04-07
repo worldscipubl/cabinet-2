@@ -52,7 +52,7 @@ const ChatApi = entryApi.injectEndpoints({
         // create a websocket connection when the cache subscription starts
         // const auth = { email: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" };
         const authToken = localStorage.getItem("user_token");
-        return;
+        return
         const ws = new WebSocket(
           `wss://api.worldscipubl.com:8001?basic=${authToken}&articleId=${articleId}`
         );
@@ -70,10 +70,10 @@ const ChatApi = entryApi.injectEndpoints({
             if (!data) return;
             // if (!isMessage(data) || data.channel !== arg) return;
 
-            updateCachedData((draft) => {
-              console.log(draft);
-              // messagesAdapter.upsertOne(draft, data)
-            });
+            // updateCachedData((draft) => {
+            //   console.log(draft);
+            //   // messagesAdapter.upsertOne(draft, data)
+            // });
           };
 
           ws.addEventListener("message", listener);
@@ -91,7 +91,7 @@ const ChatApi = entryApi.injectEndpoints({
       query: (data) => ({
         url: "/message-articles",
         method: "post",
-        data,
+        data: data,
       }),
       // invalidatesTags: ["messagesByArticle"]
     }),
