@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="доработки">
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles/ChatInfiniteScroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles/ChatMessageForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles/ChatMessages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/utils/hooks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/utils/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/HomePageCardForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/HomePageCardForm.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints/ChatApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints/ChatApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatMessage/ChatMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatMessage/ChatMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatMessage/ChatMessage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatMessage/ChatMessage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ArticleChat.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatListMessages.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/ChatMessageForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/AuthForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthForm/AuthForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/PageRegSuccess/PageRegSuccess.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/PageRegSuccess/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/PageResetPassword/PageResetPassword.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthPage/PageResetPassword/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +48,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -77,10 +64,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm" />
       <recent name="D:\webstorm\cabinet-2\src\components" />
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/HomePage" />
       <recent name="$PROJECT_DIR$/src/pages/ArticlePage/ArticleChat/particles" />
       <recent name="$PROJECT_DIR$/src/pages/ArticlePage" />
       <recent name="$PROJECT_DIR$/src/pages/" />
@@ -144,6 +133,8 @@
       <workItem from="1646168716714" duration="4614000" />
       <workItem from="1648900036525" duration="14298000" />
       <workItem from="1648916262201" duration="10366000" />
+      <workItem from="1650558122903" duration="9821000" />
+      <workItem from="1650601741212" duration="5921000" />
     </task>
     <task id="LOCAL-00001" summary="доработки">
       <created>1645742046425</created>

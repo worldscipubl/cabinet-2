@@ -5,6 +5,7 @@ import cn from "./Modal.module.scss";
 
 const Modal = forwardRef(
   ({ className, classNameWrapper, overlay, children, open, setOpen }, ref) => {
+
     function handleWrapper(event) {
       event.preventDefault();
       const { target, currentTarget } = event;

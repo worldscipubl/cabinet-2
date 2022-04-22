@@ -1,1 +1,258 @@
-@use './src/common/style/global' as *;
+@use '../../common/style/global/index' as *;
+
+
+.form{
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: grid;
+  grid-template: 1fr max-content 1fr / 1fr max-content 1fr;
+}
+
+.content {
+  box-sizing: border-box;
+  grid-column: 2/3;
+  margin: 0;
+  padding: 0;
+}
+
+
+.offer__title {
+  padding: 0;
+  margin: 30px 0 0 0;
+  max-width: 500px;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: bold;
+}
+
+.offer__subtitle {
+  padding: 0;
+  margin: 20px 0 0 0;
+  max-width: 400px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: normal;
+}
+
+.content__text {
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: normal;
+}
+
+.offer {
+  margin: 15px 0 55px 0;
+  background-color: #FAE078;
+  height: 332px;
+  padding: 17px;
+  position: relative;
+  border-radius: 6px;
+  display: grid;
+  grid-template: auto / 2fr max-content;
+
+}
+
+.offer__teach {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  align-self: end;
+}
+
+.offer__content {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.offer__book {
+  padding: 0;
+  margin: 0;
+  width: 36px;
+  height: 36px;
+}
+
+.offer__youtubeWrapper {
+  margin: 40px 0 0 0;
+  padding: 0;
+  display: grid;
+  grid-template: auto / repeat(2, max-content);
+  gap: 11px;
+}
+
+.offer__youtube {
+  grid-column: 1/2;
+  margin: 0;
+  padding: 0;
+  width: 63px;
+  height: 45px;
+}
+
+.offer__youtubeText {
+  grid-column: 2/3;
+  margin: 0;
+  padding: 0;
+}
+
+.offer__text {
+  margin: 0;
+  padding: 0;
+  max-width: 190px;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: normal;
+}
+
+.history__list {
+  padding: 0;
+  margin: 15px 0 0 0;
+  list-style: none;
+  display: grid;
+  grid-template: max-content / repeat(3, 2fr) 1fr;
+  gap: 10px;
+}
+
+.history__item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 32px 30px;
+  background: #E3DDDB;
+  border-radius: 8px;
+  height: 279px;
+  display: grid;
+  grid-template: 1fr repeat(2, max-content) / 1fr;
+}
+
+.history__item_more {
+  background: #FFFFFF;
+  display: grid;
+  grid-template: 1fr max-content / 1fr;
+  cursor: pointer;
+}
+
+.history__imgWrapper {
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+.history__img {
+  grid-row: 1/2;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  align-self: center;
+  justify-self: center;
+
+}
+
+.history__title {
+  grid-row: 2/3;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.history__text {
+  grid-row: 3/4;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.history__moreText {
+  grid-row: 1/2;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+  align-self: center;
+  text-align: center;
+}
+
+.history__moreArrow {
+  grid-row: 2/3;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+  justify-self: center;
+}
+
+
+.materials {
+  margin: 0;
+  padding: 0;
+}
+
+.materials__list {
+  padding: 0;
+  margin: 15px 0 0 0;
+  list-style: none;
+  display: grid;
+  grid-template: max-content / repeat(4, 1fr);
+  gap: 10px;
+}
+
+.materials__item {
+  box-sizing: border-box;
+  margin: 0;
+  background: #C5D9E3;
+  border-radius: 8px;
+  display: grid;
+  grid-template: 1fr max-content / 1fr;
+}
+
+.materials__item_blue {
+  background: #ABBFD8;
+}
+
+.materials__item_green {
+  background: #C8CFA8;
+}
+
+.materials__item_rose {
+  background: #F3E1DC;
+}
+
+.materials__imgWrapper {
+  margin: 0;
+  padding: 5px;
+  height: 145px;
+  align-self: center;
+  justify-self: center;
+}
+
+.materials__img {
+  grid-row: 1/2;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  align-self: center;
+  justify-self: center;
+
+}
+
+.materials__text {
+  grid-row: 3/4;
+  margin: 0;
+  padding: 5px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
+  text-align: center;
+}
+
