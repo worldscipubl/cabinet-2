@@ -1,0 +1,134 @@
+@use './src/common/style/global' as *;
+
+.home__form {
+  margin: 0;
+  padding: 0;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  overflow: auto;
+}
+
+.content__text {
+  padding: 26px 0 18px;
+  margin: 0;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: normal;
+  text-align: center;
+  border-bottom: solid 1px #C4C4C4;
+}
+
+.history {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  background: #FFFFFF;
+  overflow: auto;
+}
+
+.history__list {
+  padding: 34px;
+  margin: 15px 0 0 0;
+  list-style: none;
+  display: grid;
+  grid-template: max-content / repeat(4, 1fr);
+  gap: 10px;
+  overflow: auto;
+}
+
+.history__item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 32px 30px;
+  background: #E3DDDB;
+  border-radius: 8px;
+  height: 200px;
+  display: grid;
+  grid-template: 1fr repeat(2, max-content) / 1fr;
+}
+
+.history__item_more {
+  background: #FFFFFF;
+  display: grid;
+  grid-template: 1fr max-content / 1fr;
+  cursor: pointer;
+}
+
+.history__imgWrapper {
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+.history__img {
+  grid-row: 1/2;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  align-self: center;
+  justify-self: center;
+
+}
+
+.history__title {
+  grid-row: 2/3;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.history__text {
+  grid-row: 3/4;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.history__moreText {
+  grid-row: 1/2;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+  align-self: center;
+  text-align: center;
+}
+
+.history__moreArrow {
+  grid-row: 2/3;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+  justify-self: center;
+}
+
+.form__close {
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  top: 20px;
+  right: 20px;
+  border: none;
+  outline: none;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  z-index: 500;
+}
