@@ -11,12 +11,12 @@
 }
 
 .content {
+  font-family: "Helvetica", "Arial", sans-serif;
   box-sizing: border-box;
   grid-column: 2/3;
   margin: 0;
   padding: 0;
 }
-
 
 .offer__title {
   padding: 0;
@@ -88,6 +88,7 @@
   padding: 0;
   width: 63px;
   height: 45px;
+  cursor: pointer;
 }
 
 .offer__youtubeText {
@@ -123,6 +124,12 @@
   height: 279px;
   display: grid;
   grid-template: 1fr repeat(2, max-content) / 1fr;
+}
+
+.history__item:hover {
+  box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
+  transition: all .5s ease;
 }
 
 .history__item_more {
@@ -213,6 +220,13 @@
   border-radius: 8px;
   display: grid;
   grid-template: 1fr max-content / 1fr;
+  cursor: pointer;
+}
+
+.materials__item:hover {
+  box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
+  transition: all .5s ease;
 }
 
 .materials__item_blue {
