@@ -47,6 +47,7 @@
   height: 200px;
   display: grid;
   grid-template: 1fr repeat(2, max-content) / 1fr;
+  cursor: pointer;
 }
 
 .history__item:hover {

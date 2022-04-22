@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="доработки">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/HomePageCardForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/HomePageCardForm.module.scss" afterDir="false" />
@@ -132,7 +131,7 @@
       <workItem from="1648916262201" duration="10366000" />
       <workItem from="1650558122903" duration="9821000" />
       <workItem from="1650601741212" duration="5921000" />
-      <workItem from="1650628891476" duration="4608000" />
+      <workItem from="1650628891476" duration="7799000" />
     </task>
     <task id="LOCAL-00001" summary="доработки">
       <created>1645742046425</created>
