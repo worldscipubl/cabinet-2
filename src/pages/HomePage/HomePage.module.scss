@@ -48,6 +48,13 @@
     line-height: 34px;
   }
 
+  @media screen and (max-width: $bp-md-768) {
+    top: 20px;
+    left: 70px;
+    margin: 0;
+    font-size: 28px;
+    line-height: 32px;
+  }
 }
 
 .offer__subtitle {
@@ -59,18 +66,25 @@
   font-weight: normal;
 
   @media screen and (max-width: $bp-laptop) {
-    //margin: 70px 0 0 0;
-    //max-width: 400px;
     font-size: 21px;
     line-height: 23px;
   }
 
   @media screen and (max-width: $bp-tablet) {
     margin: 70px 0 0 0;
-    //max-width: 400px;
     font-size: 20px;
     line-height: 24px;
   }
+
+  @media screen and (max-width: $bp-md-768) {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 22px;
+  }
+
 }
 
 .content__text {
@@ -99,11 +113,14 @@
   position: relative;
   border-radius: 6px;
   display: grid;
-  //grid-template: auto / 2fr max-content;
   grid-template: auto / 1fr 50%;
 
   @media screen and (max-width: $bp-laptop) {
     height: 310px;
+  }
+
+  @media screen and (max-width: $bp-md-768) {
+    grid-template: auto / 1fr 70%;
   }
 
 }
@@ -120,6 +137,10 @@
   }
 
   @media screen and (max-width: $bp-tablet) {
+    padding: 0 0 20px 0;
+  }
+
+  @media screen and (max-width: $bp-md-768) {
     padding: 0 0 20px 0;
   }
 
@@ -143,6 +164,12 @@
   display: grid;
   grid-template: auto / repeat(2, max-content);
   gap: 11px;
+
+  @media screen and (max-width: $bp-md-768) {
+    margin: 80px 0 0 0;
+    grid-template: auto / 1fr;
+  }
+
 }
 
 .offer__youtube {
@@ -152,6 +179,13 @@
   width: 63px;
   height: 45px;
   cursor: pointer;
+
+  @media screen and (max-width: $bp-md-768) {
+    width: 50px;
+    height: 40px;
+  }
+
+
 }
 
 .offer__youtubeText {
@@ -169,7 +203,7 @@
   font-weight: normal;
 }
 
-.history__list {
+.history {
   padding: 0;
   margin: 15px 0 0 0;
   list-style: none;
@@ -178,25 +212,30 @@
   gap: 10px;
 }
 
-.history__item {
+.history__link {
+  height: calc(100vw / 5.2);
+  color: #000000;
   box-sizing: border-box;
   margin: 0;
   padding: 0 32px 30px;
   background: #E3DDDB;
   border-radius: 8px;
-  height: 279px;
   display: grid;
   grid-template: 1fr repeat(2, max-content) / 1fr;
   cursor: pointer;
 }
 
-.history__item:hover {
+.history__link:hover {
   box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
   transform: translateY(-5px);
   transition: all .5s ease;
 }
 
-.history__item_more {
+.history__link:visited {
+  color: #000000;
+}
+
+.history__link_more {
   background: #FFFFFF;
   display: grid;
   grid-template: 1fr max-content / 1fr;
@@ -210,14 +249,13 @@
 }
 
 .history__img {
-  grid-row: 1/2;
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 100%;
   display: block;
   align-self: center;
   justify-self: center;
-
 }
 
 .history__title {
@@ -263,11 +301,6 @@
 
 
 .materials {
-  margin: 0;
-  padding: 0;
-}
-
-.materials__list {
   padding: 0;
   margin: 15px 0 0 0;
   list-style: none;
@@ -276,7 +309,18 @@
   gap: 10px;
 }
 
-.materials__item {
+.materials__img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  align-self: center;
+  justify-self: center;
+}
+
+.materials__link {
+  color: #000000;
   box-sizing: border-box;
   margin: 0;
   background: #C5D9E3;
@@ -286,47 +330,37 @@
   cursor: pointer;
 }
 
-.materials__item:hover {
+.materials__link:hover {
   box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
   transform: translateY(-5px);
   transition: all .5s ease;
 }
 
-.materials__item_blue {
+.materials__link_blue {
   background: #ABBFD8;
 }
 
-.materials__item_green {
+.materials__link_green {
   background: #C8CFA8;
 }
 
-.materials__item_rose {
+.materials__link_rose {
   background: #F3E1DC;
 }
 
 .materials__imgWrapper {
-  margin: 0;
-  padding: 5px;
-  height: 145px;
-  align-self: center;
-  justify-self: center;
-}
-
-.materials__img {
   grid-row: 1/2;
   margin: 0;
-  padding: 0;
-  width: 100%;
-  display: block;
+  padding: 5px;
+  height: calc(100vw/10);
   align-self: center;
   justify-self: center;
-
 }
 
 .materials__text {
-  grid-row: 3/4;
+  grid-row: 2/3;
   margin: 0;
-  padding: 5px;
+  padding: 5px 2px;
   font-size: 14px;
   line-height: 16px;
   font-weight: normal;

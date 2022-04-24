@@ -5,7 +5,7 @@ import styles from "./HomePage.module.scss"
 import Homepage from '../../common/images/home-page/homepage.svg';
 import Zibeline from '../../common/images/home-page/zibeline.svg';
 import Elsevier from '../../common/images/home-page/elsevier.svg';
-import Inder from '../../common/images/home-page/inder.svg';
+import Emerald from '../../common/images/home-page/emerald.svg';
 import Arrow from '../../common/images/home-page/arrow.svg';
 import Book from '../../common/images/home-page/book.svg';
 import Youtube from '../../common/images/home-page/youtube.svg';
@@ -48,67 +48,64 @@ const HomePage = ({ ...props }) => {
 
       <p className={styles.content__text}>Вдохновляйтесь историями успеха публикаций коллег</p>
 
-      <div className={styles.history}>
-        <ul className={styles.history__list}>
-          <li className={styles.history__item}>
-            <div className={styles.history__imgWrapper}>
-              <img src={Zibeline} alt="" className={styles.history__img}/>
-            </div>
-            <h3 className={styles.history__title}>Scopus Q1</h3>
-            <p className={styles.history__text}>91-й процентиль</p>
-          </li>
-          <li className={styles.history__item}>
-            <div className={styles.history__imgWrapper}>
-              <img src={Elsevier} alt="" className={styles.history__img}/>
-            </div>
-            <h3 className={styles.history__title}>Scopus Q3</h3>
-            <p className={styles.history__text}>42-й процентиль</p>
-          </li>
-          <li className={styles.history__item}>
-            <div className={styles.history__imgWrapper}>
-              <img src={Inder} alt="" className={styles.history__img}/>
-            </div>
-            <h3 className={styles.history__title}>Scopus Q1</h3>
-            <p className={styles.history__text}>78-й процентиль</p>
-          </li>
-          <li className={classNames(styles.history__item, styles.history__item_more)}
-              onClick={() => setIsModalOpen(true)}>
+        <div className={styles.history}>
+            <a href="https://t.me/Wosscopusbot?start=w16947769" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>
+              <div className={styles.history__imgWrapper}>
+                <img src={Elsevier} alt="" className={styles.history__img}/>
+              </div>
+              <h3 className={styles.history__title}>Scopus Q1</h3>
+              <p className={styles.history__text}>91-й процентиль</p>
+            </a>
+            <a href="https://t.me/Wosscopusbot?start=w16947778" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>
+              <div className={styles.history__imgWrapper}>
+                <img src={Emerald} alt="" className={styles.history__img}/>
+              </div>
+              <h3 className={styles.history__title}>Scopus Q1</h3>
+              <p className={styles.history__text}>91-й процентиль</p>
+            </a>
+            <a href="https://t.me/Wosscopusbot?start=w16947782" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>
+              <div className={styles.history__imgWrapper}>
+                <img src={Zibeline} alt="" className={styles.history__img}/>
+              </div>
+              <h3 className={styles.history__title}>Scopus Q1</h3>
+              <p className={styles.history__text}>91-й процентил</p>
+            </a>
+
+          <div className={classNames(styles.history__link, styles.history__link_more)} onClick={() => setIsModalOpen(true)}>
             <p className={styles.history__moreText}>Показать все</p>
             <img src={Arrow} alt="" className={styles.history__moreArrow}/>
-          </li>
-        </ul>
-      </div>
+          </div>
+
+        </div>
 
       <p className={styles.content__text}>Находите полезные материалы</p>
 
-      <div className={styles.materials}>
-        <ul className={styles.materials__list}>
-          <li className={styles.materials__item}>
-            <div className={styles.materials__imgWrapper}>
-              <img src={Wsp1} alt="" className={styles.history__img}/>
-            </div>
-            <p className={styles.materials__text}>Чат-бот предоставит актуальную и полезную информацию</p>
-          </li>
-          <li className={classNames(styles.materials__item, styles.materials__item_blue)}>
-            <div className={styles.materials__imgWrapper}>
-              <img src={Pdf1} alt="" className={styles.history__img}/>
-            </div>
-            <p className={styles.materials__text}>Методические рекомендации по подготовке и написанию научных статей</p>
-          </li>
-          <li className={classNames(styles.materials__item, styles.materials__item_green)}>
-            <div className={styles.materials__imgWrapper}>
-              <img src={Pdf2} alt="" className={styles.history__img}/>
-            </div>
-            <p className={styles.materials__text}>Методические рекомендации по составлению списка литературы</p>
-          </li>
-          <li className={classNames(styles.materials__item, styles.materials__item_rose)}>
-            <div className={styles.materials__imgWrapper}>
-              <img src={Pdf3} alt="" className={styles.history__img}/>
-            </div>
-            <p className={styles.materials__text}>Методические рекомендации по выявлению журналов – «хищников»</p>
-          </li>
-        </ul>
-      </div>
+        <div className={styles.materials}>
+            <a href="https://knowledge.worldscipubl.com/viewer/1gYC2JXtR2dG3x5NF1XXvsOWYoCRj-y0f" target="_blank" rel="noopener noreferrer nofollow" className={styles.materials__link}>
+              <div className={styles.materials__imgWrapper}>
+                <img src={Wsp1} alt="" className={styles.materials__img}/>
+              </div>
+              <p className={styles.materials__text}>Чат-бот предоставит актуальную и полезную информацию</p>
+            </a>
+            <a href="https://knowledge.worldscipubl.com/viewer/1aSvmE4B4rhUuI3om5lyy7_k1LZ2nTIAK" target="_blank" rel="noopener noreferrer nofollow" className={classNames(styles.materials__link, styles.materials__link_blue)}>
+              <div className={styles.materials__imgWrapper}>
+                <img src={Pdf1} alt="" className={styles.materials__img}/>
+              </div>
+              <p className={styles.materials__text}>Методические рекомендации по подготовке и написанию научных статей</p>
+            </a>
+            <a href="https://knowledge.worldscipubl.com/viewer/1gYC2JXtR2dG3x5NF1XXvsOWYoCRj-y0f" target="_blank" rel="noopener noreferrer nofollow" className={classNames(styles.materials__link, styles.materials__link_green)}>
+              <div className={styles.materials__imgWrapper}>
+                <img src={Pdf2} alt="" className={styles.materials__img}/>
+              </div>
+              <p className={styles.materials__text}>Методические рекомендации по составлению списка литературы</p>
+            </a>
+            <a href="https://knowledge.worldscipubl.com/viewer/1uPWNwCvBoVsC2Jb9xouyWbcNZqwsFvPz" target="_blank" rel="noopener noreferrer nofollow" className={classNames(styles.materials__link, styles.materials__link_rose)}>
+              <div className={styles.materials__imgWrapper}>
+                <img src={Pdf3} alt="" className={styles.materials__img}/>
+              </div>
+              <p className={styles.materials__text}>Методические рекомендации по выявлению журналов – «хищников»</p>
+            </a>
+        </div>
 
       <Modal open={isModalOpen}
              setOpen={hahdlerModalOpen}
