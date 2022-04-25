@@ -37,10 +37,10 @@ const HomePage = ({ ...props }) => {
           <h1 className={styles.offer__title}>Обучающий курс 1 модуль</h1>
           <h2 className={styles.offer__subtitle}>«Академическое письмо – легко и просто. Теория и практика»</h2>
 
-          <div className={styles.offer__youtubeWrapper}>
+          <a href="https://www.youtube.com/playlist?list=PLictyxPDrUddHMx8ny7WjX0aowQRe9An-" target="_blank" rel="noopener noreferrer nofollow"  className={styles.offer__youtubeWrapper}>
             <img src={Youtube} alt="" className={styles.offer__youtube}/>
             <p className={styles.offer__text}>12 уроков доступно на YouTube</p>
-          </div>
+          </a>
 
         </div>
 

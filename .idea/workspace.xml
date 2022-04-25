@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="de7eec3d-9045-488a-a9f7-46f5269cde3e" name="Changes" comment="доработки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/HomePageCardForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/HomePageCardForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/HomePageCardForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePageCardForm/HomePageCardForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/images/home-page/youtube.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/images/home-page/youtube.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +134,7 @@
       <workItem from="1650601741212" duration="5921000" />
       <workItem from="1650628891476" duration="12007000" />
       <workItem from="1650721877910" duration="5509000" />
-      <workItem from="1650765030692" duration="22714000" />
+      <workItem from="1650765030692" duration="24437000" />
     </task>
     <task id="LOCAL-00001" summary="доработки">
       <created>1645742046425</created>
