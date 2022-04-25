@@ -15,10 +15,11 @@
 }
 
 .content {
+  max-width: 852px;
+  margin: 0 auto;
   font-family: "Helvetica", "Arial", sans-serif;
   box-sizing: border-box;
   grid-column: 2/3;
-  margin: 0;
   padding: 0;
 }
 
@@ -361,27 +362,11 @@
   margin: 0 auto;
   padding: 0;
   max-width: 100%;
-  //object-fit: contain;
-  //max-height: 100%;
-  //display: block;
   align-self: center;
   justify-self: center;
 
-  @media screen and (max-width: $bp-laptop) { //1024
-
-  }
-
   @media screen and (max-width: $bp-tablet) { //924
     max-width: 80%;
-  }
-
-  @media screen and (max-width: $bp-md-768) { //768
-    //width: 80%;
-    //height: 80%;
-  }
-
-  @media screen and (max-width: $bp-mobile) { //486
-
   }
 
 }
