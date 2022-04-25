@@ -65,66 +65,6 @@ function HomePageCardForm({onClose}) {
             <p className={styles.history__text}>78-й процентиль</p>
           </a>
 
-
-
-
-
-
-
-
-
-
-          {/*<a href="#" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>*/}
-          {/*  <div className={styles.history__imgWrapper}>*/}
-          {/*    <img src={Zibeline} alt="" className={styles.history__img}/>*/}
-          {/*  </div>*/}
-          {/*  <h3 className={styles.history__title}>Scopus Q1</h3>*/}
-          {/*  <p className={styles.history__text}>91-й процентиль</p>*/}
-          {/*</a>*/}
-          {/*<a href="#" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>*/}
-          {/*  <div className={styles.history__imgWrapper}>*/}
-          {/*    <img src={Elsevier} alt="" className={styles.history__img}/>*/}
-          {/*  </div>*/}
-          {/*  <h3 className={styles.history__title}>Scopus Q3</h3>*/}
-          {/*  <p className={styles.history__text}>42-й процентиль</p>*/}
-          {/*</a>*/}
-          {/*<a href="#" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>*/}
-          {/*  <div className={styles.history__imgWrapper}>*/}
-          {/*    <img src={Inder} alt="" className={styles.history__img}/>*/}
-          {/*  </div>*/}
-          {/*  <h3 className={styles.history__title}>Scopus Q1</h3>*/}
-          {/*  <p className={styles.history__text}>78-й процентиль</p>*/}
-          {/*</a>*/}
-          {/*<a href="#" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>*/}
-          {/*  <div className={styles.history__imgWrapper}>*/}
-          {/*    <img src={Emerald} alt="" className={styles.history__img}/>*/}
-          {/*  </div>*/}
-          {/*  <h3 className={styles.history__title}>Scopus Q3</h3>*/}
-          {/*  <p className={styles.history__text}>42-й процентиль</p>*/}
-          {/*</a>*/}
-          {/*<a href="#" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>*/}
-          {/*  <div className={styles.history__imgWrapper}>*/}
-          {/*    <img src={Zibeline} alt="" className={styles.history__img}/>*/}
-          {/*  </div>*/}
-          {/*  <h3 className={styles.history__title}>Scopus Q1</h3>*/}
-          {/*  <p className={styles.history__text}>78-й процентиль</p>*/}
-          {/*</a>*/}
-          {/*<a href="#" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>*/}
-          {/*  <div className={styles.history__imgWrapper}>*/}
-          {/*    <img src={People} alt="" className={styles.history__img}/>*/}
-          {/*  </div>*/}
-          {/*  <h3 className={styles.history__title}>Scopus Q3</h3>*/}
-          {/*  <p className={styles.history__text}>42-й процентиль</p>*/}
-          {/*</a>*/}
-          {/*<a href="#" target="_blank" rel="noopener noreferrer nofollow" className={styles.history__link}>*/}
-          {/*  <div className={styles.history__imgWrapper}>*/}
-          {/*    <img src={Gr} alt="" className={styles.history__img}/>*/}
-          {/*  </div>*/}
-          {/*  <h3 className={styles.history__title}>Scopus Q1</h3>*/}
-          {/*  <p className={styles.history__text}>78-й процентиль</p>*/}
-          {/*</a>*/}
-
-
         </div>
 
         <button type="button"

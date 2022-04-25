@@ -1,13 +1,5 @@
 @use '../../common/style/global/index' as *;
 
-//$bp-mobile: 486px;
-//$bp-tablet: 924px;
-//$bp-laptop: 1024px;
-//$bp-large: 1440px;
-//$bp-sm-576: 576px;
-
-
-
 .form{
   min-width: 100%;
   width: 100%;
@@ -175,7 +167,6 @@
   @media screen and (max-width: $bp-mobile) { //486
     grid-template: auto / 1fr 60%;
   }
-
 }
 
 .offer__teach {
@@ -200,8 +191,6 @@
 
   @media screen and (max-width: $bp-mobile) { //486
   position: absolute;
-    //height: 200px;
-    //max-width: 300px;
     width: 350px;
     padding: 0;
     margin: 0;
@@ -248,7 +237,6 @@
 
   @media screen and (max-width: $bp-mobile) { //486
     top: 160px;
-    //grid-template: auto / 1fr;
   }
 
 }
@@ -282,22 +270,6 @@
   transition: opacity .5s ease;
 }
 
-//.offer__youtubeText {
-//  grid-column: 2/3;
-//  margin: 0;
-//  padding: 0;
-//
-//  @media screen and (max-width: $bp-md-768) {
-//    max-width: 180px;
-//  }
-//
-//  @media screen and (max-width: $bp-mobile) { //486
-//    top: 90px;
-//    font-size: 16px;
-//    line-height: 18px;
-//  }
-//
-//}
 
 .offer__text {
   margin: 0;
@@ -312,12 +284,6 @@
     line-height: 18px;
     max-width: 180px;
   }
-
-  //  @media screen and (max-width: $bp-mobile) { //486
-  //    top: 90px;
-  //    font-size: 16px;
-  //    line-height: 18px;
-  //  }
 
 }
 
@@ -477,14 +443,12 @@
   @media screen and (max-width: $bp-mobile) { //486
     grid-template: repeat(4, 1fr) / 1fr;
   }
-
 }
 
 .materials__img {
   margin: 0 auto;
   padding: 0;
   max-width: 70%;
-  //height: 100%;
   display: block;
   align-self: center;
   justify-self: center;
@@ -529,7 +493,6 @@
   grid-row: 1/2;
   margin: 0;
   padding: 5px;
-  //height: calc(100vw/10);
   align-self: center;
   justify-self: center;
 }
