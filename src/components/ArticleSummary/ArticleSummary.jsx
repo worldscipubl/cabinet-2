@@ -18,8 +18,10 @@ const ArticleSummary = ({
             <h3
               className="text text_size_accent"
               style={{ marginBottom: "12px" }}
+              // TODO: для вывода отсутствующих значений вместо false (после согласования)
             >
-              {`${journal} / ${tariff}`}
+              {`${journal || "не указано"} / ${tariff || "не указано"}`};
+              {/*{`${journal} / ${tariff }`}*/}
             </h3>
             <a
               className="link link_size_accent "
