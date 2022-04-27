@@ -30,7 +30,10 @@ const HomePage = ({ ...props }) => {
     <div className={styles.content}>
       <p className={styles.content__text}>Бесплатный видеокурс “Академическое письмо — легко и просто"</p>
 
-      <div className={styles.offer}>
+
+      <a href="https://www.youtube.com/playlist?list=PLictyxPDrUddHMx8ny7WjX0aowQRe9An-" target="_blank" rel="noopener noreferrer nofollow"  className={styles.offer}>
+
+      {/*<div className={styles.offer}>*/}
         <img src={Homepage} alt="" className={styles.offer__teach}/>
         <div className={styles.offer__content}>
           <img src={Book} alt="" className={styles.offer__book}/>
@@ -44,7 +47,9 @@ const HomePage = ({ ...props }) => {
 
         </div>
 
-      </div>
+      {/*</div>*/}
+
+      </a>
 
       <p className={styles.content__text}>Вдохновляйтесь историями успеха публикаций коллег</p>
 
@@ -81,7 +86,7 @@ const HomePage = ({ ...props }) => {
       <p className={styles.content__text}>Находите полезные материалы</p>
 
         <div className={styles.materials}>
-            <a href="https://knowledge.worldscipubl.com/viewer/1gYC2JXtR2dG3x5NF1XXvsOWYoCRj-y0f" target="_blank" rel="noopener noreferrer nofollow" className={styles.materials__link}>
+            <a href="https://t.me/Wosscopusbot?start=w16245171" target="_blank" rel="noopener noreferrer nofollow" className={styles.materials__link}>
               <div className={styles.materials__imgWrapper}>
                 <img src={Wsp1} alt="" className={styles.materials__img}/>
               </div>
