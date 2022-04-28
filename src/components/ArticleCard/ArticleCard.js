@@ -58,7 +58,9 @@ const ArticleCard = ({ className, article, isLoading, badge }) => {
             {isLoading ? (
               <Skeleton className={classNames(cn.Skeleton)} />
             ) : (
-              `${journal || "не указано"} / ${tariff || "не указано"}`
+              `${journal || ""} ${journal && tariff ? `/` : ``} ${tariff || ""}`
+              // `${journal || "не указано"} / ${tariff || "не указано"}`
+              //TODO убрать если не будет замечаний
             )}
           </h3>
         </div>
