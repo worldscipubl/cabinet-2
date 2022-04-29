@@ -144,6 +144,7 @@
 }
 
 .offer {
+  text-decoration: none;
   margin: 15px 0 0 0;
   background-color: #FAE078;
   height: 332px;
@@ -168,6 +169,14 @@
   @media screen and (max-width: $bp-mobile) { //486
     grid-template: auto / 1fr 60%;
   }
+}
+
+.offer:hover {
+  opacity: .9;
+}
+
+.offer:visited {
+  color: #000000;
 }
 
 .offer__teach {

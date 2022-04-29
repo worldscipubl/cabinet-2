@@ -4,6 +4,8 @@ import Spinner from "../Spinner";
 import EmptyState from "../../domain/EmptyState";
 import ArticleCard from "../ArticleCard";
 import imgPlus from "../../common/images/icons/plus.svg";
+import {Link} from "react-router-dom";
+import styles from './ListArticles.module.scss'
 
 const ListArticles = ({ data, error, isLoading, spinner }) => {
   if (isLoading) return spinner ? <Spinner /> : <SkeletonArticles />;
@@ -27,6 +29,7 @@ const ListArticles = ({ data, error, isLoading, spinner }) => {
 
   return (
     <div className="articles">
+      <NewArticleCard/>
       {data.map((article) => {
         return (
           <ArticleCard
@@ -51,16 +54,21 @@ const SkeletonArticles = () => {
 
 const NewArticleCard = () => {
   return (
-    <div className="article-card new-article">
-      <div className="article-card__inner article-card__inner_align_center">
-        <img className="article-card__img" src={imgPlus} alt="plus" />
-        <div className="article-card__row">
-          <h4 className="text text_weight_bold text_color_gray">
-            Подать заявку на публикацию
-          </h4>
-        </div>
-      </div>
-    </div>
+
+    // <Link className="article-card new-article ">
+    <Link className={styles.article}
+          to={`/new-article`}>
+      {/*<div className="article-card__inner article-card__inner_align_center">*/}
+      {/*<img className="article-card__img" src={imgPlus} alt="plus" />*/}
+      <img className={styles.article__img} src={imgPlus} alt="plus" />
+      {/*<div className="article-card__row">*/}
+      <h4 className="text text_weight_bold text_color_gray">
+        Подать заявку на публикацию
+      </h4>
+      {/*</div>*/}
+      {/*</div>*/}
+    </Link>
+
   );
 };
 
