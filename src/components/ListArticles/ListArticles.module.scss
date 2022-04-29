@@ -1,0 +1,28 @@
+@use './src/common/style/global' as *;
+
+
+.article {
+  background: #ffffff;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  display: grid;
+  padding: 8px 18px 18px;
+  grid-template: 1fr max-content / 1fr;
+  min-height: 300px;
+  position: relative;
+}
+
+.article:hover {
+  transform: scale(1.05);
+}
+
+.article__img {
+  object-fit: contain;
+  object-position: center;
+  height: 60%;
+  width: 60%;
+  transition: transform 0.4s;
+  margin: auto;
+}

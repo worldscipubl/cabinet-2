@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import classNames from "classnames";
 import FieldBuilder from "../../../components/FieldBuilder";
 import Card from "../../../components/Card";
@@ -6,9 +6,15 @@ import CardHeader from "../../../components/Card/CardHeader";
 import CardBody from "../../../components/Card/CardBody";
 import { useApplyArticleMutation } from "../../../api/endpoints/ArticlesApi";
 import { fieldsArticleRequestForm } from "../../../utils/constants";
+import PreloadingScreen from "../../../components/PreloadingScreen";
 
 const ArticleRequest = () => {
+
+  const briefForm = document.forms.briefform
+
   const [applyArticle, {}] = useApplyArticleMutation();
+  const [isLoading, setIsLoading] = useState(false);
+
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
 
@@ -20,12 +26,18 @@ const ArticleRequest = () => {
   const handlerSubmit = (e) => {
     e.preventDefault();
     if (!validationForm()) return;
-    applyArticle(values)
+    const data = new FormData(briefForm);
+
+    setIsLoading(true)
+
+    applyArticle(data)
       .then((res) => {
         console.log(res);
+        setIsLoading(false)
       })
       .catch((err) => {
         console.log(err);
+        setIsLoading(false)
       });
   };
 
@@ -40,6 +52,15 @@ const ArticleRequest = () => {
       .every((el) => el);
   };
 
+  if (isLoading) {
+    return (
+      <>
+        <p className="text text_size_accent text_weight_bold text_align_center">Подождите.... <br/>Идет отправка заявки на сервер</p>
+        <PreloadingScreen isLoading={isLoading}/>
+      </>
+    )
+  }
+
   return (
     <div>
       <Card appearance={{ type: "paper" }}>
@@ -49,7 +70,7 @@ const ArticleRequest = () => {
           </h3>
         </CardHeader>
         <CardBody>
-          <div className={classNames("brief-form", {})} key={"RegFormInputs"}>
+            <form name="briefform"  className={classNames("brief-form", {})} key={"RegFormInputs"} >
             {fieldsArticleRequestForm.map((field) => {
               return (
                 <FieldBuilder
@@ -64,13 +85,20 @@ const ArticleRequest = () => {
                 />
               );
             })}
-          </div>
-          <button
-            className="button button_type_main brief-form__submit"
-            onClick={handlerSubmit}
-          >
-            Отправить
-          </button>
+
+              <button
+                className="button button_type_main brief-form__submit"
+                onClick={handlerSubmit}
+              >
+                Отправить
+              </button>
+          </form>
+          {/*<button*/}
+          {/*  className="button button_type_main brief-form__submit"*/}
+          {/*  onClick={handlerSubmit}*/}
+          {/*>*/}
+          {/*  Отправить*/}
+          {/*</button>*/}
         </CardBody>
       </Card>
     </div>
