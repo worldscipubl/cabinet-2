@@ -58,7 +58,7 @@ const FormRegistration = () => {
   };
 
   return (
-    <form className="auth-form" onSubmit={handleForm} noValidate>
+    <form className="auth-form"  onSubmit={handleForm} noValidate>
       <div className="auth-form__inner">
         <h3 className="auth-form__title text text_size_subtitle">
           Регистрация

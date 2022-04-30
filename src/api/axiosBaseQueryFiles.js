@@ -1,23 +1,18 @@
 import axios from "axios";
 import HTTPError from "../services/HTTPError";
 
-export const axiosBaseQuery = (
+export const axiosBaseQueryFiles = (
   { baseUrl, auth, prepareHeaders } = { baseUrl: "", auth: {} }
 ) => {
   const hasLogging = true;
 
   const wspAxios = axios.create({
     baseUrl,
-    headers: { "Content-Type": "application/json" },
-    // headers: { "content-type": "multipart/form-data" },
+    // headers: { "Content-Type": "application/json" },
+    headers: { "content-type": "multipart/form-data" },
     withCredentials: false,
     auth,
   });
-
-
-
-
-
 
   const checkTokenInterceptor = (config) => {
     const token = localStorage.getItem("user_token");
