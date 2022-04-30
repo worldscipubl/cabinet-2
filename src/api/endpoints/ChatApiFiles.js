@@ -1,13 +1,17 @@
-import entryApi, { providesList } from "../entryApi";
-import { retry } from "@reduxjs/toolkit/query";
+import { fetchBaseQuery, retry } from "@reduxjs/toolkit/query";
 import { createEntityAdapter } from "@reduxjs/toolkit";
+import entryApiFiles, { providesList }from "../entryApiFiles";
+import { createApi } from "@reduxjs/toolkit/dist/query/react";
+import { BASE_URL } from "../../utils/constants";
 
 const messagesAdapter = createEntityAdapter({
   selectId: (message) => message.articleMessageId,
   sortComparer: (a, b) => a.dateCreate.localeCompare(b.dateCreate),
 });
 
-const ChatApi = entryApi.injectEndpoints({
+const ChatApiFiles = createApi({
+  reducerPath: 'ChatApiFiles',
+  baseQuery: fetchBaseQuery({baseUrl: BASE_URL}),
   endpoints: (build) => ({
     getMessagesByArticle: build.mutation({
       query: ({ articleId, page = 1 }) => ({
@@ -52,7 +56,7 @@ const ChatApi = entryApi.injectEndpoints({
         // create a websocket connection when the cache subscription starts
         // const auth = { email: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" };
         const authToken = localStorage.getItem("user_token");
-        return;
+      return
         const ws = new WebSocket(
           `wss://api.worldscipubl.com:8001?basic=${authToken}&articleId=${articleId}`
         );
@@ -91,8 +95,8 @@ const ChatApi = entryApi.injectEndpoints({
       query: (data) => ({
         url: "/message-articles",
         method: "post",
-        data: data,
-        headers: { "content-type": "multipart/form-data" },
+        headers: { 'content-type': 'multipart/form-data' },
+        data: data
       }),
       // invalidatesTags: ["messagesByArticle"]
     }),
@@ -106,4 +110,4 @@ export const {
   useLazyGetMessagesByArticleQuery,
   useGetMessagesByArticleMutation,
   useSendMessagesByArticleMutation,
-} = ChatApi;
+} = ChatApiFiles;

@@ -1,8 +1,10 @@
 import React, { forwardRef } from "react";
 import EmptyState from "../../../../domain/EmptyState";
 import ChatMessage from "../../../../components/ChatMessage";
+import Loader from "../../../../components/Loader/Loader";
 
 const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
+  if (isLoading) return <Loader />;
   if (error)
     return (
       <EmptyState
