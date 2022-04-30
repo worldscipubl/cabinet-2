@@ -13,7 +13,7 @@ class ApiService {
         "Content-Type": "application/json",
         Authorization: `Basic ${token}`,
       },
-      headers: { "Content-Type": "multipart/form-data"},
+      // headers: { "Content-Type": "multipart/form-data"},
       withCredentials: false,
       // auth: { username: "rayec89552@aline9.com", password: "DzeG3Jx@}G$p" },
     });
@@ -49,6 +49,7 @@ class ApiService {
       })
         .then((response) => {
           const blob = response?.data;
+          console.log(response?.data)
           if (!blob) reject(new Error("File not found!"));
           return blob;
         })
