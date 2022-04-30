@@ -5,7 +5,7 @@ import cn from "./ListUploads.module.scss";
 import UploadCard from "../UploadCard";
 
 const ListUploads = ({ data }) => {
-  if (!data) return null;
+  if (!data ) return null;
 
   return (
     <div className={classNames(cn.Wrapper)}>
