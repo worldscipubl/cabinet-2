@@ -1,17 +1,23 @@
 import React, { useState } from "react";
+import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useResetUserPasswordMutation } from "../../../../api/endpoints/UserApi";
 import constraints from "../../../../utils/constraints";
+import PageResetPassword from "../../PageResetPassword";
+import PageResetSuccess from "../../PageResetSuccess/PageResetSuccess";
 import TextField from "../../TextField";
 
-const FormReset = () => {
-  const [resetUser, { isError, isSuccess } = {}] =
+const FormReset = ({onChange}) => {
+  const [resetUser, { isError, isSuccess, error } = {}] =
     useResetUserPasswordMutation();
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
 
   const handleChange = (e) => {
+
+    onChange(e.target.value)
+    console.log(onChange);
     const input = e.target;
     if (!input) return;
 
@@ -42,11 +48,12 @@ const FormReset = () => {
     resetUser({ email: state })
       .unwrap()
       .then((res) => {
-        history.push("/");
+        console.log(res);
+        history.push("/reset-success");
         // window.location.reload();
       })
       .catch((error) => {
-        console.log(error);
+        history.push("/reset-success");
       });
   };
   let userData = {};
@@ -56,15 +63,21 @@ const FormReset = () => {
   //     return (
   // <div>ошибка</div>
   //   )
-  if (isSuccess)
-    return (
-      <div className="auth-form__inner">
-        <h1>Восстановление пароля</h1>
-        <p className="auth-form__description text text_size_accent">
-          Новый пароль отправлен на Вашу почту
-        </p>
-      </div>
-    );
+  // console.log(error);
+  // console.log(isError);
+  // console.log(isSuccess);
+  // if (isError && error !== 401)
+  //   return (
+  //     <PageResetPassword error={error }/>
+  //     // <Route to="/reset-success" error={error}/>
+  //   );
+  // if (isSuccess) {
+  //   console.log(isSuccess)
+  //   return <PageResetSuccess email={state.email}/>
+
+  // }
+
+
   return (
     <form className="auth-form" onSubmit={handleForm}>
       <div className="auth-form__inner">
@@ -105,7 +118,11 @@ const FormReset = () => {
         </div>
         <div className="auth-form__actions">
           <div className="auth-form__action">
-            <button className="button button_type_main" type="submit">
+            <button
+              className="button button_type_main"
+              type="submit"
+              
+            >
               Восстановить
             </button>
           </div>

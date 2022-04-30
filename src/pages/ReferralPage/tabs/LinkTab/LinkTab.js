@@ -34,7 +34,7 @@ const LinkTab = () => {
 
           <div className="link-tab__clipboard clipboard">
             <h4 className="clipboard__title text text_size_accent text_weight_bold">
-              Реферальрная ссылка для коллег:
+              Реферальная ссылка для коллег:
             </h4>
             <div className="clipboard__form">
               <div className="clipboard__field">

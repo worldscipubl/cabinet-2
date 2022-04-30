@@ -1,39 +1,17 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useSendMessagesByArticleMutation } from "../../../../api/endpoints/ChatApi";
+import { useSendMessagesByArticleMutation } from "../../../../api/endpoints/ChatApiFiles";
+import Loader from "../../../../components/Loader/Loader";
 
 const ChatMessageForm = ({ articleId }) => {
   const [messagesMutation] = useSendMessagesByArticleMutation();
   const [message, setMessage] = useState("");
   const [files, setFiles] = useState([]);
 
-  const onSubmit = ({ message, messageFile }) => {
-    return new Promise((resolve, reject) => {
-      const sendData = {
-        articleId,
-        message,
-        "MessageArticleForm[file][]": messageFile,
-      };
-      messagesMutation(sendData)
-        .unwrap()
-        .then((res) => {
-          resolve("success");
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!onSubmit) return;
-    onSubmit({ message, files }).then(() => {
-      setMessage("");
-    });
-  };
 
-  const handleMessage = (e) => {
+
+ const handleMessage = (e) => {
     const input = e.target;
     if (!input) return;
 
@@ -44,21 +22,96 @@ const ChatMessageForm = ({ articleId }) => {
   };
 
   const handleFile = (e) => {
-    const input = e.target;
-    if (!input) return;
 
-    const isValid = input.validity.valid;
-    if (!isValid) return;
-
-    const { files } = input.files;
+    const files = e.target.files;
+    console.log(files);
+    // if(!files) return
     setFiles(files);
+    console.log(files);
   };
+
+// debugger
+  function onSubmit(e) {
+    e.preventDefault()
+    // return new Promise((resolve, reject) => {
+      // debugger
+      const formData = new FormData();
+      formData.append("articleId", articleId);
+      formData.append("message", message);
+      formData.append("MessageArticleForm[file]", files);
+
+
+
+      for (let pair of formData.entries()) {
+        console.log(pair[0] + ", " + pair[1]);
+      }
+
+      // debugger
+      console.log(formData);
+      console.log(messagesMutation(formData));
+      // debugger;
+      messagesMutation(formData)
+        .unwrap()
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+
+    }
+  // )}
+
+
+
+
+
+    // });
+
+
+
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!onSubmit) return;
+  //   onSubmit(message, files)
+  //     setMessage("");
+
+  // };
+  // debugger;
+
+    //   console.log(message);
+    //   console.log(files);
+    //   const sendData = {
+    //     articleId,
+    //     message,
+    //     "MessageArticleForm[file][]": {files},
+    //   };
+    // console.log(sendData);
+    //   messagesMutation(sendData)
+    //     .unwrap()
+    //     .then((res) => {
+    //       resolve("success");
+    //     })
+    //     .catch((err) => {
+    //       reject(err);
+    //     });
+// debugger;
+
+
+
+//   formelement.onSubmit = async (e) => {
+//     e.preventDefault()
+
+//     let
+// }
 
   return (
     <div className="chat-box__footer">
       <form
+        id="formelement"
         className="chat-box__send-bar send-bar"
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
         noValidate
       >
         <textarea
@@ -80,7 +133,9 @@ const ChatMessageForm = ({ articleId }) => {
             <input
               className="send-bar__origin-input"
               type="file"
+              name="MessageArticleForm[file][]"
               onChange={handleFile}
+              multiple
             />
           </label>
         </div>
