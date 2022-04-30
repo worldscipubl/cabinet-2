@@ -18,6 +18,10 @@ const FileField = ({
   ...props
 }) => {
   const handleChange = ({ target }) => {
+    console.log(12222)
+
+    console.log(target)
+    console.log(target.files)
     if (!target) return;
     const name = target?.name;
     const files = target?.files;

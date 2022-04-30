@@ -8,11 +8,13 @@ import EducationPage from "../../pages/Education";
 import FaqPage from "../../pages/FaqPage";
 import NotificationsPage from "../../pages/NotificationsPage";
 import SettingsPage from "../../pages/SettingsPage";
+import NewArticlePage from "../../pages/NewArticlePage";
 
 const PrivateRoutes = () => [
   <Route path="/" exact key="index">
-    <Redirect to="/articles" />
+    <Redirect to="/home" />
   </Route>,
+
   <Route path="/home" exact key="HomePage">
     <HomePage />
   </Route>,
@@ -25,6 +27,11 @@ const PrivateRoutes = () => [
   <Route path="/article/:articleId?/:tabId?" key="ArticlePage">
     <ArticlePage />
   </Route>,
+
+  <Route path="/new-article" key="NewArticlePage">
+    <NewArticlePage />
+  </Route>,
+
   <Route path="/referral/:tabId?" key="ReferralPage">
     <ReferralPage />
   </Route>,

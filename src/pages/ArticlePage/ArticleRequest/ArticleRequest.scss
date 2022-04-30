@@ -1,1 +1,26 @@
 @use './src/common/style/global' as *;
+
+.article-request {
+  margin: -20px 0 0 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+
+  @media screen and (max-width: $bp-tablet) { //924
+    margin: 0;
+  }
+
+  @media screen and (max-width: $bp-md-768) { //768
+    margin: 20px 0 0 0;
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: $bp-sm-576) { // 576px
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: $bp-mobile) { //486
+    font-size: 20px;
+  }
+}
