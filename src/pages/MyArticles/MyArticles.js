@@ -10,17 +10,10 @@ const MyArticles = () => {
   const { data: dataArticles, error, isLoading } = useGetArticlesQuery();
   const { data: dataUploads } = useGetApplicationsQuery();
 
-  console.log(dataUploads.length)
-
   return (
     <>
       <ListArticles data={dataArticles} error={error} isLoading={isLoading} />
-      { dataUploads.length > 0
-        ? <ListUploads data={dataUploads} />
-        : ""
-      }
-
-      {/*<ListUploads data={dataUploads} />*/}
+      <ListUploads data={dataUploads} />
     </>
   );
 };
