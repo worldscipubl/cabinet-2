@@ -21,10 +21,17 @@ const ListArticles = ({ data, error, isLoading, spinner }) => {
 
   if (!data?.length)
     return (
-      <EmptyState
-        title="У вас пока нет статей"
-        description="Тут будет отображаться список ваших статей"
-      />
+      <div className="articles">
+        <NewArticleCard/>
+        <div></div>
+        <div></div>
+      </div>
+
+
+      // <EmptyState
+      //   title="У вас пока нет статей"
+      //   description="Тут будет отображаться список ваших статей"
+      // />
     );
 
   return (

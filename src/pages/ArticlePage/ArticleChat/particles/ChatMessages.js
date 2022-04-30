@@ -5,7 +5,7 @@ import Loader from "../../../../components/Loader/Loader";
 import PreloadingScreen from "../../../../components/PreloadingScreen";
 
 const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   if (error)
     return (
       <EmptyState
@@ -18,7 +18,7 @@ const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
   if (!(Array.isArray(messages) && !!messages.length))
     return (
 
-      <PreloadingScreen isLoading={isLoading} />
+      <Loader />
 
       // <EmptyState
       //   title="Сообщений пока нет"
@@ -44,7 +44,7 @@ const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
         )
       )}
 
-      {isLoading && <h2>isLoading</h2>}
+      {isLoading && <Loader />}
     </>
   );
 });

@@ -7,9 +7,10 @@ import CardBody from "../../../components/Card/CardBody";
 import { useApplyArticleMutation } from "../../../api/endpoints/ArticlesApi";
 import { fieldsArticleRequestForm } from "../../../utils/constants";
 import PreloadingScreen from "../../../components/PreloadingScreen";
+import {useHistory} from "react-router-dom";
 
 const ArticleRequest = () => {
-
+  const history = useHistory()
   const briefForm = document.forms.briefform
 
   const [applyArticle, {}] = useApplyArticleMutation();
@@ -34,6 +35,7 @@ const ArticleRequest = () => {
       .then((res) => {
         console.log(res);
         setIsLoading(false)
+        history.goBack()
       })
       .catch((err) => {
         console.log(err);
