@@ -35,6 +35,16 @@ const PageResetPassword = () => {
       <p className="auth-form__description text text_size_accent">
         Новый пароль отправлен на Вашу почту
       </p>
+
+      <i className="divider" />
+      <div className="auth-form__other">
+        <h6 className="">
+          <Link className="link" to="/auth">
+            Войти в личный кабинет
+          </Link>
+        </h6>
+      </div>
+
     </div>
   );
 };
