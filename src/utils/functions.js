@@ -60,9 +60,24 @@ export const getTime = (value) => {
 };
 
 export const downloadBlobFile = (blob, typeName) => {
+  console.log(typeName)
   if (!blob) return;
-  const type = typeName.toString() + ".docx";
-  // const type = blob.type;
+
+  let type = blob.type;
+
+  const applicationType = type.split('/').pop().toString();
+  let extentionFile = ""
+
+  if (applicationType.includes(".doc")) {
+    extentionFile = ".docx"
+  } else if (applicationType === 'plain') {
+    extentionFile = ".txt"
+  } else {
+    extentionFile = "." + applicationType.toString();
+  }
+
+  type = typeName.toString() + extentionFile
+
   const url = window.URL.createObjectURL(new Blob([blob], { type }));
 
   const link = document.createElement("a");
