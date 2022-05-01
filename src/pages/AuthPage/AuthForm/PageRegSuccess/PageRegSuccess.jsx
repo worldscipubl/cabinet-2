@@ -9,6 +9,7 @@ const PageResetPassword = () => {
   let params = new URLSearchParams(locationSearch);
   let token = params.get("t");
   const { resetToken, isError, error } = useResetUserTokenQuery(token);
+
   if (isError && error)
     return (
       <div className="auth-form__inner">
@@ -30,10 +31,16 @@ const PageResetPassword = () => {
     );
   return (
     <div className="auth-form__inner">
-      <h1>Восстановление пароля</h1>
+
+      <h3 className="auth-form__title text text_size_subtitle">
+        Восстановление пароля
+      </h3>
       <p className="auth-form__description text text_size_accent">
         Новый пароль отправлен на Вашу почту
       </p>
+
+
+
     </div>
   );
 };

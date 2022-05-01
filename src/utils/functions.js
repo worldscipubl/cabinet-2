@@ -59,9 +59,10 @@ export const getTime = (value) => {
   return `${String(hour).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
 };
 
-export const downloadBlobFile = (blob) => {
+export const downloadBlobFile = (blob, typeName) => {
   if (!blob) return;
-  const type = blob.type;
+  const type = typeName.toString() + ".docx";
+  // const type = blob.type;
   const url = window.URL.createObjectURL(new Blob([blob], { type }));
 
   const link = document.createElement("a");
