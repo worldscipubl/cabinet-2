@@ -6,15 +6,17 @@ import downloadImg from "../../../common/images/icons/download.svg";
 import ApiService from "../../../services/ApiService";
 
 const AttachmentsSpoiler = ({ attachments }) => {
-  function handleDownloadBtn(fileId) {
+
+  function handleDownloadBtn(fileId, typeName) {
+
     const apiService = new ApiService();
     apiService
-      .downloadResource(`/article-files/${fileId}`)
+      .downloadResource(`/article-files/${fileId}`, typeName)
       .then((res) => console.log(res))
+
       .catch((err) => console.log(err));
   }
 
-  console.log(attachments.length);
   return (
     <Spoiler title="Показать вложения">
       <List>

@@ -3,6 +3,7 @@ import "./Spoiler.scss";
 import SpoilerArrow from "../SpoilerArrow";
 
 const Spoiler = ({ title, children }) => {
+
   const [open, setOpen] = useState(false);
 
   return (

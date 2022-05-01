@@ -7,7 +7,9 @@ const PageResetSuccess = ({email}) => {
     <div className="auth-form__inner">
       <h1>Восстановление пароля</h1>
       <p className="auth-form__description text text_size_accent">
-        Новый пароль отправлен на Вашу почту {email} {printEmail}
+        Ссылка направлена на Вашу почту
+        <br/>
+        Проверьте Ваш почтовый ящик
       </p>
     </div>
   );
