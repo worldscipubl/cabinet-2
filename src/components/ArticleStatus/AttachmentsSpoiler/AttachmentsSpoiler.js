@@ -12,7 +12,7 @@ const AttachmentsSpoiler = ({ attachments }) => {
     const apiService = new ApiService();
     apiService
       .downloadResource(`/article-files/${fileId}`, typeName)
-      .then((res) => console.log(res))
+      .then((res) => console.log("RES", res))
 
       .catch((err) => console.log(err));
   }
