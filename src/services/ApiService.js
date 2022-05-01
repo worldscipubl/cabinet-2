@@ -41,7 +41,8 @@ class ApiService {
     }
   }
 
-  async downloadResource(url) {
+  async downloadResource(url, typeName) {
+
     return new Promise((resolve, reject) => {
       this.getResource({
         responseType: "blob",
@@ -49,12 +50,12 @@ class ApiService {
       })
         .then((response) => {
           const blob = response?.data;
-          console.log(response?.data)
+          // console.log(response?.data)
           if (!blob) reject(new Error("File not found!"));
           return blob;
         })
         .then((blob) => {
-          downloadBlobFile(blob);
+          downloadBlobFile(blob, typeName);
           resolve(blob);
         })
         .catch((reason) => {

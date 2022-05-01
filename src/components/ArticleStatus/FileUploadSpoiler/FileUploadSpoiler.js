@@ -19,6 +19,7 @@ const FileUploadSpoiler = ({ filesUpload, articleId }) => {
       });
   }
 
+
   function submitFile(file, fileArticleTypeId) {
     const formData = new FormData();
     formData.append("articleId", articleId);

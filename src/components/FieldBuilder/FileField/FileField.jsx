@@ -64,7 +64,7 @@ const FileField = ({
         {fileName || "Файл не выбран"}
       </span>
       <label className={styles.field__btn}>
-        <span>Выберете файл</span>
+        <span>Выберите файл</span>
         <input
           className={styles.field__fileInput}
           {...props}

@@ -7,7 +7,7 @@ const PageResetPassword = () => {
   const locationSearch = location.search;
   let params = new URLSearchParams(locationSearch);
   let token = params.get("t");
-  console.log(token);
+
   const { resetToken, isError, error, isSuccess } = useResetUserTokenQuery(token);
 
   if (isError)
@@ -19,7 +19,6 @@ const PageResetPassword = () => {
         <p className="auth-form__description text text_size_accent">
           Ссылка для восстановления пароля недействительна.
           <br /> Попробуйте еще раз.
-          error
         </p>
         <div className="auth-form__actions">
           <div className="auth-form__other-item">
@@ -36,6 +35,16 @@ const PageResetPassword = () => {
       <p className="auth-form__description text text_size_accent">
         Новый пароль отправлен на Вашу почту
       </p>
+
+      <i className="divider" />
+      <div className="auth-form__other">
+        <h6 className="">
+          <Link className="link" to="/auth">
+            Войти в личный кабинет
+          </Link>
+        </h6>
+      </div>
+
     </div>
   );
 };
