@@ -88,3 +88,29 @@ export const fieldsAddCard = [
     placeholder: "0000 0000 0000 0000",
   },
 ];
+
+//MIME types и расширения для скачиваемых файлов
+export const typeMime =
+  {
+    "plain": ".txt",
+    "jpeg": ".jpeg",
+    "jpg": ".jpg",
+    "bmp": ".bmp",
+    "gif": ".gif",
+    "png": ".png",
+    "htm": ".html",
+    "html": ".html",
+    "vnd.rar": ".rar",
+    "rtf": ".rtf",
+    "svg+xml": ".svg",
+    "tiff": ".tiff",
+    "webp": ".webp",
+    "xhtml+xml": ".xhtml",
+    "vnd.ms-excel": ".xls",
+    "vnd.openxmlformats-officedocument.spreadsheetml.sheet": ".xlsx",
+    "xml": ".xml",
+    "zip": ".zip",
+    "x-7z-compressed": ".7z",
+    "msword": ".doc",
+    "vnd.openxmlformats-officedocument.wordprocessingml.document": ".docx",
+  }
