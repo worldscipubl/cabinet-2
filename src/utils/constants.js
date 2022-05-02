@@ -102,6 +102,7 @@ export const typeMime =
     "html": ".html",
     "vnd.rar": ".rar",
     "rtf": ".rtf",
+    "pdf": ".pdf",
     "svg+xml": ".svg",
     "tiff": ".tiff",
     "webp": ".webp",
