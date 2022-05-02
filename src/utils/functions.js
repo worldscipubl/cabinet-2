@@ -1,4 +1,6 @@
 import { BASE_URL } from "./constants";
+import { typeMime } from "./constants";
+
 
 export const getHashFromString = (str) => {
   let hash = 0,
@@ -60,21 +62,24 @@ export const getTime = (value) => {
 };
 
 export const downloadBlobFile = (blob, typeName) => {
-  console.log(typeName)
+  // console.log(typeName)
   if (!blob) return;
 
   let type = blob.type;
 
   const applicationType = type.split('/').pop().toString();
-  let extentionFile = ""
+  const extentionFile = typeMime[applicationType] || applicationType
+  // console.log(extentionFile)
 
-  if (applicationType.includes(".doc")) {
-    extentionFile = ".docx"
-  } else if (applicationType === 'plain') {
-    extentionFile = ".txt"
-  } else {
-    extentionFile = "." + applicationType.toString();
-  }
+  // let extentionFile = ""
+
+  // if (applicationType.includes(".doc")) {
+  //   extentionFile = ".docx"
+  // } else if (applicationType === 'plain') {
+  //   extentionFile = ".txt"
+  // } else {
+  //   extentionFile = "." + applicationType.toString();
+  // }
 
   type = typeName.toString() + extentionFile
 
