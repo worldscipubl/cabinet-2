@@ -8,6 +8,8 @@ import { useApplyArticleMutation } from "../../../api/endpoints/ArticlesApi";
 import { fieldsArticleRequestForm } from "../../../utils/constants";
 import PreloadingScreen from "../../../components/PreloadingScreen";
 import {useHistory} from "react-router-dom";
+import Loader from "../../../components/Loader";
+import './ArticleRequest.scss'
 
 const ArticleRequest = () => {
   const history = useHistory()
@@ -26,6 +28,7 @@ const ArticleRequest = () => {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
+
     if (!validationForm()) return;
     const data = new FormData(briefForm);
 
@@ -33,9 +36,9 @@ const ArticleRequest = () => {
 
     applyArticle(data)
       .then((res) => {
-        console.log(res);
         setIsLoading(false)
-        history.goBack()
+        history.push('/articles')
+        history.go(0)
       })
       .catch((err) => {
         console.log(err);
@@ -57,8 +60,11 @@ const ArticleRequest = () => {
   if (isLoading) {
     return (
       <>
-        <p className="text text_size_accent text_weight_bold text_align_center">Подождите.... <br/>Идет отправка заявки на сервер</p>
-        <PreloadingScreen isLoading={isLoading}/>
+        <p className="text text_size_accent text_weight_bold text_align_center">Подождите . . .</p>
+        <div className='article-request'>
+          <Loader isLoading={isLoading}/>
+        </div>
+        {/*<PreloadingScreen isLoading={isLoading}/>*/}
       </>
     )
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory, useParams } from "react-router-dom";
 import ArticleChat from "./ArticleChat";
 import ArticleBrief from "./ArticleBrief";
@@ -11,10 +11,18 @@ import ArticlePipeline from "./ArticlePipeline";
 import withMainLayout from "../../hoc/withMainLayout";
 import { useGetArticleByIdQuery } from "../../api/endpoints/ArticlesApi";
 
-const ArticlePage = () => {
+const ArticlePage = (props) => {
+
+
+
   const { articleId, tabId } = useParams();
-  const { data: article, error, isLoading } = useGetArticleByIdQuery(articleId);
+  const { data: article, error, isLoading, } = useGetArticleByIdQuery(articleId);
   const history = useHistory();
+
+  // const { articleContract, setArticleContract } = useState(article.contractNumber)
+  //
+  //
+  // console.log(articleContract)
 
   const articleTabs = [
     <ArticleRequest
@@ -103,8 +111,8 @@ const ArticlePage = () => {
 export default withMainLayout(
   ArticlePage,
   { title: "name" },
-  ({ ...props }) => {
-    const { articleId } = useParams();
-    return `Статья № ${articleId}`;
+  ({ tabId }) => {
+    const { articleId, contractNumber } = useParams();
+    return `№${articleId} ${contractNumber ? `(${contractNumber})` : ``}`
   }
 );
