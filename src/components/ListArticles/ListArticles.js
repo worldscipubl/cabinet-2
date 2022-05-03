@@ -8,7 +8,18 @@ import {Link} from "react-router-dom";
 import styles from './ListArticles.module.scss'
 
 const ListArticles = ({ data, error, isLoading, spinner }) => {
-  if (isLoading) return spinner ? <Spinner /> : <SkeletonArticles />;
+
+  if (isLoading) return spinner
+    ?
+    <Spinner />
+  :
+    <>
+      <div className={styles.article__message}>
+        <p className="text text_size_default text_weight_bold text_align_center">Подождите... Идет получение статей</p>
+      </div>
+      <SkeletonArticles />;
+    </>
+
 
   if (error)
     return (
@@ -61,19 +72,12 @@ const SkeletonArticles = () => {
 
 const NewArticleCard = () => {
   return (
-
-    // <Link className="article-card new-article ">
     <Link className={styles.article}
           to={`/new-article`}>
-      {/*<div className="article-card__inner article-card__inner_align_center">*/}
-      {/*<img className="article-card__img" src={imgPlus} alt="plus" />*/}
       <img className={styles.article__img} src={imgPlus} alt="plus" />
-      {/*<div className="article-card__row">*/}
       <h4 className="text text_weight_bold text_color_gray">
         Подать заявку на публикацию
       </h4>
-      {/*</div>*/}
-      {/*</div>*/}
     </Link>
 
   );

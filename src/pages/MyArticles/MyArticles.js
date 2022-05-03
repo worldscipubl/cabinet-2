@@ -7,8 +7,11 @@ import { useGetApplicationsQuery } from "../../api/endpoints/BeforeArticleApi";
 import "./MyArticles.scss";
 
 const MyArticles = () => {
+
+
   const { data: dataArticles, error, isLoading } = useGetArticlesQuery();
   const { data: dataUploads } = useGetApplicationsQuery();
+
 
   return (
     <>
