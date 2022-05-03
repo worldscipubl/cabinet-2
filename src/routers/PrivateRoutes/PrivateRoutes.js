@@ -10,7 +10,7 @@ import NotificationsPage from "../../pages/NotificationsPage";
 import SettingsPage from "../../pages/SettingsPage";
 import NewArticlePage from "../../pages/NewArticlePage";
 
-const PrivateRoutes = () => [
+const   PrivateRoutes = () => [
   <Route path="/" exact key="index">
     <Redirect to="/home" />
   </Route>,
@@ -24,7 +24,7 @@ const PrivateRoutes = () => [
   <Route path="/article" exact key="ArticleRedirect">
     <Redirect to="/articles" />
   </Route>,
-  <Route path="/article/:articleId?/:tabId?" key="ArticlePage">
+  <Route path="/article/:articleId?/:contractNumber?/:tabId?" key="ArticlePage">
     <ArticlePage />
   </Route>,
 

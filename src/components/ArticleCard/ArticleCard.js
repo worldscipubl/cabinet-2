@@ -7,7 +7,8 @@ import withBadge from "../../hoc/withBadge";
 import cn from "./ArticleCard.module.scss";
 
 const ArticleCard = ({ className, article, isLoading, badge }) => {
-  const { articleId, statusTitle, title, journal, tariff, progress } =
+
+  const { articleId, statusTitle, title, journal, tariff, progress, contractNumber } =
     article || {};
 
   return (
@@ -15,7 +16,10 @@ const ArticleCard = ({ className, article, isLoading, badge }) => {
       className={classNames(cn.LinkWrapper, className, {
         [cn.isLoading]: isLoading,
       })}
-      to={`/article/${articleId}`}
+
+      //Если есть номер договора тогда передаем в параметрах, если нет - пусто
+      to={`/article/${articleId}/${contractNumber ? `${contractNumber}` : ``}`}
+
     >
       <div className={classNames(cn.Container)}>
         <div className={classNames(cn.Item)}>
@@ -23,7 +27,7 @@ const ArticleCard = ({ className, article, isLoading, badge }) => {
             {isLoading ? (
               <Skeleton className={classNames(cn.Skeleton)} />
             ) : (
-              `№${articleId || -1}`
+              `№${articleId || -1} ${contractNumber ? `(${contractNumber})` : ``}`
             )}
           </span>
         </div>
@@ -59,8 +63,6 @@ const ArticleCard = ({ className, article, isLoading, badge }) => {
               <Skeleton className={classNames(cn.Skeleton)} />
             ) : (
               `${journal || ""} ${journal && tariff ? `/` : ``} ${tariff || ""}`
-              // `${journal || "не указано"} / ${tariff || "не указано"}`
-              //TODO убрать если не будет замечаний
             )}
           </h3>
         </div>

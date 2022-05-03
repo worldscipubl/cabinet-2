@@ -4,6 +4,8 @@ import MainLayout from "../layouts/MainLayout";
 const withMainLayout =
   (Component, propsLayout, makeTitle) =>
   ({ ...props }) => {
+
+
     const { title: defaultTitle = "" } = propsLayout;
     const title = makeTitle?.({ ...props }) || defaultTitle;
 
