@@ -38,6 +38,22 @@
       font-size: 12px;
     }
 
+    &_disabled {
+      background-color: $white;
+      border: 1px solid $gray;
+      border-radius: 1.6em;
+      color: $gray;
+      padding: 0.8em 1.5em;
+      cursor: none;
+
+      &:hover {
+        background-color: $white;
+        border: 1px solid $gray;
+        color: $gray;
+      }
+
+    }
+
     &_tabs {
       background-color: $white;
       border: 1px solid $black;

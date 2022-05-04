@@ -1,0 +1,19 @@
+@use '../../../../common/style/global/index' as *;
+
+.form{
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: 1fr max-content 1fr / 1fr max-content 1fr;
+
+  @media screen and (max-width: $bp-laptop) { //1024
+    min-width: 100%;
+    width: 100%;
+  }
+
+}
+
+.form__wrapper {
+    top: 0;
+}

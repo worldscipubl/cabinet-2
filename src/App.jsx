@@ -11,6 +11,10 @@ const App = () => {
   const { data: user, error, isError, isLoading } = useGetUserQuery();
 
   useEffect(() => {
+
+    localStorage.removeItem("error")
+
+
     getTokenMessaging()
       .then((currentToken) => {
         console.log(currentToken);
