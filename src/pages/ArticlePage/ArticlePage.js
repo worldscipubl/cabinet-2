@@ -112,7 +112,8 @@ export default withMainLayout(
   ArticlePage,
   { title: "name" },
   ({ tabId }) => {
-    const { articleId, contractNumber } = useParams();
-    return `№${articleId} ${contractNumber ? `(${contractNumber})` : ``}`
+    const { articleId } = useParams();
+
+    return `Статья № ${articleId} ${localStorage.getItem("contractNumber")}`;
   }
 );
