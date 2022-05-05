@@ -1,0 +1,67 @@
+@use './src/common/style/global' as *;
+
+.Wrapper {
+  height: 2em;
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+
+  &.isLoading {
+    .Img {
+      border: none;
+      opacity: 0.5;
+    }
+  }
+}
+
+.Img {
+  display: inline-block;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  height: 100%;
+  width: 100%;
+
+  &.border {
+    border: 0.08em solid $label-bg-gray-hover;
+  }
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  min-height: 32px;
+  min-width: 32px;
+  overflow: hidden;
+  transition: border 0.3s;
+
+  &_type {
+    &_btn {
+      cursor: pointer;
+    }
+  }
+
+  &_size {
+    &_stretch-x {
+      width: 100%;
+    }
+
+    &_stretch-y {
+      height: 100%;
+    }
+
+    &_small {
+      height: 34px;
+      width: 34px;
+    }
+
+    &_large {
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
