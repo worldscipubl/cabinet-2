@@ -12,8 +12,6 @@ import { useLoginUserMutation } from "../../../../api/endpoints/UserApi";
 const FormLogin = () => {
 
   const [loginUser] = useLoginUserMutation();
-  // const [errors, setErrors] = useState(null);
-  // const [state, setState] = useState({});
   const history = useHistory();
 
   const [loginState, setLoginState] = useState(
@@ -22,6 +20,10 @@ const FormLogin = () => {
       password: '',
     }
   )
+  if (localStorage.getItem("error") !== "Неверный e-mail или пароль. Попробуйте снова.") {
+    localStorage.removeItem("error")
+  }
+  localStorage.removeItem("success-registration")
 
   const [isValid, setIsValid] = useState(false);
   const [errorMessageEmail, setErrorMessageEmail] = useState("")
@@ -29,17 +31,11 @@ const FormLogin = () => {
 
   useEffect(() => {
     const emailValidity = loginState.email.match(/^[\w-\.\d*]+@[\w\d]+(\.\w{2,4})$/);
-    // const passwordValidity = loginState.password.match(/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g);
     const passwordValidity = loginState.password.length > 0
     emailValidity ? setErrorMessageEmail("") : setErrorMessageEmail("Поле не должно быть пустым и должно содержать корректный e-mail")
     passwordValidity ? setErrorMessagePassword("") : setErrorMessagePassword("Введите пароль")
     setIsValid(!!(emailValidity && passwordValidity));
   }, [loginState.email, loginState.password])
-
-  useEffect(() => {
-    setErrorMessageEmail("")
-    setErrorMessagePassword("")
-  }, [])
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -77,11 +73,6 @@ const FormLogin = () => {
         <p className="auth-form__description text text_size_accent">
           Введите свои учетные данные
         </p>
-
-        {/*{errors && errors.form && <FormErrorsBoard dataErrors={errors.form} />}*/}
-
-        {/*{localStorage.getItem("error") && <FormErrorsBoard dataErrors={localStorage.getItem("error")} />}*/}
-
         <p className="auth-form__inputs text text_size_default text_color_red">{localStorage.getItem("error")}</p>
 
         <div className="auth-form__inputs">
@@ -95,10 +86,8 @@ const FormLogin = () => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                // required
                 onChange={handleChange}
                 value={loginState.email}
-                // pattern={constraints.email.pattern}
               />
             </TextField>
           </div>
@@ -115,7 +104,6 @@ const FormLogin = () => {
                 type="password"
                 onChange={handleChange}
                 value={loginState.password}
-                // required
               />
             </TextField>
           </div>

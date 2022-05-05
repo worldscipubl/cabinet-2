@@ -13,6 +13,7 @@ const App = () => {
   useEffect(() => {
 
     localStorage.removeItem("error")
+    localStorage.removeItem("success")
 
 
     getTokenMessaging()

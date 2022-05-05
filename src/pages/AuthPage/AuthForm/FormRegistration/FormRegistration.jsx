@@ -1,177 +1,217 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import constraints from "../../../../utils/constraints";
-import FormErrorsBoard from "../FormErrorsBoard";
+// import FormErrorsBoard from "../FormErrorsBoard";
 import TextField from "../../TextField";
-import Checkbox from "../../../../components/Checkbox/Checkbox";
+// import Checkbox from "../../../../components/Checkbox/Checkbox";
 import { useRegistrationUserMutation } from "../../../../api/endpoints/UserApi";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { getCookie } from "../../../../utils/functions";
+import './FormRegistration.modules.scss'
+import classNames from "classnames";
 
 const FormRegistration = () => {
   const [regUser, { error: errorRegUser } = {}] = useRegistrationUserMutation();
-  const [errors, setErrors] = useState(null);
-  const [state, setState] = useState({});
-  const [checked, setChecked] = useState(false);
+  // const [errors, setErrors] = useState(null);
+  // const [state, setState] = useState({});
+  // const [checked, setChecked] = useState(false);
   const partnerId = getCookie("partnerId");
+  const history = useHistory();
+
+  if (localStorage.getItem("error") !== "Пользователь с таким e-mail уже зарегистрирован. Попробуйте снова.") {
+    localStorage.removeItem("error")
+  }
+
+  const [registerState, setRegisterState] = useState(
+    {
+      name: '',
+      email: '',
+      phone: '',
+      partnerId: partnerId,
+    }
+  )
+
+  const [isValid, setIsValid] = useState(false);
+  const [errorMessageEmail, setErrorMessageEmail] = useState("")
+  const [errorMessageName, setErrorMessageName] = useState("")
+  const [errorMessagePhone, setErrorMessagePhone] = useState("")
+
+
+  useEffect(() => {
+    const emailValidity = registerState.email.match(/^[\w-\.\d*]+@[\w\d]+(\.\w{2,4})$/);
+    const phoneValidity = registerState.phone.match(constraints.phone.pattern) && registerState.phone>=10000000000;
+    const nameValidity = registerState.name.match(/^[а-яА-ЯёЁa-zA-Z_\ ]{2,60}$/);
+    emailValidity ? setErrorMessageEmail("") : setErrorMessageEmail("Поле не должно быть пустым и должно содержать корректный e-mail")
+    nameValidity ? setErrorMessageName("") : setErrorMessageName("Введите имя (кирилица, латиница и пробел, длиной от 2 до 60 символов)")
+    phoneValidity ? setErrorMessagePhone("") : setErrorMessagePhone(constraints.phone.msg)
+
+    setIsValid(!!(emailValidity && nameValidity && phoneValidity));
+  }, [registerState.email, registerState.name, registerState.phone])
+
   const handleChange = (e) => {
-    const input = e.target;
-    if (!input) return;
-
-    const isValid = input.validity.valid;
-    const { name, value } = input;
-    if (!name) return;
-
-    setState({ ...state, [name]: value, partnerId });
-
-    if (!isValid) {
-      constraints[name] &&
-        setErrors({ ...errors, [name]: constraints[name].msg });
-    } else {
-      setErrors(null);
+    const {name, value} = e.target;
+    setRegisterState(prevState => ({...prevState, [name]: value}));
+    if(localStorage.getItem("error")) {
+      localStorage.removeItem("error")
     }
   };
-  const history = useHistory();
+
   const signUp = () => {
+    localStorage.removeItem("success-registration");
     regUser({
-      user: { ...state },
+      user: { ...registerState },
     })
       .unwrap()
       .then((res) => {
-        history.push("/");
-        window.location.reload();
+        localStorage.removeItem("error")
+        localStorage.setItem("success-registration", "Вы успешно зарегистрировались. Пароль отправлен на Вашу почту");
       })
       .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleCheckbox = (e) => {
-    const value = e.target.checked;
-    setChecked(value);
+        console.log(error)
+      if (error.toString().includes("зарегистрирован")) {
+        localStorage.setItem("error", "Пользователь с таким e-mail уже зарегистрирован. Попробуйте снова.");
+      }
+    });
   };
 
   const handleForm = (e) => {
     e.preventDefault();
-    if (!(state.name && state.email)) return;
-    signUp();
+    signUp()
   };
 
-  return (
-    <form className="auth-form"  onSubmit={handleForm} noValidate>
-      <div className="auth-form__inner">
-        <h3 className="auth-form__title text text_size_subtitle">
-          Регистрация
-        </h3>
-        <p className="auth-form__description text text_size_accent">
-          Введите свои учетные данные
-        </p>
+  //Если еще не зарегистрировались
+  if (!localStorage.getItem("success-registration")) {
+    return (
+      <form className="auth-form" onSubmit={handleForm} noValidate>
+        <div className="auth-form__inner">
+          <h3 className="auth-form__title text text_size_subtitle">
+            Регистрация
+          </h3>
 
-        {errors && errors.form && <FormErrorsBoard dataErrors={errors.form} />}
+          <p className="auth-form__description text text_size_accent">
+            Введите свои учетные данные
+          </p>
 
-        <div className="auth-form__inputs">
-          <div className="auth-form__input">
-            <TextField
-              label="Имя"
-              error={!!(errors && errors.name)}
-              helperText={errors && errors.name}
-            >
-              <input
-                type="text"
-                name="name"
-                placeholder="Имя"
-                required
-                onChange={(e) => handleChange(e)}
-                value={state.name}
-              />
-            </TextField>
+          <p className="auth-form__inputs text text_size_default text_color_red">{localStorage.getItem("error")}</p>
+
+          <div className="auth-form__inputs">
+            <div className="auth-form__input">
+              <TextField
+                label="Имя"
+                error={errorMessageName}
+                helperText={errorMessageName}
+              >
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Имя"
+                  required
+                  onChange={handleChange}
+                  value={registerState.name}
+                />
+              </TextField>
+            </div>
+            <div className="auth-form__input">
+              <TextField
+                label="Email"
+                error={errorMessageEmail}
+                helperText={errorMessageEmail}
+              >
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  onChange={handleChange}
+                  value={registerState.email}
+                />
+              </TextField>
+            </div>
+            <div className="auth-form__input">
+              <TextField
+                label="Телефон"
+                error={errorMessagePhone}
+                helperText={errorMessagePhone}
+              >
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Телефон"
+                  required
+                  onChange={handleChange}
+                  value={registerState.phone}
+                />
+              </TextField>
+            </div>
           </div>
-          <div className="auth-form__input">
-            <TextField
-              label="Email"
-              error={!!(errors && errors.email)}
-              helperText={errors && errors.email}
-            >
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-                onChange={(e) => handleChange(e)}
-                value={state.email}
-                pattern={constraints.email.pattern}
-              />
-            </TextField>
+
+          <i className="divider"/>
+          <p className="auth-form__margin-0 text text_size_default">{localStorage.getItem("success-registration")}</p>
+          <div className={classNames("auth-form__other", "form__other")}>
+            <div className="auth-form__other-item">
+              <p className="text">Уже есть аккаунт?</p>
+            </div>
+
+            <div className="auth-form__other-item">
+              <Link className="link" to="/auth">
+                Войти
+              </Link>
+            </div>
+
+            <div className="auth-form__other-item">|</div>
+
+            <div className="auth-form__other-item">
+              <Link className="link" to="/reset">
+                Восстановить пароль
+              </Link>
+            </div>
           </div>
-          <div className="auth-form__input">
-            <TextField
-              label="Телефон"
-              error={!!(errors && errors.phone)}
-              helperText={errors && errors.phone}
-            >
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Телефон"
-                required
-                onChange={(e) => handleChange(e)}
-                value={state.phone}
-                pattern={constraints.phone.pattern}
-              />
-            </TextField>
-          </div>
-          <div className="auth-form__input">
-            <Checkbox label="У меня есть купон">
-              <input type="checkbox" onChange={(e) => handleCheckbox(e)} />
-            </Checkbox>
-          </div>
-          <div className={`auth-form__input ${!checked && "hidden"}`}>
-            <TextField
-              label="Купон"
-              error={!!(errors && errors.coupon)}
-              helperText={errors && errors.coupon}
-            >
-              <input
-                type="text"
-                name="coupon"
-                placeholder="Купон"
-                onChange={(e) => handleChange(e)}
-                value={state.coupon}
-              />
-            </TextField>
+          <div className="auth-form__actions">
+            <div className="auth-form__action">
+              <button className={isValid ? "button button_type_main" : "button button_type_disabled"} type="submit" disabled={!isValid}>
+                Зарегистрироваться
+              </button>
+            </div>
           </div>
         </div>
+      </form>
+    );
+  }
 
-        <i className="divider" />
-        <div className="auth-form__other">
-          <div className="auth-form__other-item">
-            <p className="text">Уже есть аккаунт?</p>
+  //Если успешная регистрация
+  if (localStorage.getItem("success-registration")) {
+    return (
+      <form className="auth-form" onSubmit={handleForm} noValidate>
+        <div className="auth-form__inner">
+          <h3 className="auth-form__title text text_size_subtitle">
+            Регистрация
+          </h3>
+          <i className="divider"/>
+          <p className="auth-form__margin-0 text text_size_default">{localStorage.getItem("success-registration")}</p>
+          <div className={classNames("auth-form__other", "form__other")}>
+            <h6 className="">
+              <Link className="link" to="/auth">
+                Войти в личный кабинет
+              </Link>
+            </h6>
+
+
           </div>
 
-          <div className="auth-form__other-item">
-            <Link className="link" to="/auth">
-              Войти
-            </Link>
-          </div>
-
-          <div className="auth-form__other-item">|</div>
-
-          <div className="auth-form__other-item">
-            <Link className="link" to="/reset">
-              Восстановить пароль
-            </Link>
-          </div>
         </div>
-        <div className="auth-form__actions">
-          <div className="auth-form__action">
-            <button className="button button_type_main" type="submit">
-              Зарегистрироваться
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
-  );
+      </form>
+    );
+  }
+
+
+
+
+
+
+
+
+
+
 };
 
 export default FormRegistration;

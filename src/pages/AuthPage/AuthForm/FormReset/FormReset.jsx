@@ -1,18 +1,23 @@
-import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { useResetUserPasswordMutation } from "../../../../api/endpoints/UserApi";
+import {useGetUserQuery, useResetUserPasswordMutation, useResetUserTokenQuery} from "../../../../api/endpoints/UserApi";
 import constraints from "../../../../utils/constraints";
-import PageResetPassword from "../../PageResetPassword";
-import PageResetSuccess from "../../PageResetSuccess/PageResetSuccess";
+// import PageResetPassword from "../../PageResetPassword";
+// import PageResetSuccess from "../../PageResetSuccess/PageResetSuccess";
 import TextField from "../../TextField";
 
 const FormReset = ({onChange}) => {
+
   const [resetUser, { isError, isSuccess, error } = {}] =
     useResetUserPasswordMutation();
   const [errors, setErrors] = useState(null);
   const [state, setState] = useState({});
+  const [isValid, setIsValid] = useState(false)
+
+  if (localStorage.getItem("error") !== "Ошибка. Возможно пользователь с таким e-mail не зарегистрирован") {
+    localStorage.removeItem("error")
+  }
 
   const handleChange = (e) => {
 
@@ -29,9 +34,11 @@ const FormReset = ({onChange}) => {
 
     if (!isValid) {
       setErrors({ ...errors, [name]: constraints[name].msg });
+      setIsValid(false)
       return;
     } else {
       setErrors(null);
+      setIsValid(true)
       return;
     }
   };
@@ -44,39 +51,24 @@ const FormReset = ({onChange}) => {
   };
 
   const history = useHistory();
+
   const resetPass = () => {
     resetUser({ email: state })
       .unwrap()
       .then((res) => {
         console.log(res);
+        localStorage.removeItem("error")
         history.push("/reset-success");
         // window.location.reload();
       })
       .catch((error) => {
-        history.push("/reset-success");
+        localStorage.setItem("error", "Ошибка. Возможно пользователь с таким e-mail не зарегистрирован");
+        // history.push("/reset-success");
       });
   };
   let userData = {};
   localStorage.setItem(userData, state.email);
   console.log(localStorage.getItem(userData));
-  //   if (isError)
-  //     return (
-  // <div>ошибка</div>
-  //   )
-  // console.log(error);
-  // console.log(isError);
-  // console.log(isSuccess);
-  // if (isError && error !== 401)
-  //   return (
-  //     <PageResetPassword error={error }/>
-  //     // <Route to="/reset-success" error={error}/>
-  //   );
-  // if (isSuccess) {
-  //   console.log(isSuccess)
-  //   return <PageResetSuccess email={state.email}/>
-
-  // }
-
 
   return (
     <form className="auth-form" onSubmit={handleForm}>
@@ -87,7 +79,7 @@ const FormReset = ({onChange}) => {
         <p className="auth-form__description text text_size_accent">
           Воспользуйтесь формой ниже, чтобы восстановить его.
         </p>
-
+        <p className="auth-form__inputs text text_size_default text_color_red">{localStorage.getItem("error")}</p>
         <div className="auth-form__inputs">
           <div className="auth-form__input">
             <TextField
@@ -119,9 +111,8 @@ const FormReset = ({onChange}) => {
         <div className="auth-form__actions">
           <div className="auth-form__action">
             <button
-              className="button button_type_main"
-              type="submit"
-              
+              className={isValid ? "button button_type_main" : "button button_type_disabled"} type="submit" disabled={!isValid}
+
             >
               Восстановить
             </button>
