@@ -24,7 +24,7 @@ const   PrivateRoutes = () => [
   <Route path="/article" exact key="ArticleRedirect">
     <Redirect to="/articles" />
   </Route>,
-  <Route path="/article/:articleId?/:contractNumber?/:tabId?" key="ArticlePage">
+  <Route path="/article/:articleId?/:tabId?" key="ArticlePage">
     <ArticlePage />
   </Route>,
 
