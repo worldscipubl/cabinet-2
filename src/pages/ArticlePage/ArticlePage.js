@@ -113,7 +113,10 @@ export default withMainLayout(
   { title: "name" },
   ({ tabId }) => {
     const { articleId } = useParams();
-
-    return `Статья № ${articleId} ${localStorage.getItem("contractNumber")}`;
+    let contractNumber = ""
+    if (localStorage.getItem("contractNumber") !== "false") {
+      contractNumber = localStorage.getItem("contractNumber")
+    }
+    return `Статья № ${articleId} ${contractNumber}`;
   }
 );
