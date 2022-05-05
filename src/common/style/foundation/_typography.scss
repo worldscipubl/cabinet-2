@@ -47,7 +47,7 @@ $text-colors: (
   @extend %text;
   color: map-get($text-colors, "black");
 
-  &_size {
+    &_size {
     @each $size, $val in $text-sizes {
       &_#{$size} {
         font-size: $val;
@@ -65,6 +65,7 @@ $text-colors: (
         color: $val;
       }
     }
+
   }
 
   &_weight {
