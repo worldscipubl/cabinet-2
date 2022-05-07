@@ -11,15 +11,18 @@ const ArticleCard = ({ className, article, isLoading, badge }) => {
   const { articleId, statusTitle, title, journal, tariff, progress, contractNumber } =
     article || {};
 
+  function handleronClickCard(contractNumber) {
+    localStorage.setItem("contractNumber", contractNumber)
+  }
+
+
   return (
     <Link
       className={classNames(cn.LinkWrapper, className, {
         [cn.isLoading]: isLoading,
       })}
-
-      //Если есть номер договора тогда передаем в параметрах, если нет - пусто
-      to={`/article/${articleId}/${contractNumber ? `${contractNumber}` : ``}`}
-
+      to={`/article/${articleId}`}
+      onClick={() => handleronClickCard(contractNumber)}
     >
       <div className={classNames(cn.Container)}>
         <div className={classNames(cn.Item)}>
