@@ -11,6 +11,7 @@ import './FormRegistration.modules.scss'
 import classNames from "classnames";
 
 const FormRegistration = () => {
+
   const [regUser, { error: errorRegUser } = {}] = useRegistrationUserMutation();
   // const [errors, setErrors] = useState(null);
   // const [state, setState] = useState({});
@@ -31,29 +32,41 @@ const FormRegistration = () => {
     }
   )
 
-  const [isValid, setIsValid] = useState(false);
-  const [errorMessageEmail, setErrorMessageEmail] = useState("")
-  const [errorMessageName, setErrorMessageName] = useState("")
-  const [errorMessagePhone, setErrorMessagePhone] = useState("")
+  const [errorMessage, setErrorMessage] = useState(
+    {
+      name: '',
+      email: '',
+      phone: '',
+    }
+  )
 
+  const [validityInput, setValidityInput] = useState(
+    {
+      name: false,
+      email: false,
+      phone: false,
+    }
+  )
+
+  const [isValid, setIsValid] = useState(false);
 
   useEffect(() => {
-    const emailValidity = registerState.email.match(/^[\w-\.\d*]+@[\w\d]+(\.\w{2,4})$/);
-    const phoneValidity = registerState.phone.match(constraints.phone.pattern) && registerState.phone>=10000000000;
-    const nameValidity = registerState.name.match(/^[а-яА-ЯёЁa-zA-Z_\ ]{2,60}$/);
-    emailValidity ? setErrorMessageEmail("") : setErrorMessageEmail("Поле не должно быть пустым и должно содержать корректный e-mail")
-    nameValidity ? setErrorMessageName("") : setErrorMessageName("Введите имя (кирилица, латиница и пробел, длиной от 2 до 60 символов)")
-    phoneValidity ? setErrorMessagePhone("") : setErrorMessagePhone(constraints.phone.msg)
+    setIsValid(!(validityInput.name && validityInput.email && validityInput.phone));
+  }, [validityInput])
 
-    setIsValid(!!(emailValidity && nameValidity && phoneValidity));
-  }, [registerState.email, registerState.name, registerState.phone])
+  const validation = (data, value) => {
+      const Validity = value.match(constraints[data].pattern);
+      Validity ? setErrorMessage(prevState => ({...prevState, [data]: ""})) : setErrorMessage(prevState => ({...prevState, [data]: constraints[data].messageError}))
+      Validity ? setValidityInput(prevState => ({...prevState, [data]: true})) : setValidityInput(prevState => ({...prevState, [data]: false}))
+  }
 
   const handleChange = (e) => {
     const {name, value} = e.target;
     setRegisterState(prevState => ({...prevState, [name]: value}));
-    if(localStorage.getItem("error")) {
+        if(localStorage.getItem("error")) {
       localStorage.removeItem("error")
     }
+    validation(name, value)
   };
 
   const signUp = () => {
@@ -98,8 +111,8 @@ const FormRegistration = () => {
             <div className="auth-form__input">
               <TextField
                 label="Имя"
-                error={errorMessageName}
-                helperText={errorMessageName}
+                error={errorMessage.name}
+                helperText={errorMessage.name}
               >
                 <input
                   type="text"
@@ -114,8 +127,8 @@ const FormRegistration = () => {
             <div className="auth-form__input">
               <TextField
                 label="Email"
-                error={errorMessageEmail}
-                helperText={errorMessageEmail}
+                error={errorMessage.email}
+                helperText={errorMessage.email}
               >
                 <input
                   type="email"
@@ -130,8 +143,8 @@ const FormRegistration = () => {
             <div className="auth-form__input">
               <TextField
                 label="Телефон"
-                error={errorMessagePhone}
-                helperText={errorMessagePhone}
+                error={errorMessage.phone}
+                helperText={errorMessage.phone}
               >
                 <input
                   type="tel"
@@ -168,7 +181,7 @@ const FormRegistration = () => {
           </div>
           <div className="auth-form__actions">
             <div className="auth-form__action">
-              <button className={isValid ? "button button_type_main" : "button button_type_disabled"} type="submit" disabled={!isValid}>
+              <button className={!isValid ? "button button_type_main" : "button button_type_disabled"} type="submit" disabled={isValid}>
                 Зарегистрироваться
               </button>
             </div>

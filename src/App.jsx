@@ -5,10 +5,14 @@ import PreloadingScreen from "./components/PreloadingScreen";
 import Header from "./components/Header";
 import withAppPresets from "./hoc/withAppPresets";
 import EmptyState from "./domain/EmptyState";
-import { useGetUserQuery } from "./api/endpoints/UserApi";
+import {useGetUserDataQuery, useGetUserQuery} from "./api/endpoints/UserApi";
 
 const App = () => {
   const { data: user, error, isError, isLoading } = useGetUserQuery();
+  const { data } = useGetUserDataQuery();
+  if (data) {
+    sessionStorage.setItem("current_user", JSON.stringify(data))
+  }
 
   useEffect(() => {
 

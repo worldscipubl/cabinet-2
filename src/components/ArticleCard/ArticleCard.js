@@ -11,9 +11,9 @@ const ArticleCard = ({ className, article, isLoading, badge }) => {
   const { articleId, statusTitle, title, journal, tariff, progress, contractNumber } =
     article || {};
 
-  function handleronClickCard(contractNumber) {
-    localStorage.setItem("contractNumber", contractNumber)
-  }
+  // function handleronClickCard(contractNumber) {
+  //   localStorage.setItem("contractNumber", contractNumber)
+  // }
 
 
   return (
@@ -22,7 +22,7 @@ const ArticleCard = ({ className, article, isLoading, badge }) => {
         [cn.isLoading]: isLoading,
       })}
       to={`/article/${articleId}`}
-      onClick={() => handleronClickCard(contractNumber)}
+      // onClick={() => handleronClickCard(contractNumber)}
     >
       <div className={classNames(cn.Container)}>
         <div className={classNames(cn.Item)}>

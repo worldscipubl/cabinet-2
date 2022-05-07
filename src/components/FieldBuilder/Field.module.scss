@@ -14,8 +14,9 @@ $btn-offset-size: -#{math.div($border-thickness, 2)};
   position: relative;
 
   &.disabled {
-    pointer-events: none;
-    opacity: 0.5;
+    border-color: #941313;
+    //pointer-events: none;
+    //opacity: 0.5;
   }
 
   &.error {
@@ -242,4 +243,12 @@ $btn-offset-size: -#{math.div($border-thickness, 2)};
 
 .optionAdd {
   justify-content: center;
+}
+
+.disabledField {
+  pointer-events: none;
+}
+
+.errorField {
+  border-color: red;
 }

@@ -11,24 +11,23 @@ const ListArticles = ({ data, error, isLoading, spinner }) => {
 
   if (isLoading) return spinner
     ?
-    <Spinner />
-  :
-    <>
-      <div className={styles.article__message}>
-        <p className="text text_size_default text_weight_bold text_align_center">Подождите... Идет получение статей</p>
-      </div>
-      <SkeletonArticles />;
-    </>
-
+      <Spinner />
+    :
+      <>
+        <div className={styles.article__message}>
+          <p className="text text_size_default text_weight_bold text_align_center">Подождите... Идет получение статей</p>
+        </div>
+        <SkeletonArticles />
+      </>
 
   if (error)
-    return (
-      <EmptyState
-        type="warning"
-        title="Упс... Произошла ошибка!"
-        description={error.message}
+      return (
+        <EmptyState
+          type="warning"
+          title="Упс... Произошла ошибка!"
+          description={error.message}
       />
-    );
+     );
 
   if (!data?.length)
     return (
@@ -37,8 +36,6 @@ const ListArticles = ({ data, error, isLoading, spinner }) => {
         <div></div>
         <div></div>
       </div>
-
-
       // <EmptyState
       //   title="У вас пока нет статей"
       //   description="Тут будет отображаться список ваших статей"
@@ -67,7 +64,7 @@ const SkeletonArticles = () => {
         <ArticleCard key={index} isLoading />
       ))}
     </div>
-  );
+  )
 };
 
 const NewArticleCard = () => {
@@ -79,7 +76,6 @@ const NewArticleCard = () => {
         Подать заявку на публикацию
       </h4>
     </Link>
-
   );
 };
 

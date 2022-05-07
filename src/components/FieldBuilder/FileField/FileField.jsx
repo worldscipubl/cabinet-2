@@ -38,21 +38,22 @@ const FileField = ({
   };
 
   return (
-    <div className={classNames(styles.field__container, styles.field__input)}>
-      {!!error && (
-        <img
-          className={classNames(styles.field__icon, styles.field__icon_start)}
-          src={errorImg}
-          alt="start-icon"
-        />
-      )}
-      {startIcon && (
-        <img
-          className={classNames(styles.field__icon, styles.field__icon_start)}
-          src={startIcon}
-          alt="start-icon"
-        />
-      )}
+    // <div className={classNames(styles.field__container, styles.field__input)}>
+      <div className={!error ? classNames(styles.field__container, styles.field__input) : classNames(styles.field__container, styles.field__input, styles.errorField)}>
+      {/*{!!error && (*/}
+      {/*  <img*/}
+      {/*    className={classNames(styles.field__icon, styles.field__icon_start)}*/}
+      {/*    src={errorImg}*/}
+      {/*    alt="start-icon"*/}
+      {/*  />*/}
+      {/*)}*/}
+      {/*{startIcon && (*/}
+      {/*  <img*/}
+      {/*    className={classNames(styles.field__icon, styles.field__icon_start)}*/}
+      {/*    src={startIcon}*/}
+      {/*    alt="start-icon"*/}
+      {/*  />*/}
+      {/*)}*/}
 
       <span
         className={classNames(styles.field__input, styles.field__input_file)}
