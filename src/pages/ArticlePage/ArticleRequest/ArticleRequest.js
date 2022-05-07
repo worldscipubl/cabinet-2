@@ -6,7 +6,7 @@ import CardHeader from "../../../components/Card/CardHeader";
 import CardBody from "../../../components/Card/CardBody";
 import { useApplyArticleMutation } from "../../../api/endpoints/ArticlesApi";
 import { fieldsArticleRequestForm } from "../../../utils/constants";
-import PreloadingScreen from "../../../components/PreloadingScreen";
+// import PreloadingScreen from "../../../components/PreloadingScreen";
 import {useHistory} from "react-router-dom";
 import Loader from "../../../components/Loader";
 import './ArticleRequest.scss'
@@ -20,6 +20,7 @@ const ArticleRequest = () => {
 
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("current_user")));
 
   const handlerField = (name, value, err) => {
     if (!err) setValues((prevState) => ({ ...prevState, [name]: value }));
@@ -57,6 +58,7 @@ const ArticleRequest = () => {
       .every((el) => el);
   };
 
+
   if (isLoading) {
     return (
       <>
@@ -90,6 +92,9 @@ const ArticleRequest = () => {
                   description={field?.description}
                   defaultError={errors[field?.name] || ""}
                   handlers={{ handlerField }}
+                  defaultValue={currentUser[field.name]}
+                  fieldName={field.name}
+                  placeholder={field.placeholder}
                 />
               );
             })}

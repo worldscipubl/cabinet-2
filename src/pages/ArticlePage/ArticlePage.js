@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useHistory, useParams } from "react-router-dom";
 import ArticleChat from "./ArticleChat";
 import ArticleBrief from "./ArticleBrief";
@@ -110,13 +110,19 @@ const ArticlePage = (props) => {
 
 export default withMainLayout(
   ArticlePage,
-  { title: "name" },
+  { title: "" },
   ({ tabId }) => {
     const { articleId } = useParams();
-    let contractNumber = ""
-    if (localStorage.getItem("contractNumber") !== "false") {
-      contractNumber = localStorage.getItem("contractNumber")
+    const [isLoading, setIsLoading] = useState(true)
+    const { data: article } = useGetArticleByIdQuery(articleId);
+
+    useEffect(() => {
+      article ? setIsLoading(false) : setIsLoading(true)
+    }, [article])
+
+    if (!isLoading) {
+      return `№${articleId} ${article.contractNumber ? `(${article.contractNumber})` : ``}`
+    } else {
     }
-    return `Статья № ${articleId} ${contractNumber}`;
   }
 );

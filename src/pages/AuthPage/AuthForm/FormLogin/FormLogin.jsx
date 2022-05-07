@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 // import FormErrorsBoard from "../FormErrorsBoard";
 import TextField from "../../TextField";
 import { useLoginUserMutation } from "../../../../api/endpoints/UserApi";
+import constraints from "../../../../utils/constraints";
 // import styles from "../../../HomePage/HomePage.module.scss";
 // import HomePageCardForm from "../../../HomePage/HomePageCardForm";
 // import styles from './FormLogin.module.scss'
@@ -20,26 +21,49 @@ const FormLogin = () => {
       password: '',
     }
   )
+
+  const [errorMessage, setErrorMessage] = useState(
+    {
+      email: '',
+      password: '',
+    }
+  )
+
+  const [validityInput, setValidityInput] = useState(
+    {
+      email: false,
+      password: false,
+    }
+  )
+
   if (localStorage.getItem("error") !== "Неверный e-mail или пароль. Попробуйте снова.") {
     localStorage.removeItem("error")
   }
   localStorage.removeItem("success-registration")
 
   const [isValid, setIsValid] = useState(false);
-  const [errorMessageEmail, setErrorMessageEmail] = useState("")
-  const [errorMessagePassword, setErrorMessagePassword] = useState("")
 
   useEffect(() => {
-    const emailValidity = loginState.email.match(/^[\w-\.\d*]+@[\w\d]+(\.\w{2,4})$/);
-    const passwordValidity = loginState.password.length > 0
-    emailValidity ? setErrorMessageEmail("") : setErrorMessageEmail("Поле не должно быть пустым и должно содержать корректный e-mail")
-    passwordValidity ? setErrorMessagePassword("") : setErrorMessagePassword("Введите пароль")
-    setIsValid(!!(emailValidity && passwordValidity));
-  }, [loginState.email, loginState.password])
+    setIsValid(!(validityInput.email && validityInput.password));
+  }, [validityInput])
+
+  const validation = (name, value) => {
+    if(name === "password") {
+      const Validity = value.length > 0
+      Validity ? setErrorMessage(prevState => ({...prevState, password: ""})) : setErrorMessage(prevState => ({...prevState, password: "Введите пароль"}))
+      Validity ? setValidityInput(prevState => ({...prevState, password: true})) : setValidityInput(prevState => ({...prevState, password: false}))
+    } else {
+      const Validity = value.match(constraints[name].pattern);
+      Validity ? setErrorMessage(prevState => ({...prevState, [name]: ""})) : setErrorMessage(prevState => ({...prevState, [name]: constraints[name].messageError}))
+      Validity ? setValidityInput(prevState => ({...prevState, [name]: true})) : setValidityInput(prevState => ({...prevState, [name]: false}))
+    }
+  }
 
   const handleChange = (e) => {
     const {name, value} = e.target;
     setLoginState(prevState => ({...prevState, [name]: value}));
+    validation(name, value)
+
   };
 
   const handleForm = (e) => {
@@ -79,8 +103,8 @@ const FormLogin = () => {
           <div className="auth-form__input">
             <TextField
               label="Email"
-              error={errorMessageEmail}
-              helperText={errorMessageEmail}
+              error={errorMessage.email}
+              helperText={errorMessage.email}
             >
               <input
                 type="email"
@@ -94,13 +118,14 @@ const FormLogin = () => {
           <div className="auth-form__input">
             <TextField
               label="Пароль"
-              error={errorMessagePassword}
-              helperText={errorMessagePassword}
+              error={errorMessage.password}
+              helperText={errorMessage.password}
             >
               <input
                 name="password"
-                autoComplete="on"
+                autoComplete="off"
                 placeholder="Пароль"
+                // required
                 type="password"
                 onChange={handleChange}
                 value={loginState.password}
@@ -128,7 +153,7 @@ const FormLogin = () => {
             </Link>
           </div>
           <div className="auth-form__action">
-            <button className={isValid ? "button button_type_main" : "button button_type_disabled"} type="submit" disabled={!isValid}>
+            <button className={!isValid ? "button button_type_main" : "button button_type_disabled"} type="submit" disabled={isValid}>
               Войти
             </button>
           </div>
