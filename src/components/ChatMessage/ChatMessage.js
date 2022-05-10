@@ -25,7 +25,7 @@ const ChatMessage = forwardRef(
       <div
         ref={isLast ? ref : null}
         className={classNames("chat-message", {
-          "chat-message_right": direction,
+          "chat-message_right": !direction,
         })}
       >
         <img className="chat-message__img" src={avatar} ref={refAvatar} />
