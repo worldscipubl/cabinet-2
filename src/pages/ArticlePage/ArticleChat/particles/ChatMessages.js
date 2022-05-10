@@ -2,7 +2,6 @@ import React, { forwardRef } from "react";
 import EmptyState from "../../../../domain/EmptyState";
 import ChatMessage from "../../../../components/ChatMessage";
 import Loader from "../../../../components/Loader/Loader";
-import PreloadingScreen from "../../../../components/PreloadingScreen";
 
 const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
   // if (isLoading) return <Loader />;
@@ -17,14 +16,15 @@ const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
 
   if (!(Array.isArray(messages) && !!messages.length))
     return (
-
+      isLoading
+        ?
       <Loader />
-
-      // <EmptyState
-      //   title="Сообщений пока нет"
-      //   imgName="no_data"
-      //   description="Тут будет история вашей переписки"
-      // />
+        :
+      <EmptyState
+        title="Сообщений пока нет"
+        imgName="no_data"
+        description="Тут будет история вашей переписки"
+      />
     );
 
   return (
