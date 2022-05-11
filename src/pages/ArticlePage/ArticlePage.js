@@ -10,6 +10,7 @@ import EmptyState from "../../domain/EmptyState";
 import ArticlePipeline from "./ArticlePipeline";
 import withMainLayout from "../../hoc/withMainLayout";
 import { useGetArticleByIdQuery } from "../../api/endpoints/ArticlesApi";
+import ArticleArchive from "./ArticleArchive";
 
 const ArticlePage = (props) => {
 
@@ -48,6 +49,13 @@ const ArticlePage = (props) => {
       tabId="article-brief"
       key="article-brief"
       tabLabel="Договор"
+    />,
+    <ArticleArchive
+      articleId={articleId}
+      // statusId={article?.statusId}
+      tabId="article-archive"
+      key="article-archive"
+      tabLabel="Архив"
     />,
     <ArticlePayment
       articleId={articleId}
