@@ -10,6 +10,7 @@ import Spinner from "../Spinner";
 import { useUpdateStatusArticleMutation } from "../../api/endpoints/ArticlesApi";
 
 const ArticleStatus = ({ status, articleId, article, hasPay }) => {
+  console.log(status)
 
   const [loading, setLoading] = useState(true);
   const [updateStatusArticle, {}] = useUpdateStatusArticleMutation();

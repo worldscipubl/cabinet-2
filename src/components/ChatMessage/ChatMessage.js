@@ -12,6 +12,7 @@ const ChatMessage = forwardRef(
       date = "",
       isLast = false,
       isFirst = false,
+      user
     },
     ref
   ) => {
@@ -28,13 +29,13 @@ const ChatMessage = forwardRef(
           "chat-message_right": !direction,
         })}
       >
-        <img className="chat-message__img" src={avatar} ref={refAvatar} />
+        <img className="chat-message__img" src={!direction ? user.avatar : avatar} ref={refAvatar} />
         <div className="chat-message-bubble">
           <div className="chat-message__info">
             <div className="chat-message__info-name text text_weight_bold">
-              {name}
+              {!direction ? user.name : "Без имени"}
             </div>
-            <div className="chat-message__info-time text">{date}</div>
+            <div className="chat-message__info-time text">{date.toLocaleString()}</div>
           </div>
           <div className="chat-message__text text">{text}</div>
         </div>
