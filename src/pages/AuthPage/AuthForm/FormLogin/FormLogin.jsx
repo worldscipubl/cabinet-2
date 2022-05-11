@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import TextField from "../../TextField";
 import { useLoginUserMutation } from "../../../../api/endpoints/UserApi";
 import constraints from "../../../../utils/constraints";
+import authApiFetch from "../../../../api/ApiFetch/AuthApiFetch";
 // import styles from "../../../HomePage/HomePage.module.scss";
 // import HomePageCardForm from "../../../HomePage/HomePageCardForm";
 // import styles from './FormLogin.module.scss'
@@ -74,18 +75,33 @@ const FormLogin = () => {
   const signIn = (email, password) => {
     localStorage.removeItem("user_token")
     const userToken = window.btoa(email + ":" + password);
-    loginUser(userToken)
-      .unwrap()
-      .then((res) => {
+
+    authApiFetch.loginUser(userToken)
+      .then(res => {
         localStorage.removeItem("error")
         localStorage.setItem("user_token", JSON.stringify(userToken));
         history.push("/");
         document.location.reload();
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(err => {
+        history.push("/");
+        document.location.reload();
         localStorage.setItem("error", "Неверный e-mail или пароль. Попробуйте снова.");
-      });
+        localStorage.removeItem("user_token")
+      })
+
+    // loginUser(userToken)
+    //   .unwrap()
+    //   .then((res) => {
+    //     localStorage.removeItem("error")
+    //     localStorage.setItem("user_token", JSON.stringify(userToken));
+    //     history.push("/");
+    //     document.location.reload();
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     localStorage.setItem("error", "Неверный e-mail или пароль. Попробуйте снова.");
+    //   });
   };
 
   return (

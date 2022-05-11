@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import { getTokenMessaging } from "./firebase";
 import AppRouter from "./routers/AppRouter";
 import PreloadingScreen from "./components/PreloadingScreen";
@@ -6,23 +6,62 @@ import Header from "./components/Header";
 import withAppPresets from "./hoc/withAppPresets";
 import EmptyState from "./domain/EmptyState";
 import {useGetUserDataQuery, useGetUserQuery} from "./api/endpoints/UserApi";
+import authApiFetch from "./api/ApiFetch/AuthApiFetch";
 
 const App = () => {
-  const { data: user, error, isError, isLoading } = useGetUserQuery();
-  const { data } = useGetUserDataQuery();
-  if (data) {
-    sessionStorage.setItem("current_user", JSON.stringify(data))
-  }
+  // const { data: user, error, isError, isLoading } = useGetUserQuery();
+  // const { data } = useGetUserDataQuery();
+  // if (data) {
+  //   sessionStorage.setItem("current_user", JSON.stringify(data))
+  // }
+
+
+  const [user, setUser] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [isError, setIsError] = useState(false)
+  const [currentUser, setCurrentUser] = useState({})
+
 
   useEffect(() => {
 
+    if(localStorage.getItem('user_token')) {
+      setIsLoading(true)
+      authApiFetch.loginUser(localStorage.getItem('user_token'))
+        .then(res => {
+          setUser(res)
+          setIsLoading(false)
+          setError('')
+        })
+        .catch(err => {
+          console.log(err)
+          setIsLoading(false)
+          setError(err)
+          setIsError(true)
+        })
+
+      setIsLoading(true)
+      authApiFetch.getCurrentUser(localStorage.getItem('user_token'))
+        .then(res => {
+          setCurrentUser(res)
+          setIsLoading(false)
+          setError('')
+        })
+        .catch(err => {
+          console.log(err)
+          setIsLoading(false)
+          setError(err)
+          setIsError(true)
+        })
+
+    }
     localStorage.removeItem("error")
     localStorage.removeItem("success")
 
 
     getTokenMessaging()
       .then((currentToken) => {
-        console.log(currentToken);
+        // console.log(currentToken);
       })
       .catch((err) => {
         console.log("failed: ", err);
