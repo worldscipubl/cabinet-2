@@ -1,9 +1,25 @@
-import React, { forwardRef } from "react";
+import React, {forwardRef, useEffect, useState} from "react";
 import EmptyState from "../../../../domain/EmptyState";
 import ChatMessage from "../../../../components/ChatMessage";
 import Loader from "../../../../components/Loader/Loader";
+import authApiFetch from "../../../../api/ApiFetch/AuthApiFetch";
+import {getTokenMessaging} from "../../../../firebase";
 
 const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
+
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    authApiFetch.loginUser(localStorage.getItem('user_token'))
+      .then(res => {
+        setUser(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+
+  }, []);
+
   // if (isLoading) return <Loader />;
   if (error)
     return (
@@ -18,13 +34,13 @@ const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
     return (
       isLoading
         ?
-      <Loader />
+        <Loader />
         :
-      <EmptyState
-        title="Сообщений пока нет"
-        imgName="no_data"
-        description="Тут будет история вашей переписки"
-      />
+        <EmptyState
+          title="Сообщений пока нет"
+          imgName="no_data"
+          description="Тут будет история вашей переписки"
+        />
     );
 
   return (
@@ -32,7 +48,7 @@ const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
       {messages.map(
         ({ articleMessageId, dateCreate, files, role, text }, index, array) => (
           <ChatMessage
-            date={dateCreate}
+            date={new Date(Number(dateCreate+"000"))}
             direction={!!role}
             text={text}
             key={index}
@@ -40,6 +56,7 @@ const ChatMessages = forwardRef(({ error, messages, isLoading }, ref) => {
             isFirst={index === 0}
             ref={ref}
             files={files}
+            user={user}
           />
         )
       )}

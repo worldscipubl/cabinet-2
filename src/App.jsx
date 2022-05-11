@@ -44,6 +44,7 @@ const App = () => {
       authApiFetch.getCurrentUser(localStorage.getItem('user_token'))
         .then(res => {
           setCurrentUser(res)
+          sessionStorage.setItem("current_user", JSON.stringify(res))
           setIsLoading(false)
           setError('')
         })

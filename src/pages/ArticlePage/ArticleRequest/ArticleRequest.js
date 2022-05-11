@@ -92,9 +92,9 @@ const ArticleRequest = () => {
                   description={field?.description}
                   defaultError={errors[field?.name] || ""}
                   handlers={{ handlerField }}
-                  defaultValue={currentUser[field.name]}
-                  fieldName={field.name}
-                  placeholder={field.placeholder}
+                  defaultValue={currentUser[field.name] || ""}
+                  fieldName={field.name || ""}
+                  placeholder={field.placeholder || ""}
                 />
               );
             })}
