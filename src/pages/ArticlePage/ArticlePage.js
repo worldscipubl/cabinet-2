@@ -11,19 +11,34 @@ import ArticlePipeline from "./ArticlePipeline";
 import withMainLayout from "../../hoc/withMainLayout";
 import { useGetArticleByIdQuery } from "../../api/endpoints/ArticlesApi";
 import ArticleArchive from "./ArticleArchive";
+import articleApiFetch from "../../api/ApiFetch/ArticleApiFetch";
 
-const ArticlePage = (props) => {
+const ArticlePage = () => {
 
-
+  const [article, setArticle] = useState({})
+  const [isLoading, setIsLoading] =useState(false)
+  const [error, setError] =useState(false)
+  const [currentStage, setCurrentStage] =useState(false)
 
   const { articleId, tabId } = useParams();
-  const { data: article, error, isLoading, } = useGetArticleByIdQuery(articleId);
   const history = useHistory();
 
-  // const { articleContract, setArticleContract } = useState(article.contractNumber)
-  //
-  //
-  // console.log(articleContract)
+  useEffect(() => {
+    setIsLoading(true)
+    articleApiFetch.articleStatus(articleId, localStorage.getItem('user_token'),"articleUploaded,currentStage,currentStatus")
+      .then(res => {
+        setArticle(res)
+        setIsLoading(false)
+        setError(false)
+      })
+      .catch(err => {
+        console.log(err)
+        setIsLoading(false)
+        setError(true)
+      })
+  }, []);
+
+
 
   const articleTabs = [
     <ArticleRequest
@@ -36,6 +51,7 @@ const ArticlePage = (props) => {
       tabLabel="Процесс публикации"
       key="ArticlePipeline"
       article={article}
+      currentStage={currentStage}
     />,
     <ArticleChat
       tabId="article-chat"
@@ -52,7 +68,6 @@ const ArticlePage = (props) => {
     />,
     <ArticleArchive
       articleId={articleId}
-      // statusId={article?.statusId}
       tabId="article-archive"
       key="article-archive"
       tabLabel="Архив"
@@ -75,7 +90,7 @@ const ArticlePage = (props) => {
   const filterPages = getFilterPages(article);
 
   if (isLoading) return <Spinner />;
-
+  //
   if (error)
     return (
       <EmptyState

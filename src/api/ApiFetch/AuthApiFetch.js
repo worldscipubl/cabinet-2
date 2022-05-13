@@ -24,7 +24,7 @@ class AuthApiFetch {
   }
 
   loginUser(token) {
-    return fetch(`${this._baseUrl}/users/login`, {
+    return  fetch(`${this._baseUrl}/users/login`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +32,17 @@ class AuthApiFetch {
       },
     })
       .then((res) => this.handleResponse(res));
+
+
+
+    // return fetch(`${this._baseUrl}/users/login`, {
+    //   method: 'POST',
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Authorization": `Basic ${token}`
+    //   },
+    // })
+    //   .then((res) => this.handleResponse(res));
   }
 
   getCurrentUser(token) {

@@ -1,33 +1,19 @@
 import React from "react";
 import "./StepperItem.scss";
+import ArticleChanges from "../../ArticleChanges";
 
-const StepperItem = ({ children, state, title, onClick }) => {
-  const stateStyle = getStateStyle(state);
+const StepperItem = ({article, item, clickStage, statuses, isLoading}) => {
 
   return (
-    <li className={`stepper-item ${stateStyle}`}>
-      <div className="stepper-item__header" onClick={onClick}>
-        <span className="stepper-item__icon text"></span>
-        <h3 className="stepper-item__title text text_size_accent text_weight_bold">
-          {title}
-        </h3>
+    <>
+      <div className={ clickStage && clickStage === item.stage ? "stepper-item__content article-stage" : "stepper-item__content article-stage_active"}>
+        <i className={ clickStage && clickStage === item.stage ? "stepper-item__border article-stage" : "stepper-item__border article-stage_active"}></i>
       </div>
-      <div className="stepper-item__content">
-        <i className="stepper-item__border"></i>
-        <div className="stepper-item__inner">{children}</div>
+      <div className={clickStage && clickStage === item.stage ? "article-stage_active" : "article-stage"}>
+        <ArticleChanges article={article} stage={item.stage} statuses={statuses} isLoading={isLoading} />
       </div>
-    </li>
+    </>
   );
 };
 
-const getStateStyle = (state) => {
-  if (!state) return "";
-
-  let stateStyle = "";
-  Object.entries(state).map(
-    ([key, value]) => value && (stateStyle += ` ${key.toString()}`)
-  );
-
-  return stateStyle;
-};
 export default StepperItem;
