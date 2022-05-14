@@ -12,21 +12,14 @@ import "./ArticleArchive.scss";
 // import AuthorForm from "../../../components/AuthorForm/AuthorForm";
 import EmptyState from "../../../domain/EmptyState";
 import articleApiFetch from "../../../api/ApiFetch/ArticleApiFetch";
-import {useGetFilesByArticleIdQuery} from "../../../api/endpoints/ArticleFilesApi";
-import {useGetArticleByIdQuery} from "../../../api/endpoints/ArticlesApi";
+// import {useGetFilesByArticleIdQuery} from "../../../api/endpoints/ArticleFilesApi";
+// import {useGetArticleByIdQuery} from "../../../api/endpoints/ArticlesApi";
 
 const ArticleArchive = ({ articleId, statusId }) => {
-
-  // const {data} = useGetFilesByArticleIdQuery(articleId)
-  // const { data} = useGetArticleByIdQuery(articleId);
-
-
-// console.log(data)
 
   useEffect(() => {
     articleApiFetch.fileArchive(articleId, localStorage.getItem("user_token"))
       .then(res => {
-        console.log(res)
       })
       .catch(err => {
         console.log(err)
@@ -34,12 +27,11 @@ const ArticleArchive = ({ articleId, statusId }) => {
 
   });
 
-
   return (
     <EmptyState
       title="Архив пуст"
       imgName="no_data"
-      description="Тут будут фалы по статье"
+      description="Тут будут файлы по статье"
     />
   )
 

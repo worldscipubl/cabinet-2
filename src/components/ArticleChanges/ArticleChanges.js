@@ -4,10 +4,10 @@ import ArticleStatus from "../ArticleStatus";
 import "./ArticleChanges.scss";
 import { useGetHasPayQuery } from "../../api/endpoints/ArticlePaymentApi";
 import Loader from "../Loader/Loader";
-// import articleApiFetch from "../../api/ApiFetch/ArticleApiFetch";
 
 const ArticleChanges = ({ article, stage, statuses, isLoading }) => {
   const { articleId } = article;
+
 
   const { data: hasPay } = useGetHasPayQuery(articleId);
 
