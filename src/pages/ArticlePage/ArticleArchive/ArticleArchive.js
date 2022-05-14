@@ -1,39 +1,51 @@
 import React, {useEffect, useState} from "react";
-// import Card from "../../../components/Card/Card";
-// import ViewPager from "../../../components/ViewPager/ViewPager";
 import "./ArticleArchive.scss";
-// import {
-//   useAddArticleMutation,
-//   useAddContactMutation,
-//   useGetArticleQuery,
-//   useGetContactQuery,
-// } from "../../../api/endpoints/BriefApi";
-// import BriefForm from "../../../components/BriefForm/BriefForm";
-// import AuthorForm from "../../../components/AuthorForm/AuthorForm";
 import EmptyState from "../../../domain/EmptyState";
 import articleApiFetch from "../../../api/ApiFetch/ArticleApiFetch";
-// import {useGetFilesByArticleIdQuery} from "../../../api/endpoints/ArticleFilesApi";
-// import {useGetArticleByIdQuery} from "../../../api/endpoints/ArticlesApi";
+import Loader from "../../../components/Loader";
+import ArticleArchiveList from "./ArticleArchiveList";
 
-const ArticleArchive = ({ articleId, statusId }) => {
+const ArticleArchive = ({ articleId }) => {
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [isEmpty, setIsEmpty] = useState(false)
+  const [files, setFiles] = useState([])
 
   useEffect(() => {
+    setIsLoading(true)
     articleApiFetch.fileArchive(articleId, localStorage.getItem("user_token"))
       .then(res => {
+        console.log(res)
+        setFiles(res)
+        !files.length < 1 && setIsEmpty(true)
+        setIsLoading(false)
       })
       .catch(err => {
         console.log(err)
+        setIsLoading(false)
     })
+  },[]);
 
-  });
+  if (isLoading) return <Loader />;
+
+  if (files.length < 1) {
+    return (
+      <EmptyState
+        title="Архив пуст"
+        imgName="no_data"
+        description="Тут будут файлы по статье"
+      />
+    )
+  }
 
   return (
-    <EmptyState
-      title="Архив пуст"
-      imgName="no_data"
-      description="Тут будут файлы по статье"
-    />
-  )
+    files.map((item, index) => (
+      <ArticleArchiveList
+        key={item.dateCreate}
+        item={item}
+      />
+    ))
+  );
 
 }
 
