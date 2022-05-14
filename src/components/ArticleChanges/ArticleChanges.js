@@ -1,35 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ArticleStatus from "../ArticleStatus";
-import { useLazyGetArticleChangesQuery } from "../../api/endpoints/TimeLineArticleApi";
+// import { useLazyGetArticleChangesQuery } from "../../api/endpoints/TimeLineArticleApi";
 import "./ArticleChanges.scss";
 import { useGetHasPayQuery } from "../../api/endpoints/ArticlePaymentApi";
 import Loader from "../Loader/Loader";
 
-const ArticleChanges = ({ article, stage }) => {
-  const { /*currentStage: stage, */ articleId } = article;
-  const [statuses, setStatuses] = useState(article?.status || []);
-  const [trigger, { data: updateStatuses, error, isLoading, isError }] =
-    useLazyGetArticleChangesQuery();
+const ArticleChanges = ({ article, stage, statuses, isLoading }) => {
+  const { articleId } = article;
+
 
   const { data: hasPay } = useGetHasPayQuery(articleId);
 
-  useEffect(() => {
-    if (!updateStatuses) return getMore();
-    setStatuses((prev) => [...prev, ...updateStatuses]);
-  }, [updateStatuses]);
-
-  const getMore = (nextStatus) => {
-    trigger({
-      articleId,
-      stage,
-      start: nextStatus,
-    });
-  };
-
   if (isLoading) return <Loader />;
   if (!statuses || !statuses.length) return null;
-  const lastStatus = statuses[statuses.length - 1];
-  const nextStatus = lastStatus?.startNext;
   return (
     <div className="article-changes">
       {statuses.map((status) => {
@@ -44,27 +27,6 @@ const ArticleChanges = ({ article, stage }) => {
           />
         );
       })}
-      {nextStatus && !isLoading && (
-        <button
-          className="text text_size_default text_color_gray article-changes__old-msg"
-          onClick={() => {
-            getMore(nextStatus);
-          }}
-        >
-          Показать предыдущие сообщения...
-        </button>
-      )}
-
-      {isLoading && (
-        <h2 className="text text_size_default text_color_gray article-changes__old-msg">
-          Загружаю...
-        </h2>
-      )}
-      {isError && (
-        <h2 className="text text_size_default text_color_red article-changes__old-msg">
-          {error}
-        </h2>
-      )}
     </div>
   );
 };
