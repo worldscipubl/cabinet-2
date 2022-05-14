@@ -15,12 +15,13 @@ const ArticleArchiveList = ({item}) => {
 
   return (
     <>
-    <ul className={"archive"}>
       <li className={"archive__item"} onClick={() => handleDownloadBtn(item.fileId, item.name)}>
         <img src={Download} alt="" className={"archive__img"}/>
-        <p className="text text_size_default archive__title">{item.name}</p>
+        <div className={"archive__content"}>
+          <p className="text text_size_default archive__date">{new Date(Number(item.dateCreate+"000")).toLocaleDateString()}</p>
+          <p className="text text_size_default archive__title">{item.name}</p>
+        </div>
       </li>
-    </ul>
     </>
   );
 

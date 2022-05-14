@@ -40,10 +40,12 @@ const ArticleArchive = ({ articleId }) => {
 
   return (
     files.map((item, index) => (
-      <ArticleArchiveList
-        key={item.dateCreate}
-        item={item}
-      />
+      <ul className={"archive"}>
+        <ArticleArchiveList
+          key={item.dateCreate}
+          item={item}
+        />
+      </ul>
     ))
   );
 
