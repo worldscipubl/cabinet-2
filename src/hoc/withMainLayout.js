@@ -5,6 +5,7 @@ const withMainLayout =
   (Component, propsLayout, makeTitle) =>
   ({ ...props }) => {
 
+    sessionStorage.setItem("page", "true")
 
     const { title: defaultTitle = "" } = propsLayout;
     const title = makeTitle?.({ ...props }) || defaultTitle;

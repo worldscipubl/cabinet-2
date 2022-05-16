@@ -5,16 +5,13 @@ import PreloadingScreen from "./components/PreloadingScreen";
 import Header from "./components/Header";
 import withAppPresets from "./hoc/withAppPresets";
 import EmptyState from "./domain/EmptyState";
-import {useGetUserDataQuery, useGetUserQuery} from "./api/endpoints/UserApi";
+// import {useGetUserDataQuery, useGetUserQuery} from "./api/endpoints/UserApi";
 import authApiFetch from "./api/ApiFetch/AuthApiFetch";
+import NotFoundPage from "./domain/NotFoundPage";
+import {useHistory} from "react-router-dom";
 
 const App = () => {
-  // const { data: user, error, isError, isLoading } = useGetUserQuery();
-  // const { data } = useGetUserDataQuery();
-  // if (data) {
-  //   sessionStorage.setItem("current_user", JSON.stringify(data))
-  // }
-
+const history = useHistory()
 
   const [user, setUser] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -22,9 +19,8 @@ const App = () => {
   const [isError, setIsError] = useState(false)
   const [currentUser, setCurrentUser] = useState({})
 
-
   useEffect(() => {
-
+    sessionStorage.setItem("page", "false")
     if(localStorage.getItem('user_token')) {
       setIsLoading(true)
       authApiFetch.loginUser(localStorage.getItem('user_token'))
@@ -69,6 +65,17 @@ const App = () => {
       });
   }, []);
 
+
+
+  const handlerOnClick = () => {
+    setIsLoading(false)
+    sessionStorage.setItem("page", "true")
+    history.replace("/home")
+    history.go()
+    setIsLoading(true)
+  }
+
+
   if (isLoading) return <PreloadingScreen isLoading={isLoading} />;
 
   if (isError && error?.status !== 401)
@@ -91,6 +98,13 @@ const App = () => {
   return (
     <div className="app">
       <Header user={user} />
+      {
+        sessionStorage.getItem("page") !== "true"
+        ?
+          <NotFoundPage history={history}/>
+        :
+          ""
+      }
       <AppRouter user={user} />
     </div>
   );

@@ -90,7 +90,7 @@ const ArticlePage = () => {
   const filterPages = getFilterPages(article);
 
   if (isLoading) return <Spinner />;
-  //
+
   if (error)
     return (
       <EmptyState
@@ -129,6 +129,7 @@ const ArticlePage = () => {
         : articleTabs}
     </TabLayout>
   );
+
 };
 
 export default withMainLayout(
