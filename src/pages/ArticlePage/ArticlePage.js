@@ -130,18 +130,7 @@ const ArticlePage = () => {
     </TabLayout>
   );
 
-  // return (
-  //   <>
-  //   <p>1111111111111</p>
-  //   </>
-  // )
-
 };
-
-// export default ArticlePage
-
-
-
 
 export default withMainLayout(
   ArticlePage,

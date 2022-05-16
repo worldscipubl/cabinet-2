@@ -9,6 +9,9 @@ import withMainLayout from "../../hoc/withMainLayout";
 import "./ReferralPage.module.scss";
 
 const ReferralPage = (props) => {
+
+  sessionStorage.setItem("page", "true")
+
   const { tabId } = useParams();
 
   const ReferralTabs = [
