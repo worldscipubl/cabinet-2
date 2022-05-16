@@ -3,11 +3,18 @@ import { Route, Switch } from "react-router-dom";
 import PrivateRoutes from "../PrivateRoutes";
 import PublicRoutes from "../PublicRoutes";
 import NotFoundPage from "../../domain/NotFoundPage";
+import FormReset from "../../pages/AuthPage/AuthForm/FormReset";
 
 const AppRouter = ({ user }) => (
   <Switch>
     {user ? <PrivateRoutes /> : <PublicRoutes />}
-    <Route>
+    <Route path="/sing-up">
+      <FormReset />
+    </Route>
+
+
+
+    <Route path="*">
       <NotFoundPage key="NotFoundPage" />
     </Route>
   </Switch>

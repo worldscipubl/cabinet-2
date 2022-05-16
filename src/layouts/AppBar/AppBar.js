@@ -5,9 +5,17 @@ import classNames from "classnames";
 import btnImg from "../../common/images/icons/arrow-back.svg";
 import cn from "./AppBar.module.scss";
 
-const AppBar = ({ title, description }) => {
+const   AppBar = ({ title, description }) => {
   const location = useLocation();
   const history = useHistory();
+
+  const handlerHistory = () => {
+    if (location.pathname.includes('/article/')) {
+      history.push('/articles')
+    } else {
+      history.push('/')
+    }
+  }
 
   return (
     <header className={classNames(cn.AppBar)}>
@@ -15,7 +23,8 @@ const AppBar = ({ title, description }) => {
         {!["/home", "/"].includes(location.pathname) && (
           <li
             className={classNames(cn.Action, cn.ActionBack)}
-            onClick={() => history.goBack()}
+            // onClick={() => history.goBack()}
+            onClick={handlerHistory}
           >
             <img
               className={classNames(cn.ActionBackImg)}

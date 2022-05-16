@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Card from "../../../components/Card/Card";
 import ViewPager from "../../../components/ViewPager/ViewPager";
 import "./ArticleBrief.scss";
@@ -10,8 +10,15 @@ import {
 } from "../../../api/endpoints/BriefApi";
 import BriefForm from "../../../components/BriefForm/BriefForm";
 import AuthorForm from "../../../components/AuthorForm/AuthorForm";
+import {useHistory} from "react-router-dom";
 
 const ArticleBrief = ({ articleId, statusId }) => {
+
+  const history = useHistory()
+  useEffect( () => {
+    history.push(`/article/${articleId}/article-brief`)
+  },[])
+
   const [statePages, setStatePages] = useState({
     0: false,
     1: false,
