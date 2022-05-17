@@ -1,17 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import classNames from "classnames";
 import ReferralDashboard from "../../../../components/ReferralDashboard";
 import { useGetPayoutsQuery } from "../../../../api/endpoints/PayoutsApi";
 import ReferralPayoutTable from "./ReferralPayoutTable";
 import cn from "../AmountTab/AmountTab.module.scss";
 import DialogCashOut from "../../../../components/DialogСashOut";
+import {useHistory} from "react-router-dom";
 
-const PayoutTab = () => {
+const PayoutTab = ({tabId, user}) => {
   const { data, error, isLoading } = useGetPayoutsQuery();
   const metrics = [
     { label: "Баланс", field: "current" },
     { label: "Выведено", field: "output" },
   ];
+
+  const history = useHistory()
+  useEffect( () => {
+    history.push(`/referral/${tabId}`)
+  },[])
 
   return (
     <div className={classNames(cn.Container)}>

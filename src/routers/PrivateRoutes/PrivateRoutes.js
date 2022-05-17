@@ -10,7 +10,7 @@ import NotificationsPage from "../../pages/NotificationsPage";
 import SettingsPage from "../../pages/SettingsPage";
 import NewArticlePage from "../../pages/NewArticlePage";
 
-const   PrivateRoutes = () => {
+const   PrivateRoutes = (user) => {
 
   return [
   <Route path="/" exact key="index">
@@ -33,7 +33,7 @@ const   PrivateRoutes = () => {
       <NewArticlePage/>
     </Route>,
     <Route path="/referral/:tabId?" key="ReferralPage">
-      <ReferralPage/>
+      <ReferralPage  user={user}/>
     </Route>,
     <Route path="/education" exact key="EducationPage">
       <EducationPage/>

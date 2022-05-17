@@ -8,16 +8,14 @@ import PayoutTab from "./tabs/PayoutTab";
 import withMainLayout from "../../hoc/withMainLayout";
 import "./ReferralPage.module.scss";
 
-const ReferralPage = (props) => {
-
+const ReferralPage = ({user}) => {
   sessionStorage.setItem("page", "true")
-
   const { tabId } = useParams();
 
   const ReferralTabs = [
-    <LinkTab tabId="link" tabLabel="Реферальная ссылка" key="link-tab" />,
-    <AmountTab tabId="amount" key="amount-tab" tabLabel="Счет" />,
-    <PayoutTab tabId="payout" tabLabel="Выплаты" key="payout-tab" />,
+    <LinkTab tabId="link" tabLabel="Реферальная ссылка" key="link-tab" user={user.user} />,
+    <AmountTab tabId="amount" key="amount-tab" tabLabel="Счет" user={user.user}/>,
+    <PayoutTab tabId="payout" tabLabel="Выплаты" key="payout-tab" user={user.user}/>,
   ];
 
   return <TabLayout defaultTabs={tabId}>{ReferralTabs}</TabLayout>;
