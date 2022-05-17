@@ -7,7 +7,7 @@ import FormReset from "../../pages/AuthPage/AuthForm/FormReset";
 
 const AppRouter = ({ user }) => (
   <Switch>
-    {user ? <PrivateRoutes /> : <PublicRoutes />}
+    {user ? <PrivateRoutes user={user}/> : <PublicRoutes />}
     <Route path="/sing-up">
       <FormReset />
     </Route>
