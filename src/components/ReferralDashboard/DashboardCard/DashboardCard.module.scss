@@ -31,15 +31,15 @@
   font-family: $fontMain;
   text-align: center;
   font-weight: bold;
-  font-size: 58px;
+  font-size: 38px;
   line-height: 100%;
   margin-top: 0.2em;
 
   min-width: 75%;
 
-  @media screen and (max-width: $bp-tablet) {
-    font-size: 38px;
-  }
+  //@media screen and (max-width: $bp-tablet) {
+  //  font-size: 38px;
+  //}
 
   @media screen and (max-width: $bp-mobile) {
     font-size: 24px;
