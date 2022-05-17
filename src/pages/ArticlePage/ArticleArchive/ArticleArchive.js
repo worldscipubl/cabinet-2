@@ -4,8 +4,11 @@ import EmptyState from "../../../domain/EmptyState";
 import articleApiFetch from "../../../api/ApiFetch/ArticleApiFetch";
 import Loader from "../../../components/Loader";
 import ArticleArchiveList from "./ArticleArchiveList";
+import {useHistory} from "react-router-dom";
 
 const ArticleArchive = ({ articleId }) => {
+
+  const history = useHistory()
 
   const [isLoading, setIsLoading] = useState(false)
   const [isEmpty, setIsEmpty] = useState(false)
@@ -23,6 +26,7 @@ const ArticleArchive = ({ articleId }) => {
         console.log(err)
         setIsLoading(false)
     })
+    history.push(`/article/${articleId}/article-archive`)
   },[]);
 
   if (isLoading) return <Loader />;

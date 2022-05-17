@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Card from "../../../components/Card/Card";
 import Loader from "../../../components/Loader";
 import {
@@ -8,8 +8,15 @@ import {
   usePaymentByPdfMutation,
 } from "../../../api/endpoints/ArticlePaymentApi";
 import "./ArticlePayment.scss";
+import {useHistory} from "react-router-dom";
 
 const ArticlePayment = ({ articleId = "" }) => {
+
+  const history = useHistory()
+  useEffect( () => {
+    history.push(`/article/${articleId}/article-payment`)
+  },[])
+
   const { data, error, isLoading } = useGetPaymentsQuery(articleId);
   const [paymentByLink, {}] = usePaymentByLinkMutation();
   const [paymentByPdf, {}] = usePaymentByPdfMutation();
