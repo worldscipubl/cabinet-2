@@ -15,6 +15,8 @@ import articleApiFetch from "../../api/ApiFetch/ArticleApiFetch";
 
 const ArticlePage = () => {
 
+  sessionStorage.setItem("page", "true")
+
   const [article, setArticle] = useState({})
   const [isLoading, setIsLoading] =useState(false)
   const [error, setError] =useState(false)

@@ -1,18 +1,24 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Card from "../../../../components/Card";
 import promoCodeImg from "../../../../common/images/illustrations/promocode.svg";
 import FieldBuilder from "../../../../components/FieldBuilder";
 import "./LinkTab.scss";
 import useGetAvatar from "../../../../hooks/useGetUserId";
+import {useHistory} from "react-router-dom";
 
-const LinkTab = () => {
-  const { userId } = useGetAvatar();
-  const referralLink = `${window.location.origin}/partner/${userId}`;
+const LinkTab = ({tabId, user}) => {
+  // const { userId } = useGetAvatar();
+  const referralLink = `${window.location.origin}/partner/${user.userId}`;
+  const history = useHistory()
 
   const handleClipboard = (e) => {
     e.preventDefault();
     navigator.clipboard.writeText(referralLink);
   };
+
+  useEffect( () => {
+    history.push(`/referral/${tabId}`)
+  },[])
 
   return (
     <div>
@@ -27,7 +33,7 @@ const LinkTab = () => {
             <br />
             1. зарегистрируется в личном кабинете по Вашей реферальной ссылке;{" "}
             <br />
-            2. оплатил услуги сервиса.
+            2. оплатит услуги сервиса.
           </p>
 
           <img className="link-tab__img" src={promoCodeImg} alt="/" />
