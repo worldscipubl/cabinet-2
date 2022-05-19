@@ -9,6 +9,7 @@ import EmptyState from "./domain/EmptyState";
 import authApiFetch from "./api/ApiFetch/AuthApiFetch";
 import NotFoundPage from "./domain/NotFoundPage";
 import {useHistory} from "react-router-dom";
+import ArticleApiFetch from "./api/ApiFetch/ArticleApiFetch";
 
 const App = () => {
 const history = useHistory()
@@ -54,6 +55,10 @@ const history = useHistory()
     }
     localStorage.removeItem("error")
     localStorage.removeItem("success")
+
+    ArticleApiFetch.getArticles(localStorage.getItem("user_token"), 0, 100)
+      .then(res => {})
+      .catch(err => {})
 
 
     getTokenMessaging()
