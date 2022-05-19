@@ -8,13 +8,13 @@ import "./MyArticles.scss";
 
 const MyArticles = () => {
 
-  const { data: dataArticles, error, isLoading } = useGetArticlesQuery();
-  const { data: dataUploads } = useGetApplicationsQuery();
+  // const { data: dataArticles, error, isLoading } = useGetArticlesQuery();
+  // const { data: dataUploads } = useGetApplicationsQuery();
 
   return (
     <>
-      <ListArticles data={dataArticles} error={error} isLoading={isLoading} />
-      <ListUploads data={dataUploads} />
+      <ListArticles />
+      {/*<ListUploads />*/}
     </>
   );
 };
