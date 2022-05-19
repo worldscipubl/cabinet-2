@@ -28,61 +28,69 @@ class ArticleApiFetch {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
-        // "Content-type": "multipart/form-data",
         "Authorization": `Basic ${token}`
       },
     })
       .then((res) => this.handleResponse(res));
   }
-
 
   articleStatus(articleId, token, expand) {
     return fetch(`${this._baseUrl}/articles/${articleId}?expand=${expand}`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
-        // "Content-type": "multipart/form-data",
         "Authorization": `Basic ${token}`
       },
     })
       .then((res) => this.handleResponse(res));
   }
-
 
   articleChanges(articleId, token, stage, start, count) {
     return fetch(`${this._baseUrl}/article-changes?articleId=${articleId}&stage=${stage}&start=${start}&count=${count}`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
-        // "Content-type": "multipart/form-data",
         "Authorization": `Basic ${token}`
       },
     })
       .then((res) => this.handleResponse(res));
   }
 
+  getArticles(token, offset, count) {
+    return fetch(`${this._baseUrl}/articles?offset=${offset}&count=${count}`, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Basic ${token}`
+      },
+    })
+      .then((res) => {
+        const allArticles = res.headers.get("X-Pagination-Total-Count")
+        // const countPages = res.headers.get("X-Pagination-Page-Count");
+        // const currentPage = res.headers.get("X-Pagination-Current-Page");
+        // if(currentPage < countPages) {
+        //   console.log(currentPage)
+        //   nextPage = Number(currentPage) + 1
+        //   console.log(nextPage)
+        // }
 
+        // const articlesHeader = {
+        //   allArticles: res.headers.get("X-Pagination-Total-Count"),
+        //   allPages: res.headers.get("X-Pagination-Page-Count"),
+        //   currentPage: res.headers.get("X-Pagination-Current-Page"),
+        //   articlesInPage: res.headers.get("X-Pagination-Per-Page"),
+        //   nextPage: nextPage
+        // }
+        const data = res.json();
+        return {
+          data: Object(data),
+          allArticles,
+        };
 
-  // getArticleChanges = (articleId, stage, start, count) => {
-  //   return new Promise((resolve, reject) => {
-  //     this.getResource({
-  //       url: "/article-changes",
-    //       params: { articleId, stage, start, count },
-  //     })
-  //       .then((response) => {
-  //         if (response.data) resolve(response.data);
-  //         else reject(new Error("No data"));
-  //       })
-  //       .catch((reason) => {
-  //         reject(reason);
-  //       });
-  //   });
-  // };
-
-
+      });
+  }
 
 }
 
 const articleApiFetch = new ArticleApiFetch(BASE_URL, localStorage.getItem("user_token"));
 export default articleApiFetch;
-
