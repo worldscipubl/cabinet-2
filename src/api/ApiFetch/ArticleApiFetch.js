@@ -56,8 +56,8 @@ class ArticleApiFetch {
       .then((res) => this.handleResponse(res));
   }
 
-  getArticles(token, page, count) {
-    return fetch(`${this._baseUrl}/articles?page=${page}&per-page=${count}`, {
+  getArticles(token, offset, count) {
+    return fetch(`${this._baseUrl}/articles?offset=${offset}&count=${count}`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
@@ -65,14 +65,14 @@ class ArticleApiFetch {
       },
     })
       .then((res) => {
-        let nextPage = 0
-        const countPages = res.headers.get("X-Pagination-Page-Count");
-        const currentPage = res.headers.get("X-Pagination-Current-Page");
-        if(currentPage < countPages) {
-          console.log(currentPage)
-          nextPage = Number(currentPage) + 1
-          console.log(nextPage)
-        }
+        const allArticles = res.headers.get("X-Pagination-Total-Count")
+        // const countPages = res.headers.get("X-Pagination-Page-Count");
+        // const currentPage = res.headers.get("X-Pagination-Current-Page");
+        // if(currentPage < countPages) {
+        //   console.log(currentPage)
+        //   nextPage = Number(currentPage) + 1
+        //   console.log(nextPage)
+        // }
 
         // const articlesHeader = {
         //   allArticles: res.headers.get("X-Pagination-Total-Count"),
@@ -84,7 +84,7 @@ class ArticleApiFetch {
         const data = res.json();
         return {
           data: Object(data),
-          nextPage,
+          allArticles,
         };
 
       });

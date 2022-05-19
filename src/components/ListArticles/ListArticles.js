@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import PropTypes from "prop-types";
-import Spinner from "../Spinner";
+// import Spinner from "../Spinner";
 import EmptyState from "../../domain/EmptyState";
 import ArticleCard from "../ArticleCard";
 import imgPlus from "../../common/images/icons/plus.svg";
@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 import styles from './ListArticles.module.scss'
 import ArticleApiFetch from "../../api/ApiFetch/ArticleApiFetch";
 import classNames from "classnames";
-import cn from "../../layouts/TabLayout/TabButton/TabButton.module.scss";
+// import cn from "../../layouts/TabLayout/TabButton/TabButton.module.scss";
 import ListUploads from "../ListUploads";
 import {useGetApplicationsQuery} from "../../api/endpoints/BeforeArticleApi";
 import Loader from "../Loader";
@@ -17,25 +17,24 @@ const ListArticles = () => {
 
 
   const { data: dataUploads } = useGetApplicationsQuery();
+
   const [articles, setArticles] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [isPreload, setIsPreload] = useState(false)
   const [error, setError] = useState(false)
-  const [nextPage, setNextPage] = useState(0)
+  const [allArticles, setAllArticles] = useState(0)
+  const [currentArticles, setCurrentArticles] = useState(0)
 
 
 
-  const getUserArticles = (page, count) => {
+  const getUserArticles = (offset, count) => {
+    console.log(offset, count)
     setIsPreload(true)
     setError(false)
-    ArticleApiFetch.getArticles(localStorage.getItem("user_token"), page, count)
+    ArticleApiFetch.getArticles(localStorage.getItem("user_token"), offset, count)
       .then( (res) => {
-        const {data, nextPage} = res
-        // console.log(articlesHeader.nextPage)
-        // console.log(articlesHeader.currentPage)
-        // console.log(articlesHeader.allPages)
-        setNextPage(nextPage)
-        // nextPage = articlesHeader.nextPage
+        const {data, allArticles} = res
+        setAllArticles(allArticles)
         data.then (res => {
           setArticles([...articles, ...res]);
         })
@@ -52,13 +51,15 @@ const ListArticles = () => {
 
   useEffect( () => {
     setIsLoading(true)
-    getUserArticles(1,5);
+    getUserArticles(0,5);
+    setCurrentArticles(5)
   },[])
 
   const handlerOnClick = () => {
-    console.log(nextPage)
-    if(nextPage > 0) {
-      getUserArticles(nextPage, 5);
+    if(allArticles > currentArticles) {
+    console.log(currentArticles)
+      getUserArticles(currentArticles, 6);
+      setCurrentArticles(currentArticles + 6)
     }
   }
 
@@ -106,7 +107,7 @@ const ListArticles = () => {
       {isPreload && <Loader/>}
 
       {
-        nextPage > 0 &&
+        allArticles > currentArticles &&
         <button type="button" className={classNames(styles.article__button, "button button_type_tabs")}
                 onClick={handlerOnClick}>Показать еще
         </button>
