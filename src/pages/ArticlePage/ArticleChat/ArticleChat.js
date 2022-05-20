@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useLazyGetMessagesByArticleQuery } from "../../../api/endpoints/ChatApi";
 import { ChatInfiniteScroll, ChatMessageForm } from "./particles";
 import "./ArticleChat.scss";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 
-const ArticleChat = ({ articleId }) => {
+const ArticleChat = () => {
 
   const history = useHistory()
+  const {articleId, tabId} = useParams()
+
+  console.log(useParams())
+
   useEffect( () => {
     history.push(`/article/${articleId}/article-chat`)
   },[])

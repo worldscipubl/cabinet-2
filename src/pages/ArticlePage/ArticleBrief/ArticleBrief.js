@@ -10,12 +10,16 @@ import {
 } from "../../../api/endpoints/BriefApi";
 import BriefForm from "../../../components/BriefForm/BriefForm";
 import AuthorForm from "../../../components/AuthorForm/AuthorForm";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 
-const ArticleBrief = ({ articleId, statusId }) => {
+const ArticleBrief = ({ statusId }) => {
 
   const history = useHistory()
+  const params = useParams()
+  const {articleId, tabId} = useParams()
+
   useEffect( () => {
+    console.log(params)
     history.push(`/article/${articleId}/article-brief`)
   },[])
 

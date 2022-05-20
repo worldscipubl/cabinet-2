@@ -1,8 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import EmptyState from "../../domain/EmptyState";
 import withMainLayout from "../../hoc/withMainLayout";
+import {useHistory} from "react-router-dom";
 
 const EducationPage = () => {
+  const history = useHistory();
+
+  useEffect( () => {
+    history.push(`/education`)
+  },[])
+
   return (
     <EmptyState
       title="Обучение"
