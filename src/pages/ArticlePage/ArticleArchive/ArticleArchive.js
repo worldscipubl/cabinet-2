@@ -6,43 +6,45 @@ import Loader from "../../../components/Loader";
 import ArticleArchiveList from "./ArticleArchiveList";
 import {useHistory} from "react-router-dom";
 
-const ArticleArchive = ({ articleId }) => {
+const ArticleArchive = ({ articleId, filesArchive }) => {
+
+  console.log(filesArchive)
 
   const history = useHistory()
 
-  const [isLoading, setIsLoading] = useState(false)
-  const [isEmpty, setIsEmpty] = useState(false)
-  const [files, setFiles] = useState([])
+  // const [isLoading, setIsLoading] = useState(false)
+  // const [isEmpty, setIsEmpty] = useState(false)
+  // const [files, setFiles] = useState([])
 
   useEffect(() => {
-    setIsLoading(true)
-    articleApiFetch.fileArchive(articleId, localStorage.getItem("user_token"))
-      .then(res => {
-        setFiles(res)
-        !files.length < 1 && setIsEmpty(true)
-        setIsLoading(false)
-      })
-      .catch(err => {
-        console.log(err)
-        setIsLoading(false)
-    })
+    // setIsLoading(true)
+    // articleApiFetch.fileArchive(articleId, localStorage.getItem("user_token"))
+    //   .then(res => {
+    //     setFiles(res)
+    //     !files.length < 1 && setIsEmpty(true)
+    //     setIsLoading(false)
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //     setIsLoading(false)
+    // })
     history.push(`/article/${articleId}/article-archive`)
   },[]);
 
-  if (isLoading) return <Loader />;
-
-  if (files.length < 1) {
-    return (
-      <EmptyState
-        title="Архив пуст"
-        imgName="no_data"
-        description="Тут будут файлы по статье"
-      />
-    )
-  }
+  // if (isLoading) return <Loader />;
+  //
+  // if (files.length < 1) {
+  //   return (
+  //     <EmptyState
+  //       title="Архив пуст"
+  //       imgName="no_data"
+  //       description="Тут будут файлы по статье"
+  //     />
+  //   )
+  // }
 
   return (
-    files.map((item, index) => (
+    filesArchive.map((item, index) => (
       <ul className={"archive"}>
         <ArticleArchiveList
           key={item.dateCreate}

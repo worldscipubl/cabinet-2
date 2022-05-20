@@ -56,6 +56,18 @@ class ArticleApiFetch {
       .then((res) => this.handleResponse(res));
   }
 
+  getArticlesInProcess(token) {
+    return fetch(`${this._baseUrl}/articles/in-process`, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Basic ${token}`
+      },
+    })
+      .then((res) => this.handleResponse(res));
+  }
+
+
   getArticles(token, offset, count) {
     return fetch(`${this._baseUrl}/articles?offset=${offset}&count=${count}`, {
       method: 'GET',
@@ -66,21 +78,6 @@ class ArticleApiFetch {
     })
       .then((res) => {
         const allArticles = res.headers.get("X-Pagination-Total-Count")
-        // const countPages = res.headers.get("X-Pagination-Page-Count");
-        // const currentPage = res.headers.get("X-Pagination-Current-Page");
-        // if(currentPage < countPages) {
-        //   console.log(currentPage)
-        //   nextPage = Number(currentPage) + 1
-        //   console.log(nextPage)
-        // }
-
-        // const articlesHeader = {
-        //   allArticles: res.headers.get("X-Pagination-Total-Count"),
-        //   allPages: res.headers.get("X-Pagination-Page-Count"),
-        //   currentPage: res.headers.get("X-Pagination-Current-Page"),
-        //   articlesInPage: res.headers.get("X-Pagination-Per-Page"),
-        //   nextPage: nextPage
-        // }
         const data = res.json();
         return {
           data: Object(data),

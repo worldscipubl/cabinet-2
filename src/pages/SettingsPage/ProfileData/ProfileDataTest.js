@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import classNames from "classnames";
 import FormField from "../../../components/FormField";
 import Input from "../../../components/Input";
@@ -10,6 +10,7 @@ import {
   useSetUserDataMutation,
 } from "../../../api/endpoints/UserApi";
 import styles from "../SettingsPage.module.scss";
+import {useHistory} from "react-router-dom";
 
 const fieldsProfile = [
   {
@@ -21,13 +22,14 @@ const fieldsProfile = [
     name: "birthday",
     label: "Дата рождения",
     placeholder: "Укажите дату рождения",
+    type: "data"
   },
-  // {
-  //   // don't have
-  //   name: "phone",
-  //   label: "Номер телефона",
-  //   placeholder: "Укажите ваш телефон",
-  // },
+  {
+    // don't have
+    name: "phone",
+    label: "Номер телефона",
+    placeholder: "Укажите ваш телефон",
+  },
   {
     name: "academicStatus",
     label: "Академический статус: ",
@@ -46,7 +48,13 @@ const fieldsProfile = [
   },
 ];
 
-const ProfileData = () => {
+const ProfileDataTest = ({user}) => {
+
+  const history = useHistory()
+  useEffect( () => {
+    history.push(`/settings/profile-test`)
+  },[])
+
   const { data, error, isLoading } = useGetUserDataQuery();
   const [mutation, { error: errorSubmit } = {}] = useSetUserDataMutation();
 
@@ -54,6 +62,8 @@ const ProfileData = () => {
     if (!valueField) return;
 
     const data = { [nameField]: valueField };
+
+    console.log(data)
     return await mutation({ data }).unwrap();
   };
 
@@ -76,31 +86,55 @@ const ProfileData = () => {
   return (
     <CardHeadband title="Данные профиля">
       <div className={classNames(styles.settings__avatarGroup)}>
-        <FieldAvatar className={classNames(styles.settings__avatar)} />
+        <FieldAvatar className={classNames(styles.settings__avatar)} user={user} />
         <div className={classNames(styles.settings__avatarForm, {})}>
-          {fieldsProfile.map((field) => (
-            <FormField
-              className={classNames(styles.settings__input, {})}
-              name={field?.name}
-              key={field?.name}
-              label={field?.label}
-              isLoading={isLoading}
-              description={field?.description}
-              defaultValue={data?.[field?.name]}
-              propsInput={{
-                type: field?.type || "text",
-                placeholder: field?.placeholder,
-                required: true,
-                multiple: !!(field?.type === "file"),
-              }}
-              component={<Input />}
-              handlers={{ handleFieldSubmit }}
-            />
-          ))}
+          {/*{fieldsProfile.map((field) => (*/}
+          {/*  <FormField*/}
+          {/*    className={classNames(styles.settings__input, {})}*/}
+          {/*    name={field?.name}*/}
+          {/*    key={field?.name}*/}
+          {/*    label={field?.label}*/}
+          {/*    isLoading={isLoading}*/}
+          {/*    description={field?.description}*/}
+          {/*    defaultValue={data?.[field?.name]}*/}
+          {/*    propsInput={{*/}
+          {/*      type: field?.type || "text",*/}
+          {/*      placeholder: field?.placeholder,*/}
+          {/*      required: true,*/}
+          {/*      multiple: !!(field?.type === "file"),*/}
+          {/*    }}*/}
+          {/*    component={<Input />}*/}
+          {/*    handlers={{ handleFieldSubmit }}*/}
+          {/*  />*/}
+          {/*))}*/}
+
+
+          <form action="#" encType="multipart/form-data">
+            <p >We are ready </p>
+
+
+            <label className="form__label">
+              <span>Дата рождения</span>
+              <input type="date"
+                     name="birthday"
+                     placeholder="Укажите дату рождения"/>
+            </label>
+
+
+
+
+
+
+                <button type="submit" aria-label="submit" className="app__button form__button" name="form_submit">
+                  Send
+                </button>
+          </form>
+
+
         </div>
       </div>
     </CardHeadband>
   );
 };
 
-export default ProfileData;
+export default ProfileDataTest;

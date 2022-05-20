@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useLayoutEffect, useState} from "react";
 import PropTypes from "prop-types";
 // import Spinner from "../Spinner";
 import EmptyState from "../../domain/EmptyState";
@@ -12,23 +12,41 @@ import classNames from "classnames";
 import ListUploads from "../ListUploads";
 import {useGetApplicationsQuery} from "../../api/endpoints/BeforeArticleApi";
 import Loader from "../Loader";
+import {displayCards} from "../../utils/functions"
 
 const ListArticles = () => {
 
-
-  const { data: dataUploads } = useGetApplicationsQuery();
+  // const { data: dataUploads } = useGetApplicationsQuery();
 
   const [articles, setArticles] = useState([])
+  const [articlesInProcess, setArticlesInProcess] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [isPreload, setIsPreload] = useState(false)
   const [error, setError] = useState(false)
   const [allArticles, setAllArticles] = useState(0)
   const [currentArticles, setCurrentArticles] = useState(0)
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [incrementPosition, setIncrementPosition] = useState(window.innerWidth);
 
+  useLayoutEffect(() => {
+    const updateWidth = () => {
+      setScreenWidth(window.innerWidth)
+    }
+    const position = displayCards(screenWidth)
+    setIncrementPosition(position.step)
+    setIsLoading(true)
+    getUserArticles(0,position.init);
+    setCurrentArticles(position.init)
+    window.addEventListener("resize", updateWidth)
+    return () => window.removeEventListener("resize", updateWidth) > {}
+  }, [])
 
+  useEffect(() => {
+    const position = displayCards(screenWidth)
+    setIncrementPosition(position.step)
+  }, [screenWidth])
 
   const getUserArticles = (offset, count) => {
-    console.log(offset, count)
     setIsPreload(true)
     setError(false)
     ArticleApiFetch.getArticles(localStorage.getItem("user_token"), offset, count)
@@ -50,16 +68,20 @@ const ListArticles = () => {
   }
 
   useEffect( () => {
-    setIsLoading(true)
-    getUserArticles(0,5);
-    setCurrentArticles(5)
+    ArticleApiFetch.getArticlesInProcess(localStorage.getItem("user_token"))
+      .then( (res) => {
+        console.log(res)
+        setArticlesInProcess(res)
+      })
+      .catch( (err) => {
+        console.log(err)
+      })
   },[])
 
   const handlerOnClick = () => {
     if(allArticles > currentArticles) {
-    console.log(currentArticles)
-      getUserArticles(currentArticles, 6);
-      setCurrentArticles(currentArticles + 6)
+      getUserArticles(currentArticles, incrementPosition);
+      setCurrentArticles(currentArticles + incrementPosition)
     }
   }
 
@@ -112,7 +134,11 @@ const ListArticles = () => {
                 onClick={handlerOnClick}>Показать еще
         </button>
       }
-      <ListUploads data={dataUploads} />
+
+      {
+        articlesInProcess.length > 0 &&
+        <ListUploads data={articlesInProcess}/>
+      }
     </>
 
   );
@@ -140,17 +166,17 @@ const NewArticleCard = () => {
   );
 };
 
-ListArticles.defaultProps = {
-  data: null,
-  isLoading: false,
-  spinner: false,
-};
-
-ListArticles.propTypes = {
-  data: PropTypes.array,
-  error: PropTypes.object,
-  isLoading: PropTypes.bool.isRequired,
-  spinner: PropTypes.bool,
-};
+// ListArticles.defaultProps = {
+//   data: null,
+//   isLoading: false,
+//   spinner: false,
+// };
+//
+// ListArticles.propTypes = {
+//   data: PropTypes.array,
+//   error: PropTypes.object,
+//   isLoading: PropTypes.bool.isRequired,
+//   spinner: PropTypes.bool,
+// };
 
 export default ListArticles;

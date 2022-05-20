@@ -6,7 +6,7 @@ import useGetAvatar from "../../hooks/useGetAvatar";
 import { useSetUserAvatarMutation } from "../../api/endpoints/UserApi";
 import cn from "./FieldAvatar.module.scss";
 
-const FieldAvatar = ({ className }) => {
+const FieldAvatar = ({ className, user }) => {
   const { avatar, isLoadingAvatar } = useGetAvatar();
   const [uploadFile, { error }] = useSetUserAvatarMutation();
   const [isLoading, setLoading] = useState(isLoadingAvatar);
@@ -30,7 +30,7 @@ const FieldAvatar = ({ className }) => {
     uploadFile(formData)
       .unwrap()
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         // TODO: Сделать вывод ошибки в snackBar
         setFile(avatar);
       })

@@ -44,8 +44,8 @@ const   PrivateRoutes = (user) => {
     <Route path="/notifications" exact key="NotificationsPage">
       <NotificationsPage/>
     </Route>,
-    <Route path="/settings" key="SettingsPage">
-      <SettingsPage/>
+    <Route path="/settings/:tabId?" key="SettingsPage">
+      <SettingsPage user={user}/>
     </Route>,
   ]
 
