@@ -92,7 +92,6 @@ const FormField = ({
       formData.append("UserFile[file][]", value[i]);
     }
 
-    console.log(formData);
     handleFieldFileSubmit(formData).catch((err) => {
       resetField();
       setError(err);

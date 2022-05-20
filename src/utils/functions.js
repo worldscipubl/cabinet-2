@@ -165,3 +165,25 @@ function hexToBase64(str) {
     )
   );
 }
+
+//Начальное количество отображаемых статей и шаг отображения для разных разрешений экрана
+export function displayCards(screenWidth) {
+  const positionCards = {
+    init: 0,
+    step: 0,
+  }
+
+  if (screenWidth <= 751) {
+    positionCards.init = 3;
+    positionCards.step = 2;
+    return positionCards
+  } else if (screenWidth < 1309) {
+    positionCards.init = 3;
+    positionCards.step = 4;
+    return positionCards
+  } else {
+    positionCards.init = 5;
+    positionCards.step = 6;
+    return positionCards
+  }
+}

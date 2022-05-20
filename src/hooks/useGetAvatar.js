@@ -7,6 +7,7 @@ const useGetAvatar = () => {
     isLoading: isLoadingAvatar,
   } = useGetUserQuery();
   const { avatar } = data;
+
   return { avatar, errorAvatar, isLoadingAvatar };
 };
 

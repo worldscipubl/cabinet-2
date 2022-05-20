@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import CardHeadband from "../../../components/CardHeadband";
 import FormFieldRow from "../../../components/FormFieldRow";
 import FormFieldContainer from "../../../components/FormFieldContainer";
 import CardList from "../../../components/CardList";
 import DialogResetPassword from "../../../components/DialogResetPassword";
+import {useHistory} from "react-router-dom";
 
 const ProfileSettings = () => {
+
+  const history = useHistory()
+  useEffect( () => {
+    history.push(`/settings/profile-settings`)
+  },[])
+
   return (
     <CardHeadband title="Настройки профиля">
       <FormFieldContainer
