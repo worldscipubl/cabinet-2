@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import classNames from "classnames";
 import Paper from "../../components/Paper";
 import ListNotifications from "../../components/ListNotifications";
@@ -6,8 +6,16 @@ import TabLayout from "../../layouts/TabLayout";
 import withMainLayout from "../../hoc/withMainLayout";
 import { useGetNotificationsQuery } from "../../api/endpoints/NotificationsApi";
 import cn from "./NotificationsPage.module.scss";
+import {useHistory} from "react-router-dom";
 
 const NotificationsPage = () => {
+
+  const history = useHistory();
+
+  useEffect( () => {
+    history.push(`/notifications`)
+  },[])
+
   const { data, error, isLoading } = useGetNotificationsQuery();
 
   return (

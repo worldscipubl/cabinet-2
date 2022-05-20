@@ -4,13 +4,12 @@ import EmptyState from "../../../domain/EmptyState";
 import articleApiFetch from "../../../api/ApiFetch/ArticleApiFetch";
 import Loader from "../../../components/Loader";
 import ArticleArchiveList from "./ArticleArchiveList";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 
-const ArticleArchive = ({ articleId, filesArchive }) => {
-
-  console.log(filesArchive)
+const ArticleArchive = ({ filesArchive }) => {
 
   const history = useHistory()
+  const {articleId, tabId} = useParams()
 
   // const [isLoading, setIsLoading] = useState(false)
   // const [isEmpty, setIsEmpty] = useState(false)

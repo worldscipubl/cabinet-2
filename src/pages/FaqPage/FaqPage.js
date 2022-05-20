@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import classNames from "classnames";
 import EmptyState from "../../domain/EmptyState";
@@ -11,6 +11,10 @@ import cn from "./FaqPage.module.scss";
 const FaqPage = (props) => {
   const { data, error, isLoading } = useGetFaqListQuery();
   const history = useHistory();
+
+  useEffect( () => {
+    history.push(`/faq`)
+  },[])
 
   if (isLoading) return <Spinner />;
 
