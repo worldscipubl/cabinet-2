@@ -16,7 +16,7 @@ import {displayCards} from "../../utils/functions"
 
 const ListArticles = () => {
 
-  // const { data: dataUploads } = useGetApplicationsQuery();
+  const { data: dataUploads } = useGetApplicationsQuery();
 
   const [articles, setArticles] = useState([])
   const [articlesInProcess, setArticlesInProcess] = useState([])
@@ -135,10 +135,12 @@ const ListArticles = () => {
         </button>
       }
 
-      {
-        articlesInProcess.length > 0 &&
-        <ListUploads data={articlesInProcess}/>
-      }
+      <ListUploads data={dataUploads} />
+
+      {/*{*/}
+      {/*  articlesInProcess.length > 0 &&*/}
+      {/*  <ListUploads data={articlesInProcess}/>*/}
+      {/*}*/}
     </>
 
   );
