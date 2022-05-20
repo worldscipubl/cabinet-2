@@ -8,8 +8,15 @@ import {
   useToggleTriggerMutation,
 } from "../../../api/endpoints/NotificationsApi";
 import ItemCategory from "./ItemCategory";
+import {useHistory} from "react-router-dom";
 
 const NotificationSettings = () => {
+
+  const history = useHistory()
+  useEffect( () => {
+    history.push(`/settings/notifications`)
+  },[])
+
   const { data, error, isLoading } = useGetTriggersQuery();
   const [toggleTrigger, {}] = useToggleTriggerMutation();
   const [isLoadingTrigger, setLoadingTrigger] = useState(null);

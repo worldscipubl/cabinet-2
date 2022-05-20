@@ -11,6 +11,7 @@ const DateField = ({
   handlers: { handlerEndIcon, handlerField } = {},
   ...props
 }) => {
+
   return (
     <label className="field__container">
       {startIcon && (

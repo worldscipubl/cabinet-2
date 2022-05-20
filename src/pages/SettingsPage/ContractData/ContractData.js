@@ -12,6 +12,7 @@ import FormFieldContainer from "../../../components/FormFieldContainer";
 import UserFile from "../../../components/UserFile";
 import FormField from "../../../components/FormField";
 import cn from "./ContractData.module.scss";
+import {useHistory} from "react-router-dom";
 
 const fieldsContract = [
   {
@@ -42,6 +43,12 @@ const fieldsContract = [
 ];
 
 const ContractData = () => {
+
+  const history = useHistory()
+  useEffect( () => {
+    history.push(`/settings/contract`)
+  },[])
+
   const { data, error, isLoading } = useGetUserDataQuery();
   const {
     data: dataUserFiles,
@@ -53,7 +60,6 @@ const ContractData = () => {
     useSetUserPasswordMutation();
 
   useEffect(() => {
-    console.log(dataUserFiles);
   }, [dataUserFiles]);
 
   const handleFieldSubmit = async (nameField, valueField) => {

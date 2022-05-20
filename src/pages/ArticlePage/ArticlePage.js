@@ -21,6 +21,7 @@ const ArticlePage = () => {
   const [isLoading, setIsLoading] =useState(false)
   const [error, setError] =useState(false)
   const [currentStage, setCurrentStage] =useState(false)
+  const [filesArchive, setFilesArchive] = useState([])
 
   const { articleId, tabId } = useParams();
   const history = useHistory();
@@ -37,6 +38,18 @@ const ArticlePage = () => {
         console.log(err)
         setIsLoading(false)
         setError(true)
+      })
+
+    articleApiFetch.fileArchive(articleId, localStorage.getItem("user_token"))
+      .then(res => {
+        if(res.length > 0) {
+          setFilesArchive(res)
+        }
+        setIsLoading(false)
+      })
+      .catch(err => {
+        console.log(err)
+        setIsLoading(false)
       })
   }, []);
 
@@ -73,6 +86,7 @@ const ArticlePage = () => {
       tabId="article-archive"
       key="article-archive"
       tabLabel="Архив"
+      filesArchive={filesArchive}
     />,
     <ArticlePayment
       articleId={articleId}
@@ -82,14 +96,16 @@ const ArticlePage = () => {
     />,
   ];
 
-  const getFilterPages = ({ statusId = 0, articleUploaded = false } = {}) => {
+  const getFilterPages = ({ statusId = 0, articleUploaded = false, } = {}) => {
     const filters = [];
     if (statusId < 4) filters.push("article-brief", "article-payment");
     if (statusId >= 4 && statusId < 9) filters.push("article-payment");
     if (articleUploaded) filters.push("article-request");
+    if (filesArchive.length === 0) filters.push("article-archive");
     return filters;
   };
   const filterPages = getFilterPages(article);
+
 
   if (isLoading) return <Spinner />;
 
