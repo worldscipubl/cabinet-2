@@ -101,7 +101,7 @@ const ArticlePage = () => {
     if (statusId < 4) filters.push("article-brief", "article-payment");
     if (statusId >= 4 && statusId < 9) filters.push("article-payment");
     if (articleUploaded) filters.push("article-request");
-    if (filesArchive.length === 0) filters.push("article-archive");
+    // if (filesArchive.length === 0) filters.push("article-archive");
     return filters;
   };
   const filterPages = getFilterPages(article);

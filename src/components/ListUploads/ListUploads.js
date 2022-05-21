@@ -17,13 +17,10 @@ const ListUploads = ({ data }) => {
       <div className="articles">
         {data.map((article) => {
           return (
-            <>
-            <p>тест</p>
-            </>
-            // <UploadCard
-            //   key={article?.articleId || "article" + Math.random()}
-            //   article={article}
-            // />
+            <UploadCard
+              key={article?.articleId || "article" + Math.random()}
+              article={article}
+            />
           );
         })}
       </div>
