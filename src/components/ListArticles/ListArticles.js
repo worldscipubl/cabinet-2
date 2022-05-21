@@ -1,32 +1,40 @@
 import React, {useEffect, useLayoutEffect, useState} from "react";
-import PropTypes from "prop-types";
-// import Spinner from "../Spinner";
+import {Link} from "react-router-dom";
+import classNames from "classnames";
+import styles from './ListArticles.module.scss'
+import imgPlus from "../../common/images/icons/plus.svg";
+import ListUploads from "../ListUploads";
+import Loader from "../Loader";
 import EmptyState from "../../domain/EmptyState";
 import ArticleCard from "../ArticleCard";
-import imgPlus from "../../common/images/icons/plus.svg";
-import {Link} from "react-router-dom";
-import styles from './ListArticles.module.scss'
 import ArticleApiFetch from "../../api/ApiFetch/ArticleApiFetch";
-import classNames from "classnames";
-// import cn from "../../layouts/TabLayout/TabButton/TabButton.module.scss";
-import ListUploads from "../ListUploads";
-import {useGetApplicationsQuery} from "../../api/endpoints/BeforeArticleApi";
-import Loader from "../Loader";
+import BeforeApplicationFetch from "../../api/ApiFetch/BeforeApplicationFetch";
 import {displayCards} from "../../utils/functions"
+
+// import {useGetApplicationsQuery} from "../../api/endpoints/BeforeArticleApi";
+// import cn from "../../layouts/TabLayout/TabButton/TabButton.module.scss";
+// import PropTypes from "prop-types";
+// import Spinner from "../Spinner";
 
 const ListArticles = () => {
 
-  const { data: dataUploads } = useGetApplicationsQuery();
+  // const { data: dataUploads } = useGetApplicationsQuery();
 
+  //articles - массив статей пользователя, beforeApplication - массив зааявок для подтверждения
   const [articles, setArticles] = useState([])
-  const [articlesInProcess, setArticlesInProcess] = useState([])
+  const [beforeApplication, setBeforeApplication] = useState([])
+
+  //isLoading - идет начальная загрузка, isPreload - идет подгрузка, error - возникла ошибка
   const [isLoading, setIsLoading] = useState(false)
   const [isPreload, setIsPreload] = useState(false)
   const [error, setError] = useState(false)
+
+  //Всего статей у пользователя, последняя отображаемая статья,
+  // количество тоображаемых статей на одном шаге, текущее разрешение экрана (переменные для пагинации)
   const [allArticles, setAllArticles] = useState(0)
   const [currentArticles, setCurrentArticles] = useState(0)
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [incrementPosition, setIncrementPosition] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useLayoutEffect(() => {
     const updateWidth = () => {
@@ -68,10 +76,9 @@ const ListArticles = () => {
   }
 
   useEffect( () => {
-    ArticleApiFetch.getArticlesInProcess(localStorage.getItem("user_token"))
+    BeforeApplicationFetch.getBeforeApplications(localStorage.getItem("user_token"))
       .then( (res) => {
-        console.log(res)
-        setArticlesInProcess(res)
+        setBeforeApplication(res)
       })
       .catch( (err) => {
         console.log(err)
@@ -135,12 +142,10 @@ const ListArticles = () => {
         </button>
       }
 
-      <ListUploads data={dataUploads} />
-
-      {/*{*/}
-      {/*  articlesInProcess.length > 0 &&*/}
-      {/*  <ListUploads data={articlesInProcess}/>*/}
-      {/*}*/}
+      {
+        beforeApplication.length > 0 &&
+        <ListUploads data={beforeApplication}/>
+      }
     </>
 
   );
