@@ -7,12 +7,13 @@ import CardBody from "../../../components/Card/CardBody";
 import { useApplyArticleMutation } from "../../../api/endpoints/ArticlesApi";
 import { fieldsArticleRequestForm } from "../../../utils/constants";
 // import PreloadingScreen from "../../../components/PreloadingScreen";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import Loader from "../../../components/Loader";
 import './ArticleRequest.scss'
 
 const ArticleRequest = () => {
   const history = useHistory()
+
   const briefForm = document.forms.briefform
 
   const [applyArticle, {}] = useApplyArticleMutation();

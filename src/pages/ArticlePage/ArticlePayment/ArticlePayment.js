@@ -8,11 +8,13 @@ import {
   usePaymentByPdfMutation,
 } from "../../../api/endpoints/ArticlePaymentApi";
 import "./ArticlePayment.scss";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 
-const ArticlePayment = ({ articleId = "" }) => {
+const ArticlePayment = () => {
 
   const history = useHistory()
+  const {articleId, tabId} = useParams()
+
   useEffect( () => {
     history.push(`/article/${articleId}/article-payment`)
   },[])
