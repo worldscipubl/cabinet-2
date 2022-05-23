@@ -112,18 +112,12 @@ const ProfileDataTest = ({user}) => {
           <form action="#" encType="multipart/form-data">
             <p >We are ready </p>
 
-
             <label className="form__label">
               <span>Дата рождения</span>
               <input type="date"
                      name="birthday"
                      placeholder="Укажите дату рождения"/>
             </label>
-
-
-
-
-
 
                 <button type="submit" aria-label="submit" className="app__button form__button" name="form_submit">
                   Send

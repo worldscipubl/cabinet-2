@@ -1,0 +1,92 @@
+@use './src/common/style/global' as *;
+
+.profile {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template: 1fr / max-content 1fr;
+  gap: 20px;
+
+  @media screen and (max-width: $bp-tablet) {
+    grid-template: max-content max-content / 1fr;
+    gap: 20px;
+  }
+
+}
+
+.profile__avatar {
+  margin: 0;
+  padding: 0 50px;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  align-self: center;
+
+  @media screen and (max-width: $bp-tablet) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    margin: 0 auto;
+  }
+
+}
+
+.profile__form {
+  margin: 0;
+  padding: 0 20px 20px 0;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  display: grid;
+  grid-template: auto / 1fr;
+  gap: 15px;
+
+  @media screen and (max-width: $bp-tablet) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+}
+
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+}
+
+.form__input {
+  color: rgba(0, 0, 0, .7);
+  grid-column: 1/2;
+  margin: 0;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.form__input:focus {
+  padding: 10px;
+}
+
+.form__inputWrapper {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template: max-content / 1fr max-content;
+  gap: 10px;
+}
+
+.form__inputButton {
+  grid-column: 2/3;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  background: url("../../../common/images/icons/pencil.svg") no-repeat center / cover ;
+  align-self: center;
+  cursor: pointer;
+}
+
+.form__submitButton {
+  margin: 20px 0 0 0;
+}

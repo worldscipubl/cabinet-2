@@ -9,8 +9,6 @@ const ArticleChat = () => {
   const history = useHistory()
   const {articleId, tabId} = useParams()
 
-  console.log(useParams())
-
   useEffect( () => {
     history.push(`/article/${articleId}/article-chat`)
   },[])
