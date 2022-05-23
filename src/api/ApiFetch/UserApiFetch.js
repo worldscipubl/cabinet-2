@@ -36,35 +36,7 @@ class UserApiFetch {
       .then((res) => {
         console.log(res)
       })
-
-
-        // this.handleResponse(res));
   }
-
-
-
-//   setUserData: build.mutation({
-//   query: ({ data, isFile = false }) => ({
-//   url: isFile ? "/user-files" : "/users/self",
-//   method: isFile ? "post" : "put",
-//   data,
-// }),
-// invalidatesTags: ["userData"],
-// }),
-
-
-
-
-//   getUserData: build.query({
-//   query: () => ({ url: "/users/self", method: "get" }),
-//   providesTags: (result) =>
-//     result
-// ? [{ ...result, ...{ type: "userData" } }, "userData"]
-// : ["userData"],
-//   transformResponse: (response) => {
-//   return response.data;
-// },
-// }),
 
 }
 

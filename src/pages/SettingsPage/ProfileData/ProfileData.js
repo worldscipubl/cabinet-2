@@ -12,6 +12,8 @@ import FieldAvatar from "../../../components/FieldAvatar";
 import styles from "./ProfileData.module.scss";
 import Loader from "../../../components/Loader";
 import UserApiFetch from "../../../api/ApiFetch/UserApiFetch";
+import {useHistory} from "react-router-dom";
+// import Pencil from '../../../common/images/icons/pencil.svg'
 
 // const fieldsProfile = [
 //   {
@@ -50,25 +52,29 @@ import UserApiFetch from "../../../api/ApiFetch/UserApiFetch";
 
 const ProfileData = () => {
 
-  const profileForm = document.forms.profileform
+  const history = useHistory()
 
   const [currentUser, setCurrentUser] = useState({})
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(true)
 
   useEffect( () => {
     setIsLoading(true)
+    setError(false)
     UserApiFetch.getCurrentUser(localStorage.getItem("user_token"))
       .then( res => {
         setCurrentUser(res)
         setIsLoading(false)
+        setError(false)
       })
       .catch( err => {
         console.log(err)
         setIsLoading(false)
+        setError(true)
       })
-  },[])
 
-  console.log(currentUser)
+      history.push(`/settings/profile`)
+  },[])
 
   const formatDate = (date) => {
     let d = new Date(Number(date+"000"))
@@ -84,8 +90,6 @@ const ProfileData = () => {
     return [day, month, year].join('.');
   }
 
-  // const [mutation, { error: errorSubmit } = {}] = useSetUserDataMutation();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     UserApiFetch.setCurrentUser(localStorage.getItem("user_token"), currentUser )
@@ -97,21 +101,25 @@ const ProfileData = () => {
       });
   };
 
-  // if (error)
-  //   return (
-  //     <EmptyState
-  //       type="warning"
-  //       title="Упс... Произошла ошибка!"
-  //       description={error.message}
-  //     >
-  //       <button
-  //         className="button button_type_main"
-  //         onClick={() => document.location.reload()}
-  //       >
-  //         Обновить страницу
-  //       </button>
-  //     </EmptyState>
-  //   );
+  const inputOpen = (name) => {
+    document.getElementById(name).focus();
+  }
+
+  if (error)
+    return (
+      <EmptyState
+        type="warning"
+        title="Упс... Произошла ошибка!"
+        description={error.message}
+      >
+        <button
+          className="button button_type_main"
+          onClick={() => document.location.reload()}
+        >
+          Обновить страницу
+        </button>
+      </EmptyState>
+    );
 
   function handleChange(e) {
     if(e.target.name === "birthday") {
@@ -133,74 +141,94 @@ const ProfileData = () => {
           <FieldAvatar className={classNames(styles.settings__avatar)} />
         </div>
 
-          <form name="profileform" className={styles.profile__form}>
+          <form className={styles.profile__form}>
             <label className={styles.form__label}>
               <span className="text text-field__label">ФИО</span>
-              <input type="text"
-                     name="name"
-                     placeholder="Укажите ФИО"
-                     className={classNames("text textField__input", styles.form__input)}
-                     value={currentUser.name}
-                     onChange={handleChange}
-              />
+              <div className={styles.form__inputWrapper}>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       placeholder="Укажите ФИО"
+                       className={classNames("text textField__input", styles.form__input)}
+                       value={currentUser.name}
+                       onChange={handleChange}
+                />
+                <button type="button" className={styles.form__inputButton} onClick={() => inputOpen("name", false)}></button>
+              </div>
             </label>
 
             <label className={styles.form__label}>
               <span className="text text-field__label">Дата рождения</span>
-
-              <input
-                type="text"
-                name="birthday"
-                placeholder={formatDate(currentUser.birthday) || "Укажите дату рождения"}
-                onChange={handleChange}
-                onFocus={(e) => (e.target.type = "date")}
-                onBlur={(e) => (e.target.type = "text")}
-                className={classNames("text textField__input", styles.form__input)}
-              />
+              <div className={styles.form__inputWrapper}>
+                <input
+                  type="text"
+                  id="birthday"
+                  name="birthday"
+                  placeholder={formatDate(currentUser.birthday) || "Укажите дату рождения"}
+                  onChange={handleChange}
+                  onFocus={(e) => (e.target.type = "date")}
+                  onBlur={(e) => (e.target.type = "text")}
+                  className={classNames("text textField__input", styles.form__input)}
+                />
+                <button type="button" className={styles.form__inputButton} onClick={() => inputOpen("birthday", false)}></button>
+              </div>
             </label>
 
             <label className={styles.form__label}>
               <span className="text text-field__label">Академический статус</span>
-              <input type="text"
-                     name="academicStatus"
-                     placeholder="Укажите академический статус"
-                     className={classNames("text textField__input", styles.form__input)}
-                     value={currentUser.academicStatus}
-                     onChange={handleChange}
-              />
+              <div className={styles.form__inputWrapper}>
+                <input type="text"
+                       id="academicStatus"
+                       name="academicStatus"
+                       placeholder="Укажите академический статус"
+                       className={classNames("text textField__input", styles.form__input)}
+                       value={currentUser.academicStatus}
+                       onChange={handleChange}
+                />
+                <button type="button" className={styles.form__inputButton} onClick={() => inputOpen("academicStatus", false)}></button>
+              </div>
             </label>
 
             <label className={styles.form__label}>
               <span className="text text-field__label">Должность</span>
-              <input type="text"
-                     name="post"
-                     placeholder="Укажите должность"
-                     className={classNames("text textField__input", styles.form__input)}
-                     value={currentUser.post}
-                     onChange={handleChange}
-              />
+              <div className={styles.form__inputWrapper}>
+                <input type="text"
+                       id="post"
+                       name="post"
+                       placeholder="Укажите должность"
+                       className={classNames("text textField__input", styles.form__input)}
+                       value={currentUser.post}
+                       onChange={handleChange}
+
+                />
+                <button type="button" className={styles.form__inputButton} onClick={() => inputOpen("post", false)}></button>
+              </div>
             </label>
 
             <label className={styles.form__label}>
               <span className="text text-field__label">Страна</span>
-              <input type="text"
-                     name="country"
-                     placeholder="Укажите вашу страну"
-                     className={classNames("text textField__input", styles.form__input)}
-                     value={currentUser.country}
-                     onChange={handleChange}
-              />
+              <div className={styles.form__inputWrapper}>
+                <input type="text"
+                       id="country"
+                       name="country"
+                       placeholder="Укажите вашу страну"
+                       className={classNames("text textField__input", styles.form__input)}
+                       value={currentUser.country}
+                       onChange={handleChange}
+                />
+                <button type="button" className={styles.form__inputButton} onClick={() => inputOpen("country", false)}></button>
+              </div>
             </label>
 
-            <button type="submit" aria-label="submit" className="button button_type_tabs active" name="form_submit" onClick={handleSubmit}>
+            <button type="submit"
+                    aria-label="submit"
+                    className={classNames("button button_type_tabs active", styles.form__submitButton)}
+                    name="form_submit"
+                    onClick={handleSubmit}>
               Сохранить
             </button>
           </form>
-
 </div>
-          {/*<button type="submit" aria-label="submit" className="button button_type_tabs active" name="form_submit" onClick={handleSubmit}>*/}
-          {/*  Сохранить*/}
-          {/*</button>*/}
 
      </CardHeadband>
   );
