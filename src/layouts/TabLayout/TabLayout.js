@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TabContent from "./TabContent";
 import TabBar from "./TabBar";
 
-const TabLayout = ({ children, defaultTabs }) => {
+const TabLayout = ({ children, defaultTabs, article, archive }) => {
   const [activeTab, setActiveTab] = useState(
     getActiveTabDefault(children, defaultTabs)
   );
@@ -13,7 +13,7 @@ const TabLayout = ({ children, defaultTabs }) => {
 
   return (
     <>
-      <TabBar activeTab={activeTab} handleTab={setActiveTab}>
+      <TabBar activeTab={activeTab} handleTab={setActiveTab} article={article} archive={archive}>
         {children}
       </TabBar>
       <TabContent activeTab={activeTab}>{children}</TabContent>

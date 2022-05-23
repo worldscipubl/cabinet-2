@@ -8,8 +8,6 @@ import {useHistory} from "react-router-dom";
 
 const ArticleArchive = ({ articleId, filesArchive }) => {
 
-  console.log(filesArchive)
-
   const history = useHistory()
 
   // const [isLoading, setIsLoading] = useState(false)

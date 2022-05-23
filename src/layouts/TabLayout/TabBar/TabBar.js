@@ -3,7 +3,7 @@ import TabButton from "../TabButton";
 import classNames from "classnames";
 import cn from "./TabBar.module.scss";
 
-const TabBar = ({ className, activeTab, children, handleTab }) => {
+const TabBar = ({ className, activeTab, children, handleTab, article, archive }) => {
   const handlerTab = (tabId) => {
     if (!tabId) return;
     if (!handleTab) return;
@@ -23,6 +23,8 @@ const TabBar = ({ className, activeTab, children, handleTab }) => {
                 key={tabId}
                 label={tabLabel}
                 onClick={() => handlerTab(tabId)}
+                article={article}
+                archive={archive}
               />
             );
           })}

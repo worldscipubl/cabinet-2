@@ -98,8 +98,8 @@ const ArticlePage = () => {
 
   const getFilterPages = ({ statusId = 0, articleUploaded = false, } = {}) => {
     const filters = [];
-    if (statusId < 4) filters.push("article-brief", "article-payment");
-    if (statusId >= 4 && statusId < 9) filters.push("article-payment");
+    // if (statusId < 4) filters.push("article-brief", "article-payment");
+    // if (statusId >= 4 && statusId < 9) filters.push("article-payment");
     if (articleUploaded) filters.push("article-request");
     // if (filesArchive.length === 0) filters.push("article-archive");
     return filters;
@@ -141,7 +141,7 @@ const ArticlePage = () => {
     );
 
   return (
-    <TabLayout defaultTabs={tabId}>
+    <TabLayout defaultTabs={tabId} article={article} archive={filesArchive.length}>
       {filterPages.length
         ? articleTabs.filter((tab) => !filterPages.includes(tab.props?.tabId))
         : articleTabs}

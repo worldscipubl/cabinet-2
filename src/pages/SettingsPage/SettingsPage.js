@@ -24,7 +24,7 @@ const SettingsPage = ({user}) => {
     // <ProfileDataTest
     //   tabLabel="Данные профиля"
     //   tabId="profile"
-    //   key="profile-test"
+    //   key="profile"
     //   user={user.user}
     // />,
 
